@@ -1,0 +1,32 @@
+{
+  "name": "html-usfm-editor",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/runtime": "7.13.8",
+    "@nrwl/nx-cloud": "latest",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-test-selectors": "^2.0.3",
+    "nx": "15.7.0",
+    "prettier": "^2.6.2",
+    "react-docgen": "^5.4.3",
+    "react-scripts": "^5.0.1",
+    "react-styleguidist": "^13.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,69 @@
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { usfm2perf } from '../helpers/usfm2perf'
+import EpiteleteHtml from "epitelete-html";
+import { Editor } from "html-usfm-editor-core"
+
+export default function UsfmEditor( props ) {
+  const {
+    usfmText,
+    onSave,
+    onUnsavedData,
+    verbose
+  } = props
+
+  const proskomma = null;
+  const docSetId = "Xxx/en_xxx" // just dummy values
+  const [ready, setReady] = useState(false);
+  // eslint-disable-next-line 
+  const [ep, setEp] = useState(new EpiteleteHtml({ proskomma, docSetId, options: { historySize: 100 } }))
+
+  useEffect(
+    () => {
+      async function loadUsfm() {
+        const tempPerf = usfm2perf(usfmText)
+        await ep.sideloadPerf('XXX', tempPerf)
+        setReady(true)
+      }
+      if ( usfmText && !ready ) loadUsfm();
+    }, [usfmText, ready, ep]
+  )
+ 
+  const editorProps = {
+    epiteleteHtml: ep,
+    bookId: 'XXX',
+    onSave,
+    onUnsavedData,
+    verbose
+  }
+
+  return (
+    <div>
+      { ready ? <Editor {...editorProps} /> : 'Loading...'}
+    </div>
+  )
+};
+
+UsfmEditor.propTypes = {
+  /** The text in usfm format to load in the editor */
+  usfmText: PropTypes.string,
+  /** Method to call when save button is pressed */
+  onSave: PropTypes.func,
+  /** Callback method to receive information about unsaved data */
+  onUnsavedData: PropTypes.func,
+  /** Whether to show extra info in the js console */
+  verbose: PropTypes.bool,
+  /** Book, chapter, verse to scroll to and highlight */
+  activeReference: PropTypes.shape({
+    bookId: PropTypes.string,
+    chapter: PropTypes.number,
+    verse: PropTypes.number,
+  }),
+  /** Callback triggered when a verse is clicked on */
+  onReferenceSelected: PropTypes.func,
+
+};
+
+UsfmEditor.defaultProps = {
+  verbose: false
+}

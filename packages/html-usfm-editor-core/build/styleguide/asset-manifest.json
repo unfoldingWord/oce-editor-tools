@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/build/bundle.ce607a21.js",
+    "tit.en.ult.perf.json": "/tit.en.ult.perf.json",
+    "tit-fra_fraLSG-perf.html.json": "/tit-fra_fraLSG-perf.html.json",
+    "86-TITfraLSG.usfm": "/86-TITfraLSG.usfm",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "build/bundle.ce607a21.js"
+  ]
+}
