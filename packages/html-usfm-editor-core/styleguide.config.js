@@ -11,8 +11,6 @@ module.exports = {
   exampleMode: 'expand',
   moduleAliases: {},
   components: [
-    'src/components/PkEditor.jsx',
-    'src/components/UsfmEditor.jsx',
     'src/components/Editor.jsx',
   ],
   getComponentPathLine: componentPath => {

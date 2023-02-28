@@ -62,7 +62,7 @@
   },
   "scripts": {
     "start": "yarn && npx styleguidist server",
-    "build": "npx styleguidist build && mv styleguide build",
+    "build": "npx styleguidist build",
     "test": "react-scripts test",
     "sections": "node styleguide.sections.js",
     "prepublishOnly": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline"
