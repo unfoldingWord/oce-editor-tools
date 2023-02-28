@@ -18,7 +18,10 @@ import Popper from '@mui/material/Popper';
 import GraftPopup from "./GraftPopup"
 
 export default function Editor( props) {
-  const { onSave, onUnsavedData, epiteleteHtml, bookId, verbose, activeReference, onReferenceSelected } = props;
+  const { 
+    onSave, onUnsavedData, epiteleteHtml, bookId, verbose, 
+    activeReference, onReferenceSelected 
+  } = props;
   const [graftSequenceId, setGraftSequenceId] = useState(null);
 
   // const [isSaving, startSaving] = useTransition();

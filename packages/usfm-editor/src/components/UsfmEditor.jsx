@@ -6,17 +6,15 @@ import { Editor } from "html-usfm-editor-core"
 
 export default function UsfmEditor( props ) {
   const {
-    usfmText,
-    onSave,
-    onUnsavedData,
-    verbose
-  } = props
+    usfmText, onSave, onUnsavedData, verbose,
+    htmlMap, activeReference, onReferenceSelected 
+  } = props;
 
   const proskomma = null;
   const docSetId = "Xxx/en_xxx" // just dummy values
   const [ready, setReady] = useState(false);
   // eslint-disable-next-line 
-  const [ep, setEp] = useState(new EpiteleteHtml({ proskomma, docSetId, options: { historySize: 100 } }))
+  const [ep, setEp] = useState(new EpiteleteHtml({ proskomma, docSetId, htmlMap, options: { historySize: 100 } }))
 
   useEffect(
     () => {
@@ -30,11 +28,13 @@ export default function UsfmEditor( props ) {
   )
  
   const editorProps = {
-    epiteleteHtml: ep,
+    epiteleteHtml: ep, 
     bookId: 'XXX',
     onSave,
     onUnsavedData,
-    verbose
+    verbose,
+    activeReference, 
+    onReferenceSelected 
   }
 
   return (
@@ -51,6 +51,8 @@ UsfmEditor.propTypes = {
   onSave: PropTypes.func,
   /** Callback method to receive information about unsaved data */
   onUnsavedData: PropTypes.func,
+  /** Optional customised html map */
+  htmlMap: PropTypes.any,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
   /** Book, chapter, verse to scroll to and highlight */

@@ -3,7 +3,8 @@ import { useDeepCompareEffect } from "use-deep-compare";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 import EpiteleteHtml from "epitelete-html";
 
-export default function usePkImport( docSetBookId, usfmText ) {
+/** htmlMap - Optional customised html map */
+export default function usePkImport( docSetBookId, usfmText, htmlMap ) {
   const [loading,setLoading] = useState(true)
   const [done,setDone] = useState(false)
   const [org, repoStr, bookId] = docSetBookId?.split('/') ?? []
@@ -54,6 +55,7 @@ export default function usePkImport( docSetBookId, usfmText ) {
         const _ep = new EpiteleteHtml({ 
           proskomma,
           docSetId,
+          htmlMap,
           options: { historySize: 100 }
         })
         addEpCache(docSetId,_ep)
