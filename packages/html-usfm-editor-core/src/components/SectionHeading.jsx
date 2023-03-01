@@ -12,8 +12,9 @@ export default function SectionHeading({ type: _type, content, show, index, verb
   }, []);
 
   const matchRes = content.match(/<span class="mark[^"]+chapter-(\d+)/)
-  const chNum = (matchRes && matchRes[1]) || 0
-  const type = chNum ? `Chapter ${chNum}` : "Title & Introduction";
+  const foundChNum = (matchRes && matchRes[1])
+  const chNum = foundChNum || 0
+  const type = foundChNum ? `Chapter ${chNum}` : "Title & Introduction";
 
   return (
     <div className='sectionHeading' data-chapter-number={chNum} {...props}>
