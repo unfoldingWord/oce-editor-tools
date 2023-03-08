@@ -20,8 +20,7 @@ import GraftPopup from "./GraftPopup"
 export default function Editor( props) {
   const { 
     onSave, onUnsavedData, epiteleteHtml, 
-    bookId, hasInitialUnsavedData = false, 
-    verbose, activeReference, onReferenceSelected 
+    bookId, verbose, activeReference, onReferenceSelected 
   } = props;
   const [graftSequenceId, setGraftSequenceId] = useState(null);
 
@@ -31,12 +30,10 @@ export default function Editor( props) {
   const [brokenAlignedWords, setBrokenAlignedWords] = useState();
   const [anchorEl, setAnchorEl] = useState(null);
   const [blockIsEdited, setBlockIsEdited] = useState(false);
-  const [hasUnsavedBlock, setHasUnsavedBlock] = useState(hasInitialUnsavedData);
-  const [undoInx, setUndoInx] = useState(0)
+  const [hasUnsavedBlock, setHasUnsavedBlock] = useState()
 
   const bookCode = bookId.toUpperCase()
 
-  const [lastSaveUndoInx, setLastSaveUndoInx] = useState(hasInitialUnsavedData ? undefined : 0)
   const readOptions = { readPipeline: "stripAlignmentPipeline" }
   const [sectionIndices, setSectionIndices] = useState({});
   const [hasIntroduction, setHasIntroduction] = useState(false)
@@ -64,6 +61,21 @@ export default function Editor( props) {
     return arrayToObject(resArray,"id")
   }
 
+  const getLastSaveUndoInx = () => (epiteleteHtml?.history[bookCode]?.lastSaveUndoInx) || undefined
+  const getUndoInx = () => (epiteleteHtml?.history[bookCode]?.undoInx) || 0
+
+  const setLastSaveUndoInx = (newInx) => {
+    if (epiteleteHtml?.history[bookCode]) {
+      epiteleteHtml.history[bookCode].lastSaveUndoInx = newInx
+    }
+  }
+
+  const setUndoInx = (newUndoInx) => {
+    if (epiteleteHtml?.history[bookCode]) {
+      epiteleteHtml.history[bookCode].undoInx = newUndoInx
+    }
+  }
+
   useDeepCompareEffect(() => {
     if (epiteleteHtml) {
       //        epiteleteHtml.readHtml(bookCode,{},bcvQuery).then((_htmlPerf) => {
@@ -74,7 +86,6 @@ export default function Editor( props) {
       });
     }
   }, [epiteleteHtml, bookCode, setOrgUnaligned, setHtmlPerf]);
-
   
   const handleUnalignedClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -93,20 +104,22 @@ export default function Editor( props) {
 
   const popperOpen = Boolean(anchorEl);
   const id = popperOpen ? 'simple-popper' : undefined;
-  
+
   const incUndoInx = () => {
+    const undoInx = getUndoInx()
     if (onUnsavedData != null) {
-      if ((undoInx + 1) === lastSaveUndoInx) onUnsavedData(false)
-      else if (undoInx === lastSaveUndoInx) onUnsavedData(true)
+      if ((undoInx + 1) === getLastSaveUndoInx()) onUnsavedData(false)
+      else if (undoInx === getLastSaveUndoInx()) onUnsavedData(true)
     }
     setUndoInx(undoInx+1)
   }
 
   const decUndoInx = () => {
+    const undoInx = getUndoInx()
     if (undoInx>0) {
       if (onUnsavedData != null) {
-        if ((undoInx - 1) === lastSaveUndoInx) onUnsavedData(false)
-        else if (undoInx === lastSaveUndoInx) onUnsavedData(true)
+        if ((undoInx - 1) === getLastSaveUndoInx()) onUnsavedData(false)
+        else if (undoInx === getLastSaveUndoInx()) onUnsavedData(true)
       }
       setUndoInx(undoInx-1)
     }
@@ -140,7 +153,7 @@ export default function Editor( props) {
   }, [htmlPerf, bookCode, orgUnaligned, setBrokenAlignedWords, setHtmlPerf]);
 
   const handleSave = async () => {
-    setLastSaveUndoInx(undoInx)
+    setLastSaveUndoInx(getUndoInx())
     setBlockIsEdited(false)
     setHasUnsavedBlock(false)
     const usfmText = await epiteleteHtml.readUsfm( bookCode )
@@ -164,7 +177,7 @@ export default function Editor( props) {
 
   const canUndo = blockIsEdited || epiteleteHtml?.canUndo(bookCode);
   const canRedo = (!blockIsEdited) && epiteleteHtml?.canRedo(bookCode);
-  const canSave = (blockIsEdited || hasUnsavedBlock) && (lastSaveUndoInx !== undoInx)
+  const canSave = (blockIsEdited || hasUnsavedBlock) && (getLastSaveUndoInx() !== getUndoInx())
 
   const {
     state: {
@@ -280,7 +293,6 @@ export default function Editor( props) {
     sectionIndex,
     verbose,
   };
-
 
   const graftProps = {
     ...htmlEditorProps,
