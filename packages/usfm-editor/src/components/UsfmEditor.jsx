@@ -58,12 +58,17 @@ UsfmEditor.propTypes = {
   /** Book, chapter, verse to scroll to and highlight */
   activeReference: PropTypes.shape({
     bookId: PropTypes.string,
-    chapter: PropTypes.number,
-    verse: PropTypes.number,
+    chapter: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    verse: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
   }),
   /** Callback triggered when a verse is clicked on */
   onReferenceSelected: PropTypes.func,
-
 };
 
 UsfmEditor.defaultProps = {
