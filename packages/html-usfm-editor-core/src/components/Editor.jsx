@@ -30,7 +30,7 @@ export default function Editor( props) {
   const [brokenAlignedWords, setBrokenAlignedWords] = useState();
   const [anchorEl, setAnchorEl] = useState(null);
   const [blockIsEdited, setBlockIsEdited] = useState(false);
-  const [hasUnsavedBlock, setHasUnsavedBlock] = useState()
+  const [hasUnsavedBlock, setHasUnsavedBlock] = useState(false)
 
   const bookCode = bookId.toUpperCase()
 
@@ -63,6 +63,10 @@ export default function Editor( props) {
 
   const getLastSaveUndoInx = () => (epiteleteHtml?.history[bookCode]?.lastSaveUndoInx) || undefined
   const getUndoInx = () => (epiteleteHtml?.history[bookCode]?.undoInx) || 0
+  const isEqualToSaveUndoInx = (checkInx) => {
+    const checkSaveUndoInx = (epiteleteHtml?.history[bookCode]?.lastSaveUndoInx) || 0
+    return (checkInx === checkSaveUndoInx)
+  }
 
   const setLastSaveUndoInx = (newInx) => {
     if (epiteleteHtml?.history[bookCode]) {
@@ -76,12 +80,23 @@ export default function Editor( props) {
     }
   }
 
+  const handleUnsavedData = (hasUnsavedData) => {
+    if (hasUnsavedBlock !== hasUnsavedData) {
+      if (onUnsavedData != null) onUnsavedData(hasUnsavedData)
+      setHasUnsavedBlock(hasUnsavedData)
+    }  
+  }
+
   useDeepCompareEffect(() => {
     if (epiteleteHtml) {
       //        epiteleteHtml.readHtml(bookCode,{},bcvQuery).then((_htmlPerf) => {
       epiteleteHtml.readHtml( bookCode, readOptions ).then((_htmlPerf) => {
         const _alignmentData = epiteleteHtml.getPipelineData(bookCode)
         setOrgUnaligned(getFlatWordObj(_alignmentData?.unalignedWords))
+        const prevUndoInx = epiteleteHtml?.history[bookCode]?.undoInx
+        const hasPrevUnsavedBlock = prevUndoInx && (getLastSaveUndoInx() !== prevUndoInx) || false
+        if (onUnsavedData != null) onUnsavedData(hasPrevUnsavedBlock)
+        setHasUnsavedBlock(hasPrevUnsavedBlock)  
         setHtmlPerf(_htmlPerf);
       });
     }
@@ -98,7 +113,6 @@ export default function Editor( props) {
       .filter(x => !nextUnalignedData[x])
       .concat(Object.keys(nextUnalignedData).filter(x => !orgUnaligned[x]))
     setBrokenAlignedWords(diffUnaligned)
-    setHasUnsavedBlock(true)
     setHtmlPerf(newHtmlPerf)
   }
 
@@ -107,20 +121,16 @@ export default function Editor( props) {
 
   const incUndoInx = () => {
     const undoInx = getUndoInx()
-    if (onUnsavedData != null) {
-      if ((undoInx + 1) === getLastSaveUndoInx()) onUnsavedData(false)
-      else if (undoInx === getLastSaveUndoInx()) onUnsavedData(true)
-    }
+    if (isEqualToSaveUndoInx(undoInx + 1)) handleUnsavedData(false)
+    else if (isEqualToSaveUndoInx(undoInx)) handleUnsavedData(true)
     setUndoInx(undoInx+1)
   }
 
   const decUndoInx = () => {
     const undoInx = getUndoInx()
     if (undoInx>0) {
-      if (onUnsavedData != null) {
-        if ((undoInx - 1) === getLastSaveUndoInx()) onUnsavedData(false)
-        else if (undoInx === getLastSaveUndoInx()) onUnsavedData(true)
-      }
+      if (isEqualToSaveUndoInx(undoInx - 1)) handleUnsavedData(false)
+      else if (isEqualToSaveUndoInx(undoInx)) handleUnsavedData(true)
       setUndoInx(undoInx-1)
     }
   }
@@ -133,7 +143,6 @@ export default function Editor( props) {
   }
 
   const onHtmlPerf = useDeepCompareCallback(( _htmlPerf, { sequenceId }) => {
-
     setBlockIsEdited(false)
     const perfChanged = !isEqual(htmlPerf, _htmlPerf);
     if (perfChanged) setHtmlPerf(_htmlPerf);
@@ -147,6 +156,7 @@ export default function Editor( props) {
       const perfChanged = !isEqual(htmlPerf, newHtmlPerf);
       if (perfChanged) {
         setHtmlAndUpdateUnaligned(newHtmlPerf)
+        handleUnsavedData(true)
       }
     };
     saveNow()
@@ -155,9 +165,8 @@ export default function Editor( props) {
   const handleSave = async () => {
     setLastSaveUndoInx(getUndoInx())
     setBlockIsEdited(false)
-    setHasUnsavedBlock(false)
     const usfmText = await epiteleteHtml.readUsfm( bookCode )
-    onUnsavedData && onUnsavedData(false)
+    handleUnsavedData(false)
     onSave && onSave(bookCode,usfmText)
   }
 
@@ -351,8 +360,14 @@ Editor.propTypes = {
   /** Book, chapter, verse to scroll to and highlight */
   activeReference: PropTypes.shape({
     bookId: PropTypes.string,
-    chapter: PropTypes.number,
-    verse: PropTypes.number,
+    chapter: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    verse: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
   }),
   /** Callback triggered when a verse is clicked on */
   onReferenceSelected: PropTypes.func,
