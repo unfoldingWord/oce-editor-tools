@@ -48,9 +48,8 @@ function Component () {
     console.log(usfmText)
   }
   
-  const onReferenceSelected = (reference) => {
-    console.log(reference)
-  }
+  const onReferenceSelected = (reference) => console.log(reference)
+  const onUnsavedData = (hasUnsavedData) => console.log(hasUnsavedData)
 
   const docSetId = 'KentR1235/fr_lsg_tit_book'
   
@@ -62,6 +61,7 @@ function Component () {
     epiteleteHtml,
     bookId: 'tit',
     onSave,
+    onUnsavedData,
     onReferenceSelected,
     activeReference: {
       bookId: 'tit',
@@ -142,7 +142,6 @@ function Component () {
     bookId: 'TIT',
     onSave,
     onUnsavedData,
-    hasInitialUnsavedData: true,
     verbose
   }
   

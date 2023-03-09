@@ -62,7 +62,7 @@ export default function usePkImport( docSetBookId, usfmText, htmlMap ) {
       }
       setDone(true)
     }
-  }, [docSetId,epCache,proskomma,loading])
+  }, [docSetId,epCache,proskomma,htmlMap,loading])
   
   return { loading, done }
 }
