@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types';
-import { useDeepCompareCallback, useDeepCompareEffect, useDeepCompareMemo } from "use-deep-compare";
+import { useDeepCompareCallback, useDeepCompareMemo } from "use-deep-compare";
 import isEqual from 'lodash.isequal';
 import { HtmlPerfEditor } from "@xelah/type-perf-html";
 import EpiteleteHtml from "epitelete-html";
@@ -46,7 +46,7 @@ export default function Editor( props) {
       return obj
     }, {})
 
-  const getFlatWordObj = (obj) => {
+  const getFlatWordObj = useCallback((obj) => {
     const resArray = [];
     if (obj) {
       Object.entries(obj).forEach(([chNum, chObj]) => {
@@ -59,10 +59,10 @@ export default function Editor( props) {
       })
     }
     return arrayToObject(resArray,"id")
-  }
+  },[])
 
-  const getLastSaveUndoInx = () => (epiteleteHtml?.history[bookCode]?.lastSaveUndoInx) || undefined
-  const getUndoInx = () => (epiteleteHtml?.history[bookCode]?.undoInx) || 0
+  const epLastSaveUndoInx = (epiteleteHtml?.history[bookCode]?.lastSaveUndoInx) || undefined
+  const epUndoInx = (epiteleteHtml?.history[bookCode]?.undoInx) || 0
   const isEqualToSaveUndoInx = (checkInx) => {
     const checkSaveUndoInx = (epiteleteHtml?.history[bookCode]?.lastSaveUndoInx) || 0
     return (checkInx === checkSaveUndoInx)
@@ -87,20 +87,25 @@ export default function Editor( props) {
     }  
   }
 
-  useDeepCompareEffect(() => {
+  const setOrgHtml = useCallback ((newHtmlPerf) => {
+    const _alignmentData = epiteleteHtml.getPipelineData(bookCode)
+    setOrgUnaligned(getFlatWordObj(_alignmentData?.unalignedWords))
+    const prevUndoInx = epiteleteHtml?.history[bookCode]?.undoInx
+    const hasPrevUnsavedBlock = (prevUndoInx && (epLastSaveUndoInx !== prevUndoInx)) || false
+    if (onUnsavedData != null) onUnsavedData(hasPrevUnsavedBlock)
+    setHasUnsavedBlock(hasPrevUnsavedBlock)  
+    setHtmlPerf(newHtmlPerf);
+  }, [bookCode, epiteleteHtml, getFlatWordObj, epLastSaveUndoInx, onUnsavedData])
+
+  useEffect(() => {
     if (epiteleteHtml) {
       //        epiteleteHtml.readHtml(bookCode,{},bcvQuery).then((_htmlPerf) => {
-      epiteleteHtml.readHtml( bookCode, readOptions ).then((_htmlPerf) => {
-        const _alignmentData = epiteleteHtml.getPipelineData(bookCode)
-        setOrgUnaligned(getFlatWordObj(_alignmentData?.unalignedWords))
-        const prevUndoInx = epiteleteHtml?.history[bookCode]?.undoInx
-        const hasPrevUnsavedBlock = prevUndoInx && (getLastSaveUndoInx() !== prevUndoInx) || false
-        if (onUnsavedData != null) onUnsavedData(hasPrevUnsavedBlock)
-        setHasUnsavedBlock(hasPrevUnsavedBlock)  
-        setHtmlPerf(_htmlPerf);
-      });
+      epiteleteHtml.readHtml( 
+        bookCode, 
+        { readPipeline: "stripAlignmentPipeline" }
+      ).then((_htmlPerf) => setOrgHtml(_htmlPerf));
     }
-  }, [epiteleteHtml, bookCode, setOrgUnaligned, setHtmlPerf]);
+  }, [bookCode, epiteleteHtml, setOrgHtml]);
   
   const handleUnalignedClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -120,14 +125,14 @@ export default function Editor( props) {
   const id = popperOpen ? 'simple-popper' : undefined;
 
   const incUndoInx = () => {
-    const undoInx = getUndoInx()
+    const undoInx = epUndoInx
     if (isEqualToSaveUndoInx(undoInx + 1)) handleUnsavedData(false)
     else if (isEqualToSaveUndoInx(undoInx)) handleUnsavedData(true)
     setUndoInx(undoInx+1)
   }
 
   const decUndoInx = () => {
-    const undoInx = getUndoInx()
+    const undoInx = epUndoInx
     if (undoInx>0) {
       if (isEqualToSaveUndoInx(undoInx - 1)) handleUnsavedData(false)
       else if (isEqualToSaveUndoInx(undoInx)) handleUnsavedData(true)
@@ -163,7 +168,7 @@ export default function Editor( props) {
   }, [htmlPerf, bookCode, orgUnaligned, setBrokenAlignedWords, setHtmlPerf]);
 
   const handleSave = async () => {
-    setLastSaveUndoInx(getUndoInx())
+    setLastSaveUndoInx(epUndoInx)
     setBlockIsEdited(false)
     const usfmText = await epiteleteHtml.readUsfm( bookCode )
     handleUnsavedData(false)
@@ -186,7 +191,7 @@ export default function Editor( props) {
 
   const canUndo = blockIsEdited || epiteleteHtml?.canUndo(bookCode);
   const canRedo = (!blockIsEdited) && epiteleteHtml?.canRedo(bookCode);
-  const canSave = (blockIsEdited || hasUnsavedBlock) && (getLastSaveUndoInx() !== getUndoInx())
+  const canSave = (blockIsEdited || hasUnsavedBlock) && (epLastSaveUndoInx !== epUndoInx)
 
   const {
     state: {
