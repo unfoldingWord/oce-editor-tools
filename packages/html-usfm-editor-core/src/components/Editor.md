@@ -43,13 +43,12 @@ function Component () {
   const ready = !importing && done
   
   const onSave = (bookCode,usfmText) => {
-    console.log("save button clicked")
-    console.log(bookCode)
-    console.log(usfmText)
+    console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
   }
-  
-  const onReferenceSelected = (reference) => console.log(reference)
-  const onUnsavedData = (hasUnsavedData) => console.log(hasUnsavedData)
+  const onReferenceSelected = (reference) => {
+    console.log(`onReferenceSelected: ${reference}`)
+  }
+  const onUnsavedData = (hasUnsavedData) => console.log(`onUnsavedData: ${hasUnsavedData}`)
 
   const docSetId = 'KentR1235/fr_lsg_tit_book'
   
