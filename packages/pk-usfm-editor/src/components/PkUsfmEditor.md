@@ -29,7 +29,7 @@ const onSave = (bookCode,usfmText) => {
   
   return (
       <div key="1">
-        <UsfmEditor {...editorProps} />
+        <PkUsfmEditor {...editorProps} />
       </div>
   );
 };  
