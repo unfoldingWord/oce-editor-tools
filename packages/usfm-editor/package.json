@@ -21,7 +21,7 @@
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
     "html-usfm-editor-core": "0.1.1",
-    "proskomma-react-hooks": "^2.4.0"
+    "proskomma-cross": "^0.0.1-beta.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

@@ -38,7 +38,7 @@ export default function RecursiveBlock({
   }, []);
 
   const checkReturnKeyPress = (event) => {
-    console.log( event  )
+    if (verbose) console.log( event  )
     if (event.key === "Enter") {
       let activeTextArea = document.activeElement;
       if (activeTextArea.children.length > 1) {

@@ -13,7 +13,7 @@ export default function usePkImport( docSetBookId, usfmText, htmlMap ) {
 
   const {
     state: { 
-      pkHook, 
+      pk: proskomma, 
       pkCache,
       epCache,
     }, 
@@ -22,8 +22,6 @@ export default function usePkImport( docSetBookId, usfmText, htmlMap ) {
       setEpCache,
     } 
   } = useContext(LocalPkCacheContext)
-
-  const { proskomma } = pkHook ?? {}; 
 
   // monitor the pkCache and import when usfmText is available
   useDeepCompareEffect(() => {
@@ -35,7 +33,7 @@ export default function usePkImport( docSetBookId, usfmText, htmlMap ) {
         usfmText
       )
     }
-  
+
     if (usfmText) {
       if (proskomma) {
         if (!pkCache[docSetBookId]) {
@@ -52,9 +50,11 @@ export default function usePkImport( docSetBookId, usfmText, htmlMap ) {
     const addEpCache = (key, obj) => setEpCache({ [key]: obj, ...epCache })
     if (!loading && proskomma) {
       if (!epCache[docSetId]) {
+        const [tmpOrg, tmpRepoStr] = docSetId?.split('/') ?? []
+        const tmpDocSetId = `${tmpOrg}_${tmpRepoStr}`
         const _ep = new EpiteleteHtml({ 
           proskomma,
-          docSetId,
+          docSetId: tmpDocSetId,
           htmlMap,
           options: { historySize: 100 }
         })

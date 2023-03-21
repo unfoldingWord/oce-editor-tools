@@ -22,8 +22,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/system": "^5.11.9",
     "@xelah/type-perf-html": "^1.0.2",
-    "epitelete-html": "0.2.18",
-    "proskomma-react-hooks": "^2.4.0"
+    "epitelete-html": "0.2.18"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

@@ -3,23 +3,39 @@ import React, {
   useState,
 } from 'react'
 import PropTypes from 'prop-types'
-
-import { useProskomma } from "proskomma-react-hooks";
+// import { Proskomma } from 'proskomma-core'
+import {Proskomma} from 'proskomma-cross'
 
 export const LocalPkCacheContext = createContext({})
 
 export default function PkCacheProvider({ children }) {
   const [pkCache,setPkCache] = useState({})
   const [epCache,setEpCache] = useState({})
-
-  const pkHook = useProskomma({verbose: true})
+  // eslint-disable-next-line 
+  const [pk,setProskomma] = useState(new Proskomma([
+    {
+      name: "org",
+      type: "string",
+      regex: "^[^\\s]+$"
+    },
+    {
+      name: "lang",
+      type: "string",
+      regex: "^[^\\s]+$"
+    },
+    {
+      name: "abbr",
+      type: "string",
+      regex: "^[^\\s]+$"
+    },
+  ]))
 
   // create the value for the context provider
   const context = {
     state: {
       pkCache,
       epCache,
-      pkHook,
+      pk,
     },
     actions: {
       setPkCache,
@@ -40,4 +56,4 @@ PkCacheProvider.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-};
+}
