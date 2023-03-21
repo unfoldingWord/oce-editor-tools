@@ -25,7 +25,8 @@ import GraftPopup from "./GraftPopup"
 export default function Editor( props) {
   const { 
     onSave, epiteleteHtml, 
-    bookId, verbose, activeReference, onReferenceSelected 
+    bookId, verbose, activeReference, 
+    onRenderToolbar, onReferenceSelected 
   } = props;
   const [graftSequenceId, setGraftSequenceId] = useState(null);
 
@@ -323,6 +324,7 @@ export default function Editor( props) {
     preview,
     allAligned: (!brokenAlignedWords || brokenAlignedWords.length===0),
     onShowUnaligned: handleUnalignedClick,
+    onRenderToolbar,
     undo,
     redo,
     canUndo,
@@ -370,6 +372,8 @@ Editor.propTypes = {
       PropTypes.number
     ]),
   }),
+  /** Optional callback - for extending the toolbar */
+  onRenderToolbar: PropTypes.func,
   /** Callback triggered when a verse is clicked on */
   onReferenceSelected: PropTypes.func,
 };

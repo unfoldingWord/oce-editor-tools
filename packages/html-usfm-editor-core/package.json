@@ -20,6 +20,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@gwdevs/extensible-rcl": "^1.0.1",
     "@mui/system": "^5.11.9",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18"

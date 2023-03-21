@@ -6,6 +6,7 @@ The Editor expects input of a EpiteleteHtml object.
 import { useState, useEffect } from 'react';
 
 import EpiteleteHtml from "epitelete-html";
+import { Button } from "@mui/material";
 
 import { usfmText } from '../data/Acts.1.usfm.js';
 import { usfm2perf } from '../helpers/usfm2perf';
@@ -27,8 +28,6 @@ function Component () {
     console.log(`onReferenceSelected: ${reference}`)
   }
   
-  const onReferenceSelected = (reference) => console.log(reference)
-
   useEffect(() => {
     async function loadUsfm() {
       const tempPerf = usfm2perf(usfmText)
@@ -37,12 +36,18 @@ function Component () {
     }
     if (epiteleteHtml) loadUsfm();
   }, [epiteleteHtml])
-  
+
+  const onRenderToolbar = ({ items }) => [
+    ...items,
+    <Button>Extra Item</Button>
+  ];
+
   const editorProps = {
     epiteleteHtml,
     bookId: 'act',
     onSave,
     onReferenceSelected,
+    onRenderToolbar,
     activeReference: {
       bookId: 'act',
       chapter: 1,

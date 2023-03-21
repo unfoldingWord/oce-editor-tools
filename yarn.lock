@@ -2047,7 +2047,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gwdevs/extensible-rcl@npm:^1.0.0":
+"@gwdevs/extensible-rcl@npm:^1.0.0, @gwdevs/extensible-rcl@npm:^1.0.1":
   version: 1.0.1
   resolution: "@gwdevs/extensible-rcl@npm:1.0.1"
   peerDependencies:
@@ -8841,6 +8841,7 @@ __metadata:
     "@babel/runtime": 7.13.8
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
+    "@gwdevs/extensible-rcl": ^1.0.1
     "@mui/icons-material": ^5.10.9
     "@mui/material": ^5.8.7
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
