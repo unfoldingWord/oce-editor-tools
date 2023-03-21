@@ -1,4 +1,5 @@
-\id ACT EN_UST en_English_ltr Wed Dec 14 2022 13:52:19 GMT-0500 (Eastern Standard Time) tc
+/* eslint-disable */
+export const usfmText = String.raw`\id ACT EN_UST en_English_ltr Wed Dec 14 2022 13:52:19 GMT-0500 (Eastern Standard Time) tc
 \usfm 3.0
 \ide UTF-8
 \h Acts
@@ -1000,4 +1001,4 @@
 \w with|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*
 \zaln-s |x-strong="G35880" x-lemma="ὁ" x-morph="Gr,EA,,,,GMP," x-occurrence="1" x-occurrences="1" x-content="τῶν"\*\w the|x-occurrence="3" x-occurrences="3"\w*\zaln-e\*
 \zaln-s |x-strong="G17330" x-lemma="ἕνδεκα" x-morph="Gr,EN,,,,GMP," x-occurrence="1" x-occurrences="1" x-content="ἕνδεκα"\*\w 11|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*
-\zaln-s |x-strong="G06520" x-lemma="ἀπόστολος" x-morph="Gr,N,,,,,GMP," x-occurrence="1" x-occurrences="1" x-content="ἀποστόλων"\*\w others|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*.
+\zaln-s |x-strong="G06520" x-lemma="ἀπόστολος" x-morph="Gr,N,,,,,GMP," x-occurrence="1" x-occurrences="1" x-content="ἀποστόλων"\*\w others|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*.`

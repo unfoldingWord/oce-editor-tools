@@ -19,12 +19,7 @@ export default function UsfmEditor( props ) {
   useEffect(
     () => {
       async function loadUsfm() {
-        console.log(usfmText)
-
         const tempPerf = usfm2perf(usfmText)
-        console.log(tempPerf)
-        console.log(ep)
-        // console.log()
         await ep.sideloadPerf('XXX', tempPerf)
         setReady(true)
       }

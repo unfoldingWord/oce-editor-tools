@@ -6,41 +6,19 @@ The Editor expects input of a EpiteleteHtml object.
 import { useState, useEffect } from 'react';
 
 import EpiteleteHtml from "epitelete-html";
-import { useProskomma, useImport } from "proskomma-react-hooks";
-import { 
-  useDeepCompareCallback, 
-  useDeepCompareEffect, 
-  useDeepCompareMemo 
-} from "use-deep-compare";
 
-const urlDocument = ({ selectors, bookCode, bookName, filename, ...props}) => ({
-  selectors,
-  bookCode, 
-  url: `/86-TITfraLSG.usfm`,
-});
-
-const documents = [
-  urlDocument({ bookCode: 'tit', filename: 'fr_lsg_tit_book.usfm', selectors: { org: 'KentR1235', lang: 'fr', abbr: 'lsg_tit_book' } }),
-];
+import { usfmText } from '../data/Acts.1.usfm.js';
+import { usfm2perf } from '../helpers/usfm2perf';
 
 function Component () {
   const verbose = true
-  const [startImport, setStartImport] = useState(false);
-  const _documents = startImport ? documents : [];
-
-  const proskommaHook = useProskomma({ verbose });
-  const { proskomma } = proskommaHook
-
-  const onImport = (props) => console.log('Imported doc!', props);
-
-  const { importing, done } = useImport({
-    ...proskommaHook,
-    onImport,
-    documents,
-    verbose,
-  });
-  
-  const ready = !importing && done
+  const docSetId = "Xxx/en_act" // just dummy values
+  const [ready,setReady] = useState(false)
+  const [epiteleteHtml, setEpiteleteHtml] = useState(
+    new EpiteleteHtml(
+      { proskomma: undefined, docSetId, options: { historySize: 100 } }
+    )
+  )
   
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -49,22 +27,23 @@ function Component () {
   }
   
   const onReferenceSelected = (reference) => console.log(reference)
-  const onUnsavedData = (hasUnsavedData) => console.log(hasUnsavedData)
 
-  const docSetId = 'KentR1235/fr_lsg_tit_book'
-  
-  const epiteleteHtml = useDeepCompareMemo(() => (
-    ready && new EpiteleteHtml({ proskomma, docSetId, options: { historySize: 100 } })
-  ), [proskomma, ready, docSetId]);
+  useEffect(() => {
+    async function loadUsfm() {
+      const tempPerf = usfm2perf(usfmText)
+      await epiteleteHtml.sideloadPerf('ACT', tempPerf)
+      setReady(true)
+    }
+    if (epiteleteHtml) loadUsfm();
+  }, [epiteleteHtml])
   
   const editorProps = {
     epiteleteHtml,
-    bookId: 'tit',
+    bookId: 'act',
     onSave,
-    onUnsavedData,
     onReferenceSelected,
     activeReference: {
-      bookId: 'tit',
+      bookId: 'act',
       chapter: 1,
       verse: 4,
     },
@@ -83,7 +62,6 @@ function Component () {
 <Component key="1" />;
 
 ```
-
 
 # Editor demo 2
 
@@ -112,10 +90,6 @@ function Component () {
   const [ep, setEp] = useState(new EpiteleteHtml({ proskomma, docSetId, options: { historySize: 100 } }))
   const verbose = true
 
-  const onUnsavedData = (value) => {
-    console.log(`onUnsavedData callback - value: ${value}`)
-  }
-
   const onSave = async (bookCode,usfmText) => {
     console.log("save button clicked")
     console.log("USFM:",usfmText)
@@ -141,7 +115,6 @@ function Component () {
     epiteleteHtml: ep,
     bookId: 'TIT',
     onSave,
-    onUnsavedData,
     verbose
   }
   
