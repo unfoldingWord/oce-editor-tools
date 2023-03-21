@@ -21,9 +21,10 @@ function Component () {
   )
   
   const onSave = (bookCode,usfmText) => {
-    console.log("save button clicked")
-    console.log(bookCode)
-    console.log(usfmText)
+    console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
+  }
+  const onReferenceSelected = (reference) => {
+    console.log(`onReferenceSelected: ${reference}`)
   }
   
   const onReferenceSelected = (reference) => console.log(reference)

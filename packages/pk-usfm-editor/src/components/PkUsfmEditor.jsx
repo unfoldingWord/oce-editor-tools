@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PkEditor from "./PkEditor";
 import usePkImport from "../hooks/usePkImport";
 
-export default function UsfmEditor( props) {
+export default function PkUsfmEditor( props) {
   const { docSetId, usfmText, bookId } = props;
   const docSetBookId = `${docSetId}/${bookId}`
 
@@ -17,7 +17,7 @@ export default function UsfmEditor( props) {
   )
 };
 
-UsfmEditor.propTypes = {
+PkUsfmEditor.propTypes = {
   /** Method to call when save button is pressed */
   onSave: PropTypes.func,
   /** docSetId identifies a set of documents in proskomma, usually contains org and language code */
@@ -30,6 +30,6 @@ UsfmEditor.propTypes = {
   verbose: PropTypes.bool,
 };
 
-UsfmEditor.defaultProps = {
+PkUsfmEditor.defaultProps = {
   verbose: false
 }
