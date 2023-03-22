@@ -6,8 +6,9 @@ import { Editor } from "html-usfm-editor-core"
 
 export default function UsfmEditor( props ) {
   const {
-    usfmText, onSave, onUnsavedData, verbose,
-    htmlMap, activeReference, onReferenceSelected 
+    usfmText, onSave, verbose,
+    htmlMap, activeReference, 
+    onRenderToolbar, onReferenceSelected 
   } = props;
 
   const proskomma = null;
@@ -31,9 +32,9 @@ export default function UsfmEditor( props ) {
     epiteleteHtml: ep, 
     bookId: 'XXX',
     onSave,
-    onUnsavedData,
     verbose,
-    activeReference, 
+    activeReference,
+    onRenderToolbar,
     onReferenceSelected 
   }
 
@@ -49,8 +50,6 @@ UsfmEditor.propTypes = {
   usfmText: PropTypes.string,
   /** Method to call when save button is pressed */
   onSave: PropTypes.func,
-  /** Callback method to receive information about unsaved data */
-  onUnsavedData: PropTypes.func,
   /** Optional customised html map */
   htmlMap: PropTypes.any,
   /** Whether to show extra info in the js console */
@@ -67,6 +66,8 @@ UsfmEditor.propTypes = {
       PropTypes.number
     ])
   }),
+  /** Optional callback - for extending the toolbar */
+  onRenderToolbar: PropTypes.func,
   /** Callback triggered when a verse is clicked on */
   onReferenceSelected: PropTypes.func,
 };

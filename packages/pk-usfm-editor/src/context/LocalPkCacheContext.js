@@ -3,8 +3,7 @@ import React, {
   useState,
 } from 'react'
 import PropTypes from 'prop-types'
-// import { Proskomma } from 'proskomma-core'
-import {Proskomma} from 'proskomma-cross'
+import { Proskomma } from 'proskomma-core'
 
 export const LocalPkCacheContext = createContext({})
 

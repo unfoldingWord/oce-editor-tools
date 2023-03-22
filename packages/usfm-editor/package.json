@@ -1,7 +1,7 @@
 {
   "name": "usfm-editor",
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://uw-editor.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -20,8 +20,8 @@
   "dependencies": {
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
-    "html-usfm-editor-core": "0.1.1",
-    "proskomma-cross": "^0.0.1-beta.4"
+    "html-usfm-editor-core": "0.1.2",
+    "proskomma-core": "^0.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
