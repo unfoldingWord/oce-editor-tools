@@ -26,6 +26,8 @@ PkUsfmEditor.propTypes = {
   usfmText: PropTypes.string,
   /** bookId to identify the content in the editor */
   bookId: PropTypes.string,
+  /** Optional callback - for extending the toolbar */
+  onRenderToolbar: PropTypes.func,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
 };

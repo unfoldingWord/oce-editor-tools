@@ -13328,9 +13328,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proskomma-cross@npm:^0.0.1-beta.4":
-  version: 0.0.1-beta.4
-  resolution: "proskomma-cross@npm:0.0.1-beta.4"
+"proskomma-core@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "proskomma-core@npm:0.10.0"
   dependencies:
     "@babel/preset-env": ^7.20.2
     "@graphql-tools/schema": ^9.0.3
@@ -13352,7 +13352,7 @@ __metadata:
     utf8-string-bytes: ^1.0.3
     util: ^0.12.4
     xregexp: ^5.1.1
-  checksum: c239325bcec0ad5d8774672861f30ab8aaa8937e05b9ec9982aef85677e11c86c4d94d3a86b3467ce6929f5a45be1c4998c803d36093e9db026c65f9dd28f47f
+  checksum: 632883ddd64b64a96b6b1b68216a9b3c342740c46133031ffa30d2c58bb104c2e60554621832d1ff2158a721649821769c76ddcf38facb725bfc0b0a49edec92
   languageName: node
   linkType: hard
 
@@ -16071,7 +16071,7 @@ __metadata:
     eslint-plugin-test-selectors: ^2.0.3
     html-usfm-editor-core: 0.1.1
     prettier: ^2.5.1
-    proskomma-cross: ^0.0.1-beta.4
+    proskomma-core: ^0.10.0
     react: latest
     react-dom: latest
     react-scripts: ^5.0.1
