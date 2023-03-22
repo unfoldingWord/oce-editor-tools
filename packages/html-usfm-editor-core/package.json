@@ -1,7 +1,7 @@
 {
   "name": "html-usfm-editor-core",
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://html-editor.netlify.app/",
   "license": "MIT",
   "repository": {
