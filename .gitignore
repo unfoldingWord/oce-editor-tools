@@ -37,6 +37,7 @@ testem.log
 .yarn
 .yalc
 yalc.lock
+/temp
 
 # System Files
 .DS_Store
