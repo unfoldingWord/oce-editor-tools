@@ -28,22 +28,10 @@ export default function usePreview(props) {
     verbose, 
   } = props;
 
-  // const [renderer, setRenderer] = useState()
-
-  // useEffect(() => {
-  //   setRenderer(
-  //     new SofriaRenderFromProskomma({
-  //       proskomma: pk,
-  //       actions: sofria2WebActions,
-  //     })
-  //   )
-  // }, [pk]);
-
   const [renderedData, setRenderedData] = useState([])
   const [done, setDone] = useState(false)
 
   useEffect(() => {
-    // if ((docId != null) && (pk != null) && (renderer != null)) {    
     if ((docId != null) && (pk != null)) {    
       const renderer = new SofriaRenderFromProskomma({
         proskomma: pk,
@@ -60,7 +48,6 @@ export default function usePreview(props) {
         renderers,
       };
       const output = {};
-      console.log(config)
       try {
         renderer.renderDocument({
           docId,

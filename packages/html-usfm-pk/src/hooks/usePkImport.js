@@ -7,9 +7,11 @@ import EpiteleteHtml from "epitelete-html";
 export default function usePkImport( repoBookId, usfmText, htmlMap ) {
   const [loading,setLoading] = useState(true)
   const [done,setDone] = useState(false)
-  const [org, repoStr] = repoBookId?.split('/') ?? []
+  const [org, repoStr, bookId] = repoBookId?.split('/') ?? []
   const [lang, abbr] = repoStr?.split('_') ?? []
   const repoIdStr = `${org}/${repoStr}`
+
+  const bookCode = bookId.toUpperCase()
 
   const {
     state: { 
@@ -36,7 +38,7 @@ export default function usePkImport( repoBookId, usfmText, htmlMap ) {
     async function doQuery() {
       const query = `{ documents { id bookCode: header( id: "bookCode") } }`
       const result = await proskomma.gqlQuerySync(query)
-      const docId = result.data.documents.filter(d=> d.bookCode === 'TIT')[0].id
+      const docId = result.data.documents.filter(d=> d.bookCode === bookCode)[0].id
       addPkCache(repoBookId,docId)
     }
 

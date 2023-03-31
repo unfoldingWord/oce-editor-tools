@@ -19,7 +19,6 @@ function Component () {
     onSave,
     usfmText,
     onReferenceSelected,
-    onRenderToolbar,
     activeReference: {
       bookId: 'apg',
       chapter: 1,
