@@ -20,7 +20,7 @@
   "dependencies": {
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
-    "html-usfm-core": "workspace:^",
+    "html-usfm-core": "0.1.2-alpha2",
     "proskomma-core": "^0.10.1"
   },
   "devDependencies": {
