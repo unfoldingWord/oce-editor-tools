@@ -15,18 +15,7 @@ export default function PkEditor( props) {
     actions: { getRepoUID }
   } = useContext(LocalPkCacheContext)
 
-  useEffect(() => {
-    console.log(epiteleteHtml)
-  }, [epiteleteHtml]);
-
-  useEffect(() => {
-    console.log(repoIdStr)
-  }, [repoIdStr]);
-
   useDeepCompareEffect(() => {
-    console.log(epCache)
-    console.log(repoIdStr)
-    console.log(langIdStr)
     const repoLangStr = getRepoUID(repoIdStr,langIdStr)
     if (epCache[repoLangStr]) {
       setEpiteleteHtml(epCache[repoLangStr])

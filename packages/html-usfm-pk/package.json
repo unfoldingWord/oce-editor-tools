@@ -1,7 +1,7 @@
 {
   "description": "A React Component Library for editing Usfm - incl. Proskomma cache.",
   "name": "html-usfm-pk",
-  "version": "0.1.2-alpha11",
+  "version": "0.1.2",
   "homepage": "https://pk-usfm-editor.netlify.app/",
   "license": "MIT",
   "repository": {
