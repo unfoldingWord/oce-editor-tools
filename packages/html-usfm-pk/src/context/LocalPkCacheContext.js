@@ -5,6 +5,8 @@ import React, {
 import PropTypes from 'prop-types'
 import { Proskomma } from 'proskomma-core'
 
+import { unique } from 'shorthash'
+
 export const LocalPkCacheContext = createContext({})
 
 export default function PkCacheProvider({ children }) {
@@ -13,21 +15,16 @@ export default function PkCacheProvider({ children }) {
   // eslint-disable-next-line 
   const [pk,setProskomma] = useState(new Proskomma([
     {
-      name: "org",
+      name: "repoIdStr",
       type: "string",
-      regex: "^[^\\s]+$"
-    },
-    {
-      name: "lang",
-      type: "string",
-      regex: "^[^\\s]+$"
-    },
-    {
-      name: "abbr",
-      type: "string",
-      regex: "^[^\\s]+$"
-    },
+      regex: /^[^\s\\]+$/
+    }
   ]))
+
+  const getRepoUID = (repoIdStr,langIdStr) => {
+    // add some random characters in order to work also for empty props
+    return unique(`${repoIdStr}${langIdStr}eOIruhAO!#Sdif`)
+  }
 
   // create the value for the context provider
   const context = {
@@ -39,6 +36,7 @@ export default function PkCacheProvider({ children }) {
     actions: {
       setPkCache,
       setEpCache,
+      getRepoUID
     },
   }
 

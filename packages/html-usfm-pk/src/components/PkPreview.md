@@ -6,16 +6,16 @@ which is included as a wrapper in the app).
 
 ```js
 import { useState, useEffect } from 'react';
-import usePkImport from "../hooks/usePkImport";
+import usePkBookImport from "../hooks/usePkBookImport";
 import { usfmText } from '../data/tit.en.ult.usfm.js';
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
 function Component () {
-  const repoIdStr = 'unfoldingWord/en_ult'
+  const repoIdStr = 'unfoldingWord_ult'
+  const langIdStr = 'en'
   const bookId = 'TIT'
-  const repoBookId = `${repoIdStr}/${bookId}`
 
-  const { loading, done } = usePkImport( repoBookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
   const renderFlags = {
     showTitles: true,
@@ -25,6 +25,7 @@ function Component () {
 
   const previewProps = {
     repoIdStr,
+    langIdStr,
     bookId,
     renderFlags,
     verbose: true,
@@ -49,7 +50,7 @@ The demo demonstrates using the PkPreview together with some extended informatio
 
 ```js
 import { useState, useEffect } from 'react';
-import usePkImport from "../hooks/usePkImport";
+import usePkBookImport from "../hooks/usePkBookImport";
 import { usfmText } from '../data/tit.en.ult.usfm.js';
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
@@ -57,11 +58,11 @@ import { Button } from '@mui/material'
 import { MdError } from 'react-icons/md'
 
 function Component () {
-  const repoIdStr = 'unfoldingWord/en_ult'
+  const repoIdStr = 'unfoldingWord_ult'
+  const langIdStr = 'en'
   const bookId = 'TIT'
-  const repoBookId = `${repoIdStr}/${bookId}`
 
-  const { loading, done } = usePkImport( repoBookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
   const onRenderItem = (props) => {
     const {verseId, extInfo} = props
@@ -138,6 +139,7 @@ const renderFlags = {
 
   const previewProps = {
     repoIdStr,
+    langIdStr,
     bookId,
     renderFlags,
     extInfo,

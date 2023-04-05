@@ -84,7 +84,7 @@ import EpiteleteHtml from "epitelete-html";
 
 function Component () {
   const proskomma = null;
-  const docSetId = 'unfoldingWord/en_ult'
+  const docSetId = 'unfoldingWord_ult'
   const [ready, setReady] = useState(false);
   const [ep, setEp] = useState(new EpiteleteHtml({ proskomma, docSetId, options: { historySize: 100 } }))
   const verbose = true

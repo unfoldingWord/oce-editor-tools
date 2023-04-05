@@ -6,28 +6,25 @@ import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 
 export default function PkEditor( props) {
   const {
-    repoIdStr, bookId, activeReference, onReferenceSelected 
+    repoIdStr, langIdStr
   } = props;
   const [epiteleteHtml, setEpiteleteHtml] = useState();
 
   const {
-    state: {
-      epCache,
-    },
+    state: { epCache },
+    actions: { getRepoUID }
   } = useContext(LocalPkCacheContext)
 
   useDeepCompareEffect(() => {
-    if (epCache[repoIdStr]) {
-      setEpiteleteHtml(epCache[repoIdStr])
+    const repoLangStr = getRepoUID(repoIdStr,langIdStr)
+    if (epCache[repoLangStr]) {
+      setEpiteleteHtml(epCache[repoLangStr])
     }
-  }, [epCache, repoIdStr]);
+  }, [epCache, repoIdStr, langIdStr]);
 
   const editorProps = {
     ...props,
-    bookId,
     epiteleteHtml,
-    activeReference, 
-    onReferenceSelected 
   };
 
   return (<Editor { ...editorProps } />)
@@ -40,6 +37,8 @@ PkEditor.propTypes = {
   onReferenceSelected: PropTypes.func,
   /** repoIdStr identifies a set of documents in proskomma, usually contains org and language code */
   repoIdStr: PropTypes.string,
+  /** langIdStr identifies the language of a set of documents in proskomma */
+  langIdStr: PropTypes.string,
   /** bookId to identify the content in the editor */
   bookId: PropTypes.string,
   /** Whether to show extra info in the js console */

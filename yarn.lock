@@ -8818,7 +8818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-usfm-core@0.1.2-alpha, html-usfm-core@workspace:^, html-usfm-core@workspace:packages/html-usfm-core":
+"html-usfm-core@0.1.2, html-usfm-core@workspace:packages/html-usfm-core":
   version: 0.0.0-use.local
   resolution: "html-usfm-core@workspace:packages/html-usfm-core"
   dependencies:
@@ -8874,6 +8874,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"html-usfm-core@npm:0.1.2-alpha2":
+  version: 0.1.2-alpha2
+  resolution: "html-usfm-core@npm:0.1.2-alpha2"
+  dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@mui/system": ^5.11.9
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: 0.2.18
+  peerDependencies:
+    "@mui/icons-material": ^5.10.9
+    "@mui/material": ^5.10.12
+    "@mui/styled-engine": "*"
+    "@mui/styles": ^5.10.10
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: 0bfb8035b769f3a0f3c13c084381495282c92bea325439de27c26cb17362c6ed58bee41ca86bb32460b95b668fcbdb2e4d6a27bb9e91e812402953c3f6756921
+  languageName: node
+  linkType: hard
+
 "html-usfm-pk@workspace:packages/html-usfm-pk":
   version: 0.0.0-use.local
   resolution: "html-usfm-pk@workspace:packages/html-usfm-pk"
@@ -8907,12 +8929,14 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.2.0
     eslint-plugin-test-selectors: ^2.0.3
-    html-usfm-core: 0.1.2-alpha
+    html-usfm-core: 0.1.2
     prettier: ^2.5.1
+    proskomma-core: 0.10.1
     react: latest
     react-dom: latest
     react-scripts: ^5.0.1
     react-styleguidist: ^13.0.0
+    shorthash: ^0.0.2
     styled-components: ^5.2.1
     translation-helps-rcl: 3.3.4-rc.3
     webpack-cli: ^4.10.0
@@ -8960,7 +8984,7 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.2.0
     eslint-plugin-test-selectors: ^2.0.3
-    html-usfm-core: "workspace:^"
+    html-usfm-core: 0.1.2-alpha2
     prettier: ^2.5.1
     proskomma-core: ^0.10.1
     react: latest
@@ -13404,7 +13428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proskomma-core@npm:^0.10.1":
+"proskomma-core@npm:0.10.1, proskomma-core@npm:^0.10.1":
   version: 0.10.1
   resolution: "proskomma-core@npm:0.10.1"
   dependencies:
@@ -14768,6 +14792,13 @@ __metadata:
   version: 1.8.0
   resolution: "shell-quote@npm:1.8.0"
   checksum: 6ef7c5e308b9c77eedded882653a132214fa98b4a1512bb507588cf6cd2fc78bfee73e945d0c3211af028a1eabe09c6a19b96edd8977dc149810797e93809749
+  languageName: node
+  linkType: hard
+
+"shorthash@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "shorthash@npm:0.0.2"
+  checksum: 4048833f2a7f324350cc1a48a6b64bca268e5a2e9c59cb6cad3607c41fd800bf1739498fe4b8b6737709cdb540fb74125fb7254eba98bdd3dc41e8d9f7990b20
   languageName: node
   linkType: hard
 

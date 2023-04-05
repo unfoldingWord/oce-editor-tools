@@ -32,7 +32,7 @@ export default function usePreview(props) {
   const [done, setDone] = useState(false)
 
   useEffect(() => {
-    if ((docId != null) && (pk != null)) {    
+    if ((docId != null) && (pk != null)) {
       const renderer = new SofriaRenderFromProskomma({
         proskomma: pk,
         actions: sofria2WebActions,
@@ -54,11 +54,11 @@ export default function usePreview(props) {
           config,
           output,
         });
-        setDone(true)
       } catch (err) {
         if (verbose) console.log('Renderer', err);
         throw err;
       }
+      setDone(true)
       setRenderedData(output.paras)
     }
   }, [pk, verbose, renderFlags, docId, bookId, extInfo]);
