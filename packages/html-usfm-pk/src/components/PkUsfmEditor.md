@@ -11,8 +11,8 @@ import PkCacheProvider from '../context/LocalPkCacheContext'
 function Component () {
   // const repoIdStr = 'unfoldingWord_ult'
   const repoIdStr = 'org-unk/msl_ifr'
-  const langIdStr = 'en'
-  // const langIdStr = undefined
+  // const langIdStr = 'en'
+  const langIdStr = undefined
   const bookId = 'TIT'
 
   const onSave = (bookCode,usfmText) => {

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types';
 import { useDeepCompareEffect } from "use-deep-compare";
 import { Editor } from "html-usfm-core"
@@ -6,7 +6,7 @@ import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 
 export default function PkEditor( props) {
   const {
-    repoIdStr, langIdStr, bookId, activeReference, onReferenceSelected 
+    repoIdStr, langIdStr
   } = props;
   const [epiteleteHtml, setEpiteleteHtml] = useState();
 
@@ -15,7 +15,18 @@ export default function PkEditor( props) {
     actions: { getRepoUID }
   } = useContext(LocalPkCacheContext)
 
+  useEffect(() => {
+    console.log(epiteleteHtml)
+  }, [epiteleteHtml]);
+
+  useEffect(() => {
+    console.log(repoIdStr)
+  }, [repoIdStr]);
+
   useDeepCompareEffect(() => {
+    console.log(epCache)
+    console.log(repoIdStr)
+    console.log(langIdStr)
     const repoLangStr = getRepoUID(repoIdStr,langIdStr)
     if (epCache[repoLangStr]) {
       setEpiteleteHtml(epCache[repoLangStr])
@@ -24,10 +35,7 @@ export default function PkEditor( props) {
 
   const editorProps = {
     ...props,
-    bookId,
     epiteleteHtml,
-    activeReference, 
-    onReferenceSelected 
   };
 
   return (<Editor { ...editorProps } />)
