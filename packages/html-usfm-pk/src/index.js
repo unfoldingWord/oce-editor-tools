@@ -2,7 +2,7 @@ import PkUsfmEditor from "./components/PkUsfmEditor";
 import PkEditor from "./components/PkEditor";
 import PkPreview from "./components/PkPreview";
 import PkCacheProvider from "./context/LocalPkCacheContext";
-import usePkImport from "./hooks/usePkImport";
+import usePkBookImport from "./hooks/usePkBookImport";
 import useUnsavedDataState from "./hooks/useUnsavedDataState";
 
 export {
@@ -10,6 +10,6 @@ export {
   PkEditor,
   PkPreview,
   PkCacheProvider,
-  usePkImport,
+  usePkBookImport,
   useUnsavedDataState,
 };

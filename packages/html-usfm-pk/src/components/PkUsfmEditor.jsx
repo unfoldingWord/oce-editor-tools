@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import PkEditor from "./PkEditor";
-import usePkImport from "../hooks/usePkImport";
+import usePkBookImport from "../hooks/usePkBookImport";
 
 export default function PkUsfmEditor( props) {
-  const { repoIdStr, usfmText, bookId } = props;
-  const repoBookId = `${repoIdStr}/${bookId}`
+  const { repoIdStr, langIdStr, bookId, usfmText } = props;
 
-  const { loading, done } = usePkImport( repoBookId, usfmText )
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText )
 
   return (
     <div>
@@ -20,8 +19,10 @@ export default function PkUsfmEditor( props) {
 PkUsfmEditor.propTypes = {
   /** Method to call when save button is pressed */
   onSave: PropTypes.func,
-  /** repoIdStr identifies a set of documents in proskomma, usually contains org and language code */
+  /** repoIdStr identifies a set of documents in proskomma */
   repoIdStr: PropTypes.string,
+  /** langIdStr identifies the language of a set of documents in proskomma */
+  langIdStr: PropTypes.string,
   /** The text in usfm format to load in the editor */
   usfmText: PropTypes.string,
   /** bookId to identify the content in the editor */

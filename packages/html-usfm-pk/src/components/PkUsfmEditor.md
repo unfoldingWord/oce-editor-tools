@@ -9,11 +9,13 @@ import { usfmText } from '../data/tit.en.ult.usfm.js';
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
 function Component () {
-  const repoIdStr = 'unfoldingWord/en_ult'
+  // const repoIdStr = 'unfoldingWord_ult'
+  const repoIdStr = 'org-unk/msl_ifr'
+  const langIdStr = 'en'
+  // const langIdStr = undefined
   const bookId = 'TIT'
-  const repoBookId = `${repoIdStr}/${bookId}`
 
-const onSave = (bookCode,usfmText) => {
+  const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
     console.log(bookCode)
     console.log(usfmText)
@@ -22,6 +24,7 @@ const onSave = (bookCode,usfmText) => {
   const editorProps = {
     onSave,
     repoIdStr,
+    langIdStr,
     usfmText,
     bookId,
   }

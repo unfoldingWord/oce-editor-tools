@@ -9,15 +9,14 @@ import {
 
 export default function PkPreview(props) {
   const {
-    repoIdStr, bookId, verbose, extInfo, renderFlags,
+    repoIdStr, langIdStr, bookId, verbose, extInfo, renderFlags,
   } = props;
-
-  const repoBookId = `${repoIdStr}/${bookId}`
 
   const [docIdFromCache, setDocIdFromCache] = useState(undefined)
 
   const {
     state: { pk, pkCache },
+    actions: { getRepoUID }
   } = useContext(LocalPkCacheContext);
 
   const { done, renderedData } = usePreview({
@@ -31,11 +30,12 @@ export default function PkPreview(props) {
 
   useEffect(() => {
     if (pk != null) {
-      if (pkCache[repoBookId] && !docIdFromCache) {
-        setDocIdFromCache(pkCache[repoBookId])
+      const repoLangStr = getRepoUID(repoIdStr,langIdStr)
+      if (pkCache[repoLangStr] && !docIdFromCache) {
+        setDocIdFromCache(pkCache[repoLangStr])
       }
     }
-  },[pk, done, pkCache, repoBookId, docIdFromCache]);
+  },[pk, done, pkCache, docIdFromCache, getRepoUID, repoIdStr, langIdStr, bookId]);
 
   return (
     <Grid container style={{ fontFamily: 'Arial' }}>
@@ -49,6 +49,8 @@ export default function PkPreview(props) {
 PkPreview.propTypes = {
   /** repoIdStr identifies a set of documents in proskomma, usually contains org and language code */
   repoIdStr: PropTypes.string,
+  /** langIdStr identifies the language of a set of documents in proskomma */
+  langIdStr: PropTypes.string,
   /** bookId to identify the content in the editor */
   bookId: PropTypes.string,
   /** Rendering flags */

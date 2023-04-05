@@ -20,7 +20,7 @@ export default function UsfmPreview(props) {
   // eslint-disable-next-line no-unused-vars
   const [pk,setPk] = useState(new Proskomma())
 
-  const bookCode = bookId.toUpperCase()
+  const bookCode = bookId?.toUpperCase()
 
   const { done, renderedData } = usePreview({
     pk, 
