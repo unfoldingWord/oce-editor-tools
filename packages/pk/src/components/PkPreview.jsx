@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { usePreview } from "html-usfm-core";
+import { usePreview } from "@oce-editor-tools/core";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 import {
   Typography,
