@@ -8818,7 +8818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-usfm-core@0.1.2, html-usfm-core@workspace:^, html-usfm-core@workspace:packages/html-usfm-core":
+"html-usfm-core@0.1.2, html-usfm-core@workspace:packages/html-usfm-core":
   version: 0.0.0-use.local
   resolution: "html-usfm-core@workspace:packages/html-usfm-core"
   dependencies:
@@ -8962,7 +8962,7 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.2.0
     eslint-plugin-test-selectors: ^2.0.3
-    html-usfm-core: "workspace:^"
+    html-usfm-core: 0.1.2
     prettier: ^2.5.1
     proskomma-core: ^0.10.1
     react: latest
