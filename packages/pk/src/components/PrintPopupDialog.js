@@ -58,7 +58,7 @@ export default function PrintPopupDialog(props) {
         setDocIdFromCache(pkCache[repoLangStr])
       }
     }
-  },[pk, done, pkCache, docIdFromCache, getRepoUID, repoIdStr, langIdStr, bookId]);
+  },[pk, pkCache, docIdFromCache, getRepoUID, repoIdStr, langIdStr, bookId]);
 
 
   const getStyles = (name) => {

@@ -1,6 +1,4 @@
-# Editor demo 1
-
-The Editor expects input of an EpiteleteHtml object.
+# PrintPopupDialog demo
 
 ```js
 import { useState, useEffect } from 'react';
