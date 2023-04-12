@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types';
 import { useDeepCompareEffect } from "use-deep-compare";
-import { Editor } from "html-usfm-core"
+import { Editor } from "@oce-editor-tools/core"
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 
 export default function PkEditor( props) {

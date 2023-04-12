@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { usePreview } from "html-usfm-core";
+import { usePreview } from "@oce-editor-tools/core";
 import { Proskomma } from 'proskomma-core'
 import {
   Typography,
