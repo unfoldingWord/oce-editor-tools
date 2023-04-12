@@ -93,6 +93,9 @@
   "resolutions": {
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "browser": {
     "fs": false,
     "os": false,
