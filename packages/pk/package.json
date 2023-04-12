@@ -1,8 +1,8 @@
 {
-  "description": "A React Component Library for editing PERF.",
-  "name": "html-usfm-simple",
-  "version": "0.1.2-alpha",
-  "homepage": "https://uw-editor.netlify.app/",
+  "description": "A React Component Library for editing Usfm - incl. Proskomma cache.",
+  "name": "@oce-editor-tools/pk",
+  "version": "0.1.4",
+  "homepage": "https://pk-usfm-editor.netlify.app/",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,10 +18,11 @@
     "translation-helps-rcl": "3.3.4-rc.2"
   },
   "dependencies": {
+    "@oce-editor-tools/core": "0.1.3",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
-    "html-usfm-core": "0.1.2-alpha2",
-    "proskomma-core": "^0.10.1"
+    "proskomma-core": "0.10.1",
+    "shorthash": "^0.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -92,6 +93,9 @@
   ],
   "resolutions": {
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "browser": {
     "fs": false,

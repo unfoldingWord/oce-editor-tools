@@ -1,7 +1,7 @@
 {
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.2",
-  "name": "html-usfm-core",
+  "version": "0.1.3",
+  "name": "@oce-editor-tools/core",
   "homepage": "https://html-editor.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -94,6 +94,9 @@
   ],
   "resolutions": {
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "browser": {
     "fs": false,

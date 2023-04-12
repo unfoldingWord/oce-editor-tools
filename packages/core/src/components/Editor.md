@@ -1,6 +1,6 @@
 # Editor demo 1
 
-The Editor expects input of a EpiteleteHtml object.
+The Editor expects input of an EpiteleteHtml object.
 
 ```js
 import { useState, useEffect } from 'react';
