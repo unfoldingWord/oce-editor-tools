@@ -83,80 +83,79 @@ export default function Buttons(props) {
         background: theme.palette.background.default
       }}
     >
-      <Extensible onRenderItems={onRenderToolbar}>
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonSectionable"
-          value="sectionable"
-          aria-label="sectionable"
-          title="Sectionable"
-        >
-          <ViewStream />
-        </ToggleButton>)}
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonBlockable"
-          value="blockable"
-          aria-label="blockable"
-          title="Blockable"
-        >
-          <Subject />
-        </ToggleButton>)}
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonPreview"
-          value="preview"
-          aria-label="preview"
-          title="Preview"
-        >
-          <Preview />
-        </ToggleButton>)}
-        <ToggleButton
-          data-test-id="ToggleButtonEditable"
-          value="editable"
-          aria-label="editable"
-          title="Editable"
-        >
-          <Edit />
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="ButtonAssignmentData"
-          value="alignment"
-          aria-label="alignment"
-          onClick={handleAssignmentDataClick}
-          disabled={allAligned}
-          title="Alignment"
-        >
-          {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="Undo"
-          value="undo"
-          aria-label="undo"
-          onClick={handleUndo}
-          disabled={!canUndo}
-          title='Undo'
-        >
-          <Undo />
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="Redo"
-          value="redo"
-          aria-label="redo"
-          onClick={handleRedo}
-          disabled={!canRedo}
-          title="Redo"
-        >
-          <Redo />
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="Save"
-          value="save"
-          aria-label="save"
-          onClick={onSave}
-          disabled={!canSave}
-          title="Save"
-        >
-          <Save />
-        </ToggleButton>
-      </Extensible>
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonSectionable"
+        value="sectionable"
+        aria-label="sectionable"
+        title="Sectionable"
+      >
+        <ViewStream />
+      </ToggleButton>)}
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonBlockable"
+        value="blockable"
+        aria-label="blockable"
+        title="Blockable"
+      >
+        <Subject />
+      </ToggleButton>)}
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonPreview"
+        value="preview"
+        aria-label="preview"
+        title="Preview"
+      >
+        <Preview />
+      </ToggleButton>)}
+      <ToggleButton
+        data-test-id="ToggleButtonEditable"
+        value="editable"
+        aria-label="editable"
+        title="Editable"
+      >
+        <Edit />
+      </ToggleButton>
+      <ToggleButton
+        data-test-id="ButtonAssignmentData"
+        value="alignment"
+        aria-label="alignment"
+        onClick={handleAssignmentDataClick}
+        disabled={allAligned}
+        title="Alignment"
+      >
+        {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
+      </ToggleButton>
+      <ToggleButton
+        data-test-id="Undo"
+        value="undo"
+        aria-label="undo"
+        onClick={handleUndo}
+        disabled={!canUndo}
+        title='Undo'
+      >
+        <Undo />
+      </ToggleButton>
+      <ToggleButton
+        data-test-id="Redo"
+        value="redo"
+        aria-label="redo"
+        onClick={handleRedo}
+        disabled={!canRedo}
+        title="Redo"
+      >
+        <Redo />
+      </ToggleButton>
+      <ToggleButton
+        data-test-id="Save"
+        value="save"
+        aria-label="save"
+        onClick={onSave}
+        disabled={!canSave}
+        title="Save"
+      >
+        <Save />
+      </ToggleButton>
+      <Extensible onRenderItems={onRenderToolbar}/>
     </ToggleButtonGroup>
   );
 }

@@ -62,10 +62,11 @@ function Component () {
 
 ```
 
-# Editor demo 2
+## Editor demo 2
 
 The demo demonstrates using Epitelete in standalone mode (no Proskomma).
 Here is the function for sideloading:
+
 ```txt
     /**
      * Loads given perf into memory
