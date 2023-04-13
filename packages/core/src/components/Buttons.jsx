@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { Extensible } from "@gwdevs/extensible-rcl";
 import {
   ViewStream,
@@ -115,47 +115,48 @@ export default function Buttons(props) {
       >
         <Edit />
       </ToggleButton>
-      <ToggleButton
-        data-test-id="ButtonAssignmentData"
-        value="alignment"
-        aria-label="alignment"
-        onClick={handleAssignmentDataClick}
-        disabled={allAligned}
-        title="Alignment"
-      >
-        {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
-      </ToggleButton>
-      <ToggleButton
-        data-test-id="Undo"
-        value="undo"
-        aria-label="undo"
-        onClick={handleUndo}
-        disabled={!canUndo}
-        title='Undo'
-      >
-        <Undo />
-      </ToggleButton>
-      <ToggleButton
-        data-test-id="Redo"
-        value="redo"
-        aria-label="redo"
-        onClick={handleRedo}
-        disabled={!canRedo}
-        title="Redo"
-      >
-        <Redo />
-      </ToggleButton>
-      <ToggleButton
-        data-test-id="Save"
-        value="save"
-        aria-label="save"
-        onClick={onSave}
-        disabled={!canSave}
-        title="Save"
-      >
-        <Save />
-      </ToggleButton>
-      <Extensible onRenderItems={onRenderToolbar}/>
+      <Extensible onRenderItems={onRenderToolbar}>
+        <Button
+          data-test-id="ButtonAssignmentData"
+          value="alignment"
+          aria-label="alignment"
+          onClick={handleAssignmentDataClick}
+          disabled={allAligned}
+          title="Alignment"
+        >
+          {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
+        </Button>
+        <Button
+          data-test-id="Undo"
+          value="undo"
+          aria-label="undo"
+          onClick={handleUndo}
+          disabled={!canUndo}
+          title='Undo'
+        >
+          <Undo />
+        </Button>
+        <Button
+          data-test-id="Redo"
+          value="redo"
+          aria-label="redo"
+          onClick={handleRedo}
+          disabled={!canRedo}
+          title="Redo"
+        >
+          <Redo />
+        </Button>
+        <Button
+          data-test-id="Save"
+          value="save"
+          aria-label="save"
+          onClick={onSave}
+          disabled={!canSave}
+          title="Save"
+        >
+          <Save />
+        </Button>
+      </Extensible>
     </ToggleButtonGroup>
   );
 }
