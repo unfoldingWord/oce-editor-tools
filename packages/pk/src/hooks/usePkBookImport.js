@@ -45,6 +45,8 @@ export default function usePkBookImport( repoIdStr, langIdStr, bookId, usfmText,
     if ((typeof repoIdStr === "string") && usfmText && proskomma) {
       if (!pkCache[repoLangStr]) {
         doImportPk()
+      } else {
+        setLoading(false)
       }
     }
   }, [repoIdStr,usfmText,pkCache,proskomma])

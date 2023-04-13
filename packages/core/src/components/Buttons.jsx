@@ -1,10 +1,11 @@
-import React, { useCallback, useMemo } from "react";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import React, { useState, useMemo } from "react";
+import { Button } from "@mui/material";
 import { Extensible } from "@gwdevs/extensible-rcl";
 import {
   ViewStream,
   Subject,
   Edit,
+  EditOff,
   Preview,
   Undo,
   Redo, 
@@ -13,8 +14,6 @@ import {
   AssignmentLate,
 } from '@mui/icons-material'
 import PropTypes from 'prop-types';
-
-import { useTheme } from '@mui/material/styles';
 
 export default function Buttons(props) {
   const { 
@@ -34,21 +33,7 @@ export default function Buttons(props) {
     () => ["sectionable", "blockable", "editable", "preview"],
     []
   );
-  const theme = useTheme()
-  const toggles = togglesAll.filter((toggle) => props[toggle]);
-
-  const handleToggles = useCallback(
-    (event, newToggles) => {
-      const _toggles = {};
-
-      togglesAll.forEach((toggle) => {
-        _toggles[toggle] = newToggles.includes(toggle);
-      });
-
-      setToggles(_toggles);
-    },
-    [setToggles, togglesAll]
-  );
+  const [locToggles,setLocToggles] = useState(togglesAll.filter((toggle) => props[toggle]))
 
   const handleUndo = (event) => {
     undo();
@@ -62,6 +47,19 @@ export default function Buttons(props) {
     return false;
   };
 
+  const isSetToggle = (toggle) => locToggles.includes(toggle)
+
+  const handleToggleClick = (toggle) => {
+    let _toggles = []
+    if (locToggles.includes(toggle)) {
+      _toggles = locToggles.filter(item => item !== toggle)
+    } else {
+      _toggles = [toggle, ...locToggles]
+    }
+    setLocToggles(_toggles)
+    setToggles(_toggles);
+  }
+
   const handleAssignmentDataClick = (event) => {
     onShowUnaligned(event);
     event.preventDefault();
@@ -69,95 +67,87 @@ export default function Buttons(props) {
   };
 
   return (
-    <ToggleButtonGroup
-      data-test-id="ToggleButtonGroup"
-      value={toggles}
-      onChange={handleToggles}
-      aria-label="text formatting"
-      className="buttons"
-      sx={{
-        mb:2,
-        position: 'sticky',
-        top: 0,
-        zIndex: 'appBar',
-        background: theme.palette.background.default
-      }}
-    >
+    <>
       <Extensible onRenderItems={onRenderToolbar}>
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonSectionable"
-          value="sectionable"
-          aria-label="sectionable"
-          title="Sectionable"
-        >
-          <ViewStream />
-        </ToggleButton>)}
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonBlockable"
-          value="blockable"
-          aria-label="blockable"
-          title="Blockable"
-        >
-          <Subject />
-        </ToggleButton>)}
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonPreview"
-          value="preview"
-          aria-label="preview"
-          title="Preview"
-        >
-          <Preview />
-        </ToggleButton>)}
-        <ToggleButton
-          data-test-id="ToggleButtonEditable"
-          value="editable"
-          aria-label="editable"
-          title="Editable"
-        >
-          <Edit />
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="ButtonAssignmentData"
-          value="alignment"
-          aria-label="alignment"
-          onClick={handleAssignmentDataClick}
-          disabled={allAligned}
-          title="Alignment"
-        >
-          {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="Undo"
-          value="undo"
-          aria-label="undo"
-          onClick={handleUndo}
-          disabled={!canUndo}
-          title='Undo'
-        >
-          <Undo />
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="Redo"
-          value="redo"
-          aria-label="redo"
-          onClick={handleRedo}
-          disabled={!canRedo}
-          title="Redo"
-        >
-          <Redo />
-        </ToggleButton>
-        <ToggleButton
-          data-test-id="Save"
-          value="save"
-          aria-label="save"
-          onClick={onSave}
-          disabled={!canSave}
-          title="Save"
-        >
-          <Save />
-        </ToggleButton>
+      { showToggles && (<Button
+        data-test-id="ButtonSectionable"
+        value="sectionable"
+        aria-label="sectionable"
+        title="Sectionable"
+        onClick={() => handleToggleClick("sectionable")}
+        sx={!isSetToggle("sectionable") ? { color: 'grey'} : undefined }
+      >
+        <ViewStream />
+      </Button>)}
+      { showToggles && (<Button
+        data-test-id="ButtonBlockable"
+        value="blockable"
+        aria-label="blockable"
+        title="Blockable"
+        onClick={() => handleToggleClick("blockable")}
+        sx={!isSetToggle("blockable") ? { color: 'grey'} : undefined }
+      >
+        <Subject />
+      </Button>)}
+      { showToggles && (<Button
+        data-test-id="ButtonPreview"
+        value="preview"
+        aria-label="preview"
+        title="Preview"
+        onClick={() => handleToggleClick("preview")}
+        sx={!isSetToggle("preview") ? { color: 'grey'} : undefined }
+      >
+        <Preview />
+      </Button>)}
+      <Button
+        data-test-id="ButtonEditable"
+        value="editable"
+        aria-label="editable"
+        title="Editable"
+        sx={!isSetToggle("editable") ? { color: 'grey'} : undefined }
+        onClick={() => handleToggleClick("editable")}
+      >
+        {isSetToggle("editable") ? <Edit /> : <EditOff />}        
+      </Button>
+      <Button
+        data-test-id="ButtonAssignmentData"
+        value="alignment"
+        aria-label="alignment"
+        onClick={handleAssignmentDataClick}
+        disabled={allAligned}
+        title="Alignment"
+      >
+     {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
+      </Button><Button
+        data-test-id="Undo"
+        value="undo"
+        aria-label="undo"
+        onClick={handleUndo}
+        disabled={!canUndo}
+        title='Undo'
+      >
+        <Undo />
+      </Button><Button
+        data-test-id="Redo"
+        value="redo"
+        aria-label="redo"
+        onClick={handleRedo}
+        disabled={!canRedo}
+        title="Redo"
+      >
+        <Redo />
+      </Button><Button
+        data-test-id="Save"
+        value="save"
+        aria-label="save"
+        onClick={onSave}
+        disabled={!canSave}
+        title="Save"
+      >
+        <Save />
+      </Button>
       </Extensible>
-    </ToggleButtonGroup>
+    </>
   );
 }
 Buttons.propTypes = {

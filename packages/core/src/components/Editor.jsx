@@ -10,7 +10,6 @@ import isEqual from 'lodash.isequal';
 import { HtmlPerfEditor } from "@xelah/type-perf-html";
 import EpiteleteHtml from "epitelete-html";
 
-import { Skeleton, Stack } from "@mui/material";
 import useEditorState from "../hooks/useEditorState";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
@@ -266,15 +265,6 @@ export default function Editor( props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeReference, htmlPerf, sequenceId, editorRef, hasIntroduction])
 
-  const skeleton = (
-    <Stack spacing={1}>
-      <Skeleton key='1' variant="text" height="8em" sx={{ bgcolor: 'white' }} />
-      <Skeleton key='2' variant="rectangular" height="16em" sx={{ bgcolor: 'white' }} />
-      <Skeleton key='3' variant="text" height="8em" sx={{ bgcolor: 'white' }} />
-      <Skeleton key='4' variant="rectangular" height="16em" sx={{ bgcolor: 'white' }} />
-    </Stack>
-  );
-
   const handlers = {
     onBlockClick: ({ element }) => {
       const _sequenceId = element.dataset.target;
@@ -345,7 +335,7 @@ export default function Editor( props) {
           </Box>
         </Box>
       </Popper>
-      {sequenceId && htmlPerf ? <HtmlPerfEditor {...htmlEditorProps} /> : skeleton}
+      {sequenceId && htmlPerf ? <HtmlPerfEditor {...htmlEditorProps} /> : <div/>}
       <GraftPopup {...graftProps} />
     </div>
   );
