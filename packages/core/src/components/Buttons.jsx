@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from "react";
-import { Button } from "@mui/material";
+import React, { useCallback, useMemo } from "react";
+import { Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { Extensible } from "@gwdevs/extensible-rcl";
 import {
   ViewStream,
@@ -67,85 +67,93 @@ export default function Buttons(props) {
   };
 
   return (
-    <>
-      <Extensible onRenderItems={onRenderToolbar}>
-      { showToggles && (<Button
-        data-test-id="ButtonSectionable"
+    <ToggleButtonGroup
+      data-test-id="ToggleButtonGroup"
+      value={toggles}
+      onChange={handleToggles}
+      aria-label="text formatting"
+      className="buttons"
+      sx={{
+        mb:2,
+        position: 'sticky',
+        top: 0,
+        zIndex: 'appBar',
+        background: theme.palette.background.default
+      }}
+    >
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonSectionable"
         value="sectionable"
         aria-label="sectionable"
         title="Sectionable"
-        onClick={() => handleToggleClick("sectionable")}
-        sx={!isSetToggle("sectionable") ? { color: 'grey'} : undefined }
       >
         <ViewStream />
-      </Button>)}
-      { showToggles && (<Button
-        data-test-id="ButtonBlockable"
+      </ToggleButton>)}
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonBlockable"
         value="blockable"
         aria-label="blockable"
         title="Blockable"
-        onClick={() => handleToggleClick("blockable")}
-        sx={!isSetToggle("blockable") ? { color: 'grey'} : undefined }
       >
         <Subject />
-      </Button>)}
-      { showToggles && (<Button
-        data-test-id="ButtonPreview"
+      </ToggleButton>)}
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonPreview"
         value="preview"
         aria-label="preview"
         title="Preview"
-        onClick={() => handleToggleClick("preview")}
-        sx={!isSetToggle("preview") ? { color: 'grey'} : undefined }
       >
         <Preview />
-      </Button>)}
-      <Button
-        data-test-id="ButtonEditable"
+      </ToggleButton>)}
+      <ToggleButton
+        data-test-id="ToggleButtonEditable"
         value="editable"
         aria-label="editable"
         title="Editable"
-        sx={!isSetToggle("editable") ? { color: 'grey'} : undefined }
-        onClick={() => handleToggleClick("editable")}
       >
-        {isSetToggle("editable") ? <Edit /> : <EditOff />}        
-      </Button>
-      <Button
-        data-test-id="ButtonAssignmentData"
-        value="alignment"
-        aria-label="alignment"
-        onClick={handleAssignmentDataClick}
-        disabled={allAligned}
-        title="Alignment"
-      >
-     {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
-      </Button><Button
-        data-test-id="Undo"
-        value="undo"
-        aria-label="undo"
-        onClick={handleUndo}
-        disabled={!canUndo}
-        title='Undo'
-      >
-        <Undo />
-      </Button><Button
-        data-test-id="Redo"
-        value="redo"
-        aria-label="redo"
-        onClick={handleRedo}
-        disabled={!canRedo}
-        title="Redo"
-      >
-        <Redo />
-      </Button><Button
-        data-test-id="Save"
-        value="save"
-        aria-label="save"
-        onClick={onSave}
-        disabled={!canSave}
-        title="Save"
-      >
-        <Save />
-      </Button>
+        <Edit />
+      </ToggleButton>
+      <Extensible onRenderItems={onRenderToolbar}>
+        <Button
+          data-test-id="ButtonAssignmentData"
+          value="alignment"
+          aria-label="alignment"
+          onClick={handleAssignmentDataClick}
+          disabled={allAligned}
+          title="Alignment"
+        >
+          {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
+        </Button>
+        <Button
+          data-test-id="Undo"
+          value="undo"
+          aria-label="undo"
+          onClick={handleUndo}
+          disabled={!canUndo}
+          title='Undo'
+        >
+          <Undo />
+        </Button>
+        <Button
+          data-test-id="Redo"
+          value="redo"
+          aria-label="redo"
+          onClick={handleRedo}
+          disabled={!canRedo}
+          title="Redo"
+        >
+          <Redo />
+        </Button>
+        <Button
+          data-test-id="Save"
+          value="save"
+          aria-label="save"
+          onClick={onSave}
+          disabled={!canSave}
+          title="Save"
+        >
+          <Save />
+        </Button>
       </Extensible>
     </>
   );

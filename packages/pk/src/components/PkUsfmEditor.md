@@ -1,6 +1,6 @@
 # PkUsfmEditor demo
 
-The demo demonstrates the PkUsfmEditor (with all Proskomma / Epitetele handling done through a PkCacheProvider, 
+The demo demonstrates the PkUsfmEditor (with all Proskomma / Epitetele handling done through a PkCacheProvider,
  which is included as a wrapper in the app).
 
 ```js

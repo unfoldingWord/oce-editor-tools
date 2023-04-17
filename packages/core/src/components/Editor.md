@@ -62,10 +62,11 @@ function Component () {
 
 ```
 
-# Editor demo 2
+## Editor demo 2
 
 The demo demonstrates using Epitelete in standalone mode (no Proskomma).
 Here is the function for sideloading:
+
 ```txt
     /**
      * Loads given perf into memory
@@ -81,6 +82,10 @@ import { useState, useEffect } from 'react';
 
 import __htmlPerf from '../data/tit.en.ult.perf.json';
 import EpiteleteHtml from "epitelete-html";
+  
+import { Button } from '@mui/material'
+import { MdUpdate } from 'react-icons/md'
+import { FiShare } from 'react-icons/fi'
 
 import { Button } from '@mui/material'
 import { MdUpdate } from 'react-icons/md'
