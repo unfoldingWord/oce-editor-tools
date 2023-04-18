@@ -2860,7 +2860,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@0.1.4, @oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/core@0.1.7, @oce-editor-tools/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/core@workspace:packages/core"
   dependencies:
@@ -2933,7 +2933,7 @@ __metadata:
     "@mui/material": ^5.8.7
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     "@mui/styles": ^5.8.7
-    "@oce-editor-tools/core": 0.1.4
+    "@oce-editor-tools/core": 0.1.7
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
@@ -2988,7 +2988,7 @@ __metadata:
     "@mui/material": ^5.8.7
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     "@mui/styles": ^5.8.7
-    "@oce-editor-tools/core": 0.1.4
+    "@oce-editor-tools/core": 0.1.7
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10

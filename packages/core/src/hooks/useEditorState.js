@@ -23,7 +23,6 @@ export default function useEditorState(props) {
   }, []);
 
   const setEditable = useCallback((editable) => {
-    console.log(editable)
     setState((prev) => ({ ...prev, editable }));
   }, []);
 
@@ -32,7 +31,6 @@ export default function useEditorState(props) {
   }, []);
 
   const setToggles = useCallback((toggles) => {
-    console.log(toggles)
     setState((prev) => ({ ...prev, ...toggles }));
   }, []);
 

@@ -7,6 +7,7 @@ The demo demonstrates the PkUsfmEditor (with all Proskomma / Epitetele handling 
 import { useState, useEffect } from 'react';
 import { usfmText } from '../data/tit.en.ult.usfm.js';
 import PkCacheProvider from '../context/LocalPkCacheContext'
+import useUnsavedDataState from '../hooks/useUnsavedDataState'
 import PreviewIcon from '@mui/icons-material/Preview'
 import Button from '@mui/material/Button'
 
@@ -16,6 +17,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
   const [isOpen,setIsOpen] = useState(true)
+  const { hasUnsavedData } = useUnsavedDataState() 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -31,7 +33,12 @@ function Component () {
     bookId,
   }
 
-  const handleClick = () => setIsOpen(!isOpen)
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+    if (hasUnsavedData(repoIdStr, langIdStr, bookId)) {
+      console.log("Warning: Unsaved data!")
+    }
+  }
 
   return (
       <div key="1">

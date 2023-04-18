@@ -5,7 +5,6 @@ import {
   ViewStream,
   Subject,
   Edit,
-  EditOff,
   Preview,
   Undo,
   Redo, 
@@ -14,6 +13,8 @@ import {
   AssignmentLate,
 } from '@mui/icons-material'
 import PropTypes from 'prop-types';
+
+import { useTheme } from '@mui/material/styles';
 
 export default function Buttons(props) {
   const { 
@@ -33,7 +34,21 @@ export default function Buttons(props) {
     () => ["sectionable", "blockable", "editable", "preview"],
     []
   );
-  const [locToggles,setLocToggles] = useState(togglesAll.filter((toggle) => props[toggle]))
+  const theme = useTheme()
+  const toggles = togglesAll.filter((toggle) => props[toggle]);
+
+  const handleToggles = useCallback(
+    (event, newToggles) => {
+      const _toggles = {};
+
+      togglesAll.forEach((toggle) => {
+        _toggles[toggle] = newToggles.includes(toggle);
+      });
+
+      setToggles(_toggles);
+    },
+    [setToggles, togglesAll]
+  );
 
   const handleUndo = (event) => {
     undo();
@@ -46,19 +61,6 @@ export default function Buttons(props) {
     event.preventDefault();
     return false;
   };
-
-  const isSetToggle = (toggle) => locToggles.includes(toggle)
-
-  const handleToggleClick = (toggle) => {
-    let _toggles = []
-    if (locToggles.includes(toggle)) {
-      _toggles = locToggles.filter(item => item !== toggle)
-    } else {
-      _toggles = [toggle, ...locToggles]
-    }
-    setLocToggles(_toggles)
-    setToggles(_toggles);
-  }
 
   const handleAssignmentDataClick = (event) => {
     onShowUnaligned(event);
@@ -155,7 +157,7 @@ export default function Buttons(props) {
           <Save />
         </Button>
       </Extensible>
-    </>
+    </ToggleButtonGroup>
   );
 }
 Buttons.propTypes = {

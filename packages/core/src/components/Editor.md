@@ -87,10 +87,6 @@ import { Button } from '@mui/material'
 import { MdUpdate } from 'react-icons/md'
 import { FiShare } from 'react-icons/fi'
 
-import { Button } from '@mui/material'
-import { MdUpdate } from 'react-icons/md'
-import { FiShare } from 'react-icons/fi'
-
 function Component () {
   const proskomma = null;
   const docSetId = 'unfoldingWord_ult'

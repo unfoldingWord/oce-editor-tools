@@ -1,7 +1,7 @@
 {
   "description": "A React Component Library for editing and viewing usfm.",
   "name": "@oce-editor-tools/simple",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://uw-editor.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -18,7 +18,7 @@
     "translation-helps-rcl": "3.3.4-rc.2"
   },
   "dependencies": {
-    "@oce-editor-tools/core": "0.1.6",
+    "@oce-editor-tools/core": "0.1.7",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
     "proskomma-core": "^0.10.1"
