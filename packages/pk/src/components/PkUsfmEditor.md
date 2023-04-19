@@ -7,13 +7,17 @@ The demo demonstrates the PkUsfmEditor (with all Proskomma / Epitetele handling 
 import { useState, useEffect } from 'react';
 import { usfmText } from '../data/tit.en.ult.usfm.js';
 import PkCacheProvider from '../context/LocalPkCacheContext'
+import useUnsavedDataState from '../hooks/useUnsavedDataState'
+import PreviewIcon from '@mui/icons-material/Preview'
+import Button from '@mui/material/Button'
+
 
 function Component () {
-  // const repoIdStr = 'unfoldingWord_ult'
-  const repoIdStr = 'org-unk/msl_ifr'
-  // const langIdStr = 'en'
-  const langIdStr = undefined
+  const repoIdStr = 'unfoldingWord_ult'
+  const langIdStr = 'en'
   const bookId = 'TIT'
+  const [isOpen,setIsOpen] = useState(true)
+  const { hasUnsavedData } = useUnsavedDataState() 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -28,10 +32,24 @@ function Component () {
     usfmText,
     bookId,
   }
-  
+
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+    if (hasUnsavedData(repoIdStr, langIdStr, bookId)) {
+      console.log("Warning: Unsaved data!")
+    }
+  }
+
   return (
       <div key="1">
-        <PkUsfmEditor {...editorProps} />
+        <Button 
+          variant='outlined' 
+          startIcon={<PreviewIcon/>}
+          onClick={handleClick}
+        >
+          Toggle view
+        </Button>
+        {isOpen ? <PkUsfmEditor {...editorProps} /> : <div/>}
       </div>
   );
 };  

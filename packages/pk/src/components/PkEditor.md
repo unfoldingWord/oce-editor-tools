@@ -52,7 +52,7 @@ import usePkBookImport from "../hooks/usePkBookImport";
 import { usfmText } from '../data/tit.en.ult.usfm.js';
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
-import { ToggleButton } from '@mui/material'
+import { Button } from '@mui/material'
 import { MdUpdate } from 'react-icons/md'
 import { FiShare } from 'react-icons/fi'
 
@@ -69,7 +69,6 @@ function Component () {
     console.log(usfmText)
   }
 
-// TODO: hook these up to API
   const needToMergeFromMaster = true;
   const mergeFromMasterHasConflicts = false;
   const mergeToMasterHasConflicts = true;
@@ -93,7 +92,7 @@ function Component () {
 
   const onRenderToolbar = ({ items }) => [
     ...items,
-    <ToggleButton
+    <Button
       key="update-from-master"
       value="update-from-master"
       onClick={() => {}}
@@ -102,8 +101,8 @@ function Component () {
       style={{ cursor: 'pointer' }}
     >
       <MdUpdate id="update-from-master-icon" color={mergeFromMasterColor} />
-    </ToggleButton>,
-    <ToggleButton
+    </Button>,
+    <Button
       key="share-to-master"
       value="share-to-master"
       onClick={() => {}}
@@ -112,7 +111,7 @@ function Component () {
       style={{ cursor: 'pointer' }}
     >
       <FiShare id="share-to-master-icon" color={mergeToMasterColor} />
-    </ToggleButton>,
+    </Button>,
   ];
 
   const editorProps = {
