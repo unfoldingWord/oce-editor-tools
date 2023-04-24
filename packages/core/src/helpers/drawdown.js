@@ -4,7 +4,7 @@
  */
 
 
-export function markdown(src) {
+function markdown(src) {
 
   var rx_lt = /</g;
   var rx_gt = />/g;
@@ -127,3 +127,5 @@ export function markdown(src) {
 
   return src.trim();
 };
+
+export default markdown
