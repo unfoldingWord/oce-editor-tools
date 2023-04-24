@@ -6,14 +6,19 @@ export default function useUnsavedDataState() {
   const {
     state: { 
       epCache,
-    }
+    },
+    actions: {
+      getRepoUID
+    },
+
   } = useContext(LocalPkCacheContext)
 
-  const hasUnsavedData = (repoIdStr, bookId) =>{
+  const hasUnsavedData = (repoIdStr, langIdStr, bookId) =>{
     let retVal = false
-    if (epCache && epCache[repoIdStr]) {
-      const epUndoInx = epCache[repoIdStr]?.history[bookId]?.undoInx
-      const epLastSaveUndoInx = epCache[repoIdStr]?.history[bookId]?.lastSaveUndoInx
+    const uId = getRepoUID(repoIdStr,langIdStr)
+    if (epCache && epCache[uId]) {
+      const epUndoInx = epCache[uId]?.history[bookId]?.undoInx
+      const epLastSaveUndoInx = epCache[uId]?.history[bookId]?.lastSaveUndoInx
       retVal = ((epUndoInx !== null) && (epLastSaveUndoInx !== epUndoInx)) || false
     }
     return retVal

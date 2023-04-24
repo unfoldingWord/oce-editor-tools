@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { Extensible } from "@gwdevs/extensible-rcl";
 import {
   ViewStream,
@@ -83,40 +83,40 @@ export default function Buttons(props) {
         background: theme.palette.background.default
       }}
     >
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonSectionable"
+        value="sectionable"
+        aria-label="sectionable"
+        title="Sectionable"
+      >
+        <ViewStream />
+      </ToggleButton>)}
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonBlockable"
+        value="blockable"
+        aria-label="blockable"
+        title="Blockable"
+      >
+        <Subject />
+      </ToggleButton>)}
+      { showToggles && (<ToggleButton
+        data-test-id="ToggleButtonPreview"
+        value="preview"
+        aria-label="preview"
+        title="Preview"
+      >
+        <Preview />
+      </ToggleButton>)}
+      <ToggleButton
+        data-test-id="ToggleButtonEditable"
+        value="editable"
+        aria-label="editable"
+        title="Editable"
+      >
+        <Edit />
+      </ToggleButton>
       <Extensible onRenderItems={onRenderToolbar}>
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonSectionable"
-          value="sectionable"
-          aria-label="sectionable"
-          title="Sectionable"
-        >
-          <ViewStream />
-        </ToggleButton>)}
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonBlockable"
-          value="blockable"
-          aria-label="blockable"
-          title="Blockable"
-        >
-          <Subject />
-        </ToggleButton>)}
-        { showToggles && (<ToggleButton
-          data-test-id="ToggleButtonPreview"
-          value="preview"
-          aria-label="preview"
-          title="Preview"
-        >
-          <Preview />
-        </ToggleButton>)}
-        <ToggleButton
-          data-test-id="ToggleButtonEditable"
-          value="editable"
-          aria-label="editable"
-          title="Editable"
-        >
-          <Edit />
-        </ToggleButton>
-        <ToggleButton
+        <Button
           data-test-id="ButtonAssignmentData"
           value="alignment"
           aria-label="alignment"
@@ -125,8 +125,8 @@ export default function Buttons(props) {
           title="Alignment"
         >
           {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
-        </ToggleButton>
-        <ToggleButton
+        </Button>
+        <Button
           data-test-id="Undo"
           value="undo"
           aria-label="undo"
@@ -135,8 +135,8 @@ export default function Buttons(props) {
           title='Undo'
         >
           <Undo />
-        </ToggleButton>
-        <ToggleButton
+        </Button>
+        <Button
           data-test-id="Redo"
           value="redo"
           aria-label="redo"
@@ -145,8 +145,8 @@ export default function Buttons(props) {
           title="Redo"
         >
           <Redo />
-        </ToggleButton>
-        <ToggleButton
+        </Button>
+        <Button
           data-test-id="Save"
           value="save"
           aria-label="save"
@@ -155,7 +155,7 @@ export default function Buttons(props) {
           title="Save"
         >
           <Save />
-        </ToggleButton>
+        </Button>
       </Extensible>
     </ToggleButtonGroup>
   );
