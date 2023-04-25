@@ -1,4 +1,5 @@
 import PkUsfmEditor from "./components/PkUsfmEditor";
+import PkAligner from "./components/PkAligner";
 import PkEditor from "./components/PkEditor";
 import PkPreview from "./components/PkPreview";
 import PrintPopupDialog from "./components/PrintPopupDialog";
@@ -8,6 +9,7 @@ import useUnsavedDataState from "./hooks/useUnsavedDataState";
 
 export {
   PkUsfmEditor,
+  PkAligner,
   PkEditor,
   PkPreview, 
   PrintPopupDialog,

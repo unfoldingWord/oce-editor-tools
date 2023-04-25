@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 import { WordAligner } from 'word-aligner-rcl';
 // import { Proskomma } from 'proskomma-cross';
-import { Aligner } from './helpers/alignmentApi';
-import ProskommaInterface from './classes/ProskommaInterface';
+import { Aligner } from '../helpers/alignmentApi';
+import ProskommaInterface from '../classes/ProskommaInterface';
 import {
   areAlgnmentsComplete,
   parseUsfmToWordAlignerData
-} from "./helpers/alignmentHelpers.js";
+} from "../helpers/alignmentHelpers.js";
 
-var alignedVerseJson = require('./__tests__/fixtures/alignments/en_ult_tit_1_1_unaligned.json');
-var originalVerseJson = require('./__tests__/fixtures/alignments/grk_tit_1_1.json');
-const LexiconData = require('./__tests__/fixtures/lexicon/lexicons.json');
+var alignedVerseJson = require('../__tests__/fixtures/alignments/en_ult_tit_1_1_unaligned.json');
+var originalVerseJson = require('../__tests__/fixtures/alignments/grk_tit_1_1.json');
+const LexiconData = require('../__tests__/fixtures/lexicon/lexicons.json');
 
 const translate = (key) => {
   console.log(`translate(${key})`);
