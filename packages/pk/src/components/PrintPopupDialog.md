@@ -1,6 +1,4 @@
-# Editor demo 1
-
-The Editor expects input of an EpiteleteHtml object.
+# PrintPopupDialog demo
 
 ```js
 import { useState, useEffect } from 'react';
@@ -62,11 +60,10 @@ function Component () {
 
 ```
 
-## Editor demo 2
+# Editor demo 2
 
 The demo demonstrates using Epitelete in standalone mode (no Proskomma).
 Here is the function for sideloading:
-
 ```txt
     /**
      * Loads given perf into memory
@@ -82,10 +79,6 @@ import { useState, useEffect } from 'react';
 
 import __htmlPerf from '../data/tit.en.ult.perf.json';
 import EpiteleteHtml from "epitelete-html";
-  
-import { Button } from '@mui/material'
-import { MdUpdate } from 'react-icons/md'
-import { FiShare } from 'react-icons/fi'
 
 function Component () {
   const proskomma = null;
@@ -101,7 +94,7 @@ function Component () {
     const perfJson = await ep.getDocument(bookCode)
     console.log("PERF:",JSON.stringify(perfJson, null, 4))
   }
-
+  
   useEffect(
     () => {
       async function loadPerf() {
@@ -114,58 +107,11 @@ function Component () {
       if ( ep && !ready ) loadPerf();
     }, [ep, ready]
   )
-
-  const needToMergeFromMaster = true;
-  const mergeFromMasterHasConflicts = false;
-  const mergeToMasterHasConflicts = true;
-
-  // eslint-disable-next-line no-nested-ternary
-  const mergeFromMasterTitle = mergeFromMasterHasConflicts
-    ? 'Merge Conflicts for update from master'
-    : needToMergeFromMaster
-      ? 'Update from master'
-      : 'No merge conflicts for update with master';
-  // eslint-disable-next-line no-nested-ternary
-  const mergeFromMasterColor = mergeFromMasterHasConflicts
-    ? 'red'
-    : needToMergeFromMaster
-      ? 'orange'
-      : 'lightgray';
-  const mergeToMasterTitle = mergeToMasterHasConflicts
-    ? 'Merge Conflicts for share with master'
-    : 'No merge conflicts for share with master';
-  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black';
-
-  const onRenderToolbar = ({ items }) => [
-    ...items,
-    <Button
-      key="update-from-master"
-      value="update-from-master"
-      onClick={() => {}}
-      title={mergeFromMasterTitle}
-      aria-label={mergeFromMasterTitle}
-      style={{ cursor: 'pointer' }}
-    >
-      <MdUpdate id="update-from-master-icon" color={mergeFromMasterColor} />
-    </Button>,
-    <Button
-      key="share-to-master"
-      value="share-to-master"
-      onClick={() => {}}
-      title={mergeToMasterTitle}
-      aria-label={mergeToMasterTitle}
-      style={{ cursor: 'pointer' }}
-    >
-      <FiShare id="share-to-master-icon" color={mergeToMasterColor} />
-    </Button>,
-  ];
-
+  
   const editorProps = {
     epiteleteHtml: ep,
     bookId: 'TIT',
-    editable: true,
     onSave,
-    onRenderToolbar,
     verbose
   }
   
