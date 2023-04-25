@@ -13,7 +13,7 @@ export default function MdPreview(props) {
   } = props
 
   const { done, renderedData } = useMd2HtmlPreview({
-    mdText,
+    markupStr: mdText,
     verbose
   })
 
@@ -27,8 +27,8 @@ export default function MdPreview(props) {
 }
 
 MdPreview.propTypes = {
-  /** The text in usfm format to load in the editor */
-  usfmText: PropTypes.string,
+  /** The text in markup format to load in the editor */
+  mdText: PropTypes.string,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
 }

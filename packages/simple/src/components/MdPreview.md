@@ -3,6 +3,8 @@
 The demo demonstrates how to use the MdPreview in standalone mode.
 
 ```js
+import { useState } from 'react';
+
 function Component () {
   const [markupStr, setMarkupStr] = useState("");
 
@@ -11,14 +13,13 @@ function Component () {
   fetch(url)
     .then((response) => {
       response.text().then((text) => {
-        console.log("fetched text")
         setMarkupStr(text)
       });
     });
   
   return (
     <div key="1">
-      <MdPreview {markupStr} />
+      <MdPreview mdText={markupStr} />
     </div>
   );
 };  

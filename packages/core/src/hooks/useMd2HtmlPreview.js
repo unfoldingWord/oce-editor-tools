@@ -26,9 +26,7 @@ export default function useMd2HtmlPreview(props) {
   const [renderedData, setRenderedData] = useState("")
 
   useEffect(() => {
-    console.log("useEffect")
     if (markupStr != null)  {
-      console.log(markupStr)
       setRenderedData(markup(markupStr))
       setDone(true)
     }
