@@ -1,10 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useMd2HtmlPreview } from "@oce-editor-tools/core"
-import {
-  Typography,
-  Grid,
-} from '@mui/material'
 
 export default function MdPreview(props) {
   const {
@@ -13,22 +9,20 @@ export default function MdPreview(props) {
   } = props
 
   const { done, renderedData } = useMd2HtmlPreview({
-    mdText,
+    markupStr: mdText,
     verbose
   })
 
   return (
-    <Grid container style={{ fontFamily: 'Arial' }}>
-      <Grid key={2} item xs={12}>
-      {done ? <div dangerouslySetInnerHTML={{__html: renderedData}}/> : <Typography>{'LOADING'}...</Typography>}
-      </Grid>
-    </Grid>
+    <div>
+      {done ? <div dangerouslySetInnerHTML={{__html: renderedData}}/> : 'LOADING'}
+    </div>
   );
 }
 
 MdPreview.propTypes = {
-  /** The text in usfm format to load in the editor */
-  usfmText: PropTypes.string,
+  /** The text in markup format to load in the editor */
+  mdText: PropTypes.string,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
 }
