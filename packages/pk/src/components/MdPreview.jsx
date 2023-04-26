@@ -15,9 +15,9 @@ export default function MdPreview(props) {
 
   return (
     <div>
-      {done ? <div dangerouslySetInnerHTML={{__html: renderedData}}/> : 'LOADING'}
+      {done ? <div dangerouslySetInnerHTML={{__html: renderedData}} /> : 'LOADING'}
     </div>
-  );
+  )
 }
 
 MdPreview.propTypes = {

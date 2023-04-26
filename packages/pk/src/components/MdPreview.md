@@ -65,15 +65,15 @@ function Component () {
       setLoading(false)
       setMarkupStr(compiledText)
     }
-
-
+    if (!done && !loading) doFetch()
+  })
   
   return (
     <div key="1">
-      {done ? <MdPreview mdText={markupStr} /> : 'Fetching OBS data'}      
+      {done ? <MdPreview mdText={markupStr} /> : 'Fetching OBS data'}
     </div>
   );
-};  
+}  
 
 <div>
   <Component key="1" />
