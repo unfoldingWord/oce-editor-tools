@@ -36,9 +36,9 @@ function Component () {
 
 ```
 
-## PkPreview extended demo
+## UsfmPreview extended demo
 
-The demo demonstrates using the PkPreview together with some extended information (for instance, showing merge conflicts information).
+The demo demonstrates using the UsfmPreview together with some extended information (for instance, showing merge conflicts information).
 
 ```js
 import { usfmText } from '../data/tit.en.ult.usfm.js';
