@@ -12,6 +12,7 @@ module.exports = {
   moduleAliases: {},
   components: [
     'src/components/Editor.jsx',
+    'src/components/MdPreview.jsx',
   ],
   getComponentPathLine: componentPath => {
     const name = path.basename(componentPath, '.jsx');

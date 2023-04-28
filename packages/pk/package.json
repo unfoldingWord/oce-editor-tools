@@ -23,7 +23,8 @@
     "epitelete-html": "0.2.18",
     "proskomma-core": "0.10.1",
     "shorthash": "^0.0.2",
-    "word-aligner-rcl": "^0.9.3"
+    "string-punctuation-tokenizer": "^2.2.0",
+    "word-aligner-rcl": "file:.yalc/word-aligner-rcl"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

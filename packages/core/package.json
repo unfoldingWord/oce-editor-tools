@@ -23,7 +23,8 @@
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@mui/system": "^5.11.9",
     "@xelah/type-perf-html": "^1.0.2",
-    "epitelete-html": "0.2.18"
+    "epitelete-html": "0.2.18",
+    "pagedjs": "^0.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

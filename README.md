@@ -9,11 +9,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]](https://github.com/unfoldingWord/uw-editor/graphs/contributors)
-[![Forks][forks-shield]](https://github.com/unfoldingWord/uw-editor/network/members)
-[![Stargazers][stars-shield]](https://github.com/unfoldingWord/uw-editor/stargazers)
-[![Issues][issues-shield]](https://github.com/unfoldingWord/uw-editor/issues)
-[![MIT License][license-shield]](https://github.com/unfoldingWord/uw-editor/blob/main/LICENSE)
+[![Contributors][contributors-shield]](https://github.com/unfoldingWord/oce-editor-tools/graphs/contributors)
+[![Forks][forks-shield]](https://github.com/unfoldingWord/oce-editor-tools/network/members)
+[![Stargazers][stars-shield]](https://github.com/unfoldingWord/oce-editor-tools/stargazers)
+[![Issues][issues-shield]](https://github.com/unfoldingWord/oce-editor-tools/issues)
+[![MIT License][license-shield]](https://github.com/unfoldingWord/oce-editor-tools/blob/main/LICENSE)
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/company/unfoldingword/)
 
 
@@ -21,7 +21,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://uw-editor.netlify.app/">
+  <a href="https://oce-editor-tools.netlify.app/">
     <img src="images/uW.png" alt="Logo" width="300" height="50">
   </a>
 
@@ -30,13 +30,13 @@
   <p align="center">
     A reusable biblical text editor tool library
     <br />
-    <a href="https://uw-editor.netlify.app/"><strong>View Demo and examples</strong></a>
+    <a href="https://oce-editor-tools.netlify.app/"><strong>View Demo and examples</strong></a>
     <br />
     <br />
     ·
-    <a href="https://github.com/unfoldingWord/uw-editor/issues">Report Bug</a>
+    <a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Report Bug</a>
     ·
-    <a href="https://github.com/unfoldingWord/uw-editor/issues">Request Feature</a>
+    <a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Request Feature</a>
   </p>
 </div>
 
@@ -66,7 +66,6 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -93,7 +92,7 @@ An implementation making it easy to have access to various Proskomma functions.
 
 ### @oce-editor-tools/core
 
-A simplifies implementation completely hiding Proskomma (while also loosing some repository handling as a result of this).
+A simplified implementation completely hiding Proskomma (while also loosing some repository handling as a result of this).
 
 
 ### Built With
@@ -134,14 +133,14 @@ yarn add @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@
 <!-- USAGE EXAMPLES -->
 ## Usage/Integration
 
-See [Styleguidist link](https://uw-editor.netlify.app/) for many usage examples.
+See [Styleguidist link](https://oce-editor-tools.netlify.app/) for many usage examples.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/unfoldingWord/uw-editor/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/unfoldingWord/oce-editor-tools/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -158,7 +157,7 @@ If you would like to fork the repo and create a pull request.
 1. Fork the Project
 2. Clone the repo
    ```sh
-   git clone https://github.com/unfoldingWord/uw-editor.git
+   git clone https://github.com/unfoldingWord/oce-editor-tools.git
    ```
 3. Install NPM packages
    ```sh
@@ -186,16 +185,16 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/unfoldingWord/uw-editor.svg?style=for-the-badge
-[contributors-url]: https://github.com/unfoldingWord/uw-editor/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/unfoldingWord/uw-editor.svg?style=for-the-badge
-[forks-url]: https://github.com/unfoldingWord/uw-editor/network/members
-[stars-shield]: https://img.shields.io/github/stars/unfoldingWord/uw-editor.svg?style=for-the-badge
-[stars-url]: https://github.com/unfoldingWord/uw-editor/stargazers
-[issues-shield]: https://img.shields.io/github/issues/unfoldingWord/uw-editor.svg?style=for-the-badge
-[issues-url]: https://github.com/unfoldingWord/uw-editor/issues
-[license-shield]: https://img.shields.io/github/license/unfoldingWord/uw-editor.svg?style=for-the-badge
-[license-url]: https://github.com/unfoldingWord/uw-editor/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
+[contributors-url]: https://github.com/unfoldingWord/oce-editor-tools/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
+[forks-url]: https://github.com/unfoldingWord/oce-editor-tools/network/members
+[stars-shield]: https://img.shields.io/github/stars/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
+[stars-url]: https://github.com/unfoldingWord/oce-editor-tools/stargazers
+[issues-shield]: https://img.shields.io/github/issues/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
+[issues-url]: https://github.com/unfoldingWord/oce-editor-tools/issues
+[license-shield]: https://img.shields.io/github/license/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
+[license-url]: https://github.com/unfoldingWord/oce-editor-tools/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png

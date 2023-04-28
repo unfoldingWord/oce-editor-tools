@@ -14,7 +14,6 @@ module.exports = {
     'src/components/PkEditor.jsx',
     'src/components/PkAligner.jsx',
     'src/components/PkUsfmEditor.jsx',
-    'src/components/MdPreview.jsx',
     'src/components/PkPreview.jsx',
   ],
   getComponentPathLine: componentPath => {
