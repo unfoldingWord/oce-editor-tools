@@ -24,7 +24,7 @@
     "proskomma-core": "0.10.1",
     "shorthash": "^0.0.2",
     "string-punctuation-tokenizer": "^2.2.0",
-    "word-aligner-rcl": "file:.yalc/word-aligner-rcl"
+    "word-aligner-rcl": "^0.9.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
