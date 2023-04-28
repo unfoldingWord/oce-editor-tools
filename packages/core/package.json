@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unfoldingword/html-usfm"
+    "url": "https://github.com/unfoldingword/oce-editor-tools"
   },
   "peerDependencies": {
     "@mui/icons-material": "^5.10.9",
