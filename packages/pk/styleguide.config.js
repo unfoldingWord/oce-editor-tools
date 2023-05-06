@@ -12,10 +12,9 @@ module.exports = {
   moduleAliases: {},
   components: [
     'src/components/PkEditor.jsx',
-    'src/components/PkAligner.jsx',
     'src/components/PkUsfmEditor.jsx',
-    'src/components/MdPreview.jsx',
     'src/components/PkPreview.jsx',
+    'src/components/PkPrintModal.jsx',
   ],
   getComponentPathLine: componentPath => {
     const name = path.basename(componentPath, '.jsx');

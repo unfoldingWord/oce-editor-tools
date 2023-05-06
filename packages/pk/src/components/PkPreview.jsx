@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { usePreview } from "@oce-editor-tools/core";
+import { useBookPreviewRenderer } from "@oce-editor-tools/core";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 import {
   Typography,
@@ -13,13 +13,15 @@ export default function PkPreview(props) {
   } = props;
 
   const [docIdFromCache, setDocIdFromCache] = useState(undefined)
+  const [renderedData,setRenderedData] = useState()
+  const [done,setDone] = useState(false)
 
   const {
     state: { pk, pkCache },
     actions: { getRepoUID }
   } = useContext(LocalPkCacheContext);
 
-  const { done, renderedData } = usePreview({
+  const { ready, doRender } = useBookPreviewRenderer({
     pk, 
     docId: docIdFromCache, 
     bookId,
@@ -30,12 +32,23 @@ export default function PkPreview(props) {
 
   useEffect(() => {
     if (pk != null) {
-      const repoLangStr = getRepoUID(repoIdStr,langIdStr)
-      if (pkCache[repoLangStr] && !docIdFromCache) {
-        setDocIdFromCache(pkCache[repoLangStr])
+      if (!ready) {
+        try {
+          const repoLangStr = getRepoUID(repoIdStr,langIdStr)
+          if (pkCache[repoLangStr] && !docIdFromCache) {
+            setDocIdFromCache(pkCache[repoLangStr])
+          }
+          setDone(true)
+        } catch (e) {
+          console.log(e)
+        }
+      } else {
+        const _renderedData = doRender({renderFlags, extInfo, verbose})
+        setRenderedData(_renderedData)
       }
     }
-  },[pk, done, pkCache, docIdFromCache, getRepoUID, repoIdStr, langIdStr, bookId]);
+  },[pk, doRender, extInfo, renderFlags, verbose, ready, getRepoUID, repoIdStr, langIdStr, pkCache, docIdFromCache]);
+
 
   return (
     <Grid container style={{ fontFamily: 'Arial' }}>

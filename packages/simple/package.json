@@ -1,12 +1,12 @@
 {
   "description": "A React Component Library for editing and viewing usfm.",
   "name": "@oce-editor-tools/simple",
-  "version": "0.1.9-alpha",
-  "homepage": "https://uw-editor.netlify.app/",
+  "version": "0.1.10",
+  "homepage": "https://oce-editor-tools.netlify.app/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unfoldingword/html-usfm"
+    "url": "https://github.com/unfoldingword/oce-editor-tools"
   },
   "peerDependencies": {
     "@mui/icons-material": "^5.10.9",
@@ -18,7 +18,7 @@
     "translation-helps-rcl": "3.3.4-rc.2"
   },
   "dependencies": {
-    "@oce-editor-tools/core": "0.1.8",
+    "@oce-editor-tools/core": "0.1.10",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
     "proskomma-core": "^0.10.1"
@@ -37,6 +37,7 @@
     "@mui/material": "^5.8.7",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "@mui/styles": "^5.8.7",
+    "@netlify/plugin-nextjs": "^4.36.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
