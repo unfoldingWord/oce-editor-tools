@@ -4,6 +4,8 @@ The demo demonstrates how to use the MdPreview in standalone mode.
 
 ```js
 import { useState, useEffect } from 'react';
+import markup from "../lib/drawdown"
+import printModalResources from "../lib/printModalResources"
 
 const range = (start, end) => Array.from(
   Array(end - start + 1).keys()
@@ -55,6 +57,43 @@ function Component () {
   const [loading, setLoading] = useState(false)
   const [done, setDone] = useState(false)
 
+  const [isOpen,setIsOpen] = useState(false)
+
+  const formatData = {
+    pageFormat: 'A4P',
+    nColumns: 1,
+  }
+
+  const substituteCss = (template, replaces) => {
+    let ret = template;
+    for (let inx = 0; inx < replaces.length; inx++) {
+      const [placeholder, replacement] = replaces[inx]
+      ret = ret.replace(placeholder, replacement);
+    }
+    return ret;
+  }
+
+  const pageCss = substituteCss(printModalResources.pageCssTemplate, [
+    ['%pageWidth%', printModalResources.pageSizes[formatData.pageFormat].width],
+    [
+      '%pageHeight%',
+      printModalResources.pageSizes[formatData.pageFormat].height,
+    ],
+    ['%nColumns%', formatData.nColumns],
+  ])
+
+  const onPrintClick = () => {
+    const newPage = window.open();
+    newPage.document.body.innerHTML = `<div id="paras">${markup(markupStr)}</div>`;
+    newPage.document.head.innerHTML = '<title>PDF Preview</title>';
+    const script = document.createElement('script');
+    script.src = `${window.location.protocol}//${window.location.host}/static/pagedjs_0_4_0.js`;
+    newPage.document.head.appendChild(script);
+    const style = document.createElement('style');
+    style.innerHTML = pageCss;
+    newPage.document.head.appendChild(style);
+  }
+
   useEffect(() => {
     async function doFetch() {
       setLoading(true)
@@ -69,7 +108,10 @@ function Component () {
   })
   
   return (
-    <div key="1">
+    <div>
+      <button onClick={onPrintClick}>
+        Print preview
+      </button>
       {done ? <MdPreview mdText={markupStr} /> : 'Fetching OBS data'}
     </div>
   );

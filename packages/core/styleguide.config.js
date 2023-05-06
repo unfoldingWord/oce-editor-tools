@@ -13,6 +13,7 @@ module.exports = {
   components: [
     'src/components/Editor.jsx',
     'src/components/MdPreview.jsx',
+    'src/components/BookPreview.jsx',
   ],
   getComponentPathLine: componentPath => {
     const name = path.basename(componentPath, '.jsx');

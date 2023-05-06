@@ -1,18 +1,18 @@
 import PkUsfmEditor from "./components/PkUsfmEditor";
-import PkAligner from "./components/PkAligner";
+// import PkAligner from "./components/PkAligner";
 import PkEditor from "./components/PkEditor";
 import PkPreview from "./components/PkPreview";
-import PrintPopupDialog from "./components/PrintPopupDialog";
+import PkPrintModal from "./components/PkPrintModal";
 import PkCacheProvider from "./context/LocalPkCacheContext";
 import usePkBookImport from "./hooks/usePkBookImport";
 import useUnsavedDataState from "./hooks/useUnsavedDataState";
 
 export {
   PkUsfmEditor,
-  PkAligner,
+  // PkAligner,
   PkEditor,
   PkPreview, 
-  PrintPopupDialog,
+  PkPrintModal,
   PkCacheProvider,
   usePkBookImport,
   useUnsavedDataState,

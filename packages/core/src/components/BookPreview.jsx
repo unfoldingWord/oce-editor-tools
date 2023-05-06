@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { usePreview } from "@oce-editor-tools/core";
+import useBookPreviewRenderer from "../hooks/useBookPreviewRenderer";
 import { Proskomma } from 'proskomma-core'
-import {
-  Typography,
-  Grid,
-} from '@mui/material';
 
-export default function UsfmPreview(props) {
+export default function BookPreview(props) {
   const {
     bookId, 
     usfmText,
@@ -19,53 +15,59 @@ export default function UsfmPreview(props) {
   const [docId, setDocId] = useState()
   // eslint-disable-next-line no-unused-vars
   const [pk,setPk] = useState(new Proskomma())
+  const [renderedData,setRenderedData] = useState()
+  const [done,setDone] = useState(false)
+  const [imported,setImported] = useState(false)
 
   const bookCode = bookId?.toUpperCase()
 
-  const { done, renderedData } = usePreview({
+  const { ready, doRender } = useBookPreviewRenderer({
     pk, 
     docId, 
     bookId,
-    renderFlags,
-    extInfo, 
-    verbose
   })
 
   useEffect(() => {
-    function doImportPk() {
+    if ((pk != null) && (usfmText != null)) {
       pk.importDocument(
         {lang: 'xxx', abbr: 'XXX'}, // doesn't matter...
         "usfm",
         usfmText
       )
+      setImported(true)
     }
-    async function doQuery() {
+  },[pk, usfmText])
+
+  useEffect(() => {
+    async function doImportPk() {
       const query = `{ documents { id bookCode: header( id: "bookCode") } }`
       const result = await pk.gqlQuerySync(query)
       const _docId = result.data.documents.filter(d=> d.bookCode === bookCode)[0].id
       setDocId(_docId)
     }
 
-    if (pk != null) {
-      try {
-        doImportPk()
-        doQuery()
-      } catch (e) {
-          console.log(e)
+    if ((pk != null) && (imported)) {
+      if (!ready) {
+        try {
+          doImportPk()
+          setDone(true)
+        } catch (e) {
+            console.log(e)
+        }
+      } else {
+        setRenderedData(doRender({renderFlags, extInfo, verbose}))
       }
     }
-  },[bookCode, pk, usfmText]);
+  },[bookCode, pk, imported, doRender, extInfo, renderFlags, verbose, ready]);
 
   return (
-    <Grid container style={{ fontFamily: 'Arial' }}>
-      <Grid key={2} item xs={12}>
-        {(done && renderedData) ? <>{renderedData}</> : <Typography>{'LOADING'}...</Typography>}
-      </Grid>
-    </Grid>
+    <div>
+        {(done && renderedData) ? <>{renderedData}</> : `LOADING`}
+    </div>
   );
 }
 
-UsfmPreview.propTypes = {
+BookPreview.propTypes = {
   /** The text in usfm format to load in the editor */
   usfmText: PropTypes.string,
   /** bookId to identify the content in the editor */
@@ -78,6 +80,6 @@ UsfmPreview.propTypes = {
   verbose: PropTypes.bool,
 };
 
-UsfmPreview.defaultProps = {
+BookPreview.defaultProps = {
   verbose: false,
 };

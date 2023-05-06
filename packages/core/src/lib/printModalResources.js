@@ -1,7 +1,3 @@
-import { SofriaRenderFromProskomma } from 'proskomma-json-tools';
-import sofria2WebActions from '../../packages/pk-usfm-editor/src/renderer/sofria2web';
-import { renderers } from '../../packages/pk-usfm-editor/src/renderer/render2html';
-
 const printModalResources = {
   pageCssTemplate: `
         @page {
@@ -105,32 +101,6 @@ const printModalResources = {
       width: '189mm',
       height: '246mm',
     },
-  },
-  doRender: function ({ pk, scriptureData, docId }) {
-    if (!docId) {
-      return;
-    }
-    const renderer = new SofriaRenderFromProskomma({
-      proskomma: pk,
-      actions: sofria2WebActions,
-    });
-
-    const config = { renderers };
-    for (const sdKey of Object.keys(scriptureData)) {
-      config[sdKey] = scriptureData[sdKey];
-    }
-    const output = {};
-    try {
-      renderer.renderDocument({
-        docId,
-        config,
-        output,
-      });
-    } catch (err) {
-      console.log('Renderer', err);
-      throw err;
-    }
-    return output.paras;
   },
 };
 
