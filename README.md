@@ -86,11 +86,11 @@
 
 A core library used by other packages.
 
-### @oce-editor-tools/core
+### @oce-editor-tools/pk
 
 An implementation making it easy to have access to various Proskomma functions.
 
-### @oce-editor-tools/core
+### @oce-editor-tools/simple
 
 A simplified implementation completely hiding Proskomma (while also loosing some repository handling as a result of this).
 
