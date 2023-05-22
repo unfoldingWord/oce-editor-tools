@@ -54,9 +54,20 @@ const printModalResources = {
         #paras {
             columns: %nColumns%
         }
-        h1, h2, h3, h4, h5 {
+
+        h2, h3, h4, h5 {
             columns: 1
         }
+
+        h1 {
+          break-before: page;
+          column-span: all;
+        }        
+
+        .new-page {
+          break-after: page;
+          column-span: all;
+        }        
         `,
   pageSizes: {
     A4P: {

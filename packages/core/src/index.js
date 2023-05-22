@@ -1,17 +1,17 @@
 import markup from "./lib/drawdown"
-import printModalResources from "./lib/printModalResources"
 import useBookPreviewRenderer from "./hooks/useBookPreviewRenderer"
-import usePagedJsPreview from "./hooks/usePagedJsPreview"
 import Editor from "./components/Editor"
-import MdPreview from "./components/MdPreview"
 import BookPreview from "./components/BookPreview"
+import ColumnsSelector from "./components/ColumnsSelector"
+import PageSizeSelector from "./components/PageSizeSelector"
+import PrintModal from "./components/PrintModal"
 
 export {
   markup,
-  printModalResources,
   useBookPreviewRenderer,
-  usePagedJsPreview,
   Editor,
-  MdPreview,
-  BookPreview
+  BookPreview,
+  ColumnsSelector,
+  PageSizeSelector,
+  PrintModal
 };

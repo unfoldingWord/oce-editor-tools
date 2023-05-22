@@ -3374,7 +3374,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@0.1.10, @oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/core@npm:0.1.10":
+  version: 0.1.10
+  resolution: "@oce-editor-tools/core@npm:0.1.10"
+  dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@mui/system": ^5.11.9
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: 0.2.18
+    pagedjs: ^0.4.1
+  peerDependencies:
+    "@mui/icons-material": ^5.10.9
+    "@mui/material": ^5.10.12
+    "@mui/styled-engine": "*"
+    "@mui/styles": ^5.10.10
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: 85583a67f4f56e580dbc37e194753df4806c69a9ac7945edca9b04a0e785ffca73aaff5753521cfdb29887eb9f5b109a0d4da6f58a3cd9af5413007605e3ff18
+  languageName: node
+  linkType: hard
+
+"@oce-editor-tools/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/core@workspace:packages/core"
   dependencies:
@@ -3513,6 +3536,7 @@ __metadata:
     babel-loader: ^8.2.2
     crypto-browserify: ^3.12.0
     css-loader: ^6.7.1
+    dompurify: ^3.0.3
     epitelete-html: 0.2.18
     eslint: ^7.32.0
     eslint-config-prettier: ^8.4.0
@@ -3528,7 +3552,9 @@ __metadata:
     react-dom: latest
     react-scripts: ^5.0.1
     react-styleguidist: ^13.0.0
+    react-to-print: ^2.14.12
     shorthash: ^0.0.2
+    style-to-object: ^0.4.1
     styled-components: ^5.2.1
     translation-helps-rcl: 3.3.4-rc.3
     webpack-cli: ^4.10.0
@@ -8160,6 +8186,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "dompurify@npm:3.0.3"
+  checksum: 02242f2fe6a5c078fd0cb04efc93079d73a2fe886bebb5e33100b7e52f4b9bfe5f2afb0b69cae39d9a13d7bbf54435df41494890c4abe7740429828b2dbb94d9
+  languageName: node
+  linkType: hard
+
 "domutils@npm:^1.7.0":
   version: 1.7.0
   resolution: "domutils@npm:1.7.0"
@@ -10976,6 +11009,13 @@ __metadata:
   version: 1.3.8
   resolution: "ini@npm:1.3.8"
   checksum: dfd98b0ca3a4fc1e323e38a6c8eb8936e31a97a918d3b377649ea15bdb15d481207a0dda1021efbd86b464cae29a0d33c1d7dcaf6c5672bee17fa849bc50a1b3
+  languageName: node
+  linkType: hard
+
+"inline-style-parser@npm:0.1.1":
+  version: 0.1.1
+  resolution: "inline-style-parser@npm:0.1.1"
+  checksum: 5d545056a3e1f2bf864c928a886a0e1656a3517127d36917b973de581bd54adc91b4bf1febcb0da054f204b4934763f1a4e09308b4d55002327cf1d48ac5d966
   languageName: node
   linkType: hard
 
@@ -16790,6 +16830,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-to-print@npm:^2.14.12":
+  version: 2.14.12
+  resolution: "react-to-print@npm:2.14.12"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: d88e93121fc95ae95ca3ad9a8b2bc1b305d6270d1330f0222d4843527a7925182d6f1e96b7a1df0403d2d6820d116c85f4a7c122956fe2dbc81dbbb09970efe2
+  languageName: node
+  linkType: hard
+
 "react-tooltip@npm:^3.11.6":
   version: 3.11.6
   resolution: "react-tooltip@npm:3.11.6"
@@ -18668,6 +18720,15 @@ __metadata:
   peerDependencies:
     webpack: ^5.0.0
   checksum: 5ee5ce2dc885369eccb55d429376e83d02570d473ac5edeb69fd65ee894847f1e51429cf078351f617bd04516ece8a1dd967f9f40464bd8fa76d903c6b2a6f08
+  languageName: node
+  linkType: hard
+
+"style-to-object@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "style-to-object@npm:0.4.1"
+  dependencies:
+    inline-style-parser: 0.1.1
+  checksum: 2ea213e98eed21764ae1d1dc9359231a9f2d480d6ba55344c4c15eb275f0809f1845786e66d4caf62414a5cc8f112ce9425a58d251c77224060373e0db48f8c2
   languageName: node
   linkType: hard
 
