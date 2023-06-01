@@ -1,11 +1,52 @@
-# MdPreview demo
+# PrintModal demo
 
-The demo demonstrates how to use the MdPreview in standalone mode.
+The demo demonstrates using the PrintModal in standalone mode
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState } from 'react'
+
+function Component () {
+  const [isOpen,setIsOpen] = useState(false)
+
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const done = true
+
+  const previewProps = {
+    openPrintModal: isOpen && done,
+    handleClosePrintModal: () => {
+      console.log('closePrintModal')
+      setIsOpen(false)
+    },
+    onRenderContent: () => `This is just a test!`,
+  }
+  
+  return (
+      <div key="1">
+        <button onClick={handleClick}>
+          Print preview
+        </button>
+        { done ? <PrintModal {...previewProps} /> : 'Loading...'}
+      </div>
+  )
+} 
+
+<div>
+  <Component key="1" />
+</div>
+
+```
+
+## PrintModal demo 2 - with OBS content
+
+The demo demonstrates how to use the PrintModal with markup content.
+
+```js
+
+import { useState, useEffect } from 'react'
 import markup from "../lib/drawdown"
-import printModalResources from "../lib/printModalResources"
 
 const range = (start, end) => Array.from(
   Array(end - start + 1).keys()
@@ -15,15 +56,15 @@ const zeroPad = (num, places) => String(num).padStart(places, '0')
 
 const asyncForEach = async (array, callback) => {
   for (let index = 0; index < array.length; index++) {
-    await callback(array[index], index, array);
+    await callback(array[index], index, array)
   }
 }
 
 const OBSfetchItem = async (url) => {
   const response = await fetch(url)
   if (!response.ok) {
-    const message = `An error has occured: ${response.status}`;
-    throw new Error(message);
+    const message = `An error has occured: ${response.status}`
+    throw new Error(message)
   }
   const retText = await response.text()
   return retText
@@ -59,41 +100,6 @@ function Component () {
 
   const [isOpen,setIsOpen] = useState(false)
 
-  const formatData = {
-    pageFormat: 'A4P',
-    nColumns: 1,
-  }
-
-  const substituteCss = (template, replaces) => {
-    let ret = template;
-    for (let inx = 0; inx < replaces.length; inx++) {
-      const [placeholder, replacement] = replaces[inx]
-      ret = ret.replace(placeholder, replacement);
-    }
-    return ret;
-  }
-
-  const pageCss = substituteCss(printModalResources.pageCssTemplate, [
-    ['%pageWidth%', printModalResources.pageSizes[formatData.pageFormat].width],
-    [
-      '%pageHeight%',
-      printModalResources.pageSizes[formatData.pageFormat].height,
-    ],
-    ['%nColumns%', formatData.nColumns],
-  ])
-
-  const onPrintClick = () => {
-    const newPage = window.open();
-    newPage.document.body.innerHTML = `<div id="paras">${markup(markupStr)}</div>`;
-    newPage.document.head.innerHTML = '<title>PDF Preview</title>';
-    const script = document.createElement('script');
-    script.src = `${window.location.protocol}//${window.location.host}/static/pagedjs_0_4_0.js`;
-    newPage.document.head.appendChild(script);
-    const style = document.createElement('style');
-    style.innerHTML = pageCss;
-    newPage.document.head.appendChild(style);
-  }
-
   useEffect(() => {
     async function doFetch() {
       setLoading(true)
@@ -106,19 +112,32 @@ function Component () {
     }
     if (!done && !loading) doFetch()
   })
+
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const previewProps = {
+    openPrintModal: isOpen && done,
+    handleClosePrintModal: () => {
+      console.log('closePrintModal')
+      setIsOpen(false)
+    },
+    onRenderContent: () => markup(markupStr),
+  }
   
   return (
     <div>
-      <button onClick={onPrintClick}>
+      <button onClick={handleClick}>
         Print preview
       </button>
-      {done ? <MdPreview mdText={markupStr} /> : 'Fetching OBS data'}
+      { done ? <PrintModal {...previewProps} /> : 'Fetching OBS data'}
     </div>
-  );
+  )
 }  
 
 <div>
-  <Component key="1" />
+  <Component key="2" />
 </div>
 
 ```

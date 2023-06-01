@@ -5,9 +5,9 @@ The demo demonstrates using the PkPrintModal in standalone mode
 which is included as a wrapper in the app).
 
 ```js
-import { useState, useEffect } from 'react';
-import usePkBookImport from "../hooks/usePkBookImport";
-import { usfmText } from '../data/tit.en.ult.usfm.js';
+import { useState, useEffect } from 'react'
+import usePkBookImport from "../hooks/usePkBookImport"
+import { usfmText } from '../data/tit.en.ult.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
 import Button from '@mui/material/Button'
 import PrintIcon from '@mui/icons-material/Print'
@@ -31,8 +31,11 @@ function Component () {
   }
 
   const previewProps = {
-    openPrintModal: isOpen,
-    handleClosePrintModal: () => console.log('closePrintModal'),
+    openPrintModal: isOpen && done,
+    handleClosePrintModal: () => {
+      console.log('closePrintModal')
+      setIsOpen(false)
+    },
     repoIdStr,
     langIdStr,
     bookId,

@@ -117,7 +117,10 @@ function markdown(src) {
   });
 
   // heading
-  replace(rx_heading, function(all, _, p1, p2) { return _ + element('h' + p1.length, unesc(highlight(p2))) });
+  replace(rx_heading, 
+    function(all, _, p1, p2) { 
+        return _ + element('h' + p1.length, unesc(highlight(p2))) + '<h1></h1>'
+    });
 
   // paragraph
   replace(rx_para, function(all, content) { return element('p', unesc(highlight(content))) });
