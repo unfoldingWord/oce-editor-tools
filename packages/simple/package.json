@@ -63,7 +63,7 @@
   },
   "scripts": {
     "start": "yarn && npx styleguidist server",
-    "build-dev": "npx styleguidist build",
+    "build-dev": "styleguidist build",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
     "test": "react-scripts test",
     "sections": "node styleguide.sections.js",
@@ -101,5 +101,8 @@
     "fs": false,
     "os": false,
     "path": false
+  },
+  "nx": {
+    "implicitDependencies": ["@oce-editor-tools/core"]
   }
 }

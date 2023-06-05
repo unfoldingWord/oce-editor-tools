@@ -4,20 +4,21 @@ import React, {
   useRef, 
   useCallback, 
 } from 'react'
-import PropTypes from 'prop-types';
-import { useDeepCompareCallback, useDeepCompareMemo } from "use-deep-compare";
-import isEqual from 'lodash.isequal';
-import { HtmlPerfEditor } from "@xelah/type-perf-html";
-import EpiteleteHtml from "epitelete-html";
+import PropTypes from 'prop-types'
+import { useDeepCompareCallback, useDeepCompareMemo } from "use-deep-compare"
+import isEqual from 'lodash.isequal'
+import { HtmlPerfEditor } from "@xelah/type-perf-html"
+import EpiteleteHtml from "epitelete-html"
+// import { insertVerseNumber, insertChapterNumber, insertFootnote } from '../helpers/cursorUtils'
 
-import useEditorState from "../hooks/useEditorState";
-import Section from "./Section";
-import SectionHeading from "./SectionHeading";
-import SectionBody from "./SectionBody";
-import RecursiveBlock from "./RecursiveBlock";
+import useEditorState from "../hooks/useEditorState"
+import Section from "./Section"
+import SectionHeading from "./SectionHeading"
+import SectionBody from "./SectionBody"
+import RecursiveBlock from "./RecursiveBlock"
 import Buttons from "./Buttons"
-import Box from '@mui/material/Box';
-import Popper from '@mui/material/Popper';
+import Box from '@mui/material/Box'
+import Popper from '@mui/material/Popper'
 
 import GraftPopup from "./GraftPopup"
 
@@ -25,42 +26,76 @@ export default function Editor( props) {
   const { 
     onSave, epiteleteHtml, 
     bookId, verbose, activeReference, 
-    onRenderToolbar, onReferenceSelected 
-  } = props;
-  const [graftSequenceId, setGraftSequenceId] = useState(null);
+    onRenderToolbar, onReferenceSelected,
+    setChapterNumber,
+    setVerseNumber,
+    scrollLock
+  } = props
 
-  // const [isSaving, startSaving] = useTransition();
-  const [htmlPerf, setHtmlPerf] = useState();
-  const [orgUnaligned, setOrgUnaligned] = useState();
-  const [brokenAlignedWords, setBrokenAlignedWords] = useState();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [blockIsEdited, setBlockIsEdited] = useState(false);
+  const [graftSequenceId, setGraftSequenceId] = useState(null)
+  // const [caretPosition, setCaretPosition] = useState()
+
+  // const [isSaving, startSaving] = useTransition()
+  const [htmlPerf, setHtmlPerf] = useState()
+  const [orgUnaligned, setOrgUnaligned] = useState()
+  const [brokenAlignedWords, setBrokenAlignedWords] = useState()
+  const [anchorEl, setAnchorEl] = useState(null)
+  const [blockIsEdited, setBlockIsEdited] = useState(false)
 
   const bookCode = bookId.toUpperCase()
 
+  // const [chapters, setChapters] = useState()
+
+  // const style = isSaving ? { cursor: 'progress' } : {}
+
+  let sequenceIds
+  sequenceIds = [htmlPerf?.mainSequenceId]
+  const sequenceId = htmlPerf?.mainSequenceId
+
+  const style = (/*isSaving  ||*/ !sequenceId) ? { cursor: 'progress' } : {}
+
+  const {
+    state: {
+      sectionable,
+      blockable,
+      editable,
+      preview,
+    },
+    actions: {
+      setSequenceIds,
+      addSequenceId,
+      setSequenceId,
+      setToggles,
+    },
+  } = useEditorState({sequenceIds: [htmlPerf?.mainSequenceId], ...props})
+
   const readOptions = { readPipeline: "stripAlignmentPipeline" }
-  const [sectionIndices, setSectionIndices] = useState({});
+  const [sectionIndices, setSectionIndices] = useState({})
   const [hasIntroduction, setHasIntroduction] = useState(false)
 
   const [epLastSaveUndoInx,setEpLastSaveUndoInx] = useState()
   const [epUndoInx,setEpUndoInx] = useState()
 
   // Avoid sync problems (due to updates in two directions) by setting the below flag 
-  // i.e. always update in a single direction; either read from Epitelete-html or write to it...
+  // i.e. always update in a single direction either read from Epitelete-html or write to it...
   const [epCachedDataLoaded,setEpCachedDataLoaded] = useState(false)
 
   const hasUnsavedData = ((epUndoInx !== null) && (epLastSaveUndoInx !== epUndoInx)) || false
 
+  const canUndo = blockIsEdited || epiteleteHtml?.canUndo(bookCode)
+  const canRedo = (!blockIsEdited) && epiteleteHtml?.canRedo(bookCode)
+  const canSave = (blockIsEdited || hasUnsavedData)
+
   const arrayToObject = (array, keyField) =>
     array.reduce((obj, item) => {
-      let iCopy = Object.assign({}, item);
+      let iCopy = Object.assign({}, item)
       delete iCopy[keyField]
-      obj[item[keyField]] = iCopy;
+      obj[item[keyField]] = iCopy
       return obj
     }, {})
 
   const getFlatWordObj = useCallback((obj) => {
-    const resArray = [];
+    const resArray = []
     if (obj) {
       Object.entries(obj).forEach(([chNum, chObj]) => {
         Object.entries(chObj).forEach(([vNum, verseArr]) => {
@@ -105,7 +140,7 @@ export default function Editor( props) {
     const _alignmentData = epiteleteHtml.getPipelineData(bookCode)
     setOrgUnaligned(getFlatWordObj(_alignmentData?.unalignedWords))
     setOrgUndoInx()
-    setHtmlPerf(newHtmlPerf);
+    setHtmlPerf(newHtmlPerf)
   }, [epiteleteHtml, bookCode, getFlatWordObj, setOrgUndoInx])
 
   useEffect(() => {
@@ -115,13 +150,13 @@ export default function Editor( props) {
       epiteleteHtml.readHtml( 
         bookCode, 
         { readPipeline: "stripAlignmentPipeline" }
-      ).then((_htmlPerf) => setOrgHtml(_htmlPerf));
+      ).then((_htmlPerf) => setOrgHtml(_htmlPerf))
     }
-  }, [bookCode, epiteleteHtml, setOrgHtml]);
+  }, [bookCode, epiteleteHtml, setOrgHtml])
   
   const handleUnalignedClick = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
-  };
+    setAnchorEl(anchorEl ? null : event.currentTarget)
+  }
 
   const setHtmlAndUpdateUnaligned = (newHtmlPerf) => {
     const _alignmentData = epiteleteHtml.getPipelineData(bookCode)
@@ -133,8 +168,8 @@ export default function Editor( props) {
     setHtmlPerf(newHtmlPerf)
   }
 
-  const popperOpen = Boolean(anchorEl);
-  const id = popperOpen ? 'simple-popper' : undefined;
+  const popperOpen = Boolean(anchorEl)
+  const id = popperOpen ? 'simple-popper' : undefined
 
   const incUndoInx = () => setEpUndoInx((prev) => (prev+1))
 
@@ -151,22 +186,22 @@ export default function Editor( props) {
 
   const onHtmlPerf = useDeepCompareCallback(( _htmlPerf, { sequenceId }) => {
     setBlockIsEdited(false)
-    const perfChanged = !isEqual(htmlPerf, _htmlPerf);
-    if (perfChanged) setHtmlPerf(_htmlPerf);
+    const perfChanged = !isEqual(htmlPerf, _htmlPerf)
+    if (perfChanged) setHtmlPerf(_htmlPerf)
 
     if (verbose) console.log('onhtmlperf', perfChanged)
     const saveNow = async () => {
       const writeOptions = { writePipeline: "mergeAlignmentPipeline", readPipeline: "stripAlignmentPipeline" }
-      const newHtmlPerf = await epiteleteHtml.writeHtml( bookCode, sequenceId, _htmlPerf, writeOptions);
-      if (verbose) console.log({ info: "Saved sequenceId", bookCode, sequenceId });
+      const newHtmlPerf = await epiteleteHtml.writeHtml( bookCode, sequenceId, _htmlPerf, writeOptions)
+      if (verbose) console.log({ info: "Saved sequenceId", bookCode, sequenceId })
 
-      const perfChanged = !isEqual(htmlPerf, newHtmlPerf);
+      const perfChanged = !isEqual(htmlPerf, newHtmlPerf)
       if (perfChanged) {
         setHtmlAndUpdateUnaligned(newHtmlPerf)
       }
-    };
+    }
     saveNow()
-  }, [htmlPerf, bookCode, orgUnaligned, setBrokenAlignedWords, setHtmlPerf]);
+  }, [htmlPerf, bookCode, orgUnaligned, setBrokenAlignedWords, setHtmlPerf])
 
   const handleSave = async () => {
     setEpLastSaveUndoInx(epUndoInx)
@@ -178,41 +213,16 @@ export default function Editor( props) {
   const undo = async () => {
     decUndoInx()
     setBlockIsEdited(false)
-    const newPerfHtml = await epiteleteHtml.undoHtml(bookCode, readOptions);
-    setHtmlAndUpdateUnaligned(newPerfHtml);
-  };
+    const newPerfHtml = await epiteleteHtml.undoHtml(bookCode, readOptions)
+    setHtmlAndUpdateUnaligned(newPerfHtml)
+  }
 
   const redo = async () => {
     incUndoInx()
     setBlockIsEdited(false)
-    const newPerfHtml = await epiteleteHtml.redoHtml(bookCode, readOptions);
-    setHtmlAndUpdateUnaligned(newPerfHtml);
-  };
-
-  const canUndo = blockIsEdited || epiteleteHtml?.canUndo(bookCode);
-  const canRedo = (!blockIsEdited) && epiteleteHtml?.canRedo(bookCode);
-  const canSave = (blockIsEdited || hasUnsavedData)
-
-  const {
-    state: {
-      sectionable,
-      blockable,
-      editable,
-      preview,
-    },
-    actions: {
-      setSequenceIds,
-      addSequenceId,
-      setSequenceId,
-      setToggles,
-    },
-  } = useEditorState({sequenceIds: [htmlPerf?.mainSequenceId], ...props});
-
-  let sequenceIds
-  sequenceIds = [htmlPerf?.mainSequenceId]
-  const sequenceId = htmlPerf?.mainSequenceId;
-
-  const style = (/*isSaving  ||*/ !sequenceId) ? { cursor: 'progress' } : {};
+    const newPerfHtml = await epiteleteHtml.redoHtml(bookCode, readOptions)
+    setHtmlAndUpdateUnaligned(newPerfHtml)
+  }
 
   useEffect(() =>{
     if( htmlPerf && ! sequenceIds ) {
@@ -224,16 +234,16 @@ export default function Editor( props) {
 
   const sectionIndex = useDeepCompareMemo(() => (
     sectionIndices[sequenceId] || 0
-  ), [sectionIndices, sequenceId]);
+  ), [sectionIndices, sequenceId])
 
   // eslint-disable-next-line no-unused-vars
   const onSectionClick = useDeepCompareCallback(({ content: _content, index }) => {
-    let _sectionIndices = { ...sectionIndices };
-    _sectionIndices[sequenceId] = index;
-    setSectionIndices(_sectionIndices);
-  }, [setSectionIndices, sectionIndices]);
+    let _sectionIndices = { ...sectionIndices }
+    _sectionIndices[sequenceId] = index
+    setSectionIndices(_sectionIndices)
+  }, [setSectionIndices, sectionIndices])
 
-  const editorRef = useRef(null);
+  const editorRef = useRef(null)
 
   useEffect( () => {
     const firstChapterHeading = editorRef.current.querySelector(`.MuiAccordion-root[index="${sectionIndices[sequenceId]}"] .sectionHeading`)
@@ -241,7 +251,24 @@ export default function Editor( props) {
       const hasIntro = Number(firstChapterHeading.dataset.chapterNumber) === sectionIndices[sequenceId]
       setHasIntroduction( hasIntro )
     }
-  }, [sequenceId, sectionIndices]);
+  }, [sequenceId, sectionIndices])
+
+  const handleReferenceSelected = ({ bookId, chapter, verse }) => {
+    chapter && setChapterNumber && setChapterNumber(chapter)
+    verse && setVerseNumber && setVerseNumber(verse)
+    onReferenceSelected && onReferenceSelected({ bookId, chapter, verse })
+  }
+
+  const scrollReference = (chapterNumber) => {
+    const refEditors = document.getElementsByClassName('ref-editor')
+    refEditors.length > 0 && Array.prototype.filter.call(refEditors, (refEditor) => {
+      const editorInView = refEditor.querySelector(`#ch-${chapterNumber}`)
+      if (editorInView) {
+        editorInView.scrollIntoView()
+        editorInView.classList.add('scroll-mt-10')
+      }
+    })
+  }
 
   useEffect( () => {
     if ( htmlPerf && sequenceId && editorRef.current && activeReference ) {
@@ -265,21 +292,43 @@ export default function Editor( props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeReference, htmlPerf, sequenceId, editorRef, hasIntroduction])
 
-  const handlers = {
-    onBlockClick: ({ element }) => {
-      const _sequenceId = element.dataset.target;
-      // if (_sequenceId && !isInline) addSequenceId(_sequenceId);
-      if (_sequenceId) setGraftSequenceId(_sequenceId);
-    },
-    onSectionClick,
-  };
+  const onIntersection = (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        console.log({ entry })
+        setChapterNumber && setChapterNumber(entry.target.dataset.attsNumber)
+        (!scrollLock) && scrollReference(entry.target.dataset.attsNumber) 
+      }
+    }
+  }
 
   const options = {
-    sectionable,
-    blockable,
-    editable,
-    preview
-  };
+    root: document.querySelector('editor'),
+    threshold: 0,
+    rootMargin: '0% 0% -60% 0%',
+  }
+  const observer = new IntersectionObserver(onIntersection, options)
+
+  const watchNodes = document.querySelectorAll('.editor .chapter')
+  const watchArr = Array.from(watchNodes)
+  const reverseArray = watchArr.length > 0 ? watchArr.slice().reverse() : []
+  reverseArray.forEach((chapter) => { observer.observe(chapter) })
+
+  const handlers = {
+    onBlockClick: ({ content: _content, element }) => {
+      const _sequenceId = element.dataset.target
+      if (_sequenceId) {
+        setGraftSequenceId(_sequenceId)
+        // setOpenSideBar(!openSideBar)
+        // setSideBarTab('footnotes')
+      } else {
+        // setSideBarTab('')
+        // setGraftSequenceId(null)
+      }
+    },
+    onSectionClick,
+  }
+
   const htmlEditorProps = {
     htmlPerf,
     onInput,
@@ -290,14 +339,27 @@ export default function Editor( props) {
       section: Section,
       sectionHeading: SectionHeading,
       sectionBody: SectionBody,
-      block: (__props) => RecursiveBlock({ htmlPerf, onHtmlPerf, sequenceIds, addSequenceId, onReferenceSelected, ...__props }),
+      block: (__props) => RecursiveBlock({ 
+        htmlPerf, 
+        onHtmlPerf, 
+        sequenceIds, 
+        addSequenceId, 
+        onReferenceSelected: handleReferenceSelected,
+        ...__props 
+      }),
     },
-    options,
+    options: {
+      sectionable,
+      blockable,
+      editable,
+      preview
+    },
     handlers,
     decorators: {},
     sectionIndex,
     verbose,
-  };
+  }
+
 
   const graftProps = {
     ...htmlEditorProps,
@@ -305,7 +367,7 @@ export default function Editor( props) {
     sequenceIds: [graftSequenceId],
     graftSequenceId,
     setGraftSequenceId,
-  };
+  }
 
   const buttonsProps = {
     sectionable,
@@ -338,8 +400,8 @@ export default function Editor( props) {
       {sequenceId && htmlPerf ? <HtmlPerfEditor {...htmlEditorProps} /> : <div/>}
       <GraftPopup {...graftProps} />
     </div>
-  );
-};
+  )
+}
 
 Editor.propTypes = {
   /** Method to call when save button is pressed */
@@ -366,7 +428,7 @@ Editor.propTypes = {
   onRenderToolbar: PropTypes.func,
   /** Callback triggered when a verse is clicked on */
   onReferenceSelected: PropTypes.func,
-};
+}
 
 Editor.defaultProps = {
   verbose: false

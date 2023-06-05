@@ -1,6 +1,6 @@
 {
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.11",
+  "version": "0.1.12-alpha",
   "name": "@oce-editor-tools/core",
   "homepage": "https://html-editor.netlify.app/",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "@emotion/styled": "^11.10.5",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@mui/system": "^5.11.9",
+    "@xelah/core": "^1.0.3",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "0.2.18",
     "pagedjs": "^0.4.1"
