@@ -26,6 +26,9 @@ export default function PkCacheProvider({ children }) {
     return unique(`${repoIdStr}${langIdStr}eOIruhAO!#Sdif`)
   }
 
+  const addPkCache = (key, str) => setPkCache((prev) => ({ ...prev, [key]: str }))
+  const addEpCache = (key, obj) => setEpCache((prev) => ({ ...prev, [key]: obj  }))
+
   // create the value for the context provider
   const context = {
     state: {
@@ -36,6 +39,8 @@ export default function PkCacheProvider({ children }) {
     actions: {
       setPkCache,
       setEpCache,
+      addPkCache,
+      addEpCache,
       getRepoUID
     },
   }

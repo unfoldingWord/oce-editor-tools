@@ -6,7 +6,8 @@ The demo demonstrates using the PkEditor (with all Proskomma / Epitetele handlin
 ```js
 import { useState, useEffect } from 'react';
 import usePkBookImport from "../hooks/usePkBookImport";
-import { usfmText } from '../data/tit.en.ult.usfm.js';
+import { usfmText } from '../data/tit.en.ult.usfm.js'
+import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
 function Component () {
@@ -36,8 +37,36 @@ function Component () {
   );
 };  
 
+function Component2 () {
+  const repoIdStr = 'lsg'
+  const langIdStr = 'fr'
+  const bookId = 'TIT'
+
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmTextFra ) 
+
+  const onSave = (bookCode,usfmText) => {
+    console.log("save button clicked")
+    console.log(bookCode)
+    console.log(usfmText)
+  }
+
+  const editorProps = {
+    onSave,
+    repoIdStr,
+    langIdStr,
+    bookId,
+  }
+  
+  return (
+      <div key="1">
+        { done ? <PkEditor {...editorProps} /> : 'Loading...'}
+      </div>
+  );
+}
+
 <PkCacheProvider>
   <Component key="1" />
+  <Component2 key="2" />
 </PkCacheProvider>
 
 ```
