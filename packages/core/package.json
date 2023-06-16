@@ -38,6 +38,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@babel/plugin-proposal-optional-chaining": "^7.12.7",
     "@babel/plugin-syntax-logical-assignment-operators": "^7.10.4",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.12.10",
     "@babel/runtime": "7.13.8",
@@ -56,6 +57,7 @@
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.4.0",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.1.5",
     "eslint-plugin-prettier": "^4.0.0",
@@ -72,7 +74,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "yarn && npx styleguidist server",
+    "start": "npx styleguidist server",
     "build:styleguide": "npx styleguidist build",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
     "test": "react-scripts test",
