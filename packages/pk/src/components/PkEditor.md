@@ -42,7 +42,17 @@ function Component2 () {
   const langIdStr = 'fr'
   const bookId = 'TIT'
 
+  const [chapter,setChapter] = useState(1)
+  const [verse,setVerse] = useState(1)
+
   const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmTextFra ) 
+
+  const onReferenceChange = (p1,ch,v) => {
+    console.log(`handleRefChangeFromEditor`)
+    console.log(p1)
+    setChapter(ch.toString())
+    setVerse(v.toString())
+  }
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -55,8 +65,14 @@ function Component2 () {
     repoIdStr,
     langIdStr,
     bookId,
+    activeReference: {
+      bookId: bookId.toLowerCase(),
+      chapter,
+      verse
+    },
+    onReferenceChange
   }
-  
+ 
   return (
       <div key="1">
         { done ? <PkEditor {...editorProps} /> : 'Loading...'}

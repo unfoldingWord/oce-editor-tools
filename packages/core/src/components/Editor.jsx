@@ -32,6 +32,8 @@ export default function Editor( props) {
     scrollLock
   } = props
 
+  const editorRef = useRef(null)
+
   const [graftSequenceId, setGraftSequenceId] = useState(null)
   // const [caretPosition, setCaretPosition] = useState()
 
@@ -41,6 +43,7 @@ export default function Editor( props) {
   const [brokenAlignedWords, setBrokenAlignedWords] = useState()
   const [anchorEl, setAnchorEl] = useState(null)
   const [blockIsEdited, setBlockIsEdited] = useState(false)
+  const [isFocused, setIsFocused] = useState(false);
 
   const bookCode = bookId.toUpperCase()
 
@@ -119,6 +122,10 @@ export default function Editor( props) {
       setEpCachedDataLoaded(true)
     }
   }, [bookCode, epiteleteHtml?.history, epCachedDataLoaded])
+
+  useEffect(() => {
+    console.log('isFocused: ', isFocused);
+  }, [isFocused])
 
   useEffect(() => {
     // Initial update - called on initial mount
@@ -243,8 +250,6 @@ export default function Editor( props) {
     setSectionIndices(_sectionIndices)
   }, [setSectionIndices, sectionIndices])
 
-  const editorRef = useRef(null)
-
   useEffect( () => {
     const firstChapterHeading = editorRef.current.querySelector(`.MuiAccordion-root[index="${sectionIndices[sequenceId]}"] .sectionHeading`)
     if ( firstChapterHeading ) {
@@ -264,14 +269,14 @@ export default function Editor( props) {
     refEditors.length > 0 && Array.prototype.filter.call(refEditors, (refEditor) => {
       const editorInView = refEditor.querySelector(`#ch-${chapterNumber}`)
       if (editorInView) {
-        editorInView.scrollIntoView()
-        editorInView.classList.add('scroll-mt-10')
+        // editorInView.scrollIntoView()
+        // editorInView.classList.add('scroll-mt-10')
       }
     })
   }
 
   useEffect( () => {
-    if ( htmlPerf && sequenceId && editorRef.current && activeReference ) {
+    if ( htmlPerf && !isFocused && sequenceId && editorRef.current && activeReference ) {
       const { chapter, verse } = activeReference
 
       let _sectionIndices = { ...sectionIndices }
@@ -387,7 +392,14 @@ export default function Editor( props) {
     showToggles: false
   }
   return (
-    <div key="1" className="Editor" style={style} ref={editorRef}>
+    <div 
+      key="1" 
+      className="Editor" 
+      style={style} 
+      ref={editorRef}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+    >
       <Buttons {...buttonsProps} />
       <Popper id={id} open={popperOpen} anchorEl={anchorEl}>
         <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
