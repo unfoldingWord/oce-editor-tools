@@ -11,6 +11,7 @@ import {
   Save,
   AssignmentTurnedIn,
   AssignmentLate,
+  Search,
 } from '@mui/icons-material'
 import PropTypes from 'prop-types';
 
@@ -27,6 +28,7 @@ export default function Buttons(props) {
     allAligned, 
     onSave, 
     canSave,
+    onSearch, 
     showToggles,
     onRenderToolbar
   } = props;
@@ -156,6 +158,15 @@ export default function Buttons(props) {
         >
           <Save />
         </Button>
+        <Button
+          data-test-id="ButtonSearch"
+          value="search"
+          aria-label="search"
+          onClick={onSearch}
+          title="Search"
+        >
+          <Search />
+        </Button>
       </Extensible>
     </ToggleButtonGroup>
   );
@@ -172,5 +183,6 @@ Buttons.propTypes = {
   onShowUnaligned: PropTypes.func,
   allAligned: PropTypes.bool,
   canSave: PropTypes.bool,
+  onSearch: PropTypes.func,
   showToggles: PropTypes.bool,
 };
