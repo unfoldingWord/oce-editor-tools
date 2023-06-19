@@ -20,6 +20,7 @@ import Box from '@mui/material/Box';
 import Popper from '@mui/material/Popper';
 
 import GraftPopup from "./GraftPopup"
+import FindReplace from './FindReplace';
 
 export default function Editor( props) {
   const { 
@@ -44,6 +45,7 @@ export default function Editor( props) {
 
   const [epLastSaveUndoInx,setEpLastSaveUndoInx] = useState()
   const [epUndoInx,setEpUndoInx] = useState()
+  const [openSearch, setOpenSearch] = useState(false);
 
   // Avoid sync problems (due to updates in two directions) by setting the below flag 
   // i.e. always update in a single direction; either read from Epitelete-html or write to it...
@@ -307,7 +309,17 @@ export default function Editor( props) {
     setGraftSequenceId,
   };
 
+  const updateHtml = async () => {
+    const newPerfHtml = await epiteleteHtml.readHtml(bookCode, readOptions);
+    setHtmlAndUpdateUnaligned(newPerfHtml);
+  };
+
+  const handleSearch = () => {
+    setOpenSearch((openSearch) => !openSearch);
+  };
+
   const buttonsProps = {
+    onSearch: handleSearch,
     sectionable,
     blockable,
     editable,
@@ -327,6 +339,13 @@ export default function Editor( props) {
   return (
     <div key="1" className="Editor" style={style} ref={editorRef}>
       <Buttons {...buttonsProps} />
+      {openSearch ? (
+        <FindReplace
+          onReplace={updateHtml}
+          epitelete={epiteleteHtml}
+          bookCode={bookCode}
+        />
+      ) : null}
       <Popper id={id} open={popperOpen} anchorEl={anchorEl}>
         <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
           List of words with broken alignment:
