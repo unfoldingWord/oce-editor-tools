@@ -9,6 +9,10 @@ import usePkBookImport from "../hooks/usePkBookImport";
 import { usfmText } from '../data/tit.en.ult.usfm.js'
 import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
 
 function Component () {
   const repoIdStr = 'unfoldingWord_ult'
@@ -81,8 +85,28 @@ function Component2 () {
 }
 
 <PkCacheProvider>
-  <Component key="1" />
-  <Component2 key="2" />
+  <Container sx={{ py: 4 }} >
+    <Grid container spacing={2}>
+      <Grid item key="Test" xs={12} sm={6}>
+        <Card
+          sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        >
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Component key="1" />
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item key="Test2" xs={12} sm={6}>
+        <Card
+          sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        >
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Component2 key="2" />
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
+  </Container>
 </PkCacheProvider>
 
 ```

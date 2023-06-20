@@ -64,7 +64,7 @@ function Component () {
 
 ## Editor demo 2
 
-The demo demonstrates using Epitelete in standalone mode (no Proskomma).
+The demo demonstrates using Epitelete in standalone mode (no Proskomma) including some added toolbar buttons (extended through "onRenderToolbar")
 Here is the function for sideloading:
 
 ```txt
