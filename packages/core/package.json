@@ -1,6 +1,6 @@
 {
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.12-alpha.8",
+  "version": "0.1.12-alpha.9",
   "name": "@oce-editor-tools/core",
   "homepage": "https://oce-editor-tools-core.netlify.app/",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "translation-helps-rcl": "3.3.4-rc.2"
   },
   "dependencies": {
-    "@findr/mui": "^1.0.0-beta.16",
+    "@findr/mui": "^1.0.0-beta.17",
     "@findr/react": "^1.0.0-beta.3",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@xelah/type-perf-html": "^1.0.2",

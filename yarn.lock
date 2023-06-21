@@ -1548,10 +1548,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.42.0.tgz#484a1d638de2911e6f5a30c12f49c7e4a3270fb6"
   integrity sha512-6SWlXpWU5AvId8Ac7zjzmIOqMOba/JWY8XZ4A7q7Gn1Vlfg/SFFIlrtHXt9nPn4op9ZPAkl91Jao+QQv3r/ukw==
 
-"@findr/mui@^1.0.0-beta.16":
-  version "1.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@findr/mui/-/mui-1.0.0-beta.16.tgz#8d5eef0b9f25dacea956671e37e84bd72cc4473c"
-  integrity sha512-5glPW1UBSI+qH8EDf36DrwU2JKe2fPKbyQrHF1xunf2WuA/xftP6Bq1ljIXUYAHpXK5pRh3579PGiOzlH+7hoQ==
+"@findr/mui@^1.0.0-beta.17":
+  version "1.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@findr/mui/-/mui-1.0.0-beta.17.tgz#f2f94d7f344dc69db1b266cb159e0de0a2cf98bb"
+  integrity sha512-Mp1AW77usn3UgzwJndW/nnq3ImpzVlGx0J3jHXbQ0bS/plggwBnNwM8v2RymaCJQY9MJJ1EAHw0djNGszPBC5g==
   dependencies:
     tslib "^2.3.0"
 
@@ -2517,19 +2517,6 @@
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@oce-editor-tools/core/-/core-0.1.10.tgz#d3b05e17c4d0db9e4c6142a7ba333cfcf80922e5"
   integrity sha512-pQUOf6sv67lf9Zu/u+iAUM/dPZqYj+SENVgdD7DhzhR2ge13AZr9HSE4kYAcW0u8VjHXbwqpxhhmFhvpwEhK2Q==
-  dependencies:
-    "@emotion/react" "^11.10.5"
-    "@emotion/styled" "^11.10.5"
-    "@gwdevs/extensible-rcl" "^1.0.1"
-    "@mui/system" "^5.11.9"
-    "@xelah/type-perf-html" "^1.0.2"
-    epitelete-html "0.2.18"
-    pagedjs "^0.4.1"
-
-"@oce-editor-tools/core@0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@oce-editor-tools/core/-/core-0.1.11.tgz#130fcb2bff506037a6caffb162775ff48eb08925"
-  integrity sha512-eXUqD3zGXeh9FVmpmPH3UXLPwPljnm/v/CSrwfblBBO36cZsZpJp2yJY6pqeOyWhaYPK+5ur/IlDoBxyrO5yzQ==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"
