@@ -1548,10 +1548,12 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.42.0.tgz#484a1d638de2911e6f5a30c12f49c7e4a3270fb6"
   integrity sha512-6SWlXpWU5AvId8Ac7zjzmIOqMOba/JWY8XZ4A7q7Gn1Vlfg/SFFIlrtHXt9nPn4op9ZPAkl91Jao+QQv3r/ukw==
 
-"@findr/mui@^1.0.0-beta.4":
-  version "1.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@findr/mui/-/mui-1.0.0-beta.4.tgz#29bace1e8b2742fa10966d0dad0ff889525a73de"
-  integrity sha512-1sWxYoJmutxeifjzHBSVpypKFebE1N8BcMNGKzvLI24+2IUh0OgI3Jedg6Si95R/BNEfPSCKwlvnTzxNM8RrXw==
+"@findr/mui@^1.0.0-beta.16":
+  version "1.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@findr/mui/-/mui-1.0.0-beta.16.tgz#8d5eef0b9f25dacea956671e37e84bd72cc4473c"
+  integrity sha512-5glPW1UBSI+qH8EDf36DrwU2JKe2fPKbyQrHF1xunf2WuA/xftP6Bq1ljIXUYAHpXK5pRh3579PGiOzlH+7hoQ==
+  dependencies:
+    tslib "^2.3.0"
 
 "@findr/perf@^1.0.3-beta.17":
   version "1.0.3-beta.17"
@@ -2115,7 +2117,7 @@
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.13.4.tgz#7e4b491d8081b6d45ae51556d82cb16b31315a19"
   integrity sha512-yFrMWcrlI0TqRN5jpb6Ma9iI7sGTHpytdzzL33oskFHNQ8UgrtPas33Y1K7sWAMwCrr1qbWDrOHLAQG4tAzuSw==
 
-"@mui/icons-material@^5.10.9":
+"@mui/icons-material@^5.10.9", "@mui/icons-material@^5.11.7":
   version "5.11.16"
   resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.11.16.tgz#417fa773c56672e39d6ccfed9ac55591985f0d38"
   integrity sha512-oKkx9z9Kwg40NtcIajF9uOXhxiyTZrrm9nmIJ4UjkU2IdHpd4QVLbCc/5hZN/y0C6qzi2Zlxyr9TGddQx2vx2A==
@@ -2136,7 +2138,7 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
-"@mui/material@^5.8.7":
+"@mui/material@^5.11.0", "@mui/material@^5.8.7":
   version "5.13.5"
   resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.13.5.tgz#c14f14824f3a37ae0c5ebddbc0034956bc6fec30"
   integrity sha512-eMay+Ue1OYXOFMQA5Aau7qbAa/kWHLAyi0McsbPTWssCbGehqkF6CIdPsfVGw6tlO+xPee1hUitphHJNL3xpOQ==
