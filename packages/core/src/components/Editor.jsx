@@ -391,7 +391,7 @@ export default function Editor( props) {
     blockable,
     editable,
     preview,
-    allAligned: (!brokenAlignedWords || brokenAlignedWords.length===0),
+    allAligned: !brokenAlignedWords || brokenAlignedWords.length === 0,
     onShowUnaligned: handleUnalignedClick,
     onRenderToolbar,
     undo,
@@ -401,8 +401,16 @@ export default function Editor( props) {
     setToggles,
     canSave,
     onSave: handleSave,
-    showToggles: false
-  }
+    showToggles: false,
+    content: (
+      <FindReplace
+        onReplace={updateHtml}
+        epitelete={epiteleteHtml}
+        bookCode={bookCode}
+        open={openSearch}
+      />
+    ),
+  };
   return (
     <div 
       key="1" 
@@ -413,13 +421,6 @@ export default function Editor( props) {
       onBlur={() => setIsFocused(false)}
     >
       <Buttons {...buttonsProps} />
-      {openSearch ? (
-        <FindReplace
-          onReplace={updateHtml}
-          epitelete={epiteleteHtml}
-          bookCode={bookCode}
-        />
-      ) : null}
       <Popper id={id} open={popperOpen} anchorEl={anchorEl}>
         <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
           List of words with broken alignment:
