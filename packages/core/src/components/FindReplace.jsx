@@ -1,8 +1,9 @@
-import { FnrMUI } from '@findr/mui';
+import * as React from 'react';
+import { FindrMUI, Mark } from '@findr/mui';
 import { useFindr } from '@findr/react';
-import { Paper } from '@mui/material';
+import { Collapse, Paper } from '@mui/material';
 
-export function FindReplace({ epitelete, bookCode, onReplace: _onReplace }) {
+export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }) {
   const sourceKey = `${epitelete.docSetId}/${bookCode}`;
 
   async function findOrReplace(params) {
@@ -98,12 +99,31 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace }) {
     target,
     replacement,
     groups,
+    onRenderResult: ({ nodes, data }) => {
+      const { bookCode, chapter, verses } = data.metadata;
+      return (
+        <>
+          <Mark
+            color={'rgb(239 239 239)'}
+            style={{ fontSize: '0.7rem', marginRight: '0.5rem' }}
+          >
+            {`${bookCode.toLowerCase()} ${chapter}:${verses}`}
+          </Mark>
+          {nodes}
+        </>
+      );
+    }
   };
 
   return (
-    <Paper elevation={1} sx={{mb:'1em',pb:'0.5em'}}>
-      <FnrMUI sx={{ padding: '0.5em', margin: '0em 0.5em' }} {...fnrProps} />
-    </Paper>
+    <Collapse in={open}>
+      <Paper elevation={1} sx={{ mb: '1em', pb: '0.5em', position: 'sticky' }}>
+        <FindrMUI
+          sx={{ padding: '0.5em', margin: '0em 0.5em' }}
+          {...fnrProps}
+        />
+      </Paper>
+    </Collapse>
   );
 }
 
