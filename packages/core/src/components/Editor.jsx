@@ -21,6 +21,7 @@ import Box from '@mui/material/Box'
 import Popper from '@mui/material/Popper'
 
 import GraftPopup from "./GraftPopup"
+import FindReplace from './FindReplace';
 
 export default function Editor( props) {
   const { 
@@ -78,6 +79,7 @@ export default function Editor( props) {
 
   const [epLastSaveUndoInx,setEpLastSaveUndoInx] = useState()
   const [epUndoInx,setEpUndoInx] = useState()
+  const [openSearch, setOpenSearch] = useState(false);
 
   // Avoid sync problems (due to updates in two directions) by setting the below flag 
   // i.e. always update in a single direction either read from Epitelete-html or write to it...
@@ -374,12 +376,22 @@ export default function Editor( props) {
     setGraftSequenceId,
   }
 
+  const updateHtml = async () => {
+    const newPerfHtml = await epiteleteHtml.readHtml(bookCode, readOptions);
+    setHtmlAndUpdateUnaligned(newPerfHtml);
+  };
+
+  const handleSearch = () => {
+    setOpenSearch((openSearch) => !openSearch);
+  };
+
   const buttonsProps = {
+    onSearch: handleSearch,
     sectionable,
     blockable,
     editable,
     preview,
-    allAligned: (!brokenAlignedWords || brokenAlignedWords.length===0),
+    allAligned: !brokenAlignedWords || brokenAlignedWords.length === 0,
     onShowUnaligned: handleUnalignedClick,
     onRenderToolbar,
     undo,
@@ -389,8 +401,16 @@ export default function Editor( props) {
     setToggles,
     canSave,
     onSave: handleSave,
-    showToggles: false
-  }
+    showToggles: false,
+    content: (
+      <FindReplace
+        onReplace={updateHtml}
+        epitelete={epiteleteHtml}
+        bookCode={bookCode}
+        open={openSearch}
+      />
+    ),
+  };
   return (
     <div 
       key="1" 

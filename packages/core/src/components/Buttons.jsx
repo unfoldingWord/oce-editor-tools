@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import { Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Box, Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { Extensible } from "@gwdevs/extensible-rcl";
 import {
   ViewStream,
@@ -11,6 +11,7 @@ import {
   Save,
   AssignmentTurnedIn,
   AssignmentLate,
+  Search,
 } from '@mui/icons-material'
 import PropTypes from 'prop-types';
 
@@ -27,8 +28,10 @@ export default function Buttons(props) {
     allAligned, 
     onSave, 
     canSave,
+    onSearch, 
     showToggles,
-    onRenderToolbar
+    onRenderToolbar,
+    content,
   } = props;
   const togglesAll = useMemo(
     () => ["sectionable", "blockable", "editable", "preview"],
@@ -69,95 +72,114 @@ export default function Buttons(props) {
   };
 
   return (
-    <ToggleButtonGroup
-      data-test-id="ToggleButtonGroup"
-      value={toggles}
-      onChange={handleToggles}
-      aria-label="text formatting"
-      className="buttons"
+    <Box
       sx={{
-        mb:2,
+        mb: 2,
         position: 'sticky',
         top: 0,
         zIndex: 'appBar',
-        background: theme.palette.background.default
       }}
     >
-      { showToggles && (<ToggleButton
-        data-test-id="ToggleButtonSectionable"
-        value="sectionable"
-        aria-label="sectionable"
-        title="Sectionable"
+      <ToggleButtonGroup
+        data-test-id="ToggleButtonGroup"
+        value={toggles}
+        onChange={handleToggles}
+        aria-label="text formatting"
+        className="buttons"
+        sx={{ background: theme.palette.background.default }}
       >
-        <ViewStream />
-      </ToggleButton>)}
-      { showToggles && (<ToggleButton
-        data-test-id="ToggleButtonBlockable"
-        value="blockable"
-        aria-label="blockable"
-        title="Blockable"
-      >
-        <Subject />
-      </ToggleButton>)}
-      { showToggles && (<ToggleButton
-        data-test-id="ToggleButtonPreview"
-        value="preview"
-        aria-label="preview"
-        title="Preview"
-      >
-        <Preview />
-      </ToggleButton>)}
-      <ToggleButton
-        data-test-id="ToggleButtonEditable"
-        value="editable"
-        aria-label="editable"
-        title="Editable"
-      >
-        <Edit />
-      </ToggleButton>
-      <Extensible onRenderItems={onRenderToolbar}>
-        <Button
-          data-test-id="ButtonAssignmentData"
-          value="alignment"
-          aria-label="alignment"
-          onClick={handleAssignmentDataClick}
-          disabled={allAligned}
-          title="Alignment"
+        {showToggles && (
+          <ToggleButton
+            data-test-id="ToggleButtonSectionable"
+            value="sectionable"
+            aria-label="sectionable"
+            title="Sectionable"
+          >
+            <ViewStream />
+          </ToggleButton>
+        )}
+        {showToggles && (
+          <ToggleButton
+            data-test-id="ToggleButtonBlockable"
+            value="blockable"
+            aria-label="blockable"
+            title="Blockable"
+          >
+            <Subject />
+          </ToggleButton>
+        )}
+        {showToggles && (
+          <ToggleButton
+            data-test-id="ToggleButtonPreview"
+            value="preview"
+            aria-label="preview"
+            title="Preview"
+          >
+            <Preview />
+          </ToggleButton>
+        )}
+        <ToggleButton
+          data-test-id="ToggleButtonEditable"
+          value="editable"
+          aria-label="editable"
+          title="Editable"
         >
-          {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
-        </Button>
-        <Button
-          data-test-id="Undo"
-          value="undo"
-          aria-label="undo"
-          onClick={handleUndo}
-          disabled={!canUndo}
-          title='Undo'
-        >
-          <Undo />
-        </Button>
-        <Button
-          data-test-id="Redo"
-          value="redo"
-          aria-label="redo"
-          onClick={handleRedo}
-          disabled={!canRedo}
-          title="Redo"
-        >
-          <Redo />
-        </Button>
-        <Button
-          data-test-id="Save"
-          value="save"
-          aria-label="save"
-          onClick={onSave}
-          disabled={!canSave}
-          title="Save"
-        >
-          <Save />
-        </Button>
-      </Extensible>
-    </ToggleButtonGroup>
+          <Edit />
+        </ToggleButton>
+        <Extensible onRenderItems={onRenderToolbar}>
+          <Button
+            data-test-id="ButtonAssignmentData"
+            value="alignment"
+            aria-label="alignment"
+            onClick={handleAssignmentDataClick}
+            disabled={allAligned}
+            title="Alignment"
+          >
+            {allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />}
+          </Button>
+          <Button
+            data-test-id="Undo"
+            value="undo"
+            aria-label="undo"
+            onClick={handleUndo}
+            disabled={!canUndo}
+            title="Undo"
+          >
+            <Undo />
+          </Button>
+          <Button
+            data-test-id="Redo"
+            value="redo"
+            aria-label="redo"
+            onClick={handleRedo}
+            disabled={!canRedo}
+            title="Redo"
+          >
+            <Redo />
+          </Button>
+          <Button
+            data-test-id="Save"
+            value="save"
+            aria-label="save"
+            onClick={onSave}
+            disabled={!canSave}
+            title="Save"
+          >
+            <Save />
+          </Button>
+          <Button
+            data-test-id="ButtonSearch"
+            value="search"
+            aria-label="search"
+            onClick={onSearch}
+            title="Search"
+          >
+            <Search />
+          </Button>
+        </Extensible>
+      </ToggleButtonGroup>
+      <Box>{content}</Box>
+    </Box>
   );
 }
 Buttons.propTypes = {
@@ -172,5 +194,6 @@ Buttons.propTypes = {
   onShowUnaligned: PropTypes.func,
   allAligned: PropTypes.bool,
   canSave: PropTypes.bool,
+  onSearch: PropTypes.func,
   showToggles: PropTypes.bool,
 };
