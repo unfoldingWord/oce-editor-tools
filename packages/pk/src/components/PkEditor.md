@@ -35,9 +35,9 @@ function Component () {
   }
   
   return (
-      <div key="1">
-        { done ? <PkEditor {...editorProps} /> : 'Loading...'}
-      </div>
+    <div key="1">
+      { done ? <PkEditor {...editorProps} /> : 'Loading...'}
+    </div>
   );
 };  
 
