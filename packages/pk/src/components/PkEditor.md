@@ -9,11 +9,15 @@ import usePkBookImport from "../hooks/usePkBookImport";
 import { usfmText } from '../data/tit.en.ult.usfm.js'
 import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
 
-function Component () {
+function Component ({bookId,activeReference,onReferenceSelected}) {
+ 
   const repoIdStr = 'unfoldingWord_ult'
   const langIdStr = 'en'
-  const bookId = 'TIT'
 
   const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
@@ -28,6 +32,8 @@ function Component () {
     repoIdStr,
     langIdStr,
     bookId,
+    activeReference,
+    onReferenceSelected,
   }
   
   return (
@@ -37,22 +43,11 @@ function Component () {
   );
 };  
 
-function Component2 () {
+function Component2 ({bookId,activeReference,onReferenceSelected}) {
   const repoIdStr = 'lsg'
   const langIdStr = 'fr'
-  const bookId = 'TIT'
-
-  const [chapter,setChapter] = useState(1)
-  const [verse,setVerse] = useState(1)
 
   const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmTextFra ) 
-
-  const onReferenceChange = (p1,ch,v) => {
-    console.log(`handleRefChangeFromEditor`)
-    console.log(p1)
-    setChapter(ch.toString())
-    setVerse(v.toString())
-  }
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -65,12 +60,8 @@ function Component2 () {
     repoIdStr,
     langIdStr,
     bookId,
-    activeReference: {
-      bookId: bookId.toLowerCase(),
-      chapter,
-      verse
-    },
-    onReferenceChange
+    activeReference,
+    onReferenceSelected
   }
  
   return (
@@ -80,10 +71,67 @@ function Component2 () {
   );
 }
 
-<PkCacheProvider>
-  <Component key="1" />
-  <Component2 key="2" />
-</PkCacheProvider>
+function DoubleContainer () {
+  const [chapter,setChapter] = React.useState("1")
+  const [verse,setVerse] = React.useState("1")
+  const bookId = 'TIT'
+
+  const activeReference = {
+    bookId: bookId.toLowerCase(),
+    chapter,
+    verse
+  }
+
+  const onReferenceSelected = (props) => {
+    const {bookId, chapter: ch, verse: v} = props
+    console.log(`handleRefChangeFromEditor`)
+    console.log(props)
+    console.log(bookId)
+    console.log(ch)
+    console.log(v)
+    setChapter(ch.toString())
+    setVerse(v.toString())
+  }
+
+  return (
+    <>
+      <PkCacheProvider>
+        <Container sx={{ py: 4 }} >
+          <Grid container spacing={2}>
+            <Grid item key="Test" xs={12} sm={6}>
+              <Card
+                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+              >
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Component 
+                    bookId={bookId}
+                    activeReference={activeReference}
+                    onReferenceSelected={onReferenceSelected}
+                  />
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item key="Test2" xs={12} sm={6}>
+              <Card
+                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+              >
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Component2 
+                    bookId={bookId}
+                    activeReference={activeReference}
+                    onReferenceSelected={onReferenceSelected}
+                  />
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </PkCacheProvider>
+    </>
+  )
+}
+
+<DoubleContainer/>
 
 ```
 
