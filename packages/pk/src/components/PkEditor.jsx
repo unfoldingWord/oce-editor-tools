@@ -27,7 +27,7 @@ export default function PkEditor( props) {
     epiteleteHtml,
   };
 
-  return (<Editor { ...editorProps } />)
+  return (epiteleteHtml && <Editor { ...editorProps } />)
 };
 
 PkEditor.propTypes = {

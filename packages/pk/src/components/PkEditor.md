@@ -37,9 +37,9 @@ function Component ({bookId,activeReference,onReferenceSelected}) {
   }
   
   return (
-      <div key="1">
-        { done ? <PkEditor {...editorProps} /> : 'Loading...'}
-      </div>
+    <div key="1">
+      { done ? <PkEditor {...editorProps} /> : 'Loading...'}
+    </div>
   );
 };  
 
