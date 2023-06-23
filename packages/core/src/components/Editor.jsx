@@ -26,7 +26,7 @@ import FindReplace from './FindReplace';
 export default function Editor( props) {
   const { 
     onSave, epiteleteHtml, 
-    bookId, verbose, activeReference, 
+    bookId, verbose, bcvSyncRef, 
     onRenderToolbar, onReferenceSelected,
     setChapterNumber,
     setVerseNumber,
@@ -278,8 +278,8 @@ export default function Editor( props) {
   }
 
   useEffect( () => {
-    if ( htmlPerf && !isFocused && sequenceId && editorRef.current && activeReference ) {
-      const { chapter, verse } = activeReference
+    if ( htmlPerf && !isFocused && sequenceId && editorRef.current && bcvSyncRef ) {
+      const { chapter, verse } = bcvSyncRef
 
       let _sectionIndices = { ...sectionIndices }
       _sectionIndices[sequenceId] = Number(chapter) - ( hasIntroduction ? 0 : 1)
@@ -297,7 +297,7 @@ export default function Editor( props) {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeReference, htmlPerf, sequenceId, editorRef, hasIntroduction])
+  }, [bcvSyncRef, htmlPerf, sequenceId, editorRef, hasIntroduction])
 
   const onIntersection = (entries) => {
     for (const entry of entries) {
@@ -445,7 +445,8 @@ Editor.propTypes = {
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
   /** Book, chapter, verse to scroll to and highlight */
-  activeReference: PropTypes.shape({
+  bcvSyncRef: PropTypes.shape({
+    syncSrcId: PropTypes.string,
     bookId: PropTypes.string,
     chapter: PropTypes.oneOfType([
       PropTypes.string,

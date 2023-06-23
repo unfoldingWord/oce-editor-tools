@@ -19,7 +19,8 @@ function Component () {
     onSave,
     usfmText,
     onReferenceSelected,
-    activeReference: {
+    bcvSyncRef: {
+      syncSrcId: "1",
       bookId: 'apg',
       chapter: 1,
       verse: "24-25",

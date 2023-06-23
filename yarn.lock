@@ -3602,7 +3602,76 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@0.1.12-alpha.10, @oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/core@npm:0.1.10":
+  version: 0.1.10
+  resolution: "@oce-editor-tools/core@npm:0.1.10"
+  dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@mui/system": ^5.11.9
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: 0.2.18
+    pagedjs: ^0.4.1
+  peerDependencies:
+    "@mui/icons-material": ^5.10.9
+    "@mui/material": ^5.10.12
+    "@mui/styled-engine": "*"
+    "@mui/styles": ^5.10.10
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: 85583a67f4f56e580dbc37e194753df4806c69a9ac7945edca9b04a0e785ffca73aaff5753521cfdb29887eb9f5b109a0d4da6f58a3cd9af5413007605e3ff18
+  languageName: node
+  linkType: hard
+
+"@oce-editor-tools/core@npm:0.1.11":
+  version: 0.1.11
+  resolution: "@oce-editor-tools/core@npm:0.1.11"
+  dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@mui/system": ^5.11.9
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: 0.2.18
+    pagedjs: ^0.4.1
+  peerDependencies:
+    "@mui/icons-material": ^5.10.9
+    "@mui/material": ^5.10.12
+    "@mui/styled-engine": "*"
+    "@mui/styles": ^5.10.10
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: 1eb8a67a4c30acaff001a648e1170f2ea07369ca8fec3e31a3d0866bca2040e5093520aa622238bc25c74a6e3be278ec6e290b645357b3f066e74e6738418e1e
+  languageName: node
+  linkType: hard
+
+"@oce-editor-tools/core@npm:0.1.12-alpha.10":
+  version: 0.1.12-alpha.10
+  resolution: "@oce-editor-tools/core@npm:0.1.12-alpha.10"
+  dependencies:
+    "@findr/mui": ^1.0.0-beta.17
+    "@findr/react": ^1.0.0-beta.3
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: ^0.2.20-beta.7
+    pagedjs: ^0.4.1
+  peerDependencies:
+    "@emotion/react": ^11.10.0
+    "@emotion/styled": ^11.10.0
+    "@mui/icons-material": ^5.11.0
+    "@mui/lab": ^5.0.0-alpha.134
+    "@mui/material": ^5.11.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: ef51e690461d359e98e4004fbc853965429e33d4d63f659a774df0393bfe994af4f0d5506089f6e75274abb1ea3338f48b0dcabe295585f7e2e589d588f30ab1
+  languageName: node
+  linkType: hard
+
+"@oce-editor-tools/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/core@workspace:packages/core"
   dependencies:
@@ -3662,52 +3731,6 @@ __metadata:
     translation-helps-rcl: 3.3.4-rc.2
   languageName: unknown
   linkType: soft
-
-"@oce-editor-tools/core@npm:0.1.10":
-  version: 0.1.10
-  resolution: "@oce-editor-tools/core@npm:0.1.10"
-  dependencies:
-    "@emotion/react": ^11.10.5
-    "@emotion/styled": ^11.10.5
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@mui/system": ^5.11.9
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: 0.2.18
-    pagedjs: ^0.4.1
-  peerDependencies:
-    "@mui/icons-material": ^5.10.9
-    "@mui/material": ^5.10.12
-    "@mui/styled-engine": "*"
-    "@mui/styles": ^5.10.10
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 85583a67f4f56e580dbc37e194753df4806c69a9ac7945edca9b04a0e785ffca73aaff5753521cfdb29887eb9f5b109a0d4da6f58a3cd9af5413007605e3ff18
-  languageName: node
-  linkType: hard
-
-"@oce-editor-tools/core@npm:0.1.11":
-  version: 0.1.11
-  resolution: "@oce-editor-tools/core@npm:0.1.11"
-  dependencies:
-    "@emotion/react": ^11.10.5
-    "@emotion/styled": ^11.10.5
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@mui/system": ^5.11.9
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: 0.2.18
-    pagedjs: ^0.4.1
-  peerDependencies:
-    "@mui/icons-material": ^5.10.9
-    "@mui/material": ^5.10.12
-    "@mui/styled-engine": "*"
-    "@mui/styles": ^5.10.10
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 1eb8a67a4c30acaff001a648e1170f2ea07369ca8fec3e31a3d0866bca2040e5093520aa622238bc25c74a6e3be278ec6e290b645357b3f066e74e6738418e1e
-  languageName: node
-  linkType: hard
 
 "@oce-editor-tools/pk-aligner@workspace:packages/pk-aligner":
   version: 0.0.0-use.local

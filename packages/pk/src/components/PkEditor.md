@@ -4,20 +4,15 @@ The demo demonstrates using the PkEditor (with all Proskomma / Epitetele handlin
  which is included as a wrapper in the app).
 
 ```js
-import { useState, useEffect } from 'react';
-import usePkBookImport from "../hooks/usePkBookImport";
+import { useState, useEffect } from 'react'
+import usePkBookImport from "../hooks/usePkBookImport"
 import { usfmText } from '../data/tit.en.ult.usfm.js'
-import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Grid from '@mui/material/Grid'
-import Container from '@mui/material/Container'
 
-function Component ({bookId,activeReference,onReferenceSelected}) {
- 
+function Component () {
   const repoIdStr = 'unfoldingWord_ult'
   const langIdStr = 'en'
+  const bookId = 'TIT'
 
   const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
@@ -32,106 +27,18 @@ function Component ({bookId,activeReference,onReferenceSelected}) {
     repoIdStr,
     langIdStr,
     bookId,
-    activeReference,
-    onReferenceSelected,
   }
   
-  return (
-    <div key="1">
-      { done ? <PkEditor {...editorProps} /> : 'Loading...'}
-    </div>
-  );
-};  
-
-function Component2 ({bookId,activeReference,onReferenceSelected}) {
-  const repoIdStr = 'lsg'
-  const langIdStr = 'fr'
-
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmTextFra ) 
-
-  const onSave = (bookCode,usfmText) => {
-    console.log("save button clicked")
-    console.log(bookCode)
-    console.log(usfmText)
-  }
-
-  const editorProps = {
-    onSave,
-    repoIdStr,
-    langIdStr,
-    bookId,
-    activeReference,
-    onReferenceSelected
-  }
- 
   return (
       <div key="1">
         { done ? <PkEditor {...editorProps} /> : 'Loading...'}
       </div>
-  );
-}
-
-function DoubleContainer () {
-  const [chapter,setChapter] = React.useState("1")
-  const [verse,setVerse] = React.useState("1")
-  const bookId = 'TIT'
-
-  const activeReference = {
-    bookId: bookId.toLowerCase(),
-    chapter,
-    verse
-  }
-
-  const onReferenceSelected = (props) => {
-    const {bookId, chapter: ch, verse: v} = props
-    console.log(`handleRefChangeFromEditor`)
-    console.log(props)
-    console.log(bookId)
-    console.log(ch)
-    console.log(v)
-    setChapter(ch.toString())
-    setVerse(v.toString())
-  }
-
-  return (
-    <>
-      <PkCacheProvider>
-        <Container sx={{ py: 4 }} >
-          <Grid container spacing={2}>
-            <Grid item key="Test" xs={12} sm={6}>
-              <Card
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-              >
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Component 
-                    bookId={bookId}
-                    activeReference={activeReference}
-                    onReferenceSelected={onReferenceSelected}
-                  />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item key="Test2" xs={12} sm={6}>
-              <Card
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-              >
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Component2 
-                    bookId={bookId}
-                    activeReference={activeReference}
-                    onReferenceSelected={onReferenceSelected}
-                  />
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
-      </PkCacheProvider>
-    </>
   )
 }
 
-<DoubleContainer/>
+<PkCacheProvider>
+  <Component key="1" />
+</PkCacheProvider>
 
 ```
 
@@ -140,9 +47,9 @@ function DoubleContainer () {
 The demo demonstrates using the onRenderToolbar to add more buttons in the toolbar.
 
 ```js
-import { useState, useEffect } from 'react';
-import usePkBookImport from "../hooks/usePkBookImport";
-import { usfmText } from '../data/tit.en.ult.usfm.js';
+import { useState, useEffect } from 'react'
+import usePkBookImport from "../hooks/usePkBookImport"
+import { usfmText } from '../data/tit.en.ult.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
 import { Button } from '@mui/material'
@@ -162,26 +69,26 @@ function Component () {
     console.log(usfmText)
   }
 
-  const needToMergeFromMaster = true;
-  const mergeFromMasterHasConflicts = false;
-  const mergeToMasterHasConflicts = true;
+  const needToMergeFromMaster = true
+  const mergeFromMasterHasConflicts = false
+  const mergeToMasterHasConflicts = true
 
   // eslint-disable-next-line no-nested-ternary
   const mergeFromMasterTitle = mergeFromMasterHasConflicts
     ? 'Merge Conflicts for update from master'
     : needToMergeFromMaster
       ? 'Update from master'
-      : 'No merge conflicts for update with master';
+      : 'No merge conflicts for update with master'
   // eslint-disable-next-line no-nested-ternary
   const mergeFromMasterColor = mergeFromMasterHasConflicts
     ? 'red'
     : needToMergeFromMaster
       ? 'orange'
-      : 'lightgray';
+      : 'lightgray'
   const mergeToMasterTitle = mergeToMasterHasConflicts
     ? 'Merge Conflicts for share with master'
-    : 'No merge conflicts for share with master';
-  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black';
+    : 'No merge conflicts for share with master'
+  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black'
 
   const onRenderToolbar = ({ items }) => [
     ...items,
@@ -205,7 +112,7 @@ function Component () {
     >
       <FiShare id="share-to-master-icon" color={mergeToMasterColor} />
     </Button>,
-  ];
+  ]
 
   const editorProps = {
     onSave,
@@ -220,8 +127,8 @@ function Component () {
       <div key="1">
         { done ? <PkEditor {...editorProps} /> : 'Loading...'}
       </div>
-  );
-};  
+  )
+}  
 
 <PkCacheProvider>
   <Component key="1" />
