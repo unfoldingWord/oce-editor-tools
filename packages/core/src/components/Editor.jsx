@@ -7,6 +7,7 @@ import React, {
 import PropTypes from 'prop-types'
 import { useDeepCompareCallback, useDeepCompareMemo } from "use-deep-compare"
 import isEqual from 'lodash.isequal'
+import uuid from 'react-uuid'
 import { HtmlPerfEditor } from "@xelah/type-perf-html"
 import EpiteleteHtml from "epitelete-html"
 // import { insertVerseNumber, insertChapterNumber, insertFootnote } from '../helpers/cursorUtils'
@@ -44,7 +45,8 @@ export default function Editor( props) {
   const [brokenAlignedWords, setBrokenAlignedWords] = useState()
   const [anchorEl, setAnchorEl] = useState(null)
   const [blockIsEdited, setBlockIsEdited] = useState(false)
-  const [isFocused, setIsFocused] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [uniqueId,setUniqueId] = useState(uuid()) 
 
   const bookCode = bookId.toUpperCase()
 
@@ -124,10 +126,6 @@ export default function Editor( props) {
       setEpCachedDataLoaded(true)
     }
   }, [bookCode, epiteleteHtml?.history, epCachedDataLoaded])
-
-  useEffect(() => {
-    console.log('isFocused: ', isFocused);
-  }, [isFocused])
 
   useEffect(() => {
     // Initial update - called on initial mount
@@ -263,7 +261,7 @@ export default function Editor( props) {
   const handleReferenceSelected = ({ bookId, chapter, verse }) => {
     chapter && setChapterNumber && setChapterNumber(chapter)
     verse && setVerseNumber && setVerseNumber(verse)
-    onReferenceSelected && onReferenceSelected({ bookId, chapter, verse })
+    onReferenceSelected && onReferenceSelected({syncSrcId: uniqueId, bookId, chapter, verse })
   }
 
   const scrollReference = (chapterNumber) => {
@@ -278,8 +276,8 @@ export default function Editor( props) {
   }
 
   useEffect( () => {
-    if ( htmlPerf && !isFocused && sequenceId && editorRef.current && bcvSyncRef ) {
-      const { chapter, verse } = bcvSyncRef
+    if ( htmlPerf && sequenceId && editorRef.current && bcvSyncRef ) {
+      const { syncSrcId, chapter, verse } = bcvSyncRef
 
       let _sectionIndices = { ...sectionIndices }
       _sectionIndices[sequenceId] = Number(chapter) - ( hasIntroduction ? 0 : 1)
@@ -291,7 +289,7 @@ export default function Editor( props) {
       }
 
       const verseElem = editorRef.current.querySelector(`span.mark.verses[data-atts-number='${verse}']`)
-      if (verseElem) {
+      if ((uniqueId!==syncSrcId) && (verseElem)) {
         verseElem.classList.add('highlight-verse')
         verseElem.scrollIntoView({ block: "center"})
       }
@@ -417,8 +415,6 @@ export default function Editor( props) {
       className="Editor" 
       style={style} 
       ref={editorRef}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
     >
       <Buttons {...buttonsProps} />
       <Popper id={id} open={popperOpen} anchorEl={anchorEl}>

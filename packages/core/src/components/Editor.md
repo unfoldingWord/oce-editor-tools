@@ -280,6 +280,7 @@ function Component2 ({bookId,bcvSyncRef,onReferenceSelected}) {
 function DoubleContainer () {
   const [chapter,setChapter] = React.useState("1")
   const [verse,setVerse] = React.useState("1")
+  const [syncSrcRef,setSyncSrcRef] = useState()
   const bookId = 'TIT'
 
   const bcvSyncRef = {
@@ -289,14 +290,11 @@ function DoubleContainer () {
   }
 
   const onReferenceSelected = (props) => {
-    const {bookId, chapter: ch, verse: v} = props
-    console.log(`handleRefChangeFromEditor`)
+    const {syncSrcRef: sRef, bookId, chapter: ch, verse: v} = props
     console.log(props)
-    console.log(bookId)
-    console.log(ch)
-    console.log(v)
-    setChapter(ch.toString())
-    setVerse(v.toString())
+    setSyncSrcRef(sRef)
+    setChapter(ch && ch.toString())
+    setVerse(v && v.toString())
   }
 
   return (
