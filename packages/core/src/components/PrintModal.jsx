@@ -50,6 +50,8 @@ export default function PrintModal({
   openPrintModal,
   handleClosePrintModal,
   onRenderContent,
+  canChangeAtts,
+  canChangeColumns,
 }) {
 
   const allNames = [
@@ -143,7 +145,7 @@ export default function PrintModal({
               container
               sx={{ display: 'flex', flexDirection: 'column' }}
             >
-              <Grid item sx={{ margin: '2%' }}>
+              {canChangeAtts && (<Grid item sx={{ margin: '2%' }}>
                 <FormGroup
                   sx={{
                     display: 'flex',
@@ -173,7 +175,7 @@ export default function PrintModal({
                     ))}
                   </Select>
                 </FormGroup>
-              </Grid>
+              </Grid>)}
               <Grid item sx={{ margin: '2%' }}>
                 <PageSizeSelector
                   formLabelTitle={'PAGE_SIZE'}
@@ -182,14 +184,14 @@ export default function PrintModal({
                   setFormatData={setFormatData}
                 />
               </Grid>
-              <Grid item sx={{ margin: '2%' }}>
+              {canChangeColumns && (<Grid item sx={{ margin: '2%' }}>
                 <ColumnsSelector
                   formLabelTitle={'COLUMNS'}
                   listItems={columnsList}
                   formatData={formatData}
                   setFormatData={setFormatData}
                 />
-              </Grid>
+              </Grid>)}
             </Grid>
             <Button
               onClick={onPrintClick}
@@ -211,8 +213,11 @@ PrintModal.propTypes = {
   handleClosePrintModal: PropTypes.func,
   /** needs to return the content that needs to be rendered */
   onRenderContent: PropTypes.func,
+  canChangeAtts: PropTypes.bool,
+  canChangeColumns: PropTypes.bool
 };
 
 PrintModal.defaultProps = {
-  verbose: false,
+  canChangeAtts: false,
+  canChangeColumns: false
 };

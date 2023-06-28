@@ -21,6 +21,8 @@ function Component () {
       setIsOpen(false)
     },
     onRenderContent: () => `This is just a test!`,
+    canChangeAtts: true,
+    canChangeColumns: true,
   }
   
   return (
