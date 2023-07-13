@@ -76,12 +76,12 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open, 
   }
 
   const setGroupCaption = ({key:sourceKey}) => {
-    const [server, id, bookCode] = sourceKey.split('/');;
+    // const [server, id, bookCode] = sourceKey.split('/');;
     return `(${sourceKey})`;
   };
 
   const setGroupTitle = ({ key: sourceKey }) => {
-    const [server, id, bookCode] = sourceKey.split("/");
+    // const [server, id, bookCode] = sourceKey.split("/");
     return `Results`;
   };
 

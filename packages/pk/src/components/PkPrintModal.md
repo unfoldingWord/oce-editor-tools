@@ -18,7 +18,7 @@ function Component () {
   const bookId = 'TIT'
   const [isOpen,setIsOpen] = useState(false)
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
 
   const renderFlags = {
     showTitles: true,

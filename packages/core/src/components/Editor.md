@@ -3,12 +3,12 @@
 The Editor expects input of an EpiteleteHtml object.
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-import EpiteleteHtml from "epitelete-html";
+import EpiteleteHtml from "epitelete-html"
 
-import { usfmText } from '../data/Acts.1.usfm.js';
-import { usfm2perf } from '../helpers/usfm2perf';
+import { usfmText } from '../data/Acts.1.usfm.js'
+import { usfm2perf } from '../helpers/usfm2perf'
 
 function Component () {
   const verbose = true
@@ -33,7 +33,7 @@ function Component () {
       await epiteleteHtml.sideloadPerf('ACT', tempPerf)
       setReady(true)
     }
-    if (epiteleteHtml) loadUsfm();
+    if (epiteleteHtml) loadUsfm()
   }, [epiteleteHtml])
  
   const editorProps = {
@@ -41,7 +41,7 @@ function Component () {
     bookId: 'act',
     onSave,
     onReferenceSelected,
-    activeReference: {
+    bcvSyncRef: {
       bookId: 'act',
       chapter: 1,
       verse: 4,
@@ -55,16 +55,16 @@ function Component () {
       { ready ? <Editor key="1" {...editorProps} /> : 'Loading...' }
     </div>
     </>
-  );
-};  
+  )
+}  
 
-<Component key="1" />;
+<Component key="1" />
 
 ```
 
 ## Editor demo 2
 
-The demo demonstrates using Epitelete in standalone mode (no Proskomma).
+The demo demonstrates using Epitelete in standalone mode (no Proskomma) including some added toolbar buttons (extended through "onRenderToolbar")
 Here is the function for sideloading:
 
 ```txt
@@ -78,19 +78,19 @@ Here is the function for sideloading:
 ```
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-import __htmlPerf from '../data/tit.en.ult.perf.json';
-import EpiteleteHtml from "epitelete-html";
+import __htmlPerf from '../data/tit.en.ult.perf.json'
+import EpiteleteHtml from "epitelete-html"
   
 import { Button } from '@mui/material'
 import { MdUpdate } from 'react-icons/md'
 import { FiShare } from 'react-icons/fi'
 
 function Component () {
-  const proskomma = null;
+  const proskomma = null
   const docSetId = 'unfoldingWord_ult'
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(false)
   const [ep, setEp] = useState(new EpiteleteHtml({ proskomma, docSetId, options: { historySize: 100 } }))
   const verbose = true
 
@@ -105,36 +105,36 @@ function Component () {
   useEffect(
     () => {
       async function loadPerf() {
-          console.log("Start side load of Titus");
+          console.log("Start side load of Titus")
           const data = await ep.sideloadPerf('TIT', __htmlPerf)
-          console.log("End side load of Titus", data);
+          console.log("End side load of Titus", data)
           console.log("Books loaded:", ep.localBookCodes())
           setReady(true)
       }
-      if ( ep && !ready ) loadPerf();
+      if ( ep && !ready ) loadPerf()
     }, [ep, ready]
   )
 
-  const needToMergeFromMaster = true;
-  const mergeFromMasterHasConflicts = false;
-  const mergeToMasterHasConflicts = true;
+  const needToMergeFromMaster = true
+  const mergeFromMasterHasConflicts = false
+  const mergeToMasterHasConflicts = true
 
   // eslint-disable-next-line no-nested-ternary
   const mergeFromMasterTitle = mergeFromMasterHasConflicts
     ? 'Merge Conflicts for update from master'
     : needToMergeFromMaster
       ? 'Update from master'
-      : 'No merge conflicts for update with master';
+      : 'No merge conflicts for update with master'
   // eslint-disable-next-line no-nested-ternary
   const mergeFromMasterColor = mergeFromMasterHasConflicts
     ? 'red'
     : needToMergeFromMaster
       ? 'orange'
-      : 'lightgray';
+      : 'lightgray'
   const mergeToMasterTitle = mergeToMasterHasConflicts
     ? 'Merge Conflicts for share with master'
-    : 'No merge conflicts for share with master';
-  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black';
+    : 'No merge conflicts for share with master'
+  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black'
 
   const onRenderToolbar = ({ items }) => [
     ...items,
@@ -158,7 +158,7 @@ function Component () {
     >
       <FiShare id="share-to-master-icon" color={mergeToMasterColor} />
     </Button>,
-  ];
+  ]
 
   const editorProps = {
     epiteleteHtml: ep,
@@ -175,9 +175,162 @@ function Component () {
       { ready ? <Editor key="1" {...editorProps} /> : 'Loading...'}
     </div>
     </>
-  );
-};  
+  )
+}  
 
-<Component key="1" />;
+<Component key="1" />
+
+```
+
+## Editor demo 3
+
+The demo demonstrates using two Editor instances (side by side) including synchronised navigation.
+
+```js
+import { useState, useEffect } from 'react'
+
+import EpiteleteHtml from "epitelete-html"
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
+
+import { usfmText } from '../data/tit.en.ult.usfm.js'
+import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js'
+import { usfm2perf } from '../helpers/usfm2perf'
+
+function Component1 ({bookId,bcvSyncRef,onReferenceSelected}) {
+  const verbose = true
+  const docSetId = "Xxx/en_tit" // just dummy values
+  const [ready,setReady] = useState(false)
+  const [epiteleteHtml, setEpiteleteHtml] = useState(
+    new EpiteleteHtml(
+      { proskomma: undefined, docSetId, options: { historySize: 100 } }
+    )
+  )
+ 
+  const onSave = (bookCode,usfmText) => {
+    console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
+  }
+  
+  useEffect(() => {
+    async function loadUsfm() {
+      const tempPerf = usfm2perf(usfmText)
+      await epiteleteHtml.sideloadPerf('TIT', tempPerf)
+      setReady(true)
+    }
+    if (epiteleteHtml) loadUsfm()
+  }, [epiteleteHtml])
+
+  const editorProps = {
+    epiteleteHtml,
+    bookId,
+    bcvSyncRef,
+    onReferenceSelected,
+    onSave,
+    verbose
+  }
+ 
+  return (
+    <>
+      { ready ? <Editor {...editorProps} /> : 'Loading...' }
+    </>
+  )
+}  
+
+function Component2 ({bookId,bcvSyncRef,onReferenceSelected}) {
+  const verbose = true
+  const docSetId = "LSG/fra_tit" // just dummy values
+  const [ready,setReady] = useState(false)
+  const [epiteleteHtml, setEpiteleteHtml] = useState(
+    new EpiteleteHtml(
+      { proskomma: undefined, docSetId, options: { historySize: 100 } }
+    )
+  )
+ 
+  const onSave = (bookCode,usfmText) => {
+    console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
+  }
+  
+  useEffect(() => {
+    async function loadUsfm() {
+      const tempPerf = usfm2perf(usfmTextFra)
+      await epiteleteHtml.sideloadPerf('TIT', tempPerf)
+      setReady(true)
+    }
+    if (epiteleteHtml) loadUsfm()
+  }, [epiteleteHtml])
+
+  const editorProps = {
+    epiteleteHtml,
+    bookId,
+    bcvSyncRef,
+    onReferenceSelected,
+    onSave,
+    verbose
+  }
+ 
+  return (
+    <>
+      { ready ? <Editor {...editorProps} /> : 'Loading...' }
+    </>
+  )
+}
+
+function DoubleContainer () {
+  const [chapter,setChapter] = React.useState("1")
+  const [verse,setVerse] = React.useState("1")
+  const [syncSrcRef,setSyncSrcRef] = useState()
+  const bookId = 'TIT'
+
+  const bcvSyncRef = {
+    bookId: bookId.toLowerCase(),
+    chapter,
+    verse
+  }
+
+  const onReferenceSelected = (props) => {
+    const {syncSrcRef: sRef, bookId, chapter: ch, verse: v} = props
+    console.log(props)
+    setSyncSrcRef(sRef)
+    setChapter(ch && ch.toString())
+    setVerse(v && v.toString())
+  }
+
+  return (
+    <Container sx={{ py: 4 }} >
+      <Grid container spacing={2}>
+        <Grid item key="Test" xs={12} sm={6}>
+          <Card
+            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+          >
+            <CardContent sx={{ flexGrow: 1 }}>
+              <Component1 
+                bookId={bookId}
+                bcvSyncRef={bcvSyncRef}
+                onReferenceSelected={onReferenceSelected}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item key="Test2" xs={12} sm={6}>
+          <Card
+            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+          >
+            <CardContent sx={{ flexGrow: 1 }}>
+              <Component2 
+                bookId={bookId}
+                bcvSyncRef={bcvSyncRef}
+                onReferenceSelected={onReferenceSelected}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+    </Container>
+  )
+}
+
+<DoubleContainer/>
 
 ```

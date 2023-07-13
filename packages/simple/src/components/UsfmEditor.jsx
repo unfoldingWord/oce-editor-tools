@@ -7,7 +7,7 @@ import { Editor } from "@oce-editor-tools/core"
 export default function UsfmEditor( props ) {
   const {
     usfmText, onSave, verbose,
-    htmlMap, activeReference, 
+    htmlMap, bcvSyncRef, 
     onRenderToolbar, onReferenceSelected 
   } = props;
 
@@ -24,7 +24,7 @@ export default function UsfmEditor( props ) {
         await ep.sideloadPerf('XXX', tempPerf)
         setReady(true)
       }
-      if ( usfmText && !ready ) loadUsfm();
+      if (usfmText && !ready && ep) loadUsfm();
     }, [usfmText, ready, ep]
   )
  
@@ -33,7 +33,7 @@ export default function UsfmEditor( props ) {
     bookId: 'XXX',
     onSave,
     verbose,
-    activeReference,
+    bcvSyncRef,
     onRenderToolbar,
     onReferenceSelected 
   }
@@ -55,7 +55,8 @@ UsfmEditor.propTypes = {
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
   /** Book, chapter, verse to scroll to and highlight */
-  activeReference: PropTypes.shape({
+  bcvSyncRef: PropTypes.shape({
+    syncSrcId: PropTypes.string,
     bookId: PropTypes.string,
     chapter: PropTypes.oneOfType([
       PropTypes.string,

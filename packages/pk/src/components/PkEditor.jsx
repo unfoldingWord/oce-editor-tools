@@ -44,7 +44,8 @@ PkEditor.propTypes = {
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
   /** Book, chapter, verse to scroll to and highlight */
-  activeReference: PropTypes.shape({
+  bcvSyncRef: PropTypes.shape({
+    syncSrcId: PropTypes.string,
     bookId: PropTypes.string,
     chapter: PropTypes.oneOfType([
       PropTypes.string,

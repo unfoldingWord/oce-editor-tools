@@ -4,9 +4,9 @@ The demo demonstrates using the PkEditor (with all Proskomma / Epitetele handlin
  which is included as a wrapper in the app).
 
 ```js
-import { useState, useEffect } from 'react';
-import usePkBookImport from "../hooks/usePkBookImport";
-import { usfmText } from '../data/tit.en.ult.usfm.js';
+import { useState, useEffect } from 'react'
+import usePkBookImport from "../hooks/usePkBookImport"
+import { usfmText } from '../data/tit.en.ult.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
 function Component () {
@@ -14,7 +14,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -33,8 +33,8 @@ function Component () {
       <div key="1">
         { done ? <PkEditor {...editorProps} /> : 'Loading...'}
       </div>
-  );
-};  
+  )
+}
 
 <PkCacheProvider>
   <Component key="1" />
@@ -47,9 +47,9 @@ function Component () {
 The demo demonstrates using the onRenderToolbar to add more buttons in the toolbar.
 
 ```js
-import { useState, useEffect } from 'react';
-import usePkBookImport from "../hooks/usePkBookImport";
-import { usfmText } from '../data/tit.en.ult.usfm.js';
+import { useState, useEffect } from 'react'
+import usePkBookImport from "../hooks/usePkBookImport"
+import { usfmText } from '../data/tit.en.ult.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
 import { Button } from '@mui/material'
@@ -61,7 +61,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -69,26 +69,26 @@ function Component () {
     console.log(usfmText)
   }
 
-  const needToMergeFromMaster = true;
-  const mergeFromMasterHasConflicts = false;
-  const mergeToMasterHasConflicts = true;
+  const needToMergeFromMaster = true
+  const mergeFromMasterHasConflicts = false
+  const mergeToMasterHasConflicts = true
 
   // eslint-disable-next-line no-nested-ternary
   const mergeFromMasterTitle = mergeFromMasterHasConflicts
     ? 'Merge Conflicts for update from master'
     : needToMergeFromMaster
       ? 'Update from master'
-      : 'No merge conflicts for update with master';
+      : 'No merge conflicts for update with master'
   // eslint-disable-next-line no-nested-ternary
   const mergeFromMasterColor = mergeFromMasterHasConflicts
     ? 'red'
     : needToMergeFromMaster
       ? 'orange'
-      : 'lightgray';
+      : 'lightgray'
   const mergeToMasterTitle = mergeToMasterHasConflicts
     ? 'Merge Conflicts for share with master'
-    : 'No merge conflicts for share with master';
-  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black';
+    : 'No merge conflicts for share with master'
+  const mergeToMasterColor = mergeToMasterHasConflicts ? 'red' : 'black'
 
   const onRenderToolbar = ({ items }) => [
     ...items,
@@ -112,7 +112,7 @@ function Component () {
     >
       <FiShare id="share-to-master-icon" color={mergeToMasterColor} />
     </Button>,
-  ];
+  ]
 
   const editorProps = {
     onSave,
@@ -127,8 +127,8 @@ function Component () {
       <div key="1">
         { done ? <PkEditor {...editorProps} /> : 'Loading...'}
       </div>
-  );
-};  
+  )
+}  
 
 <PkCacheProvider>
   <Component key="1" />
