@@ -435,7 +435,7 @@ Editor.propTypes = {
   /** Method to call when save button is pressed */
   onSave: PropTypes.func,
   /** Instance of EpiteleteHtml class */
-  epiteleteHtml: PropTypes.instanceOf(EpiteleteHtml),
+  epiteleteHtml: PropTypes.any,
   /** bookId to identify the content in the editor */
   bookId: PropTypes.string,
   /** Whether to show extra info in the js console */

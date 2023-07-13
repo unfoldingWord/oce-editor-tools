@@ -3,7 +3,7 @@ import { useDeepCompareEffect } from "use-deep-compare";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 import EpiteleteHtml from "epitelete-html";
 
-export default function usePkBookImport( repoIdStr, langIdStr, bookId, usfmText, htmlMap, options ) {
+export default function usePkBookImport( repoIdStr, langIdStr, usfmText, htmlMap, options ) {
   const [loading,setLoading] = useState(true)
   const [done,setDone] = useState(false)
 

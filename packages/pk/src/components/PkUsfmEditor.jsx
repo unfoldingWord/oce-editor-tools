@@ -4,9 +4,9 @@ import PkEditor from "./PkEditor";
 import usePkBookImport from "../hooks/usePkBookImport";
 
 export default function PkUsfmEditor( props) {
-  const { repoIdStr, langIdStr, bookId, usfmText } = props;
+  const { repoIdStr, langIdStr, usfmText } = props;
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText )
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText )
 
   return (
     <div>

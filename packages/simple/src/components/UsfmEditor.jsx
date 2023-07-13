@@ -24,7 +24,7 @@ export default function UsfmEditor( props ) {
         await ep.sideloadPerf('XXX', tempPerf)
         setReady(true)
       }
-      if ( usfmText && !ready ) loadUsfm();
+      if (usfmText && !ready && ep) loadUsfm();
     }, [usfmText, ready, ep]
   )
  

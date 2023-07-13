@@ -14,7 +14,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -61,7 +61,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")

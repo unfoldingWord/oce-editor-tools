@@ -20,7 +20,7 @@ const defaultFlags = {
   showVersesLabels: true,
 }
 
-export default function useBookPreviewRenderer(props) {
+export default function usePkBookPreviewRenderer(props) {
   const {
     pk, 
     docId, 
@@ -87,7 +87,7 @@ export default function useBookPreviewRenderer(props) {
   htmlRender: PropTypes.bool,
 */
 
-useBookPreviewRenderer.propTypes = {
+usePkBookPreviewRenderer.propTypes = {
   /** Instance of Proskomma class */
   pk: PropTypes.instanceOf(Proskomma),
   /** docId - the id of this document - taken from Proskomma */
