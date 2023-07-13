@@ -21,6 +21,7 @@ import Popper from '@mui/material/Popper';
 
 import GraftPopup from "./GraftPopup"
 import FindReplace from './FindReplace';
+import { Highlighted } from '../findr/highlights/components/Highlighted';
 
 export default function Editor( props) {
   const { 
@@ -29,6 +30,8 @@ export default function Editor( props) {
     onRenderToolbar, onReferenceSelected 
   } = props;
   const [graftSequenceId, setGraftSequenceId] = useState(null);
+  const [highlighterTarget, setHighlighterTarget] = useState(null);
+  const [highlighterOptions, setHighlighterOptions] = useState(null);
 
   // const [isSaving, startSaving] = useTransition();
   const [htmlPerf, setHtmlPerf] = useState();
@@ -292,7 +295,15 @@ export default function Editor( props) {
       section: Section,
       sectionHeading: SectionHeading,
       sectionBody: SectionBody,
-      block: (__props) => RecursiveBlock({ htmlPerf, onHtmlPerf, sequenceIds, addSequenceId, onReferenceSelected, ...__props }),
+      block: (__props) =>
+        RecursiveBlock({
+          htmlPerf,
+          onHtmlPerf,
+          sequenceIds,
+          addSequenceId,
+          onReferenceSelected,
+          ...__props,
+        }),
     },
     options,
     handlers,
@@ -340,6 +351,8 @@ export default function Editor( props) {
         onReplace={updateHtml}
         epitelete={epiteleteHtml}
         bookCode={bookCode}
+        onChangeOptions={(options) => setHighlighterOptions(options)}
+        onChangeTargets={(target) => setHighlighterTarget(target)}
         open={openSearch}
       />
     ),
@@ -351,11 +364,18 @@ export default function Editor( props) {
         <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
           List of words with broken alignment:
           <Box>
-            {brokenAlignedWords && brokenAlignedWords.map((str,i) => <li key={i}>{str}</li>)}
+            {brokenAlignedWords &&
+              brokenAlignedWords.map((str, i) => <li key={i}>{str}</li>)}
           </Box>
         </Box>
       </Popper>
-      {sequenceId && htmlPerf ? <HtmlPerfEditor {...htmlEditorProps} /> : <div/>}
+      {sequenceId && htmlPerf ? (
+        <Highlighted target={highlighterTarget} options={highlighterOptions}>
+          <HtmlPerfEditor {...htmlEditorProps} />
+        </Highlighted>
+      ) : (
+        <div />
+      )}
       <GraftPopup {...graftProps} />
     </div>
   );

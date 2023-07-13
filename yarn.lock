@@ -1567,6 +1567,11 @@
   resolved "https://registry.yarnpkg.com/@findr/react/-/react-1.0.0-beta.3.tgz#e80a30ee6a24b800c266b9c5cfa16eb5cc010d5c"
   integrity sha512-ALw2O2ulf7TCBVPxJ6Sox3dXsFzS46mh3YmRrf4IxQWpQEzZPc9T5+HMoUE7GmO0dhE5dItA4iIrXDLCctUngw==
 
+"@findr/text@^1.0.7-beta.4":
+  version "1.0.7-beta.4"
+  resolved "https://registry.yarnpkg.com/@findr/text/-/text-1.0.7-beta.4.tgz#d3f2f3e34fba15334637d20fdc2f94f86be1c260"
+  integrity sha512-bkZuNkYXelaJdtiWfo+6npN6+TpuQcjTAUFdpp1QJe+37eTQK4iytWka6UT+WnPNWUqHyvVHhMWnRV94pjPlvg==
+
 "@graphql-tools/merge@^8.4.1":
   version "8.4.2"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.4.2.tgz#95778bbe26b635e8d2f60ce9856b388f11fe8288"
@@ -2512,6 +2517,18 @@
   integrity sha512-EKS6vEqh+ykG/6DLgc5+u2RiXdv7PIX9pGvyIWiEDELcUuo0e8ptXQM8HxETZt0ihDgW2u0rUky3Avr6boO2bQ==
   dependencies:
     nx "15.7.0"
+
+"@oce-editor-tools/core@*":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@oce-editor-tools/core/-/core-0.1.12.tgz#24395825b969bb3f9bf7cfeee88297b32c79b193"
+  integrity sha512-cVP0ghW6Et9+u8nDzz7lblyxxPV4GOBLH0zoipoUCM72nvg2qV21siuSS6MVRD+0QNakJ4YgxbWL39NMFtLMUA==
+  dependencies:
+    "@findr/mui" "^1.0.0-beta.17"
+    "@findr/react" "^1.0.0-beta.3"
+    "@gwdevs/extensible-rcl" "^1.0.1"
+    "@xelah/type-perf-html" "^1.0.2"
+    epitelete-html "^0.2.20-beta.7"
+    pagedjs "^0.4.1"
 
 "@oce-editor-tools/core@0.1.10":
   version "0.1.10"

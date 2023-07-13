@@ -24,7 +24,8 @@
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "^0.2.20-beta.7",
-    "pagedjs": "^0.4.1"
+    "pagedjs": "^0.4.1",
+    "@findr/text": "^1.0.7-beta.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

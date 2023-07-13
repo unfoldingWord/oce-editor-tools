@@ -11,6 +11,7 @@ export default function Section({ children, show, dir, ...props }) {
       className={"section " + dir}
       dir={dir}
       {...props}
+      sx={{ background: "none",...props.sx}}
     >
       {children}
     </Accordion>

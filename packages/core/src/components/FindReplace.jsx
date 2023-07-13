@@ -3,7 +3,7 @@ import { FindrMUI, Mark } from '@findr/mui';
 import { useFindr } from '@findr/react';
 import { Collapse, Paper } from '@mui/material';
 
-export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }) {
+export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open, onChangeOptions, onChangeTargets }) {
   const sourceKey = `${epitelete.docSetId}/${bookCode}`;
 
   async function findOrReplace(params) {
@@ -31,6 +31,8 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }
 
   const onSearch = async (params) => {
     if (!epitelete) return;
+    onChangeTargets(params.target);
+    onChangeOptions(params.options);
     const report = await findOrReplace(params);
     return buildResults(report,sourceKey)
   };
