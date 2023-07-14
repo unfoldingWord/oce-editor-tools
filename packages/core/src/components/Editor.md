@@ -120,7 +120,7 @@ function DoubleContainer () {
           <Card
             sx={{ display: 'flex', flexDirection: 'column' }}
           >
-            <CardContent sx={{ flexGrow: 1, height: '150vh', overflow: "hidden", overflowY: "auto" }}>
+            <CardContent sx={{ flexGrow: 1, height: '40vh', overflow: "hidden", overflowY: "auto" }}>
               <Component1 
                 bookId={bookId}
                 bcvSyncRef={bcvSyncRef}
@@ -133,7 +133,7 @@ function DoubleContainer () {
           <Card
             sx={{ display: 'flex', flexDirection: 'column' }}
           >
-            <CardContent sx={{ flexGrow: 1, height: '150vh', overflow: "hidden", overflowY: "auto" }}>
+            <CardContent sx={{ flexGrow: 1, height: '40vh', overflow: "hidden", overflowY: "auto" }}>
               <Component2 
                 bookId={bookId}
                 bcvSyncRef={bcvSyncRef}

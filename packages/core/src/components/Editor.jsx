@@ -28,9 +28,13 @@ import { Highlighted } from '../findr/highlights/components/Highlighted';
 
 export default function Editor( props) {
   const { 
-    onSave, epiteleteHtml, 
-    bookId, verbose, bcvSyncRef, 
-    onRenderToolbar, onReferenceSelected,
+    onSave,
+    epiteleteHtml, 
+    bookId,
+    verbose,
+    bcvSyncRef,
+    onRenderToolbar,
+    onReferenceSelected,
     setChapterNumber,
     setVerseNumber,
     scrollLock
@@ -417,6 +421,8 @@ export default function Editor( props) {
         onChangeOptions={(options) => setHighlighterOptions(options)}
         onChangeTargets={(target) => setHighlighterTarget(target)}
         open={openSearch}
+        setOpen={setOpenSearch}
+        onClickResult={handleReferenceSelected}
       />
     ),
   };
