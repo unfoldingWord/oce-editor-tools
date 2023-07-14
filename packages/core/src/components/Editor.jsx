@@ -9,7 +9,6 @@ import { useDeepCompareCallback, useDeepCompareMemo } from "use-deep-compare"
 import isEqual from 'lodash.isequal'
 import uuid from 'react-uuid'
 import { HtmlPerfEditor } from "@xelah/type-perf-html"
-import EpiteleteHtml from "epitelete-html"
 // import { insertVerseNumber, insertChapterNumber, insertFootnote } from '../helpers/cursorUtils'
 
 import useEditorState from "../hooks/useEditorState"

@@ -302,9 +302,9 @@ function DoubleContainer () {
       <Grid container spacing={2}>
         <Grid item key="Test" xs={12} sm={6}>
           <Card
-            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            sx={{ display: 'flex', flexDirection: 'column' }}
           >
-            <CardContent sx={{ flexGrow: 1 }}>
+            <CardContent sx={{ flexGrow: 1, height: '40vh', overflow: "hidden", overflowY: "auto" }}>
               <Component1 
                 bookId={bookId}
                 bcvSyncRef={bcvSyncRef}
@@ -315,9 +315,9 @@ function DoubleContainer () {
         </Grid>
         <Grid item key="Test2" xs={12} sm={6}>
           <Card
-            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            sx={{ display: 'flex', flexDirection: 'column' }}
           >
-            <CardContent sx={{ flexGrow: 1 }}>
+            <CardContent sx={{ flexGrow: 1, height: '40vh', overflow: "hidden", overflowY: "auto" }}>
               <Component2 
                 bookId={bookId}
                 bcvSyncRef={bcvSyncRef}
