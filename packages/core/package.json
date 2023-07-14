@@ -21,11 +21,11 @@
   "dependencies": {
     "@findr/mui": "^1.0.0-beta.17",
     "@findr/react": "^1.0.0-beta.3",
+    "@findr/text": "^1.0.7-beta.4",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@xelah/type-perf-html": "^1.0.2",
     "epitelete-html": "^0.2.20-beta.7",
     "pagedjs": "^0.4.1",
-    "@findr/text": "^1.0.7-beta.4",
     "proskomma-core": "^0.10.1",
     "react-uuid": "^2.0.0"
   },
