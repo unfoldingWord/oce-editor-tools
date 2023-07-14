@@ -9,7 +9,6 @@ import { useDeepCompareCallback, useDeepCompareMemo } from "use-deep-compare"
 import isEqual from 'lodash.isequal'
 import uuid from 'react-uuid'
 import { HtmlPerfEditor } from "@xelah/type-perf-html"
-import EpiteleteHtml from "epitelete-html"
 // import { insertVerseNumber, insertChapterNumber, insertFootnote } from '../helpers/cursorUtils'
 
 import useEditorState from "../hooks/useEditorState"
@@ -23,6 +22,7 @@ import Popper from '@mui/material/Popper'
 
 import GraftPopup from "./GraftPopup"
 import FindReplace from './FindReplace';
+import { Highlighted } from '../findr/highlights/components/Highlighted';
 
 export default function Editor( props) {
   const { 
@@ -37,6 +37,8 @@ export default function Editor( props) {
   const editorRef = useRef(null)
 
   const [graftSequenceId, setGraftSequenceId] = useState(null)
+  const [highlighterTarget, setHighlighterTarget] = useState(null);
+  const [highlighterOptions, setHighlighterOptions] = useState(null);
   // const [caretPosition, setCaretPosition] = useState()
 
   // const [isSaving, startSaving] = useTransition()
@@ -405,6 +407,8 @@ export default function Editor( props) {
         onReplace={updateHtml}
         epitelete={epiteleteHtml}
         bookCode={bookCode}
+        onChangeOptions={(options) => setHighlighterOptions(options)}
+        onChangeTargets={(target) => setHighlighterTarget(target)}
         open={openSearch}
       />
     ),
@@ -421,11 +425,18 @@ export default function Editor( props) {
         <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
           List of words with broken alignment:
           <Box>
-            {brokenAlignedWords && brokenAlignedWords.map((str,i) => <li key={i}>{str}</li>)}
+            {brokenAlignedWords &&
+              brokenAlignedWords.map((str, i) => <li key={i}>{str}</li>)}
           </Box>
         </Box>
       </Popper>
-      {sequenceId && htmlPerf ? <HtmlPerfEditor {...htmlEditorProps} /> : <div/>}
+      {sequenceId && htmlPerf ? (
+        <Highlighted target={highlighterTarget} options={highlighterOptions}>
+          <HtmlPerfEditor {...htmlEditorProps} />
+        </Highlighted>
+      ) : (
+        <div />
+      )}
       <GraftPopup {...graftProps} />
     </div>
   )
