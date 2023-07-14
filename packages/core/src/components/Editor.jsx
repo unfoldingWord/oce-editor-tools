@@ -24,6 +24,8 @@ import GraftPopup from "./GraftPopup"
 import FindReplace from './FindReplace';
 import { Highlighted } from '../findr/highlights/components/Highlighted';
 
+// import { getDiff } from 'json-difference'
+
 export default function Editor( props) {
   const { 
     onSave, epiteleteHtml, 
@@ -196,7 +198,11 @@ export default function Editor( props) {
   const onHtmlPerf = useDeepCompareCallback(( _htmlPerf, { sequenceId }) => {
     setBlockIsEdited(false)
     const perfChanged = !isEqual(htmlPerf, _htmlPerf)
-    if (perfChanged) setHtmlPerf(_htmlPerf)
+    if (perfChanged) {
+      console.log("perfChanged")
+      // console.log(getDiff(_htmlPerf,htmlPerf))
+      setHtmlPerf(_htmlPerf)
+    }
 
     if (verbose) console.log('onhtmlperf', perfChanged)
     const saveNow = async () => {
@@ -271,7 +277,7 @@ export default function Editor( props) {
     refEditors.length > 0 && Array.prototype.filter.call(refEditors, (refEditor) => {
       const editorInView = refEditor.querySelector(`#ch-${chapterNumber}`)
       if (editorInView) {
-        // editorInView.scrollIntoView()
+        editorInView.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
         // editorInView.classList.add('scroll-mt-10')
       }
     })
@@ -287,13 +293,13 @@ export default function Editor( props) {
 
       const existingVerse = editorRef.current.querySelector(`span.mark.verses.highlight-verse`)
       if ( existingVerse ) {
-        existingVerse.classList.remove('highlight-verse')
+        // existingVerse.classList.remove('highlight-verse')
       }
 
       const verseElem = editorRef.current.querySelector(`span.mark.verses[data-atts-number='${verse}']`)
       if ((uniqueId!==syncSrcId) && (verseElem)) {
-        verseElem.classList.add('highlight-verse')
-        verseElem.scrollIntoView({ block: "center"})
+        // verseElem.classList.add('highlight-verse')
+        verseElem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -302,6 +308,7 @@ export default function Editor( props) {
   const onIntersection = (entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
+        console.log("entry.isIntersecting")
         console.log({ entry })
         setChapterNumber && setChapterNumber(entry.target.dataset.attsNumber)
         (!scrollLock) && scrollReference(entry.target.dataset.attsNumber) 
