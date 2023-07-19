@@ -49,9 +49,7 @@ export default function useEditorProps({
     onSectionClick,
   };
 
-  const onInput = (...args) => {
-    console.log({ args });
-  };
+  const onInput = () => undefined;
 
   const sectionIndex = useMemo(
     () => sectionIndices[sequenceId] || 0,

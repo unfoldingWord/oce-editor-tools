@@ -7,6 +7,7 @@ export function useEditorOptions(defaultOptions) {
       blockable: true,
       editable: true,
       preview: true,
+      locked: false,
       ...defaultOptions,
     }),
     [defaultOptions]
@@ -32,7 +33,6 @@ export function useEditorOptions(defaultOptions) {
         },
         { ...baseOptions }
       );
-      console.log({ selected });
       _setOptions(selected);
     },
     [baseOptions]

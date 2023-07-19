@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useCallback, useEffect, useRef } from 'react';
 import { FindrDom } from '../classes/FindrDom';
 
@@ -13,7 +12,6 @@ export const Highlighted = ({ target, options, children, ping, ...props }) => {
       const findrDom = new FindrDom({ source: sourceElement });
       findrDomRef.current = findrDom;
       return () => {
-        console.log('cleanig highlights');
         findrDom.clean();
       };
     }

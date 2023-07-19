@@ -6,6 +6,8 @@ import {
   AssignmentLate,
   AssignmentTurnedIn,
   Edit,
+  Lock,
+  LockOpen,
   Preview,
   Redo,
   Save,
@@ -48,6 +50,9 @@ export function EditorToolbar({ showToggles, content, onRenderToolbar }) {
         <Button.Editable component={ToolbarButton}>
           <Edit />
         </Button.Editable>
+        <Button.Lock component={ToolbarButton}>
+          {({selected}) => selected ? <Lock/> : <LockOpen/>}
+        </Button.Lock>
         {showToggles ? (
           <>
             <Button.Sectionable component={ToolbarButton}>

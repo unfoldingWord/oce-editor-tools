@@ -20,7 +20,6 @@ export class FindrDom {
   setObservers() {
     const resetHighlight = () => {
       var _a;
-      console.log('rehighlighting');
       this.highlighter.removeHighlight();
       if (
         (_a = this.highlighter.tokens) === null || _a === void 0

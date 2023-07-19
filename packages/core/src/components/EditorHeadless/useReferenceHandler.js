@@ -20,34 +20,34 @@ export default function useReferenceHandler({
   scrollDelay,
   reference: externalReference,
   setReference: setExternalReference,
-  scrollLock,
+  locked,
   htmlPerf,
   sequenceId,
   sectionIndices,
   setSectionIndices,
+  verbose,
 }) {
   const [hasIntroduction, setHasIntroduction] = useState(false);
   const [localReference, setLocalReference] = useState();
 
   const reference = useMemo(
-    () =>
-      scrollLock || !externalReference ? localReference : externalReference,
-    [scrollLock, externalReference, localReference]
+    () => (locked || !externalReference ? localReference : externalReference),
+    [locked, externalReference, localReference]
   );
 
   const setReference = useCallback(
     (value) => {
-      setLocalReference((reference) => {
-        const newReference = isFunction(value) ? value(reference) : value;
-        newReference.sourceId = sourceId;
-        if (!scrollLock) {
+      if (!locked) {
+        if (verbose) console.log('setting refference');
+        setLocalReference((reference) => {
+          const tempReference = isFunction(value) ? value(reference) : value;
+          const newReference = { sourceId, ...tempReference };
           setExternalReference(newReference);
-        }
-        console.log({ newReference });
-        return { newReference };
-      });
+          return { newReference };
+        });
+      }
     },
-    [scrollLock, setExternalReference, sourceId]
+    [locked, setExternalReference, sourceId, verbose]
   );
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function useReferenceHandler({
           const parent = getScrollParent(verseElem);
           if (parent) parent.scrollTop = verseElem.offsetTop;
         }
-      }, (scrollDelay || 900));
+      }, scrollDelay || 900);
     }
   }, [
     reference,
@@ -92,9 +92,5 @@ export default function useReferenceHandler({
     }
   }, [sequenceId, sectionIndices, editorRef]);
 
-  useEffect(() => {
-    console.log({ editorRef });
-  },[editorRef])
-
-  return {state: {reference}, actions: {setReference}};
+  return { state: { reference }, actions: { setReference } };
 }

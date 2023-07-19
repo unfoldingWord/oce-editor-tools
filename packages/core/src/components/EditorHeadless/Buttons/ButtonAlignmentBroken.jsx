@@ -34,14 +34,6 @@ export function ButtonAlignmentBroken({
               (x) => !initialAlignmentData[x]
             )
         );
-        console.log({
-          epiteleteHtml,
-          initialAlignmentData,
-          currAlignmentData,
-          diffUnaligned,
-          currData,
-          initialData,
-        });
         setBrokenAlignedWords(diffUnaligned);
       }),
     [epiteleteHtml, bookCode]

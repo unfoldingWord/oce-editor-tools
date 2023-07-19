@@ -13,7 +13,6 @@ export default function useEditorState({
   verbose,
   reference,
   setReference,
-  scrollLock,
   scrollDelay
 }) {
   const sourceId = _sourceId ?? epiteleteHtml.docSetId;
@@ -35,13 +34,14 @@ export default function useEditorState({
       sourceId,
       reference,
       setReference,
-      scrollLock,
+      locked: optionsState.options.locked,
       scrollDelay,
       htmlPerf,
       sequenceId,
       sectionIndices,
       setSectionIndices,
       epiteleteHtml,
+      verbose,
     });
 
   const editorProps = useEditorProps({
@@ -73,7 +73,6 @@ export default function useEditorState({
       return epiteleteHtml.readHtml(bookCode, readOptions);
     };
     epiteleteHtml.write = (bookCode, sequenceId, htmlPerf) => {
-      console.log('WRITING PERF', { htmlPerf });
       return epiteleteHtml.writeHtml(
         bookCode,
         sequenceId,

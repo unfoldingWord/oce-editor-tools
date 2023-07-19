@@ -2537,10 +2537,10 @@
     epitelete-html "0.2.18"
     pagedjs "^0.4.1"
 
-"@oce-editor-tools/core@0.1.13-alpha.6":
-  version "0.1.13-alpha.6"
-  resolved "https://registry.yarnpkg.com/@oce-editor-tools/core/-/core-0.1.13-alpha.6.tgz#cf1ef4a1c5f396f8ebdee8c0f591ce8e81132ce4"
-  integrity sha512-Wnh46N8K8iiED7h8F+o50vfYQKGyC/lTa3ygHOP/dV7hd2XcJhacBO8qqGrq3gVoWEcGak4FKPy5vVGgwnTKAQ==
+"@oce-editor-tools/core@0.1.13-alpha.7":
+  version "0.1.13-alpha.7"
+  resolved "https://registry.yarnpkg.com/@oce-editor-tools/core/-/core-0.1.13-alpha.7.tgz#385469e1ec0b4b952b742f4edd41ce7ae68f9dbf"
+  integrity sha512-YsppqA6ChkLJ8i0s0+Qe6iNNIomF0kfqdgRbZX0LFAtU4uNJyoL58hwQuSlYkx7YImWq45C/S10Io0v5p1t56g==
   dependencies:
     "@findr/mui" "^1.0.0-beta.17"
     "@findr/react" "^1.0.0-beta.3"

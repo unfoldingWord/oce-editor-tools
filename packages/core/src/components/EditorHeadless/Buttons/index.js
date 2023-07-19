@@ -1,4 +1,5 @@
 import Editable from './ButtonEditable';
+import Lock from './ButtonLock';
 import Sectionable from './ButtonSectionable';
 import Blockable from './ButtonBlockable';
 import Preview from './ButtonPreview';
@@ -11,6 +12,7 @@ import Headless from './ButtonHeadless';
 
 const Button = {
   Editable,
+  Lock,
   Sectionable,
   Blockable,
   Preview,

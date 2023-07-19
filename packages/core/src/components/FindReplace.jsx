@@ -104,15 +104,9 @@ export function FindReplace({
     const { sourceKey, metadata } = result;
     const { bookCode, chapter, verses } = metadata;
     //TODO: include a callback for resetting card's reference
-    onSetReference({ bookId: bookCode, chapter, verse: verses });
+    onSetReference({ sourceId: "*", bookId: bookCode, chapter, verse: verses });
     onClickResult({ bookId: bookCode, chapter, verse: verses });
     setEditorOption("search", false);
-    console.log('Data for reference set:', {
-      bookCode,
-      chapter,
-      verses,
-      sourceKey,
-    });
   };
 
   const setGroupCaption = ({ key: sourceKey }) => {
