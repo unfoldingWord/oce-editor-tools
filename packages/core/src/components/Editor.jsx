@@ -22,9 +22,7 @@ import Popper from '@mui/material/Popper'
 
 import GraftPopup from "./GraftPopup"
 import FindReplace from './FindReplace';
-import { Highlighted } from '../findr/highlights/components/Highlighted';
-
-// import { getDiff } from 'json-difference'
+// import { Highlighted } from '../findr/highlights/components/Highlighted';
 
 export default function Editor( props) {
   const { 
@@ -43,8 +41,8 @@ export default function Editor( props) {
   const editorRef = useRef(null)
 
   const [graftSequenceId, setGraftSequenceId] = useState(null)
-  const [highlighterTarget, setHighlighterTarget] = useState(null);
-  const [highlighterOptions, setHighlighterOptions] = useState(null);
+  // const [highlighterTarget, setHighlighterTarget] = useState(null);
+  // const [highlighterOptions, setHighlighterOptions] = useState(null);
   // const [caretPosition, setCaretPosition] = useState()
 
   // const [isSaving, startSaving] = useTransition()
@@ -204,7 +202,6 @@ export default function Editor( props) {
     const perfChanged = !isEqual(htmlPerf, _htmlPerf)
     if (perfChanged) {
       console.log("perfChanged")
-      // console.log(getDiff(_htmlPerf,htmlPerf))
       setHtmlPerf(_htmlPerf)
     }
 
@@ -418,8 +415,8 @@ export default function Editor( props) {
         onReplace={updateHtml}
         epitelete={epiteleteHtml}
         bookCode={bookCode}
-        onChangeOptions={(options) => setHighlighterOptions(options)}
-        onChangeTargets={(target) => setHighlighterTarget(target)}
+        // onChangeOptions={(options) => setHighlighterOptions(options)}
+        // onChangeTargets={(target) => setHighlighterTarget(target)}
         open={openSearch}
         setOpen={setOpenSearch}
         onClickResult={handleReferenceSelected}
@@ -444,9 +441,11 @@ export default function Editor( props) {
         </Box>
       </Popper>
       {sequenceId && htmlPerf ? (
-        <Highlighted target={highlighterTarget} options={highlighterOptions}>
+        // <Highlighted target={highlighterTarget} options={highlighterOptions}>
+        <span>
           <HtmlPerfEditor {...htmlEditorProps} />
-        </Highlighted>
+        </span>
+        // </Highlighted>
       ) : (
         <div />
       )}

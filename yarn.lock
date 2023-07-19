@@ -3623,56 +3623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@npm:0.1.10":
-  version: 0.1.10
-  resolution: "@oce-editor-tools/core@npm:0.1.10"
-  dependencies:
-    "@emotion/react": ^11.10.5
-    "@emotion/styled": ^11.10.5
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@mui/system": ^5.11.9
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: 0.2.18
-    pagedjs: ^0.4.1
-  peerDependencies:
-    "@mui/icons-material": ^5.10.9
-    "@mui/material": ^5.10.12
-    "@mui/styled-engine": "*"
-    "@mui/styles": ^5.10.10
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 85583a67f4f56e580dbc37e194753df4806c69a9ac7945edca9b04a0e785ffca73aaff5753521cfdb29887eb9f5b109a0d4da6f58a3cd9af5413007605e3ff18
-  languageName: node
-  linkType: hard
-
-"@oce-editor-tools/core@npm:0.1.13":
-  version: 0.1.13
-  resolution: "@oce-editor-tools/core@npm:0.1.13"
-  dependencies:
-    "@findr/mui": ^1.0.0-beta.17
-    "@findr/react": ^1.0.0-beta.3
-    "@findr/text": ^1.0.7-beta.4
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: ^0.2.20-beta.7
-    pagedjs: ^0.4.1
-    proskomma-core: ^0.10.1
-    react-uuid: ^2.0.0
-  peerDependencies:
-    "@emotion/react": ^11.10.0
-    "@emotion/styled": ^11.10.0
-    "@mui/icons-material": ^5.11.0
-    "@mui/lab": ^5.0.0-alpha.134
-    "@mui/material": ^5.11.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 9234d5db29f497bb65c489e4feba86b9d9d70e439ad119f60a6c263a69bb3a547bc87ab423c0844a8c70f51d0861597bfb618d51955fc9976bb91388dc6770f1
-  languageName: node
-  linkType: hard
-
-"@oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/core@0.1.14-alpha.2, @oce-editor-tools/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/core@workspace:packages/core"
   dependencies:
@@ -3734,6 +3685,55 @@ __metadata:
     translation-helps-rcl: 3.3.4-rc.2
   languageName: unknown
   linkType: soft
+
+"@oce-editor-tools/core@npm:0.1.10":
+  version: 0.1.10
+  resolution: "@oce-editor-tools/core@npm:0.1.10"
+  dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@mui/system": ^5.11.9
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: 0.2.18
+    pagedjs: ^0.4.1
+  peerDependencies:
+    "@mui/icons-material": ^5.10.9
+    "@mui/material": ^5.10.12
+    "@mui/styled-engine": "*"
+    "@mui/styles": ^5.10.10
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: 85583a67f4f56e580dbc37e194753df4806c69a9ac7945edca9b04a0e785ffca73aaff5753521cfdb29887eb9f5b109a0d4da6f58a3cd9af5413007605e3ff18
+  languageName: node
+  linkType: hard
+
+"@oce-editor-tools/core@npm:0.1.13":
+  version: 0.1.13
+  resolution: "@oce-editor-tools/core@npm:0.1.13"
+  dependencies:
+    "@findr/mui": ^1.0.0-beta.17
+    "@findr/react": ^1.0.0-beta.3
+    "@findr/text": ^1.0.7-beta.4
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@xelah/type-perf-html": ^1.0.2
+    epitelete-html: ^0.2.20-beta.7
+    pagedjs: ^0.4.1
+    proskomma-core: ^0.10.1
+    react-uuid: ^2.0.0
+  peerDependencies:
+    "@emotion/react": ^11.10.0
+    "@emotion/styled": ^11.10.0
+    "@mui/icons-material": ^5.11.0
+    "@mui/lab": ^5.0.0-alpha.134
+    "@mui/material": ^5.11.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    translation-helps-rcl: 3.3.4-rc.2
+  checksum: 9234d5db29f497bb65c489e4feba86b9d9d70e439ad119f60a6c263a69bb3a547bc87ab423c0844a8c70f51d0861597bfb618d51955fc9976bb91388dc6770f1
+  languageName: node
+  linkType: hard
 
 "@oce-editor-tools/pk-aligner@workspace:packages/pk-aligner":
   version: 0.0.0-use.local
@@ -3810,7 +3810,7 @@ __metadata:
     "@mui/icons-material": ^5.11.0
     "@mui/lab": ^5.0.0-alpha.134
     "@mui/material": ^5.11.0
-    "@oce-editor-tools/core": 0.1.13
+    "@oce-editor-tools/core": 0.1.14-alpha.2
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10

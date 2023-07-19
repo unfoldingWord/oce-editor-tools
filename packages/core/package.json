@@ -1,6 +1,6 @@
 {
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.14-alpha.1",
+  "version": "0.1.14-alpha.2",
   "name": "@oce-editor-tools/core",
   "homepage": "https://oce-editor-tools-core.netlify.app/",
   "license": "MIT",
