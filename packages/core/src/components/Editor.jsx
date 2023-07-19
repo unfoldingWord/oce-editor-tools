@@ -417,6 +417,8 @@ export default function Editor( props) {
         bookCode={bookCode}
         // onChangeOptions={(options) => setHighlighterOptions(options)}
         // onChangeTargets={(target) => setHighlighterTarget(target)}
+        onChangeOptions={(options) => console.log(options)}
+        onChangeTargets={(target) => console.log(target)}
         open={openSearch}
         setOpen={setOpenSearch}
         onClickResult={handleReferenceSelected}

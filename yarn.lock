@@ -3623,7 +3623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@0.1.14-alpha.2, @oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/core@0.1.14-alpha.3, @oce-editor-tools/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/core@workspace:packages/core"
   dependencies:
@@ -3810,7 +3810,7 @@ __metadata:
     "@mui/icons-material": ^5.11.0
     "@mui/lab": ^5.0.0-alpha.134
     "@mui/material": ^5.11.0
-    "@oce-editor-tools/core": 0.1.14-alpha.2
+    "@oce-editor-tools/core": 0.1.14-alpha.3
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
