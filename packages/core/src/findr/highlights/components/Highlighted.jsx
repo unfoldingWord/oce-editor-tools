@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from 'react';
 import { FindrDom } from '../classes/FindrDom';
 import { css } from '@emotion/react';
@@ -60,7 +59,7 @@ export const Highlighted = ({ target, options, children, ...props }) => {
           vertical-align: top;
           margin-right: 0.2em;
         }
-        .highlight {
+        .{
           background-color: rgb(255 235 0 / 50%);
           border-radius: 3px;
           mix-blend-mode: initial;

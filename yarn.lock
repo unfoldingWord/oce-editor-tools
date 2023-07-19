@@ -3623,7 +3623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@0.1.13-alpha.7, @oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/core@0.1.13, @oce-editor-tools/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/core@workspace:packages/core"
   dependencies:
@@ -3709,31 +3709,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@npm:0.1.13-alpha.6":
-  version: 0.1.13-alpha.6
-  resolution: "@oce-editor-tools/core@npm:0.1.13-alpha.6"
-  dependencies:
-    "@findr/mui": ^1.0.0-beta.17
-    "@findr/react": ^1.0.0-beta.3
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: ^0.2.20-beta.7
-    pagedjs: ^0.4.1
-    proskomma-core: ^0.10.1
-    react-uuid: ^2.0.0
-  peerDependencies:
-    "@emotion/react": ^11.10.0
-    "@emotion/styled": ^11.10.0
-    "@mui/icons-material": ^5.11.0
-    "@mui/lab": ^5.0.0-alpha.134
-    "@mui/material": ^5.11.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 31a6c0c783c6293cef45fa24fec04453fb2a92ea3c86315fe5e63c473cceeb85d7b0ecd639e7897c45f2f51053596e7ad1dc6c119f2b2eb6d3bb5c69fc253982
-  languageName: node
-  linkType: hard
-
 "@oce-editor-tools/pk-aligner@workspace:packages/pk-aligner":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/pk-aligner@workspace:packages/pk-aligner"
@@ -3809,7 +3784,7 @@ __metadata:
     "@mui/icons-material": ^5.11.0
     "@mui/lab": ^5.0.0-alpha.134
     "@mui/material": ^5.11.0
-    "@oce-editor-tools/core": 0.1.13-alpha.6
+    "@oce-editor-tools/core": 0.1.13
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
@@ -3869,7 +3844,7 @@ __metadata:
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     "@mui/styles": ^5.8.7
     "@netlify/plugin-nextjs": ^4.36.0
-    "@oce-editor-tools/core": 0.1.13-alpha.7
+    "@oce-editor-tools/core": 0.1.13
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
