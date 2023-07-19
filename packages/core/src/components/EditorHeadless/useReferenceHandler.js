@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { isFunction } from '../../helpers';
 
-function getScrollParent(node,limit) {
+function getScrollParent(node, limit) {
   if (node == null || node === limit) {
     return null;
   }
@@ -12,7 +12,6 @@ function getScrollParent(node,limit) {
     return getScrollParent(node.parentNode);
   }
 }
-
 
 export default function useReferenceHandler({
   editorRef,
@@ -37,15 +36,15 @@ export default function useReferenceHandler({
 
   const setReference = useCallback(
     (value) => {
-      if (!locked) {
-        if (verbose) console.log('setting refference');
-        setLocalReference((reference) => {
-          const tempReference = isFunction(value) ? value(reference) : value;
-          const newReference = { sourceId, ...tempReference };
+      if (verbose) console.log('setting refference');
+      setLocalReference((reference) => {
+        const tempReference = isFunction(value) ? value(reference) : value;
+        const newReference = { sourceId, ...tempReference };
+        if (!locked) {
           setExternalReference(newReference);
-          return { newReference };
-        });
-      }
+        }
+        return { newReference };
+      });
     },
     [locked, setExternalReference, sourceId, verbose]
   );

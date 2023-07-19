@@ -15,6 +15,12 @@ export default function useEditorProps({
   sequenceId,
 }) {
   const [graftSequenceId, setGraftSequenceId] = useState(null);
+  const {
+    sectionable,
+    blockable,
+    editable,
+    preview
+  } = options;
 
   const addSequenceId = useCallback(
     (sequenceId) =>
@@ -63,13 +69,18 @@ export default function useEditorProps({
     onHtmlPerf,
     onInput,
     onReferenceSelected,
-    options,
+    options: {
+      sectionable,
+      blockable,
+      editable,
+      preview,
+    },
     handlers,
     decorators: {},
     verbose,
     sectionIndex,
     graftSequenceId,
     setGraftSequenceId,
-    bookId
+    bookId,
   };
 }

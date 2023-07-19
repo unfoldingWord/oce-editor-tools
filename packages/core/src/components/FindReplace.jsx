@@ -13,11 +13,11 @@ export function FindReplace({
 }) {
   const {
     actions: { setHighlighterTarget, setHighlighterOptions, setOption: setEditorOption, setReference: onSetReference },
-    state: { epiteleteHtml, bookCode, options: editorOptions },
+    state: { epiteleteHtml, bookCode, options: editorOptions, sourceId },
   } = useEditorContext();
 
   const { search: open } = editorOptions;
-  const sourceKey = `${epiteleteHtml.docSetId}/${bookCode}`;
+  const sourceKey = `${sourceId}/${bookCode}`;
 
   async function findOrReplace(params) {
     const {
@@ -104,7 +104,12 @@ export function FindReplace({
     const { sourceKey, metadata } = result;
     const { bookCode, chapter, verses } = metadata;
     //TODO: include a callback for resetting card's reference
-    onSetReference({ sourceId: "*", bookId: bookCode, chapter, verse: verses });
+    onSetReference({
+      sourceId: sourceKey.split('/')[0],
+      bookId: bookCode,
+      chapter,
+      verse: verses,
+    });
     onClickResult({ bookId: bookCode, chapter, verse: verses });
     setEditorOption("search", false);
   };
