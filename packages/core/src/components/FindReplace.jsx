@@ -3,11 +3,25 @@ import { FindrMUI, Mark } from '@findr/mui';
 import { useFindr } from '@findr/react';
 import { Collapse, Paper } from '@mui/material';
 
-export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }) {
+export function FindReplace({
+  epitelete,
+  bookCode,
+  onReplace: _onReplace,
+  open,
+  setOpen,
+  onChangeOptions,
+  onChangeTargets,
+  onClickResult,
+}) {
   const sourceKey = `${epitelete.docSetId}/${bookCode}`;
 
   async function findOrReplace(params) {
-    const { options, target, replacement, resultsKeys: replacementKeys } = params;
+    const {
+      options,
+      target,
+      replacement,
+      resultsKeys: replacementKeys,
+    } = params;
     const data = {
       perf: {},
       params: {
@@ -17,22 +31,21 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }
         config: { ...options, ctxLen: 30 },
       },
     };
-    return await epitelete.makeDocumentReport(
-      bookCode,
-      'findAndReplace',
-      data
-    );
+    return await epitelete.makeDocumentReport(bookCode, 'findAndReplace', data);
   }
 
-  const buildResults = (report,sourceKey) => Object.values(report?.results).map((result) => ({
-    ...result,
-    sourceKey,
-  }));
+  const buildResults = (report, sourceKey) =>
+    Object.values(report?.results).map((result) => ({
+      ...result,
+      sourceKey,
+    }));
 
   const onSearch = async (params) => {
     if (!epitelete) return;
+    onChangeTargets(params.target);
+    onChangeOptions(params.options);
     const report = await findOrReplace(params);
-    return buildResults(report,sourceKey)
+    return buildResults(report, sourceKey);
   };
 
   const onReplace = async (params) => {
@@ -41,8 +54,8 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }
     const sequenceId = report.perf.main_sequence_id;
     const sequence = report.perf.sequences[sequenceId];
     const perf = await epitelete.writePerf(bookCode, sequenceId, sequence);
-    _onReplace(perf)
-    return buildResults(report,sourceKey)
+    _onReplace(perf);
+    return buildResults(report, sourceKey);
   };
 
   const {
@@ -62,24 +75,31 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }
   } = fnrEvents ?? {};
 
   const setResultTooltip = ({ result }) => {
-    const { bookCode, chapter, verses } = result.metadata
-    return `${bookCode} ${chapter}:${verses}`
+    const { bookCode, chapter, verses } = result.metadata;
+    return `${bookCode} ${chapter}:${verses}`;
   };
 
   const setReference = ({ result }) => {
     const { sourceKey, metadata } = result;
     const { bookCode, chapter, verses } = metadata;
     //TODO: include a callback for resetting card's reference
-    console.log('Data for reference set:',{ bookCode, chapter, verses, sourceKey });
-  }
+    onClickResult({ bookId: bookCode, chapter, verse: verses });
+    setOpen(open => !open);
+    console.log('Data for reference set:', {
+      bookCode,
+      chapter,
+      verses,
+      sourceKey,
+    });
+  };
 
-  const setGroupCaption = ({key:sourceKey}) => {
-    const [server, id, bookCode] = sourceKey.split('/');;
+  const setGroupCaption = ({ key: sourceKey }) => {
+    // const [server, id, bookCode] = sourceKey.split('/');;
     return `(${sourceKey})`;
   };
 
   const setGroupTitle = ({ key: sourceKey }) => {
-    const [server, id, bookCode] = sourceKey.split("/");
+    // const [server, id, bookCode] = sourceKey.split("/");
     return `Results`;
   };
 
@@ -112,7 +132,7 @@ export function FindReplace({ epitelete, bookCode, onReplace: _onReplace, open }
           {nodes}
         </>
       );
-    }
+    },
   };
 
   return (

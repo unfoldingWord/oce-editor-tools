@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
-import { useBookPreviewRenderer, PrintModal } from "@oce-editor-tools/core"
+import { usePkBookPreviewRenderer, PrintModal } from "@oce-editor-tools/core"
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 
 const defaultIncludeNames = [
@@ -14,7 +14,6 @@ const defaultIncludeNames = [
   'chapterLabels',
   'versesLabels',
 ];
-
 
 export default function PkPrintModal({
   openPrintModal,
@@ -58,7 +57,7 @@ export default function PkPrintModal({
     return ret;
   };
 
-  const { ready, doRender } = useBookPreviewRenderer({
+  const { ready, doRender } = usePkBookPreviewRenderer({
     pk, 
     docId: docIdFromCache, 
     bookId,

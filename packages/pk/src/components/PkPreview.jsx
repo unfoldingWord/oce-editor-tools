@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useBookPreviewRenderer } from "@oce-editor-tools/core";
+import { usePkBookPreviewRenderer } from "@oce-editor-tools/core";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 import {
   Typography,
@@ -21,7 +21,7 @@ export default function PkPreview(props) {
     actions: { getRepoUID }
   } = useContext(LocalPkCacheContext);
 
-  const { ready, doRender } = useBookPreviewRenderer({
+  const { ready, doRender } = usePkBookPreviewRenderer({
     pk, 
     docId: docIdFromCache, 
     bookId,

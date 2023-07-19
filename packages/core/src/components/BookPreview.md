@@ -6,8 +6,6 @@ The demo demonstrates the BookPreview component.
 import { usfmText } from '../data/tit.en.ult.usfm.js';
 
 function Component () {
-  const bookId = 'TIT'
-
   const renderFlags = {
     showTitles: true,
     showChapterLabels: true,
@@ -16,7 +14,6 @@ function Component () {
 
   const previewProps = {
     usfmText,
-    bookId,
     renderFlags,
     verbose: true,
   }

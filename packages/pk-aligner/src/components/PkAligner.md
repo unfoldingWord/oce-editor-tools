@@ -16,7 +16,7 @@ function Component () {
   const bookId = 'TIT'
   const verseRangeStr = 'Tit.2.3'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
 
   const alignerProps = {
     repoIdStr,

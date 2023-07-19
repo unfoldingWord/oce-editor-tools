@@ -1,34 +1,55 @@
 # PrintModal demo
 
-The demo demonstrates using the PrintModal in standalone mode
+The demo demonstrates using the PrintModal for renderring an Usfm text
 
 ```js
 import { useState } from 'react'
+import { usfmText } from '../data/Acts.1.usfm.js'
+import useUsfmPreviewRenderer from "../hooks/useUsfmPreviewRenderer"
+import DOMPurify from 'dompurify'
 
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
 
-  const handleClick = () => {
-    setIsOpen(!isOpen)
+  const handleClick = () => setIsOpen(!isOpen)
+
+  const renderFlags = {
+    showWordAtts: false,
+    showTitles: true,
+    showHeadings: true,
+    showIntroductions: true,
+    showFootnotes: false,
+    showXrefs: false,
+    showParaStyles: false,
+    showCharacterMarkup: false,
+    showChapterLabels: true,
+    showVersesLabels: true,
   }
 
-  const done = true
+  const { renderedData, ready } = useUsfmPreviewRenderer({ 
+    usfmText,
+    renderFlags,
+    htmlRender: true
+  })
 
   const previewProps = {
-    openPrintModal: isOpen && done,
+    openPrintModal: isOpen && ready,
     handleClosePrintModal: () => {
       console.log('closePrintModal')
       setIsOpen(false)
     },
-    onRenderContent: () => `This is just a test!`,
+    onRenderContent: () => renderedData,
+    canChangeAtts: true,
+    canChangeColumns: true,
   }
   
   return (
       <div key="1">
-        <button onClick={handleClick}>
+        { ready && (<button onClick={handleClick}>
           Print preview
-        </button>
-        { done ? <PrintModal {...previewProps} /> : 'Loading...'}
+        </button>)}
+        { ready ? <PrintModal {...previewProps} /> : 'Loading...'}
+        { ready && (<div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(renderedData)}}/>)}
       </div>
   )
 } 

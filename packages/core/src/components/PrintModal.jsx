@@ -43,13 +43,15 @@ const defaultIncludeNames = [
   'characterMarkup',
   'chapterLabels',
   'versesLabels',
-];
+]
 
 
 export default function PrintModal({
   openPrintModal,
   handleClosePrintModal,
   onRenderContent,
+  canChangeAtts,
+  canChangeColumns,
 }) {
 
   const allNames = [
@@ -63,37 +65,37 @@ export default function PrintModal({
     'characterMarkup',
     'chapterLabels',
     'versesLabels',
-  ];
+  ]
 
-  const [includedNames, setIncludedNames] = useState(defaultIncludeNames);
+  const [includedNames, setIncludedNames] = useState(defaultIncludeNames)
   const [formatData, setFormatData] = useState({
     pageFormat: 'A4P',
     nColumns: 1,
-  });
+  })
 
   const getStyles = (name) => {
     return {
       fontWeight: includedNames.indexOf(name) === -1 ? 'normal' : 'bold',
-    };
-  };
+    }
+  }
 
   const substituteCss = (template, replaces) => {
-    let ret = template;
+    let ret = template
     for (const [placeholder, replacement] of replaces) {
-      ret = ret.replace(placeholder, replacement);
+      ret = ret.replace(placeholder, replacement)
     }
-    return ret;
-  };
+    return ret
+  }
 
   const handleIncludedChange = (event) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setIncludedNames(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value
-    );
-  };
+    )
+  }
 
   const pageCss = substituteCss(printModalResources.pageCssTemplate, [
     ['%pageWidth%', printModalResources.pageSizes[formatData.pageFormat].width],
@@ -102,22 +104,22 @@ export default function PrintModal({
       printModalResources.pageSizes[formatData.pageFormat].height,
     ],
     ['%nColumns%', formatData.nColumns],
-  ]);
+  ])
 
   const onPrintClick = () => {
     const renderedData = onRenderContent && onRenderContent()
-    const newPage = window.open();
-    newPage.document.body.innerHTML = `<div id="paras">${renderedData}</div>`;
-    newPage.document.head.innerHTML = '<title>PDF Preview</title>';
-    const script = document.createElement('script');
-    script.src = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`;
-    newPage.document.head.appendChild(script);
-    const style = document.createElement('style');
-    style.innerHTML = pageCss;
-    newPage.document.head.appendChild(style);
-  };
+    const newPage = window.open()
+    newPage.document.body.innerHTML = `<div id="paras">${renderedData}</div>`
+    newPage.document.head.innerHTML = '<title>PDF Preview</title>'
+    const script = document.createElement('script')
+    script.src = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`
+    newPage.document.head.appendChild(script)
+    const style = document.createElement('style')
+    style.innerHTML = pageCss
+    newPage.document.head.appendChild(style)
+  }
 
-  const columnsList = [1, 2, 3];
+  const columnsList = [1, 2, 3]
 
   return (
     <>
@@ -143,7 +145,7 @@ export default function PrintModal({
               container
               sx={{ display: 'flex', flexDirection: 'column' }}
             >
-              <Grid item sx={{ margin: '2%' }}>
+              {canChangeAtts && (<Grid item sx={{ margin: '2%' }}>
                 <FormGroup
                   sx={{
                     display: 'flex',
@@ -173,7 +175,7 @@ export default function PrintModal({
                     ))}
                   </Select>
                 </FormGroup>
-              </Grid>
+              </Grid>)}
               <Grid item sx={{ margin: '2%' }}>
                 <PageSizeSelector
                   formLabelTitle={'PAGE_SIZE'}
@@ -182,14 +184,14 @@ export default function PrintModal({
                   setFormatData={setFormatData}
                 />
               </Grid>
-              <Grid item sx={{ margin: '2%' }}>
+              {canChangeColumns && (<Grid item sx={{ margin: '2%' }}>
                 <ColumnsSelector
                   formLabelTitle={'COLUMNS'}
                   listItems={columnsList}
                   formatData={formatData}
                   setFormatData={setFormatData}
                 />
-              </Grid>
+              </Grid>)}
             </Grid>
             <Button
               onClick={onPrintClick}
@@ -201,7 +203,7 @@ export default function PrintModal({
         </Fade>
       </Modal>
     </>
-  );
+  )
 }
 
 PrintModal.propTypes = {
@@ -211,8 +213,11 @@ PrintModal.propTypes = {
   handleClosePrintModal: PropTypes.func,
   /** needs to return the content that needs to be rendered */
   onRenderContent: PropTypes.func,
-};
+  canChangeAtts: PropTypes.bool,
+  canChangeColumns: PropTypes.bool
+}
 
 PrintModal.defaultProps = {
-  verbose: false,
-};
+  canChangeAtts: false,
+  canChangeColumns: false
+}
