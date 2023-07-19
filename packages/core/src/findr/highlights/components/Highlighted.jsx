@@ -8,7 +8,7 @@ import { css } from '@emotion/react';
 export const Highlighted = ({ target, options, children, ...props }) => {
   const findrDomRef = useRef(null);
   useEffect(() => {
-    const sourceElement = sourceRef.current;
+    const sourceElement = sourceRef?.current;
     if (sourceElement) {
       const findrDom = new FindrDom({ source: sourceElement });
       findrDomRef.current = findrDom;
@@ -26,7 +26,7 @@ export const Highlighted = ({ target, options, children, ...props }) => {
         options: Object.assign({ highlights: true }, options),
       });
   }, [target, options]);
-  const sourceRef = useRef(null);
+  const sourceRef = useRef();
   return (
     <div
       css={css`
