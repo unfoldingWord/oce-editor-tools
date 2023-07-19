@@ -24,7 +24,7 @@
     "@findr/text": "^1.0.7-beta.4",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@xelah/type-perf-html": "^1.0.2",
-    "epitelete-html": "^0.2.20-beta.7",
+    "epitelete-html": "0.2.21-beta.2",
     "pagedjs": "^0.4.1",
     "proskomma-core": "^0.10.1",
     "react-uuid": "^2.0.0"

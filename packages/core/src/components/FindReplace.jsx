@@ -2,18 +2,22 @@ import * as React from 'react';
 import { FindrMUI, Mark } from '@findr/mui';
 import { useFindr } from '@findr/react';
 import { Collapse, Paper } from '@mui/material';
+import { useEditorContext } from './EditorHeadless/Editor';
 
 export function FindReplace({
-  epitelete,
-  bookCode,
-  onReplace: _onReplace,
-  open,
-  setOpen,
-  onChangeOptions,
-  onChangeTargets,
-  onClickResult,
+  onClickResult = () => null,
+  onReplace: _onReplace = () => null,
+  onSearch: _onSearch = () => null,
+  onChangeOptions: _onChangeOptions = () => null,
+  onChangeTarget: _onChangeTarget = () => null,
 }) {
-  const sourceKey = `${epitelete.docSetId}/${bookCode}`;
+  const {
+    actions: { setHighlighterTarget, setHighlighterOptions, setOption: setEditorOption, setReference: onSetReference },
+    state: { epiteleteHtml, bookCode, options: editorOptions },
+  } = useEditorContext();
+
+  const { search: open } = editorOptions;
+  const sourceKey = `${epiteleteHtml.docSetId}/${bookCode}`;
 
   async function findOrReplace(params) {
     const {
@@ -31,7 +35,11 @@ export function FindReplace({
         config: { ...options, ctxLen: 30 },
       },
     };
-    return await epitelete.makeDocumentReport(bookCode, 'findAndReplace', data);
+    return await epiteleteHtml.makeDocumentReport(
+      bookCode,
+      'findAndReplace',
+      data
+    );
   }
 
   const buildResults = (report, sourceKey) =>
@@ -39,23 +47,36 @@ export function FindReplace({
       ...result,
       sourceKey,
     }));
+  
+  const onTargetChanged = (target) => {
+    setHighlighterTarget(target);
+    _onChangeTarget(target);
+  };
+
+  const onOptionsChanged = (options) => {
+    setHighlighterOptions(options);
+    _onChangeOptions(target);
+  }
 
   const onSearch = async (params) => {
-    if (!epitelete) return;
-    onChangeTargets(params.target);
-    onChangeOptions(params.options);
+    if (!epiteleteHtml) return;
+    onTargetChanged(params.target);
+    onOptionsChanged(params.options);
     const report = await findOrReplace(params);
-    return buildResults(report, sourceKey);
+    const results = buildResults(report, sourceKey);
+    _onSearch(results);
+    return results;
   };
 
   const onReplace = async (params) => {
-    if (!epitelete) return;
+    if (!epiteleteHtml) return;
     const report = await findOrReplace(params);
     const sequenceId = report.perf.main_sequence_id;
-    const sequence = report.perf.sequences[sequenceId];
-    const perf = await epitelete.writePerf(bookCode, sequenceId, sequence);
-    _onReplace(perf);
-    return buildResults(report, sourceKey);
+    const perfHtml = epiteleteHtml._outputHtml(report.perf);
+    await epiteleteHtml.write(bookCode, sequenceId, perfHtml);
+    const results = buildResults(report, sourceKey)
+    _onReplace(results);
+    return results;
   };
 
   const {
@@ -83,8 +104,9 @@ export function FindReplace({
     const { sourceKey, metadata } = result;
     const { bookCode, chapter, verses } = metadata;
     //TODO: include a callback for resetting card's reference
+    onSetReference({ bookId: bookCode, chapter, verse: verses });
     onClickResult({ bookId: bookCode, chapter, verse: verses });
-    setOpen(open => !open);
+    setEditorOption("search", false);
     console.log('Data for reference set:', {
       bookCode,
       chapter,
@@ -136,7 +158,7 @@ export function FindReplace({
   };
 
   return (
-    <Collapse in={open}>
+    <Collapse in={open} timeout={0}>
       <Paper elevation={1} sx={{ mb: '1em', pb: '0.5em', position: 'sticky' }}>
         <FindrMUI
           sx={{ padding: '0.5em', margin: '0em 0.5em' }}

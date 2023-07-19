@@ -60,17 +60,18 @@ export default function RecursiveBlock({
       console.log({ selectedNode })
       const verse = getCurrentVerse(selectedNode)
       const chapter = getCurrentChapter(selectedNode)
-      // if ( onReferenceSelected && chapter && verse ) {
-      onReferenceSelected({ bookId, chapter, verse })
-      // }
+      if (verbose) console.log("checkCurrentVerse", { chapter, verse });
+      console.log({bookId})
+      if ( onReferenceSelected && chapter && verse ) 
+        onReferenceSelected({ bookId, chapter, verse })
     }
   }
 
-  const updateCursorPosition = () => {
-    let cursorPosition = getCurrentCursorPosition('editor')
-    console.log(cursorPosition)
-    setCaretPosition && setCaretPosition(cursorPosition)
-  }
+  // const updateCursorPosition = () => {
+  //   let cursorPosition = getCurrentCursorPosition('editor')
+  //   console.log(cursorPosition)
+  //   setCaretPosition && setCaretPosition(cursorPosition)
+  // }
   // const updateVerseNumber = () => {
   //   const selectedNode = document.getSelection().getRangeAt(0).startContainer
   //   console.log({ selectedNode })
@@ -95,10 +96,10 @@ export default function RecursiveBlock({
       <div
         className='editor-paragraph'
         contentEditable={contentEditable}
-        // onKeyUp={checkReturnKeyPress}
+        onKeyUp={checkReturnKeyPress}
         onKeyDown={checkReturnKeyPress}
         onMouseUp={checkCurrentVerse}
-        onMouseDown={updateCursorPosition}
+        // onMouseDown={updateCursorPosition}
         {...props}
       />
     )
