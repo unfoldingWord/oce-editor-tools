@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import usePkBookPreviewRenderer from "./usePkBookPreviewRenderer"
 import { Proskomma } from 'proskomma-core'
 

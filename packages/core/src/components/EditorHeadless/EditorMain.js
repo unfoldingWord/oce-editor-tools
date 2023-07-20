@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEditorContext } from './Editor';
 import Section from '../Section';
 import SectionHeading from '../SectionHeading';

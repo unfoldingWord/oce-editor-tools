@@ -3,7 +3,7 @@
 The demo demonstrates using the PrintModal for renderring an Usfm text
 
 ```js
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { usfmText } from '../data/Acts.1.usfm.js'
 import useUsfmPreviewRenderer from "../hooks/useUsfmPreviewRenderer"
 import DOMPurify from 'dompurify'
@@ -66,7 +66,7 @@ The demo demonstrates how to use the PrintModal with markup content.
 
 ```js
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import markup from "../lib/drawdown"
 
 const range = (start, end) => Array.from(

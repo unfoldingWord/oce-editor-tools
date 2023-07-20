@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import { Box, Popper } from '@mui/material';
 import { useEditorContext } from '../Editor';
-import { useEffect, useState } from 'react';
 import { getFlatWordObj } from '../../../helpers/getFlatWordObj';
 import ButtonHeadless from './ButtonHeadless';
 import { isFunction } from '../../../helpers';

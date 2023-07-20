@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from 'react';
 import { useEditorContext } from "./Editor";
 import Toggle from "./Toggle/Toggle";
 import BlockHeadless from "./BlockHeadless";

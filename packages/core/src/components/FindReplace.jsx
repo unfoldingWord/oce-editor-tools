@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { FindrMUI, Mark } from '@findr/mui';
 import { useFindr } from '@findr/react';
 import { Collapse, Paper } from '@mui/material';

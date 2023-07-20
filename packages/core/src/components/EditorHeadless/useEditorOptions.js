@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 export function useEditorOptions(defaultOptions) {
   const initialOptions = useMemo(

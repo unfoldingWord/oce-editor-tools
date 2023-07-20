@@ -3,7 +3,7 @@
 The demo demonstrates using two Editor instances (side by side) including synchronised navigation.
 
 ```js
-import { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import EpiteleteHtml from 'epitelete-html';
 import Card from '@mui/material/Card';
@@ -127,7 +127,7 @@ function DoubleContainer() {
 The Editor expects input of an EpiteleteHtml object.
 
 ```js
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import EpiteleteHtml from "epitelete-html"
 
@@ -202,7 +202,7 @@ Here is the function for sideloading:
 ```
 
 ```js
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import __htmlPerf from '../data/tit.en.ult.perf.json'
 import EpiteleteHtml from "epitelete-html"
