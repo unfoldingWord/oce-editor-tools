@@ -40,7 +40,7 @@ export default function useReferenceHandler({
       setLocalReference((reference) => {
         const tempReference = isFunction(value) ? value(reference) : value;
         const newReference = { sourceId, ...tempReference };
-        if (!locked) {
+        if (!locked && setExternalReference) {
           setExternalReference(newReference);
         }
         return { newReference };

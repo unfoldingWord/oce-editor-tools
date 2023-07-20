@@ -28,7 +28,7 @@ const ToolbarButton = styled(ToggleButton)({
   },
 });
 
-export function EditorToolbar({ showToggles, content, onRenderToolbar }) {
+export function EditorToolbar({ showToggles, onRenderToolbar }) {
   return (
     <Box
       sx={{
@@ -51,9 +51,9 @@ export function EditorToolbar({ showToggles, content, onRenderToolbar }) {
         <Button.Editable component={ToolbarButton}>
           <Edit />
         </Button.Editable>
-        <Button.Lock component={ToolbarButton}>
+        {/* <Button.Lock component={ToolbarButton}>
           {({selected}) => selected ? <Lock/> : <LockOpen/>}
-        </Button.Lock>
+        </Button.Lock> */}
         {showToggles ? (
           <>
             <Button.Sectionable component={ToolbarButton}>
