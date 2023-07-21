@@ -1,4 +1,7 @@
-import { useState, useEffect, useCallback } from 'react'
+// eslint-disable-next-line no-unused-vars
+import React,
+{ useState, useEffect, useCallback }
+from 'react'
 import PropTypes from 'prop-types'
 import { Proskomma } from 'proskomma-core'
 import { SofriaRenderFromProskomma } from 'proskomma-json-tools'

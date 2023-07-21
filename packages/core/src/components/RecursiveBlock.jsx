@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { HtmlPerfEditor } from '@xelah/type-perf-html'
 import { getCurrentVerse, getCurrentChapter } from '../helpers/getReferences'
 import { getCurrentCursorPosition } from '../helpers/cursorUtils'
+import { useEditorContext } from './EditorHeadless/Editor'
 
 const getTarget = ({ content }) => {
   const div = document.createElement("div")
@@ -27,10 +28,12 @@ export default function RecursiveBlock({
   verbose,
   setFootNote,
   bookId,
-  onReferenceSelected,
   setCaretPosition,
   ...props
 }) {
+  const {
+    actions: { setReference },
+  } = useEditorContext();
   const [currentVerse, setCurrentVerse] = useState(null)
   useEffect(() => {
     if (verbose) console.log("Block: Mount/First Render", index)
@@ -53,24 +56,22 @@ export default function RecursiveBlock({
   }
 
   const checkCurrentVerse = () => {
-    if (document.getSelection().rangeCount >= 1 && onReferenceSelected) {
+    if (document.getSelection().rangeCount >= 1 && setReference) {
       const range = document.getSelection().getRangeAt(0)
-      console.log({ range })
       const selectedNode = range.startContainer
-      console.log({ selectedNode })
       const verse = getCurrentVerse(selectedNode)
       const chapter = getCurrentChapter(selectedNode)
-      // if ( onReferenceSelected && chapter && verse ) {
-      onReferenceSelected({ bookId, chapter, verse })
-      // }
+      if (verbose) console.log("checkCurrentVerse", { chapter, verse });
+      if ( setReference && chapter && verse ) 
+        setReference({ bookId, chapter, verse })
     }
   }
 
-  const updateCursorPosition = () => {
-    let cursorPosition = getCurrentCursorPosition('editor')
-    console.log(cursorPosition)
-    setCaretPosition && setCaretPosition(cursorPosition)
-  }
+  // const updateCursorPosition = () => {
+  //   let cursorPosition = getCurrentCursorPosition('editor')
+  //   console.log(cursorPosition)
+  //   setCaretPosition && setCaretPosition(cursorPosition)
+  // }
   // const updateVerseNumber = () => {
   //   const selectedNode = document.getSelection().getRangeAt(0).startContainer
   //   console.log({ selectedNode })
@@ -95,10 +96,10 @@ export default function RecursiveBlock({
       <div
         className='editor-paragraph'
         contentEditable={contentEditable}
-        // onKeyUp={checkReturnKeyPress}
+        onKeyUp={checkReturnKeyPress}
         onKeyDown={checkReturnKeyPress}
         onMouseUp={checkCurrentVerse}
-        onMouseDown={updateCursorPosition}
+        // onMouseDown={updateCursorPosition}
         {...props}
       />
     )

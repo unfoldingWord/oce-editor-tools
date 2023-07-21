@@ -3,6 +3,10 @@
   "version": "0.1.3",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start:core": "yarn nx start @oce-editor-tools/core",
+    "start:pk": "yarn nx start @oce-editor-tools/pk"
+  },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.17.10",
