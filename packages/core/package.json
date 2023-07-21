@@ -2,7 +2,6 @@
   "name": "@oce-editor-tools/core",
   "description": "A React Component Library for editing PERF.",
   "version": "0.1.15-beta.2",
-  "name": "@oce-editor-tools/core",
   "homepage": "https://oce-editor-tools-core.netlify.app/",
   "license": "MIT",
   "repository": {
