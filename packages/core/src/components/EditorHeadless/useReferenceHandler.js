@@ -1,4 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React,
+{ useCallback, useEffect, useMemo, useState }
+from 'react';
 import { isFunction } from '../../helpers';
 
 function getScrollParent(node, limit) {
@@ -24,7 +27,7 @@ export default function useReferenceHandler({
   sequenceId,
   sectionIndices,
   setSectionIndices,
-  verbose,
+  bookId,
 }) {
   const [hasIntroduction, setHasIntroduction] = useState(false);
   const [localReference, setLocalReference] = useState();
@@ -36,21 +39,26 @@ export default function useReferenceHandler({
 
   const setReference = useCallback(
     (value) => {
-      if (verbose) console.log('setting refference');
       setLocalReference((reference) => {
         const tempReference = isFunction(value) ? value(reference) : value;
         const newReference = { sourceId, ...tempReference };
         if (!locked && setExternalReference) {
           setExternalReference(newReference);
         }
-        return { newReference };
+        return newReference;
       });
     },
-    [locked, setExternalReference, sourceId, verbose]
+    [locked, setExternalReference, sourceId]
   );
 
   useEffect(() => {
-    if (htmlPerf && sequenceId && editorRef.current && reference) {
+    if (
+      htmlPerf &&
+      sequenceId &&
+      editorRef.current &&
+      reference &&
+      reference.bookId === bookId
+    ) {
       const { chapter, verse } = reference;
 
       setSectionIndices((sectionIndices) => ({
@@ -77,6 +85,7 @@ export default function useReferenceHandler({
     editorRef,
     hasIntroduction,
     setSectionIndices,
+    bookId
   ]);
 
   useEffect(() => {

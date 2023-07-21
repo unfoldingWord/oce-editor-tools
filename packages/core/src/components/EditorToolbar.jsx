@@ -51,9 +51,6 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
         <Button.Editable component={ToolbarButton}>
           <Edit />
         </Button.Editable>
-        {/* <Button.Lock component={ToolbarButton}>
-          {({selected}) => selected ? <Lock/> : <LockOpen/>}
-        </Button.Lock> */}
         {showToggles ? (
           <>
             <Button.Sectionable component={ToolbarButton}>
@@ -67,12 +64,15 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
             </Button.Preview>
           </>
         ) : null}
-        <Button.AlignmentBroken component={ToolbarButton}>
-          {({ allAligned }) =>
-            allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />
-          }
-        </Button.AlignmentBroken>
         <Extensible onRenderItems={onRenderToolbar}>
+          <Button.Lock component={ToolbarButton}>
+            {({ selected }) => (selected ? <Lock /> : <LockOpen />)}
+          </Button.Lock>
+          <Button.AlignmentBroken component={ToolbarButton}>
+            {({ allAligned }) =>
+              allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />
+            }
+          </Button.AlignmentBroken>
           <Button.Undo component={ToolbarButton}>
             <Undo />
           </Button.Undo>

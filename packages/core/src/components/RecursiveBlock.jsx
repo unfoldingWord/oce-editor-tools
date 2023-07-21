@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { HtmlPerfEditor } from '@xelah/type-perf-html'
 import { getCurrentVerse, getCurrentChapter } from '../helpers/getReferences'
 import { getCurrentCursorPosition } from '../helpers/cursorUtils'
+import { useEditorContext } from './EditorHeadless/Editor'
 
 const getTarget = ({ content }) => {
   const div = document.createElement("div")
@@ -27,10 +28,12 @@ export default function RecursiveBlock({
   verbose,
   setFootNote,
   bookId,
-  onReferenceSelected,
   setCaretPosition,
   ...props
 }) {
+  const {
+    actions: { setReference },
+  } = useEditorContext();
   const [currentVerse, setCurrentVerse] = useState(null)
   useEffect(() => {
     if (verbose) console.log("Block: Mount/First Render", index)
@@ -53,14 +56,14 @@ export default function RecursiveBlock({
   }
 
   const checkCurrentVerse = () => {
-    if (document.getSelection().rangeCount >= 1 && onReferenceSelected) {
+    if (document.getSelection().rangeCount >= 1 && setReference) {
       const range = document.getSelection().getRangeAt(0)
       const selectedNode = range.startContainer
       const verse = getCurrentVerse(selectedNode)
       const chapter = getCurrentChapter(selectedNode)
       if (verbose) console.log("checkCurrentVerse", { chapter, verse });
-      if ( onReferenceSelected && chapter && verse ) 
-        onReferenceSelected({ bookId, chapter, verse })
+      if ( setReference && chapter && verse ) 
+        setReference({ bookId, chapter, verse })
     }
   }
 

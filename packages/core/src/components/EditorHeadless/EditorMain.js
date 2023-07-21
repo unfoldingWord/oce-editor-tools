@@ -9,7 +9,13 @@ import { Highlighted } from '../../findr/highlights/components/Highlighted';
 
 export function EditorMain({ components, ...props }) {
   const {
-    state: { sectionIndices, editorProps, highlighterTarget, highlighterOptions, editorRef },
+    state: {
+      sectionIndices,
+      editorProps,
+      highlighterTarget,
+      highlighterOptions,
+      editorRef,
+    },
   } = useEditorContext();
 
   const {
@@ -18,7 +24,6 @@ export function EditorMain({ components, ...props }) {
     onHtmlPerf,
     sequenceIds,
     addSequenceId,
-    onReferenceSelected,
   } = editorProps;
 
   const htmlEditorProps = {
@@ -34,7 +39,6 @@ export function EditorMain({ components, ...props }) {
           onHtmlPerf,
           sequenceIds,
           addSequenceId,
-          onReferenceSelected,
           ...__props,
         }),
     },

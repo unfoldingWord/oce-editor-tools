@@ -1,4 +1,7 @@
-import React, { useCallback, useMemo, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React,
+{ useCallback, useMemo, useState }
+from 'react';
 
 export default function useEditorProps({
   epiteleteHtml,

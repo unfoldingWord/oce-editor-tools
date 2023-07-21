@@ -1,4 +1,7 @@
-import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React,
+{ useState, useCallback, useMemo, useEffect, useRef }
+from 'react';
 import PropTypes from 'prop-types';
 import { readOptions, writeOptions } from '../../constants';
 import useEditorOptions from './useEditorOptions';
@@ -32,6 +35,7 @@ export default function useEditorState({
     useReferenceHandler({
       editorRef,
       sourceId,
+      bookId,
       reference,
       setReference,
       locked: optionsState.options.locked,

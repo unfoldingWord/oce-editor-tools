@@ -1,19 +1,24 @@
 # Editor demo 1
 
-The demo demonstrates using two Editor instances (side by side) including synchronised navigation.
+The demo demonstrates using four Editor instances (side by side) including synchronised navigation.
+
+**Note:** Uncontrolled editors use a local editor reference state, while controlled editors use reference state and onSetReference passed in as an argument, use the lock icon to force the editor to be uncontrolled.
 
 ```js
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from "react";
 
-import EpiteleteHtml from 'epitelete-html';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import EpiteleteHtml from "epitelete-html";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardContent from "@mui/material/CardContent";
 
-import { usfmText } from '../data/tit.en.ult.usfm.js';
-import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js';
-import { usfm2perf } from '../helpers/usfm2perf';
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+
+import { usfmText } from "../data/tit.en.ult.usfm.js";
+import { usfmText as usfmTextFra } from "../data/86-TITfraLSG.usfm.js";
+import { usfmText as usfmTextPe } from "../data/1pe.en.ult.usfm.js";
+import { usfm2perf } from "../helpers/usfm2perf";
 
 function MyEditor({
   bookId,
@@ -55,69 +60,85 @@ function MyEditor({
     onReferenceSelected,
     onSave,
     verbose,
-    ...props
+    ...props,
   };
 
-  return <>{ready ? <Editor {...editorProps} /> : 'Loading...'}</>;
+  return <>{ready ? <Editor {...editorProps} /> : "Loading..."}</>;
 }
 
-function DoubleContainer() {
-  const bookId = 'TIT';
-  const [reference, setReference] = useState({ bookId, chapter: 1, verse: 1 });
+function GridCard({ title, children }) {
+  return (
+    <Grid item key="Test" xs={12} sm={6}>
+      <Card sx={{ display: "flex", flexDirection: "column" }}>
+        <CardHeader subheader={title}/>
+        <CardContent
+          sx={{
+            flexGrow: 1,
+            height: "40vh",
+            overflow: "hidden",
+            overflowY: "auto",
+          }}
+        >
+          {children}
+        </CardContent>
+      </Card>
+    </Grid>
+  );
+}
+const bookId1 = "TIT";
+const bookId2 = "1PE";
+
+function MyWorkspace() {
+  const [reference, setReference] = useState({ bookId: bookId1, chapter: 1, verse: 1 });
 
   const onReferenceSelected = ({ sourceId, bookId, chapter, verse }) => {
-    setReference({ sourceId, bookId, chapter, verse });
+    setReference({ sourceId, bookId: bookId, chapter, verse });
   };
 
   return (
     <Container sx={{ py: 4 }}>
+      <h2>Workspace</h2>
       <Grid container spacing={2}>
-        <Grid item key="Test" xs={12} sm={6}>
-          <Card sx={{ display: 'flex', flexDirection: 'column' }}>
-            <CardContent
-              sx={{
-                flexGrow: 1,
-                height: '40vh',
-                overflow: 'hidden',
-                overflowY: 'auto',
-              }}
-            >
-              <MyEditor
-                docSetId={'Xxx/en_tit'}
-                bookId={bookId}
-                reference={reference}
-                onReferenceSelected={onReferenceSelected}
-                usfmText={usfmText}
-              />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item key="Test2" xs={12} sm={6}>
-          <Card sx={{ display: 'flex', flexDirection: 'column' }}>
-            <CardContent
-              sx={{
-                flexGrow: 1,
-                height: '40vh',
-                overflow: 'hidden',
-                overflowY: 'auto',
-              }}
-            >
-              <MyEditor
-                docSetId={'LSG/fra_tit'}
-                bookId={bookId}
-                reference={reference}
-                onReferenceSelected={onReferenceSelected}
-                usfmText={usfmTextFra}
-              />
-            </CardContent>
-          </Card>
-        </Grid>
+        <GridCard title={`Org1: 1Peter (Uncontrolled)`}>
+          <MyEditor
+            docSetId={"ORG1-en_ult/1pe"}
+            bookId={bookId2}
+            usfmText={usfmTextPe}
+          />
+        </GridCard>
+        <GridCard title={`Org2: 1Peter (Controlled)`}>
+          <MyEditor
+            docSetId={"ORG2-en_ult/1pe"}
+            bookId={bookId2}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmTextPe}
+          />
+        </GridCard>
+        <GridCard title={`Org3: Titus (Controlled)`}>
+          <MyEditor
+            docSetId={"Xxx/en_tit"}
+            bookId={bookId1}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmText}
+          />
+        </GridCard>
+        <GridCard title={`Org4: Titus (Controlled)`}>
+          <MyEditor
+            docSetId={"LSG/fra_tit"}
+            bookId={bookId1}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmTextFra}
+          />
+        </GridCard>
       </Grid>
     </Container>
   );
 }
 
-<DoubleContainer/>
+<MyWorkspace/>
 
 ```
 
