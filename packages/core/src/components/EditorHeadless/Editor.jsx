@@ -13,7 +13,6 @@ export function EditorContainer({
   bcvSyncRef,
   reference,
   setReference = () => null,
-  scrollLock,
   scrollDelay,
   children,
   defaultOptions
@@ -28,7 +27,6 @@ export function EditorContainer({
     reference,
     setReference,
     scrollDelay,
-    scrollLock,
   });
 
   const context = {

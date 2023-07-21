@@ -60,6 +60,9 @@ export function FindReplace({
 
   const onSearch = async (params) => {
     if (!epiteleteHtml) return;
+    if (params.target === " ") {
+      return []
+    }
     onTargetChanged(params.target);
     onOptionsChanged(params.options);
     const report = await findOrReplace(params);
@@ -124,9 +127,15 @@ export function FindReplace({
     return `Results`;
   };
 
+  const __onChangeTarget = (event) => {
+    const newTarget = event.target.value;
+    if(!newTarget) onTargetChanged(null);
+    return onChangeTarget(event)
+  }
+
   const fnrProps = {
     setGroups,
-    onChangeTarget,
+    onChangeTarget: __onChangeTarget,
     onChangeReplacement,
     onReplaceGroup,
     onReplaceResult,

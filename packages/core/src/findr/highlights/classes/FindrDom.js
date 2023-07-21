@@ -56,7 +56,7 @@ export class FindrDom {
   find({ target, replacement, replacementKeys, metadata, options }) {
     var _a;
     this.highlighter.removeHighlight();
-    if (target !== null && target !== undefined) this.setTarget(target);
+    if (target !== undefined) this.setTarget(target);
     if (!this.target) return;
     this.replacement = replacement;
     if (metadata) {

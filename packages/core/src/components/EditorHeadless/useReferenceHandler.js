@@ -32,6 +32,8 @@ export default function useReferenceHandler({
   const [hasIntroduction, setHasIntroduction] = useState(false);
   const [localReference, setLocalReference] = useState();
 
+  const isControlled = (externalReference !== undefined);
+
   const reference = useMemo(
     () => (locked || !externalReference ? localReference : externalReference),
     [locked, externalReference, localReference]
@@ -100,5 +102,5 @@ export default function useReferenceHandler({
     }
   }, [sequenceId, sectionIndices, editorRef]);
 
-  return { state: { reference }, actions: { setReference } };
+  return { state: { reference, isControlled }, actions: { setReference } };
 }
