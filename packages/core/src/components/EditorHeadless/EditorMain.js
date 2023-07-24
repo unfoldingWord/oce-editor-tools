@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEditorContext } from './Editor';
-import Section from '../Section';
-import SectionHeading from '../SectionHeading';
-import SectionBody from '../SectionBody';
-import RecursiveBlock from '../RecursiveBlock';
+import SectionHeading from './SectionHeading';
+import RecursiveBlock from './RecursiveBlock';
 import { HtmlPerfEditor } from '@xelah/type-perf-html';
 import { Highlighted } from '../../findr/highlights/components/Highlighted';
 
 export function EditorMain({ components, ...props }) {
+  const { block, sectionHeading, ..._components } = components ?? {};
+
   const {
     state: {
       sectionIndices,
@@ -18,20 +18,14 @@ export function EditorMain({ components, ...props }) {
     },
   } = useEditorContext();
 
-  const {
-    bookId,
-    htmlPerf,
-    onHtmlPerf,
-    sequenceIds,
-    addSequenceId,
-  } = editorProps;
+  const { bookId, htmlPerf, onHtmlPerf, sequenceIds, addSequenceId } =
+    editorProps;
 
   const htmlEditorProps = {
     ...editorProps,
     components: {
-      section: Section,
-      sectionHeading: SectionHeading,
-      sectionBody: SectionBody,
+      ..._components,
+      sectionHeading: (_props) => SectionHeading({ ..._props, sectionHeading }),
       block: (__props) =>
         RecursiveBlock({
           bookId,
@@ -39,6 +33,7 @@ export function EditorMain({ components, ...props }) {
           onHtmlPerf,
           sequenceIds,
           addSequenceId,
+          block,
           ...__props,
         }),
     },

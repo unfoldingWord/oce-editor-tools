@@ -38,7 +38,7 @@ export function EditorContainer({
     actions: {
       onSave,
       ...actions
-    },
+    }
   };
   return (
     <EditorContext.Provider value={context}>{children}</EditorContext.Provider>

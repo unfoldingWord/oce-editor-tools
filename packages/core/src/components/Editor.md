@@ -69,12 +69,12 @@ function MyEditor({
 function GridCard({ title, children }) {
   return (
     <Grid item key="Test" xs={12} sm={6}>
-      <Card sx={{ display: "flex", flexDirection: "column" }}>
+      <Card sx={{ display: "flex", flexDirection: "column", resize: "both", }}>
         <CardHeader subheader={title}/>
         <CardContent
           sx={{
             flexGrow: 1,
-            height: "40vh",
+            minHeight: "40vh",
             overflow: "hidden",
             overflowY: "auto",
           }}
