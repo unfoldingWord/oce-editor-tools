@@ -62,7 +62,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "yarn && npx styleguidist server",
+    "start": "npx styleguidist server",
     "build-dev": "styleguidist build",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
     "test": "react-scripts test",

@@ -67,7 +67,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "styleguidist server",
+    "start": "npx styleguidist server",
     "build:styleguide": "npx styleguidist build",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
     "test": "react-scripts test",
