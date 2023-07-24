@@ -18,9 +18,9 @@
     "translation-helps-rcl": "3.3.4-rc.2"
   },
   "dependencies": {
-    "@oce-editor-tools/core": "0.1.10",
+    "@oce-editor-tools/core": "0.1.15-beta.2",
     "@xelah/type-perf-html": "^1.0.2",
-    "epitelete-html": "0.2.18",
+    "epitelete-html": "0.2.21-beta.2",
     "proskomma-core": "0.10.1",
     "shorthash": "^0.0.2",
     "string-punctuation-tokenizer": "^2.2.0",

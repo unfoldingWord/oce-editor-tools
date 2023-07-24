@@ -1,162 +1,154 @@
 # Editor demo 1
 
-The demo demonstrates using two Editor instances (side by side) including synchronised navigation.
+The demo demonstrates using four Editor instances (side by side) including synchronised navigation.
+
+**Note:** Uncontrolled editors use a local editor reference state, while controlled editors use reference state and onSetReference passed in as an argument, use the lock icon to force the editor to be uncontrolled.
 
 ```js
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from "react";
 
-import EpiteleteHtml from "epitelete-html"
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Grid from '@mui/material/Grid'
-import Container from '@mui/material/Container'
+import EpiteleteHtml from "epitelete-html";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardContent from "@mui/material/CardContent";
 
-import { usfmText } from '../data/tit.en.ult.usfm.js'
-import { usfmTextFra } from '../data/86-TITfraLSG.usfm.js'
-import { usfm2perf } from '../helpers/usfm2perf'
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 
-function Component1 ({bookId,bcvSyncRef,onReferenceSelected}) {
-  const verbose = true
-  const docSetId = "Xxx/en_tit" // just dummy values
-  const [ready,setReady] = useState(false)
-  const [epiteleteHtml, setEpiteleteHtml] = useState(
-    new EpiteleteHtml(
-      { proskomma: undefined, docSetId, options: { historySize: 100 } }
-    )
-  )
- 
-  const onSave = (bookCode,usfmText) => {
-    console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
-  }
-  
+import { usfmText } from "../data/tit.en.ult.usfm.js";
+import { usfmText as usfmTextFra } from "../data/86-TITfraLSG.usfm.js";
+import { usfmText as usfmTextPe } from "../data/1pe.en.ult.usfm.js";
+import { usfm2perf } from "../helpers/usfm2perf";
+
+function MyEditor({
+  bookId,
+  reference,
+  onReferenceSelected,
+  docSetId,
+  usfmText,
+  ...props
+}) {
+  const verbose = true;
+  const [ready, setReady] = useState(false);
+  const epiteleteHtml = useMemo(
+    () =>
+      new EpiteleteHtml({
+        proskomma: undefined,
+        docSetId,
+        options: { historySize: 100 },
+      }),
+    []
+  );
+
+  const onSave = (bookCode, usfmText) => {
+    console.log(`save button clicked: ${docSetId} ${bookCode}`, usfmText);
+  };
+
   useEffect(() => {
     async function loadUsfm() {
-      const tempPerf = usfm2perf(usfmText)
-      await epiteleteHtml.sideloadPerf('TIT', tempPerf)
-      setReady(true)
+      const tempPerf = usfm2perf(usfmText);
+      await epiteleteHtml.sideloadPerf(bookId, tempPerf);
+      setReady(true);
     }
-    if (epiteleteHtml) loadUsfm()
-  }, [epiteleteHtml])
+    if (epiteleteHtml) loadUsfm();
+  }, [epiteleteHtml]);
 
   const editorProps = {
     epiteleteHtml,
     bookId,
-    bcvSyncRef,
+    reference,
     onReferenceSelected,
     onSave,
-    verbose
-  }
- 
-  return (
-    <>
-      { ready ? <Editor {...editorProps} /> : 'Loading...' }
-    </>
-  )
-}  
+    verbose,
+    ...props,
+  };
 
-function Component2 ({bookId,bcvSyncRef,onReferenceSelected}) {
-  const verbose = true
-  const docSetId = "LSG/fra_tit" // just dummy values
-  const [ready,setReady] = useState(false)
-  const [epiteleteHtml, setEpiteleteHtml] = useState(
-    new EpiteleteHtml(
-      { proskomma: undefined, docSetId, options: { historySize: 100 } }
-    )
-  )
- 
-  const onSave = (bookCode,usfmText) => {
-    console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
-  }
-  
-  useEffect(() => {
-    async function loadUsfm() {
-      const tempPerf = usfm2perf(usfmTextFra)
-      await epiteleteHtml.sideloadPerf('TIT', tempPerf)
-      setReady(true)
-    }
-    if (epiteleteHtml) loadUsfm()
-  }, [epiteleteHtml])
-
-  const editorProps = {
-    epiteleteHtml,
-    bookId,
-    bcvSyncRef,
-    onReferenceSelected,
-    onSave,
-    verbose
-  }
- 
-  return (
-    <>
-      { ready ? <Editor {...editorProps} /> : 'Loading...' }
-    </>
-  )
+  return <>{ready ? <Editor {...editorProps} /> : "Loading..."}</>;
 }
 
-function DoubleContainer () {
-  const [chapter,setChapter] = React.useState("1")
-  const [verse,setVerse] = React.useState("1")
-  const [syncSrcRef,setSyncSrcRef] = useState()
-  const bookId = 'TIT'
+function GridCard({ title, children }) {
+  return (
+    <Grid item key="Test" xs={12} sm={6}>
+      <Card sx={{ display: "flex", flexDirection: "column" }}>
+        <CardHeader subheader={title}/>
+        <CardContent
+          sx={{
+            flexGrow: 1,
+            height: "40vh",
+            overflow: "hidden",
+            overflowY: "auto",
+          }}
+        >
+          {children}
+        </CardContent>
+      </Card>
+    </Grid>
+  );
+}
+const bookId1 = "TIT";
+const bookId2 = "1PE";
 
-  const bcvSyncRef = {
-    bookId: bookId.toLowerCase(),
-    chapter,
-    verse
-  }
+function MyWorkspace() {
+  const [reference, setReference] = useState({ bookId: bookId1, chapter: 1, verse: 1 });
 
-  const onReferenceSelected = (props) => {
-    const {syncSrcRef: sRef, bookId, chapter: ch, verse: v} = props
-    console.log(props)
-    setSyncSrcRef(sRef)
-    setChapter(ch && ch.toString())
-    setVerse(v && v.toString())
-  }
+  const onReferenceSelected = ({ sourceId, bookId, chapter, verse }) => {
+    setReference({ sourceId, bookId: bookId, chapter, verse });
+  };
 
   return (
-    <Container sx={{ py: 4 }} >
+    <Container sx={{ py: 4 }}>
+      <h2>Workspace</h2>
       <Grid container spacing={2}>
-        <Grid item key="Test" xs={12} sm={6}>
-          <Card
-            sx={{ display: 'flex', flexDirection: 'column' }}
-          >
-            <CardContent sx={{ flexGrow: 1, height: '40vh', overflow: "hidden", overflowY: "auto" }}>
-              <Component1 
-                bookId={bookId}
-                bcvSyncRef={bcvSyncRef}
-                onReferenceSelected={onReferenceSelected}
-              />
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item key="Test2" xs={12} sm={6}>
-          <Card
-            sx={{ display: 'flex', flexDirection: 'column' }}
-          >
-            <CardContent sx={{ flexGrow: 1, height: '40vh', overflow: "hidden", overflowY: "auto" }}>
-              <Component2 
-                bookId={bookId}
-                bcvSyncRef={bcvSyncRef}
-                onReferenceSelected={onReferenceSelected}
-              />
-            </CardContent>
-          </Card>
-        </Grid>
+        <GridCard title={`Org1: 1Peter (Uncontrolled)`}>
+          <MyEditor
+            docSetId={"ORG1-en_ult/1pe"}
+            bookId={bookId2}
+            usfmText={usfmTextPe}
+          />
+        </GridCard>
+        <GridCard title={`Org2: 1Peter (Controlled)`}>
+          <MyEditor
+            docSetId={"ORG2-en_ult/1pe"}
+            bookId={bookId2}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmTextPe}
+          />
+        </GridCard>
+        <GridCard title={`Org3: Titus (Controlled)`}>
+          <MyEditor
+            docSetId={"Xxx/en_tit"}
+            bookId={bookId1}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmText}
+          />
+        </GridCard>
+        <GridCard title={`Org4: Titus (Controlled)`}>
+          <MyEditor
+            docSetId={"LSG/fra_tit"}
+            bookId={bookId1}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmTextFra}
+          />
+        </GridCard>
       </Grid>
     </Container>
-  )
+  );
 }
 
-<DoubleContainer/>
+<MyWorkspace/>
 
 ```
+
 
 ## Editor demo 2
 
 The Editor expects input of an EpiteleteHtml object.
 
 ```js
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import EpiteleteHtml from "epitelete-html"
 
@@ -231,7 +223,7 @@ Here is the function for sideloading:
 ```
 
 ```js
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import __htmlPerf from '../data/tit.en.ult.perf.json'
 import EpiteleteHtml from "epitelete-html"
