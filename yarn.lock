@@ -2139,9 +2139,9 @@ __metadata:
   linkType: hard
 
 "@eslint-community/regexpp@npm:^4.4.0":
-  version: 4.5.1
-  resolution: "@eslint-community/regexpp@npm:4.5.1"
-  checksum: 6d901166d64998d591fab4db1c2f872981ccd5f6fe066a1ad0a93d4e11855ecae6bfb76660869a469563e8882d4307228cebd41142adb409d182f2966771e57e
+  version: 4.6.0
+  resolution: "@eslint-community/regexpp@npm:4.6.0"
+  checksum: 7517bf490970bcc6be4d793b202ec5a8d525078dd817454b832669e79d6cdd3af25068563410b0c3d861891ccbf7e03626a575e6fec6a2eac7ae4fd5b0223e0f
   languageName: node
   linkType: hard
 
@@ -3146,7 +3146,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^5.11.9, @mui/system@npm:^5.14.1":
+"@mui/system@npm:^5.14.1":
   version: 5.14.1
   resolution: "@mui/system@npm:5.14.1"
   dependencies:
@@ -3531,12 +3531,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/nx-cloud@latest, @nrwl/nx-cloud@npm:16.1.0":
-  version: 16.1.0
-  resolution: "@nrwl/nx-cloud@npm:16.1.0"
+"@nrwl/nx-cloud@npm:16.1.1, @nrwl/nx-cloud@npm:latest":
+  version: 16.1.1
+  resolution: "@nrwl/nx-cloud@npm:16.1.1"
   dependencies:
-    nx-cloud: 16.1.0
-  checksum: 405c1eca456f3caa37f4c8077e5c70dea65de574691c239efa834308601a2b0ac598b01176d58034a21726e8c2b2b1f2f0d6065abda25d262cc793269b037114
+    nx-cloud: 16.1.1
+  checksum: 8cc2fdf9a13b3533968ac892239fbef8aa75936ee9c44ac46a2a288d4d538676fea550c3af4c908120fc7025f0c23d759fd7024176d3bae697c0cbafd679682f
   languageName: node
   linkType: hard
 
@@ -3677,29 +3677,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@oce-editor-tools/core@npm:0.1.10":
-  version: 0.1.10
-  resolution: "@oce-editor-tools/core@npm:0.1.10"
-  dependencies:
-    "@emotion/react": ^11.10.5
-    "@emotion/styled": ^11.10.5
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@mui/system": ^5.11.9
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: 0.2.18
-    pagedjs: ^0.4.1
-  peerDependencies:
-    "@mui/icons-material": ^5.10.9
-    "@mui/material": ^5.10.12
-    "@mui/styled-engine": "*"
-    "@mui/styles": ^5.10.10
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 85583a67f4f56e580dbc37e194753df4806c69a9ac7945edca9b04a0e785ffca73aaff5753521cfdb29887eb9f5b109a0d4da6f58a3cd9af5413007605e3ff18
-  languageName: node
-  linkType: hard
-
 "@oce-editor-tools/pk-aligner@workspace:packages/pk-aligner":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/pk-aligner@workspace:packages/pk-aligner"
@@ -3717,7 +3694,7 @@ __metadata:
     "@mui/material": ^5.8.7
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     "@mui/styles": ^5.8.7
-    "@oce-editor-tools/core": 0.1.10
+    "@oce-editor-tools/core": 0.1.15-beta.2
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
@@ -3725,7 +3702,7 @@ __metadata:
     babel-loader: ^8.2.2
     crypto-browserify: ^3.12.0
     css-loader: ^6.7.1
-    epitelete-html: 0.2.20-beta.8
+    epitelete-html: 0.2.21-beta.2
     eslint: ^7.32.0
     eslint-config-prettier: ^8.4.0
     eslint-plugin-import: ^2.26.0
@@ -3784,7 +3761,7 @@ __metadata:
     crypto-browserify: ^3.12.0
     css-loader: ^6.7.1
     dompurify: ^3.0.3
-    epitelete-html: 0.2.20-beta.8
+    epitelete-html: 0.2.21-beta.2
     eslint: ^7.32.0
     eslint-config-prettier: ^8.4.0
     eslint-plugin-import: ^2.26.0
@@ -3843,7 +3820,7 @@ __metadata:
     babel-loader: ^8.2.2
     crypto-browserify: ^3.12.0
     css-loader: ^6.7.1
-    epitelete-html: 0.2.20-beta.8
+    epitelete-html: 0.2.21-beta.2
     eslint: ^7.32.0
     eslint-config-prettier: ^8.4.0
     eslint-plugin-import: ^2.26.0
@@ -4542,9 +4519,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 20.4.2
-  resolution: "@types/node@npm:20.4.2"
-  checksum: 99e544ea7560d51f01f95627fc40394c24a13da8f041121a0da13e4ef0a2aa332932eaf9a5e8d0e30d1c07106e96a183be392cbba62e8cf0bf6a085d5c0f4149
+  version: 20.4.4
+  resolution: "@types/node@npm:20.4.4"
+  checksum: 43f3c4a8acc38ae753e15a0e79bae0447d255b3742fa87f8e065d7b9d20ecb0e03d6c5b46c00d5d26f4552160381a00255f49205595a8ee48c2423e00263c930
   languageName: node
   linkType: hard
 
@@ -8635,9 +8612,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.431":
-  version: 1.4.467
-  resolution: "electron-to-chromium@npm:1.4.467"
-  checksum: 0ad9e61429991c5e384acde495f06ad9f718b2f7bd00321abc5a8c92d9a8d2fdc2915cbffb7ba7395389f2102f1d42341b3d4a80ce446ed312c8adfc5a7eac4a
+  version: 1.4.468
+  resolution: "electron-to-chromium@npm:1.4.468"
+  checksum: 3da242381c95286a928ef03501c0fdcc71b773e382cc8574aa998562ae8c9b14712c910879b41d6184fd954ccecc2424865754a86e20d83077a35a0b75a1cfea
   languageName: node
   linkType: hard
 
@@ -8781,30 +8758,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"epitelete-html@npm:0.2.18":
-  version: 0.2.18
-  resolution: "epitelete-html@npm:0.2.18"
-  dependencies:
-    "@babel/core": ^7.17.10
-    epitelete: ^0.2.18
-    node-html-parser: ^5.3.3
-  checksum: 9b149904726fdf25a9e8eb635bd95ef84beb4f62d1ab20cf6efe2482a2192c4d919430eac6f0890fb1f784528d161731a24760e1d7e743171466efe603bf544a
-  languageName: node
-  linkType: hard
-
-"epitelete-html@npm:0.2.20-beta.8":
-  version: 0.2.20-beta.8
-  resolution: "epitelete-html@npm:0.2.20-beta.8"
-  dependencies:
-    "@babel/core": ^7.17.10
-    base-64: ^1.0.0
-    epitelete: ^0.2.20
-    node-html-parser: ^5.3.3
-    pure-uuid: ^1.6.3
-  checksum: 0e15a3f89e8a6662ee5729ef87b51de8f0b37ea46810978073fcd6527425a1a2f59d75323f8a16f950a307647d3d642e39039177cea99a2db82a3ce38353bfab
-  languageName: node
-  linkType: hard
-
 "epitelete-html@npm:0.2.21-beta.2":
   version: 0.2.21-beta.2
   resolution: "epitelete-html@npm:0.2.21-beta.2"
@@ -8818,7 +8771,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"epitelete@npm:^0.2.18, epitelete@npm:^0.2.20":
+"epitelete@npm:^0.2.20":
   version: 0.2.20
   resolution: "epitelete@npm:0.2.20"
   dependencies:
@@ -9870,15 +9823,15 @@ __metadata:
   linkType: hard
 
 "fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "fast-glob@npm:3.3.0"
+  version: 3.3.1
+  resolution: "fast-glob@npm:3.3.1"
   dependencies:
     "@nodelib/fs.stat": ^2.0.2
     "@nodelib/fs.walk": ^1.2.3
     glob-parent: ^5.1.2
     merge2: ^1.3.0
     micromatch: ^4.0.4
-  checksum: 20df62be28eb5426fe8e40e0d05601a63b1daceb7c3d87534afcad91bdcf1e4b1743cf2d5247d6e225b120b46df0b9053a032b2691ba34ee121e033acd81f547
+  checksum: b6f3add6403e02cf3a798bfbb1183d0f6da2afd368f27456010c0bc1f9640aea308243d4cb2c0ab142f618276e65ecb8be1661d7c62a7b4e5ba774b9ce5432e5
   languageName: node
   linkType: hard
 
@@ -14728,11 +14681,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nx-cloud@npm:16.1.0":
-  version: 16.1.0
-  resolution: "nx-cloud@npm:16.1.0"
+"nx-cloud@npm:16.1.1":
+  version: 16.1.1
+  resolution: "nx-cloud@npm:16.1.1"
   dependencies:
-    "@nrwl/nx-cloud": 16.1.0
+    "@nrwl/nx-cloud": 16.1.1
     axios: 1.1.3
     chalk: ^4.1.0
     dotenv: ~10.0.0
@@ -14744,7 +14697,7 @@ __metadata:
     yargs-parser: ">=21.1.1"
   bin:
     nx-cloud: bin/nx-cloud.js
-  checksum: 978f08fd7292cae2f01b8399b0aecaa2b8f43e519e14c83f51a330af25e447083f1cf88e93f588c171d4b975ae9f83481b211a90640d3f377f20d290b92e5cb7
+  checksum: 63cf0312281acfab5d9596fdde9507ff1ae3765869a13cb805507fc0c6a91bedef628342205bbb4567e545ee97b0416bcc2aba83494e6d47f58b0a8dd0481310
   languageName: node
   linkType: hard
 
@@ -17007,7 +16960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-react-dom@latest:
+"react-dom@npm:latest":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -17356,7 +17309,7 @@ react-dom@latest:
   languageName: node
   linkType: hard
 
-react@latest:
+"react@npm:latest":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -21077,21 +21030,7 @@ react@latest:
   languageName: node
   linkType: hard
 
-"which-typed-array@npm:^1.1.10, which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
-  version: 1.1.10
-  resolution: "which-typed-array@npm:1.1.10"
-  dependencies:
-    available-typed-arrays: ^1.0.5
-    call-bind: ^1.0.2
-    for-each: ^0.3.3
-    gopd: ^1.0.1
-    has-tostringtag: ^1.0.0
-    is-typed-array: ^1.1.10
-  checksum: 149f54f5d11773ce938c60a2c36306720a1824eccb62bda0620170932c2783fa50ad0226254c5741a962e35c7ccba5f4e4c402b8618cb3b4f2cf47bf5e6ade31
-  languageName: node
-  linkType: hard
-
-"which-typed-array@npm:^1.1.11":
+"which-typed-array@npm:^1.1.10, which-typed-array@npm:^1.1.11, which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
   version: 1.1.11
   resolution: "which-typed-array@npm:1.1.11"
   dependencies:
@@ -21181,9 +21120,9 @@ react@latest:
   linkType: hard
 
 "word-wrap@npm:~1.2.3":
-  version: 1.2.4
-  resolution: "word-wrap@npm:1.2.4"
-  checksum: 8f1f2e0a397c0e074ca225ba9f67baa23f99293bc064e31355d426ae91b8b3f6b5f6c1fc9ae5e9141178bb362d563f55e62fd8d5c31f2a77e3ade56cb3e35bd1
+  version: 1.2.5
+  resolution: "word-wrap@npm:1.2.5"
+  checksum: f93ba3586fc181f94afdaff3a6fef27920b4b6d9eaefed0f428f8e07adea2a7f54a5f2830ce59406c8416f033f86902b91eb824072354645eea687dff3691ccb
   languageName: node
   linkType: hard
 
