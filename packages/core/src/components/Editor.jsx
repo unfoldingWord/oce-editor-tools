@@ -4,6 +4,9 @@ import EditorPack from "./EditorHeadless"
 import { EditorToolbar } from './EditorToolbar';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
+import Section from './Section';
+import SectionBody from './SectionBody';
+import SectionHeading from './SectionHeading';
 
 function Editor({
   onSave,
@@ -15,7 +18,7 @@ function Editor({
   reference,
   onReferenceSelected,
   scrollLock,
-  scrollDelay,
+  scrollDelay = 200,
   children,
   defaultOptions,
 }) {
@@ -32,11 +35,16 @@ function Editor({
     children,
     defaultOptions,
   };
+  const components = {
+    section: Section,
+    sectionHeading: SectionHeading,
+    sectionBody: SectionBody,
+  }
   return (
     <EditorPack.Container {...props}>
       <EditorToolbar showToggles={false} onRenderToolbar={onRenderToolbar} />
       <EditorContainer>
-        <EditorPack.Main/>
+        <EditorPack.Main components={components} />
       </EditorContainer>
     </EditorPack.Container>
   );

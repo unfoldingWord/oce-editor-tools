@@ -40,21 +40,3 @@ export function Toolbar({ children, component,...props }) {
 }
 
 export default Toolbar;
-  // const buttonsProps = {
-  //   onRenderToolbar,
-  //   showToggles: false,
-
-  //   // onSearch: handleSearch,
-  //   // content: (
-  //   //   <FindReplace
-  //   //     onReplace={updateHtml}
-  //   //     epitelete={epiteleteHtml}
-  //   //     bookCode={bookCode}
-  //   //     onChangeOptions={(options) => setHighlighterOptions(options)}
-  //   //     onChangeTargets={(target) => setHighlighterTarget(target)}
-  //   //     open={openSearch}
-  //   //     setOpen={setOpenSearch}
-  //   //     onClickResult={handleReferenceSelected}
-  //   //   />
-  //   // ),
-  // };
