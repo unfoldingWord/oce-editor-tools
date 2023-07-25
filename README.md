@@ -28,21 +28,18 @@
 
 ## Features
 
-  - Various underlying components are here assembled together and made available in an easy to use library.
-  - These tools are three packages, each one tailored to various use-cases, depending on your needs.
+  - Various underlying components assembled together and made available in an easy to use library.
+  - These tools are organized in three packages, each one tailored to various use-cases, depending on your needs.
 
 ## Documentation
 
-This project is organized as a mono-repository. The packages defined in this repo are published to `npm` individual. Here are the links and descriptions below:
+This project is organized as a mono-repository. The packages defined in this repo are published to `npm` individually. Here are the links and descriptions below:
 
-| Local Package | 📦 NPM Package | Tutorial | ✏️ Description |
+| Local Package | 📦 NPM Package | Demo | ✏️ Description |
 | - | - | - | - |
-| [fnr-text](./packages/fnr-text)   | [@findr/text](https://npmjs.com/@findr/text)    | [@findr/text tutorial](https://findrjs.netlify.app/) | all the logic behind a find-and-replace feature |
-| [fnr-react](./packages/fnr-react) | [@findr/react](https://npmjs.com/@findr/react)  |  | state management needed to build your own find-and-replace components |
-| [fnr-mui](./packages/fnr-mui)     | [@findr/mui](https://npmjs.com/@findr/mui)      |  | library of GUI components for find-and-replace based on [@mui/material](https://mui.com/material-ui/getting-started/) |
-| [fnr-perf](./packages/fnr-perf)   | [@findr/perf](https://npmjs.com/@findr/perf)    |  | Pipeline and Actions needed for find-and-replace scripture using [proskomma-json-tools](https://github.com/Proskomma/proskomma-json-tools/) |
-
-- reference documentation: _coming soon!_
+| [core](./packages/core) | [@oce-editor-tools/core](https://npmjs.com/@oce-editor-tools/core)  | [Core Styleguidist](https://oce-editor-tools-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
+| [pk](./packages/pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/pk)  | Pk Styleguidist - not yet available | An implementation making it easy to have access to various Proskomma functions |
+| [core](./packages/core) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/simple)  | [Simple Styleguidist](https://oce-editor-tools-core.netlify.app/) | A simplified implementation completely hiding Proskomma (while also loosing some repository handling as a result of this) |
 
 ---
 
