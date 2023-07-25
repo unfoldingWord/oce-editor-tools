@@ -17,7 +17,7 @@ export function ButtonAlignmentBroken({
 
   useEffect(
     () =>
-      epiteleteHtml.observeHtml(() => {
+      epiteleteHtml?.observeHtml(() => {
         const history = epiteleteHtml.history[bookCode];
         const currentCursor = history.cursor;
         const initialCursor = history.stack.length - 1;
