@@ -142,7 +142,6 @@ function MyWorkspace() {
 
 ```
 
-
 ## Editor demo 2
 
 The Editor expects input of an EpiteleteHtml object.
