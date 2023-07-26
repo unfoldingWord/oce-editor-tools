@@ -1,4 +1,4 @@
 [build]
-  base = "packages/pk/"
-  command = "nx build:styleguide @oce-editor-tools/pk --skip-nx-cache"
+  base = "/packages/pk/"
+  command = "yarn nx build:styleguide @oce-editor-tools/pk"
   publish = "styleguide"
