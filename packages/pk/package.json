@@ -99,6 +99,11 @@
   "resolutions": {
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   },
+  "nx": {
+    "implicitDependencies": [
+      "@oce-editor-tools/core"
+    ]
+  },
   "publishConfig": {
     "access": "public"
   },
