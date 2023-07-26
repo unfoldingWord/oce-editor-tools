@@ -1,4 +1,4 @@
 [build]
-  base = "/"
+  base = "/packages/pk/"
   command = "yarn nx build:styleguide @oce-editor-tools/pk"
-  publish = "packages/pk/styleguide"
+  publish = "styleguide"
