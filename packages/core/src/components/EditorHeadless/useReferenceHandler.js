@@ -73,10 +73,14 @@ export default function useReferenceHandler({
           `.mark.verses[data-atts-number='${verse}']`
         );
         if (reference.sourceId !== sourceId && verseElem) {
-          const parent = getScrollParent(verseElem);
-          if (parent) parent.scrollTop = verseElem.offsetTop;
+          const parentElem = getScrollParent(verseElem);
+          const verseElemRect = verseElem.getBoundingClientRect()
+          const parentElemRect = parentElem.getBoundingClientRect()
+          const elemsGap = parentElemRect.top - verseElemRect.top;
+          if (parentElem) parentElem.scrollTop =
+            parentElem.scrollTop - elemsGap - (parentElemRect.height * 0.4);
         }
-      }, scrollDelay || 900);
+      }, scrollDelay || 0);
     }
   }, [
     reference,

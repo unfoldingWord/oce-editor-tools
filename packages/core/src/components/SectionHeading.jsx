@@ -1,32 +1,38 @@
-import React, { useEffect } from 'react'
-import PropTypes from 'prop-types';
+import React from 'react';
+import { AccordionSummary, Typography } from '@mui/material';
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
-export default function SectionHeading({ type: _type, content, show, index, verbose, ...props }) {
-  useEffect(() => {
-    if (verbose) console.log('SectionHeading: Mount/First Render', index);
-    return (() => {
-      if (verbose) console.log('SectionHeading: UnMount/Destroyed', index);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const matchRes = content.match(/<span class="mark[^"]+chapter-(\d+)/)
-  const foundChNum = (matchRes && matchRes[1])
-  const chNum = foundChNum || 0
-  const type = foundChNum ? `Chapter ${chNum}` : "Title & Introduction";
-
+export default function SectionHeading({
+  type,
+  chapterNumber: chNum,
+  content,
+  show,
+  index,
+  verbose,
+  sx,
+  ...props
+}) {
   return (
-    <div className='sectionHeading' data-chapter-number={chNum} {...props}>
-      <span className='expand'>
-        {show ? '' : '...'}
-        {type}
-        {show ? '' : '...'}
-      </span>
-    </div>
+    <AccordionSummary
+      className="sectionHeading"
+      aria-controls="panel1d-content"
+      id="panel1d-header"
+      data-chapter-number={chNum}
+      sx={{
+        minHeight: 'auto',
+        '&.Mui-expanded': {
+          minHeight: 'auto',
+          margin: `0`,
+        },
+        '& .MuiAccordionSummary-content.Mui-expanded': {
+          margin: `0.5em 0em 0em`,
+        },
+        ...sx,
+      }}
+      {...props}
+    >
+      <Typography sx={{fontWeight: 500}} className="expand">
+        {type} {show ? '' : '…'}
+      </Typography>
+    </AccordionSummary>
   );
-};
-
-SectionHeading.propTypes = {
-  content: PropTypes.string,
 }

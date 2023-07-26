@@ -16,7 +16,7 @@ export const getCurrentVerse = (currentNode) => {
 
 export const getCurrentChapter = (currentNode) => {
   let currentChapter
-  const accordionElement = currentNode.parentElement.closest('.MuiAccordion-root')
+  const accordionElement = currentNode.parentElement.closest('.section')
   if ( accordionElement ) {
     const headingElement = accordionElement.querySelector('.sectionHeading')
     if ( headingElement ) {
