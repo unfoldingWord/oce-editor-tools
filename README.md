@@ -1,69 +1,67 @@
 <div id="top"></div>
 
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]](https://github.com/unfoldingWord/oce-editor-tools/graphs/contributors)
-[![Forks][forks-shield]](https://github.com/unfoldingWord/oce-editor-tools/network/members)
-[![Stargazers][stars-shield]](https://github.com/unfoldingWord/oce-editor-tools/stargazers)
-[![Issues][issues-shield]](https://github.com/unfoldingWord/oce-editor-tools/issues)
-[![MIT License][license-shield]](https://github.com/unfoldingWord/oce-editor-tools/blob/main/LICENSE)
-[![LinkedIn][linkedin-shield]](https://www.linkedin.com/company/unfoldingword/)
-
-
-
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
   <a href="https://oce-editor-tools.netlify.app/">
     <img src="images/uW.png" alt="Logo" width="300" height="50">
   </a>
 
-<h3 align="center">Oce Editor Tools</h3>
+# Oce Editor Tools
 
-  <p align="center">
-    A reusable biblical text editor tool library
-    <br />
-    <a href="https://oce-editor-tools.netlify.app/"><strong>View Demo and examples</strong></a>
-    <br />
-    <br />
-    ·
-    <a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Request Feature</a>
-  </p>
-</div>
+#### Bible resources editor tools 
+- using Proskomma underneath
+
+<a href="https://oce-editor-tools.netlify.app/"><strong>View Demo and examples</strong></a>
+
+<a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Report Bug</a>
+·
+<a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Request Feature</a>
 
 
+<p>
+<a href="https://opencomponents.io/component/unfoldingWord/findr" title="findr is part of the OCE"></a>
+<a href="https://discord.com/channels/867746700390563850/867746700390563853" title="OCE discord server"><img src="https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Discord"></a>
+<a href="https://github.com/unfoldingWord/findr/blob/HEAD/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge" alt="license"></a>
+</p>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
+---
+
+## Features
+
+  - Various underlying components assembled together and made available in an easy to use library.
+  - These tools are organized in three packages, each one tailored to various use-cases, depending on your needs.
+
+## Documentation
+
+This project is organized as a mono-repository. The packages defined in this repo are published to `npm` individually. Here are the links and descriptions:
+
+| Local Package | 📦 NPM Package | Demo | ✏️ Description |
+| - | - | - | - |
+| [core](./packages/core) | [@oce-editor-tools/core](https://npmjs.com/@oce-editor-tools/core)  | [Core Styleguidist](https://oce-editor-tools-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
+| [pk](./packages/pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/pk)  | [Pk Styleguidist](https://oce-editor-tools-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
+| [simple](./packages/simple) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/simple)  | [Simple Styleguidist](https://simple-oce-editor-tools.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
+
+---
+
+## Setup
+
+run `yarn install` on the root of the repository
+
+## Support
+
+Having trouble? Get help in the official [Open Components Ecosystem Discord](https://discord.com/channels/867746700390563850/1019675732324143205).
+
+
+*  See a diagram of the dependencies of the projects.
+
+  ```Shell
+  nx graph  
+  ```
+
+*  enable [remote caching](https://nx.app) and make CI faster.
+  ```Shell
+  npx nx connect-to-nx-cloud
+  ```
 
 
 <!-- ABOUT THE PROJECT -->
@@ -73,27 +71,21 @@
 
 
 **Purpose**
-- Create a re-usable editor component that can be integrated into application to support editing scripture text in USFM format.
+- Multiple re-usable editor and preview components packaged into a library (monorepo). These are meant to be integrated into applications for editing scripture text in USFM format.
 
 **Scope**
-- Mostly this is a wrapper for the [XELAH](https://github.com/xelahjs/xelah) text editor. uW editor is mostly responsible for the UI, toolbar, etc and XELAH supplies the text editor.
+
+This package library contains various wrappers for other components. All parts are designed to hide underlying complexity and make it easy to use, as "tools". Just choose what tools to use from the most suitable package, depending on your use cases. 
+
+These are some of the underlying components:
+
+- the [XELAH](https://github.com/xelahjs/xelah) text editor. oce-editor-tools supplies additional UI parts, a toolbar, etc and XELAH supplies the text editor.
+
+- [Epitelete-html](https://github.com/unfoldingWord/epitelete-html) HTML handling in Epitelete - as a derived sub-class. All the [original Epitelete](https://github.com/Proskomma/epitelete) parent functions are inherited and then extended with more functions for generating and parsing Html.
+
+- [proskomma-core](https://github.com/Proskomma/proskomma-core) An implementation of the Proskomma Scripture Processing Model.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-## Packages
-
-### @oce-editor-tools/core
-
-A core library used by other packages.
-
-### @oce-editor-tools/pk
-
-An implementation making it easy to have access to various Proskomma functions.
-
-### @oce-editor-tools/simple
-
-A simplified implementation completely hiding Proskomma (while also loosing some repository handling as a result of this).
-
 
 ### Built With
 
@@ -102,11 +94,11 @@ A simplified implementation completely hiding Proskomma (while also loosing some
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
+Here is an example of how you may set up your project locally.
+
 To get a local copy up and running follow these simple example steps.
 
 
@@ -114,11 +106,11 @@ To get a local copy up and running follow these simple example steps.
 
 If you wish to use a package from this library in your app you will need to add it as a dependency with, for example:
 ```sh
-npm install @oce-editor-tools/simple
+npm install @oce-editor-tools/core
 ```
 OR
 ```shell
-yarn add @oce-editor-tools/simple
+yarn add @oce-editor-tools/core
 ```
 Also you will need to add the peer dependencies:
 ```shell
@@ -133,7 +125,7 @@ yarn add @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@
 <!-- USAGE EXAMPLES -->
 ## Usage/Integration
 
-See [Styleguidist link](https://oce-editor-tools.netlify.app/) for many usage examples.
+See [Styleguidist link](https://oce-editor-tools-core.netlify.app/) for many usage examples.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -147,9 +139,9 @@ See the [open issues](https://github.com/unfoldingWord/oce-editor-tools/issues) 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.  [Guidelines for external contributions.](https://forum.door43.org)
+The open source community is an amazing place to learn, inspire, and create. So, any contributions you make are **greatly appreciated**.  [Guidelines for external contributions.](https://forum.door43.org)
 
-You can also simply open an issue with the tag "enhancement".
+You can, for instance, simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
 If you would like to fork the repo and create a pull request.
@@ -168,10 +160,10 @@ If you would like to fork the repo and create a pull request.
    yarn nx start @oce-editor-tools/simple
    ```
 
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+6. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+7. Push to the Branch (`git push origin feature/AmazingFeature`)
+8. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -183,18 +175,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
-[contributors-url]: https://github.com/unfoldingWord/oce-editor-tools/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
-[forks-url]: https://github.com/unfoldingWord/oce-editor-tools/network/members
-[stars-shield]: https://img.shields.io/github/stars/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
-[stars-url]: https://github.com/unfoldingWord/oce-editor-tools/stargazers
-[issues-shield]: https://img.shields.io/github/issues/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
-[issues-url]: https://github.com/unfoldingWord/oce-editor-tools/issues
-[license-shield]: https://img.shields.io/github/license/unfoldingWord/oce-editor-tools.svg?style=for-the-badge
-[license-url]: https://github.com/unfoldingWord/oce-editor-tools/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png

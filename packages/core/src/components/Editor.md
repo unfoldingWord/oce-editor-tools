@@ -185,7 +185,7 @@ function Component () {
     bookId: 'act',
     onSave,
     onReferenceSelected,
-    bcvSyncRef: {
+    reference: {
       bookId: 'act',
       chapter: 1,
       verse: 4,

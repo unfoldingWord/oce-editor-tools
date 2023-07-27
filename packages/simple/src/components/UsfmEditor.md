@@ -19,7 +19,7 @@ function Component () {
     onSave,
     usfmText,
     onReferenceSelected,
-    bcvSyncRef: {
+    reference: {
       syncSrcId: "1",
       bookId: 'apg',
       chapter: 1,
