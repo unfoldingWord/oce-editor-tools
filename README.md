@@ -33,13 +33,13 @@
 
 ## Documentation
 
-This project is organized as a mono-repository. The packages defined in this repo are published to `npm` individually. Here are the links and descriptions below:
+This project is organized as a mono-repository. The packages defined in this repo are published to `npm` individually. Here are the links and descriptions:
 
 | Local Package | 📦 NPM Package | Demo | ✏️ Description |
 | - | - | - | - |
 | [core](./packages/core) | [@oce-editor-tools/core](https://npmjs.com/@oce-editor-tools/core)  | [Core Styleguidist](https://oce-editor-tools-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
-| [pk](./packages/pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/pk)  | [Pk Styleguidist](https://oce-editor-tools-pk.netlify.app/) | An implementation making it easy to have access to various Proskomma functions |
-| [core](./packages/core) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/simple)  | [Simple Styleguidist](https://simple-oce-editor-tools.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
+| [pk](./packages/pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/pk)  | [Pk Styleguidist](https://oce-editor-tools-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
+| [simple](./packages/simple) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/simple)  | [Simple Styleguidist](https://simple-oce-editor-tools.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
 
 ---
 
@@ -71,27 +71,21 @@ Having trouble? Get help in the official [Open Components Ecosystem Discord](htt
 
 
 **Purpose**
-- Create a re-usable editor component that can be integrated into application to support editing scripture text in USFM format.
+- Multiple re-usable editor and preview components packaged into a library (monorepo). These are meant to be integrated into applications for editing scripture text in USFM format.
 
 **Scope**
-- Mostly this is a wrapper for the [XELAH](https://github.com/xelahjs/xelah) text editor. uW editor is mostly responsible for the UI, toolbar, etc and XELAH supplies the text editor.
+
+This package library contains various wrappers for other components. All parts are designed to hide underlying complexity and make it easy to use, as "tools". Just choose what tools to use from the most suitable package, depending on your use cases. 
+
+These are some of the underlying components:
+
+- the [XELAH](https://github.com/xelahjs/xelah) text editor. oce-editor-tools supplies additional UI parts, a toolbar, etc and XELAH supplies the text editor.
+
+- [Epitelete-html](https://github.com/unfoldingWord/epitelete-html) HTML handling in Epitelete - as a derived sub-class. All the [original Epitelete](https://github.com/Proskomma/epitelete) parent functions are inherited and then extended with more functions for generating and parsing Html.
+
+- [proskomma-core](https://github.com/Proskomma/proskomma-core) An implementation of the Proskomma Scripture Processing Model.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-## Packages
-
-### @oce-editor-tools/core
-
-A core library used by other packages.
-
-### @oce-editor-tools/pk
-
-An implementation making it easy to have access to various Proskomma functions.
-
-### @oce-editor-tools/simple
-
-A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)*.
-
 
 ### Built With
 
@@ -100,11 +94,11 @@ A simplified implementation completely hiding Proskomma *(while also loosing som
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
+Here is an example of how you may set up your project locally.
+
 To get a local copy up and running follow these simple example steps.
 
 
