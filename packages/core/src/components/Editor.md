@@ -69,12 +69,12 @@ function MyEditor({
 function GridCard({ title, children }) {
   return (
     <Grid item key="Test" xs={12} sm={6}>
-      <Card sx={{ display: "flex", flexDirection: "column", resize: "both", }}>
+      <Card sx={{ display: "flex", flexDirection: "column", resize: "vertical", height: "60vh" }}>
         <CardHeader subheader={title}/>
         <CardContent
           sx={{
             flexGrow: 1,
-            minHeight: "40vh",
+            maxHeight: "100%",
             overflow: "hidden",
             overflowY: "auto",
           }}
@@ -142,7 +142,6 @@ function MyWorkspace() {
 
 ```
 
-
 ## Editor demo 2
 
 The Editor expects input of an EpiteleteHtml object.
@@ -186,7 +185,7 @@ function Component () {
     bookId: 'act',
     onSave,
     onReferenceSelected,
-    bcvSyncRef: {
+    reference: {
       bookId: 'act',
       chapter: 1,
       verse: 4,

@@ -84,7 +84,7 @@ export default function useEditorState({
         writeOptions
       );
     };
-    const unobserveHtml = epiteleteHtml.observeHtml(({ data: htmlPerf }) =>
+    const unobserveHtml = epiteleteHtml?.observeHtml(({ data: htmlPerf }) =>
       setHtmlPerf(htmlPerf)
     );
     updateEditor(epiteleteHtml, bookCode);
