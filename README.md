@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-  <a href="https://oce-editor-tools.netlify.app/">
+  <a href="https://github.com/unfoldingWord">
     <img src="images/uW.png" alt="Logo" width="300" height="50">
   </a>
 
@@ -11,7 +11,7 @@
 #### Bible resources editor tools 
 - using Proskomma underneath
 
-<a href="https://oce-editor-tools.netlify.app/"><strong>View Demo and examples</strong></a>
+<a href="https://oce-editor-tools-core.netlify.app/"><strong>View Demo and examples</strong></a>
 
 <a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Report Bug</a>
 ·
@@ -112,6 +112,8 @@ OR
 ```shell
 yarn add @oce-editor-tools/core
 ```
+(just replace `core` above with `pk` or `simple` in order to install one of the other packages)
+
 Also you will need to add the peer dependencies:
 ```shell
 npm install @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@mui/styled-engine-sc@latest react react-dom translation-helps-rcl
@@ -127,19 +129,28 @@ yarn add @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@
 
 See [Styleguidist link](https://oce-editor-tools-core.netlify.app/) for many usage examples.
 
+Other examples here:
+
+ - [pk](https://oce-editor-tools-pk.netlify.app/) - with access to Proskomma features
+ 
+  and 
+
+ - [simple](https://npmjs.com/@oce-editor-tools/simple) - for simple usage
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/unfoldingWord/oce-editor-tools/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/unfoldingWord/oce-editor-tools/issues) for a full list of proposed features (and any known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-The open source community is an amazing place to learn, inspire, and create. So, any contributions you make are **greatly appreciated**.  [Guidelines for external contributions.](https://forum.door43.org)
+The open source community is an amazing place to learn, inspire, and create. So, any contributions you make are **greatly appreciated**.  [Guidelines for rcl development](https://forum.door43.org/t/rcl-app-development-process/605) and [general information](https://forum.door43.org).
 
 You can, for instance, simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -155,7 +166,7 @@ If you would like to fork the repo and create a pull request.
    ```sh
    yarn
    ```
-4. Run a packages locally, for instance:
+4. Run a package locally, for instance:
    ```sh
    yarn nx start @oce-editor-tools/simple
    ```
@@ -173,5 +184,6 @@ If you would like to fork the repo and create a pull request.
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
