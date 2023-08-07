@@ -1,8 +1,8 @@
 # PkEditor demo
 
-The demo demonstrates using four Editor instances (side by side) including synchronised navigation. The PkEditor uses Proskomma / Epitetele through a PkCacheProvider, which is here included as a wrapper around the workspace.
+The demo demonstrates using two Editor instances (side by side) including synchronised navigation. The PkEditor uses Proskomma / Epitetele through a PkCacheProvider, which is here included as a wrapper around the workspace.
 
-**Note:** Uncontrolled editors use a local editor reference state, while controlled editors use reference state and onSetReference passed in as an argument, use the lock icon to force the editor to be uncontrolled.
+**Note:** Controlled editors (like in this example) use reference state and onSetReference passed in as an argument.
 
 ```js
 import { useState, useEffect } from 'react'
@@ -18,6 +18,8 @@ import CardContent from "@mui/material/CardContent";
 
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
+
+import BibleReference, { useBibleReference } from 'bible-reference-rcl'
 
 function MyEditor({
   bookId,
@@ -64,55 +66,71 @@ function GridCard({ title, children }) {
     </Grid>
   )
 }
-const bookId1 = "TIT"
-const bookId2 = "1PE"
+const bookId = "TIT"
 const langIdStr = 'en'
 const langIdStrFra = 'fra'
 
 function MyWorkspace() {
-  const [reference, setReference] = useState({ bookId: bookId1, chapter: 1, verse: 1 })
+  const supportedBooks = null // if empty array or null then all books available
+  const [reference, setReference] = useState({ bookId, chapter: 1, verse: 1 })
+
+  const onRefChange = (bookId, chapter, verse) => {
+    const bRefId = "BibleRef"
+    console.log(`\n### Reference changed to ${bookId} - ${chapter}:${verse}\n\n`);
+    if ((reference.sourceId !== bRefId) 
+      || (reference.bookId !== bookId.toUpperCase()) 
+      || (reference.chapter !== chapter) 
+      || (reference.verse !== verse)) { // Do not re-trigger new events
+      setReference({ sourceId: bRefId, bookId: bookId.toUpperCase(), chapter, verse })
+    }
+  }
+
+  const { state, actions } = useBibleReference({
+    initialBook: "tit",
+    initialChapter: "1",
+    initialVerse: "1",
+    onChange: onRefChange,
+    onPreChange: (bookId, chapter, verse, p4) => {
+      console.log(`\n### onPreChange ${bookId} - ${chapter}:${verse} ${p4}\n\n`)
+      return true
+    },
+  })
+
+  useEffect(() => {
+    actions.applyBooksFilter(supportedBooks);
+  }, []); // just apply the first time in this demo
 
   const onReferenceSelected = ({ sourceId, bookId, chapter, verse }) => {
-    setReference({ sourceId, bookId: bookId, chapter, verse })
+    console.log(`onReferenceSelected: ${sourceId} -${bookId} - ${chapter}:${verse}\n\n`);
+    setReference({ sourceId, bookId, chapter, verse })
+    actions.goToBookChapterVerse(bookId.toLowerCase(), chapter.toString(), verse.toString())
   }
 
   return (
     <Container sx={{ py: 4 }}>
+      <BibleReference
+        status={state}
+        actions={actions}
+        style={{ color: '#ffffff' }}
+      />
+
       <h2>Workspace</h2>
       <Grid container spacing={2}>
-        <GridCard title={`Org1: 1Peter (Uncontrolled)`}>
-          <MyEditor
-            repoIdStr={"ORG1-en_ult/1pe"}
-            langIdStr={langIdStr}
-            bookId={bookId2}
-            usfmText={usfmTextPe}
-          />
-        </GridCard>
-        <GridCard title={`Org2: 1Peter (Controlled)`}>
-          <MyEditor
-            repoIdStr={"ORG2-en_ult/1pe"}
-            langIdStr={langIdStr}
-            bookId={bookId2}
-            reference={reference}
-            onReferenceSelected={onReferenceSelected}
-            usfmText={usfmTextPe}
-          />
-        </GridCard>
-        <GridCard title={`Org3: Titus (Controlled)`}>
+        <GridCard key={"1"} title={`Org1: Titus (Controlled)`}>
           <MyEditor
             repoIdStr={"Xxx/en_tit"}
             langIdStr={langIdStr}
-            bookId={bookId1}
+            bookId={bookId}
             reference={reference}
             onReferenceSelected={onReferenceSelected}
             usfmText={usfmText}
           />
         </GridCard>
-        <GridCard title={`Org4: Titus (Controlled)`}>
+        <GridCard key={"2"} title={`Org2: Titus (Controlled)`}>
           <MyEditor
             repoIdStr={"LSG/fra_tit"}
             langIdStr={langIdStrFra}
-            bookId={bookId1}
+            bookId={bookId}
             reference={reference}
             onReferenceSelected={onReferenceSelected}
             usfmText={usfmTextFra}
