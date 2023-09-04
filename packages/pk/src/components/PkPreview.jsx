@@ -35,8 +35,8 @@ export default function PkPreview(props) {
       if (!ready) {
         try {
           const repoLangStr = getRepoUID(repoIdStr,langIdStr)
-          if (pkCache[repoLangStr] && !docIdFromCache) {
-            setDocIdFromCache(pkCache[repoLangStr])
+          if (pkCache[repoLangStr] && pkCache[repoLangStr][bookId] && !docIdFromCache) {
+            setDocIdFromCache(pkCache[repoLangStr][bookId])
           }
           setDone(true)
         } catch (e) {
@@ -47,7 +47,7 @@ export default function PkPreview(props) {
         setRenderedData(_renderedData)
       }
     }
-  },[pk, doRender, extInfo, renderFlags, verbose, ready, getRepoUID, repoIdStr, langIdStr, pkCache, docIdFromCache]);
+  },[pk, doRender, extInfo, renderFlags, verbose, ready, getRepoUID, repoIdStr, langIdStr, bookId, pkCache, docIdFromCache]);
 
 
   return (

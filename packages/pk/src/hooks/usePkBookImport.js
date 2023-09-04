@@ -3,8 +3,9 @@ import { useDeepCompareEffect } from "use-deep-compare";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 import EpiteleteHtml from "epitelete-html";
 
-export default function usePkBookImport( repoIdStr, langIdStr, usfmText, htmlMap, options ) {
+export default function usePkBookImport( repoIdStr, langIdStr, bookId, usfmText, htmlMap, options ) {
   const [loading,setLoading] = useState(true)
+  const [curLoadingId,setCurLoadingId] = useState()
   const [done,setDone] = useState(false)
 
   const {
@@ -22,35 +23,37 @@ export default function usePkBookImport( repoIdStr, langIdStr, usfmText, htmlMap
 
   // monitor the pkCache and import when usfmText is available
   useDeepCompareEffect(() => {
-    function doImportPk(repoIdStr) {
+    function doImportPk(repoIdStr,bId) {
+      const tmpObj = pkCache[repoIdStr] || {}
       const res = proskomma.importDocument(
         { repoIdStr },
         "usfm",
         usfmText
       )
       if (res.id !== undefined) {
-        addPkCache(repoIdStr,res.id)
+        tmpObj[bId] = res.id
+        addPkCache(repoIdStr,tmpObj)
         setLoading(false)
       } else {
         setLoading(false)
       }
     }
 
-    if ((typeof repoIdStr === "string") && usfmText && proskomma) {
+    if ((typeof repoIdStr === "string") && bookId && usfmText && proskomma) {
       const repoLangStr = getRepoUID(repoIdStr, langIdStr) 
-      if (!pkCache[repoLangStr]) {
-        doImportPk(repoLangStr)
-      } else {
+      if (pkCache[repoLangStr] && pkCache[repoLangStr][bookId]) {
         setLoading(false)
+      } else if (curLoadingId !== repoLangStr + bookId) {
+        setCurLoadingId(repoLangStr + bookId)
+        doImportPk(repoLangStr,bookId)
       }
     }
-  }, [repoIdStr,usfmText,pkCache,proskomma])
+  }, [repoIdStr,langIdStr,bookId,usfmText,pkCache,proskomma])
 
   // monitor the epCache and create Epitelete instances as needed
   useDeepCompareEffect(() => {
     if (!loading && proskomma) {
       const repoLangStr = getRepoUID(repoIdStr, langIdStr)
-  
       if (repoLangStr && !epCache[repoLangStr]) {
         const _ep = new EpiteleteHtml({ 
           proskomma,

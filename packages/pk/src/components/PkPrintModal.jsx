@@ -72,15 +72,16 @@ export default function PkPrintModal({
       if (!ready) {
         try {
           const repoLangStr = getRepoUID(repoIdStr,langIdStr)
-          if (pkCache[repoLangStr] && !docIdFromCache) {
-            setDocIdFromCache(pkCache[repoLangStr])
+          if (pkCache[repoLangStr] && pkCache[repoLangStr][bookId] && !docIdFromCache) {
+            setDocIdFromCache(pkCache[repoLangStr][bookId])
           }
+
         } catch (e) {
           console.log(e)
         }
       }
     }
-  },[pk, pkCache, docIdFromCache, repoIdStr, langIdStr, ready, getRepoUID]);
+  },[pk, pkCache, docIdFromCache, repoIdStr, langIdStr, ready, getRepoUID, bookId]);
 
 
   const handleRender = () => {

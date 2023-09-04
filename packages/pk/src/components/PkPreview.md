@@ -15,7 +15,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
   const renderFlags = {
     showTitles: true,
@@ -62,7 +62,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
   const onRenderItem = (props) => {
     const {verseId, extInfo} = props

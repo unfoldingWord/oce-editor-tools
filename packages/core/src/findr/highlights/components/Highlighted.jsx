@@ -5,6 +5,7 @@ import { FindrDom } from '../classes/FindrDom';
  * The component in charge of highlighting it's children
  */
 export const Highlighted = ({ target, options, children, ping, ...props }) => {
+  console.log(props)
   const findrDomRef = useRef(null);
   useEffect(() => {
     const sourceElement = sourceRef.current;

@@ -32,7 +32,7 @@ function MyEditor({
 }) {
 
   const verbose = true
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
   const editorProps = {
     bookId,
@@ -177,7 +177,7 @@ function Component () {
   const langIdStr = 'en'
   const bookId = 'TIT'
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText ) 
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText ) 
 
   const onSave = (bookCode,usfmText) => {
     console.log("save button clicked")
@@ -245,5 +245,9 @@ function Component () {
       </div>
   )
 }  
+
+<PkCacheProvider>
+  <Component/>
+</PkCacheProvider>
 
 ```

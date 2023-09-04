@@ -4,9 +4,9 @@ import PkEditor from "./PkEditor";
 import usePkBookImport from "../hooks/usePkBookImport";
 
 export default function PkUsfmEditor( props) {
-  const { repoIdStr, langIdStr, usfmText } = props;
+  const { repoIdStr, langIdStr, bookId, usfmText } = props;
 
-  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, usfmText )
+  const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText )
 
   return (
     <div>
@@ -23,10 +23,10 @@ PkUsfmEditor.propTypes = {
   repoIdStr: PropTypes.string,
   /** langIdStr identifies the language of a set of documents in proskomma */
   langIdStr: PropTypes.string,
+  /** bookId to identify the content in the editor */
+  bookId: PropTypes.string, 
   /** The text in usfm format to load in the editor */
   usfmText: PropTypes.string,
-  /** bookId to identify the content in the editor */
-  bookId: PropTypes.string,
   /** Optional callback - for extending the toolbar */
   onRenderToolbar: PropTypes.func,
   /** Whether to show extra info in the js console */
