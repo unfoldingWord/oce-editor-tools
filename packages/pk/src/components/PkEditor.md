@@ -67,6 +67,7 @@ function GridCard({ title, children }) {
   )
 }
 const bookId = "TIT"
+const bookIdPe = "1PE"
 const langIdStr = 'en'
 const langIdStrFra = 'fra'
 
@@ -118,7 +119,7 @@ function MyWorkspace() {
       <Grid container spacing={2}>
         <GridCard key={"1"} title={`Org1: Titus (Controlled)`}>
           <MyEditor
-            repoIdStr={"Xxx/en_tit"}
+            repoIdStr={"Xxx/en_test"}
             langIdStr={langIdStr}
             bookId={bookId}
             reference={reference}
@@ -134,6 +135,16 @@ function MyWorkspace() {
             reference={reference}
             onReferenceSelected={onReferenceSelected}
             usfmText={usfmTextFra}
+          />
+        </GridCard>
+        <GridCard key={"3"} title={`Org1: 1 Peter (Uncontrolled)`}>
+          <MyEditor
+            repoIdStr={"Xxx/en_test"}
+            langIdStr={langIdStr}
+            bookId={bookIdPe}
+            reference={reference}
+            onReferenceSelected={onReferenceSelected}
+            usfmText={usfmTextPe}
           />
         </GridCard>
       </Grid>
