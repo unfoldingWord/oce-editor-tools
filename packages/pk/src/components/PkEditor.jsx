@@ -26,6 +26,7 @@ export default function PkEditor( props) {
     ...props,
     epiteleteHtml,
   };
+  console.log(editorProps)
 
   return (epiteleteHtml ? <Editor { ...editorProps } /> : null)
 };
