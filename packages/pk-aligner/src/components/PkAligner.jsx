@@ -50,7 +50,7 @@ const alignmentComplete = areAlgnmentsComplete(wordListWords, verseAlignments);
 console.log(`Alignments are ${alignmentComplete ? 'COMPLETE!' : 'incomplete'}`);
 
 export default function PkAligner(props) {
-  const { repoIdStr, langIdStr, verseRangeStr } = props;
+  const { repoIdStr, langIdStr, bookId, verseRangeStr } = props;
   console.log(verseRangeStr)
   const [docIdFromCache, setDocIdFromCache] = useState(undefined);
 
@@ -62,11 +62,11 @@ export default function PkAligner(props) {
   useEffect(() => {
     if (pk != null) {
       const repoLangStr = getRepoUID(repoIdStr, langIdStr);
-      if (pkCache[repoLangStr] && !docIdFromCache) {
-        setDocIdFromCache(pkCache[repoLangStr]);
+      if (pkCache[repoLangStr] && pkCache[repoLangStr][bookId] && !docIdFromCache) {
+        setDocIdFromCache(pkCache[repoLangStr][bookId])
       }
     }
-  }, [pk, pkCache, docIdFromCache, getRepoUID, repoIdStr, langIdStr]);
+  }, [pk, pkCache, docIdFromCache, getRepoUID, repoIdStr, bookId, langIdStr]);
 
   // const promise = pk.gqlQuerySync("{ id }");
   // console.log(promise.data.id);

@@ -94,7 +94,8 @@
     "dist"
   ],
   "resolutions": {
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+    "@yarnpkg/parsers": "3.0.0-rc.48.1"
   },
   "publishConfig": {
     "access": "public"
