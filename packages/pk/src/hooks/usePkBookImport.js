@@ -43,9 +43,12 @@ export default function usePkBookImport( repoIdStr, langIdStr, bookId, usfmText,
       const repoLangStr = getRepoUID(repoIdStr, langIdStr) 
       if (pkCache[repoLangStr] && pkCache[repoLangStr][bookId]) {
         setLoading(false)
-      } else if (curLoadingId !== repoLangStr + bookId) {
-        setCurLoadingId(repoLangStr + bookId)
-        doImportPk(repoLangStr,bookId)
+      } else {
+        const repoLangBookIdStr =  `${repoLangStr}${bookId}`
+        if (curLoadingId !== repoLangBookIdStr) {
+          setCurLoadingId(repoLangBookIdStr)
+          doImportPk(repoLangStr,bookId)
+        }
       }
     }
   }, [repoIdStr,langIdStr,bookId,usfmText,pkCache,proskomma])
