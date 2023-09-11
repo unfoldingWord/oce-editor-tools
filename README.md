@@ -135,7 +135,7 @@ Other examples here:
  
   and 
 
- - [simple](https://npmjs.com/@oce-editor-tools/simple) - for simple usage
+ - [simple](https://simple-oce-editor-tools.netlify.app/) - for simple usage
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -6,7 +6,7 @@ import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 
 export default function PkEditor( props) {
   const {
-    repoIdStr, langIdStr
+    repoIdStr, langIdStr, bookId
   } = props;
   const [epiteleteHtml, setEpiteleteHtml] = useState();
 
@@ -17,15 +17,20 @@ export default function PkEditor( props) {
 
   useDeepCompareEffect(() => {
     const repoLangStr = getRepoUID(repoIdStr,langIdStr)
-    if (epCache[repoLangStr]) {
-      setEpiteleteHtml(epCache[repoLangStr])
+      // LG: Workaround !!! Now using one Epitelete for each single book
+      // Remove the below line in order to have one Epitelete instance handle several books 
+      // - and also change the below references to it, back to use 'repoLangStr' instead 
+      const repoLangBookIdStr =  `${repoLangStr}${bookId}`
+
+    if (epCache[repoLangBookIdStr]) {
+      setEpiteleteHtml(epCache[repoLangBookIdStr])
     }
   }, [epCache, repoIdStr, langIdStr]);
 
   const editorProps = {
     ...props,
     epiteleteHtml,
-  };
+  }
 
   return (epiteleteHtml ? <Editor { ...editorProps } /> : null)
 };

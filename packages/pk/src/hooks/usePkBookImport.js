@@ -57,14 +57,20 @@ export default function usePkBookImport( repoIdStr, langIdStr, bookId, usfmText,
   useDeepCompareEffect(() => {
     if (!loading && proskomma) {
       const repoLangStr = getRepoUID(repoIdStr, langIdStr)
-      if (repoLangStr && !epCache[repoLangStr]) {
-        const _ep = new EpiteleteHtml({ 
+      // LG: Workaround !!! Now using one Epitelete for each single book
+      // Remove the below line in order to have one Epitelete instance handle several books 
+      // - and also change all of the references to it, back to use 'repoLangStr' instead 
+      const repoLangBookIdStr =  `${repoLangStr}${bookId}`
+      // The below line should be used instead, in order to have one Epitelete instance handle several books
+      // if (repoLangStr && !epCache[repoLangStr]) {
+      if (repoLangStr && !epCache[repoLangBookIdStr]) {
+          const _ep = new EpiteleteHtml({ 
           proskomma,
           docSetId: repoLangStr,
           htmlMap,
           options: { historySize: 100, ...options },
         })
-        addEpCache(repoLangStr,_ep)
+        addEpCache(repoLangBookIdStr,_ep)
       }
       setDone(true)
     }
