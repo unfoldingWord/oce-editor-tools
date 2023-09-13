@@ -1,3 +1,10 @@
+## Package: Core
+#### Other packages in the same monorepo: 
+
+pk - https://oce-editor-tools-pk.netlify.app
+
+simple - https://simple-oce-editor-tools.netlify.app
+
 # Editor demo 1
 
 The demo demonstrates using four Editor instances (side by side) including synchronised navigation.

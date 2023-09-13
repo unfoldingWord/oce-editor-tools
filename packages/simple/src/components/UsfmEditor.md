@@ -1,3 +1,11 @@
+## Package: Simple
+#### Other packages in the same monorepo: 
+
+core - https://oce-editor-tools-pk.netlify.app
+
+pk - https://oce-editor-tools-pk.netlify.app
+
+
 # UsfmEditor demo
 
 ```js
