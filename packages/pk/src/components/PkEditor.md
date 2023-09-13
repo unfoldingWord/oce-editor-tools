@@ -1,3 +1,11 @@
+## Package: Pk
+#### Other packages in the same monorepo: 
+
+core - https://oce-editor-tools-pk.netlify.app
+
+simple - https://simple-oce-editor-tools.netlify.app
+
+
 # PkEditor demo
 
 The demo demonstrates using two Editor instances (side by side) including synchronised navigation. The PkEditor uses Proskomma / Epitetele through a PkCacheProvider, which is here included as a wrapper around the workspace.
