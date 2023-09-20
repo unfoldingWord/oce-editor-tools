@@ -17,10 +17,12 @@ export default function ButtonUndo({ component, children, ...props }) {
   return (
     <ButtonHeadless
       component={component}
-      value="undo"
-      aria-label="undo"
-      title="Undo"
-      {...props}
+      componentProps={{
+        value: 'undo',
+        'aria-label': 'undo',
+        title: 'Undo',
+        ...props,
+      }}
       disabled={!canUndo}
       onClick={undo}
     >

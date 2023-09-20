@@ -5,11 +5,13 @@ export default function ButtonSearch({ children, component, onSearch, ...props }
   return (
     <Toggle.Button
       component={component}
-      value="search"
-      aria-label="search"
+      value={'search'}
+      componentProps={{
+        'aria-label': 'search',
+        title: 'Search',
+        ...props,
+      }}
       onClick={onSearch}
-      title="Search"
-      {...props}
     >
       {children}
     </Toggle.Button>

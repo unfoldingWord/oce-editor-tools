@@ -8,6 +8,7 @@ export function ButtonAlignmentBroken({
   children,
   component,
   onClick: _onClick,
+  ...props
 }) {
   const [brokenAlignedWords, setBrokenAlignedWords] = useState();
   const { state } = useEditorContext();
@@ -46,13 +47,16 @@ export function ButtonAlignmentBroken({
     <>
       <ButtonHeadless
         component={component}
-        value="alignment"
-        aria-label="show broken alignment"
+        componentProps={{
+          value: 'alignment',
+          'aria-label': 'show broken alignment',
+          disabled: { allAligned },
+          title: 'Alignment',
+          ...props,
+        }}
         onClick={handleClick}
-        disabled={allAligned}
-        allAligned={allAligned}
         brokenAlignedWords={brokenAlignedWords}
-        title="Alignment"
+        allAligned={allAligned}
       >
         {children}
       </ButtonHeadless>

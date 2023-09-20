@@ -5,10 +5,12 @@ export default function ButtonPreview({ children, component, ...props }) {
   return (
     <Toggle.Button
       component={component}
-      value="preview"
-      aria-label="preview"
-      title="Preview"
-      {...props}
+      value={'preview'}
+      componentProps={{
+        'aria-label': 'preview',
+        title: 'Preview',
+        ...props,
+      }}
     >
       {children}
     </Toggle.Button>
