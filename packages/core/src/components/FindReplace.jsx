@@ -4,6 +4,7 @@ import { useFindr } from '@findr/react';
 import { Collapse, Paper } from '@mui/material';
 import { useEditorContext } from './EditorHeadless/Editor';
 
+//TODO: create a headless version of find replace
 export function FindReplace({
   onClickResult = () => null,
   onReplace: _onReplace = () => null,

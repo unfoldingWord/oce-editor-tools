@@ -53,7 +53,7 @@ export const usfmText = String.raw`\id 1PE EN_ULT en_English_ltr Thu Aug 18 2022
 \zaln-s |x-strong="G41290" x-lemma="πληθύνω" x-morph="Gr,V,OAP3,,S," x-occurrence="1" x-occurrences="1" x-content="πληθυνθείη"\*\w be|x-occurrence="1" x-occurrences="1"\w*
 \w multiplied|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*
 \zaln-s |x-strong="G47710" x-lemma="σύ" x-morph="Gr,RP,,,2D,P," x-occurrence="1" x-occurrences="1" x-content="ὑμῖν"\*\w to|x-occurrence="2" x-occurrences="2"\w*
-\w you|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*.
+\w you|x-occurrence="1" x-occurrences="1"\w*\zaln-e\*.\f + \fq This a sample footnote \ft for testing graft editor \f*
 
 \ts\*
 \p

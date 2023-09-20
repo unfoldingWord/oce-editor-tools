@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EditorPack from './EditorHeadless';
 import Button from './EditorHeadless/Buttons';
-import { Box, ToggleButton } from '@mui/material';
+import { Box, ToggleButton, Popper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import {
   AssignmentLate,
@@ -28,7 +28,28 @@ const ToolbarButton = styled(ToggleButton)({
   },
 });
 
+export function BrokenAlignmentsPopper({ anchorEl, brokenAlignedWords }) {
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popper' : undefined;
+  return <Popper id={id} open={open} anchorEl={anchorEl}>
+    <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+      List of words with broken alignment:
+      <Box>
+        {brokenAlignedWords &&
+          brokenAlignedWords.map((str, i) => <li key={i}>{str}</li>)}
+      </Box>
+    </Box>
+  </Popper>;
+}
+
+let brokenAlignedWords = []
 export function EditorToolbar({ showToggles, onRenderToolbar }) {
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openPopup = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
   return (
     <Box
       sx={{
@@ -68,11 +89,13 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
           <Button.Lock component={ToolbarButton}>
             {({ selected }) => (selected ? <Lock /> : <LockOpen />)}
           </Button.Lock>
-          <Button.AlignmentBroken component={ToolbarButton}>
-            {({ allAligned }) =>
-              allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />
-            }
+          <Button.AlignmentBroken component={ToolbarButton} onClick={openPopup}>
+            {({ allAligned, brokenAlignedWords: b }) => {
+              brokenAlignedWords = b;
+              return allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />;
+            }}
           </Button.AlignmentBroken>
+          <BrokenAlignmentsPopper anchorEl={anchorEl} brokenAlignedWords={brokenAlignedWords}/>
           <Button.Undo component={ToolbarButton}>
             <Undo />
           </Button.Undo>

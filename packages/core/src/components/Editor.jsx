@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import EditorPack from "./EditorHeadless"
+import GraftPopup from "./GraftPopup"
 import { EditorToolbar } from './EditorToolbar';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
@@ -39,7 +40,8 @@ function Editor({
     section: Section,
     sectionHeading: SectionHeading,
     sectionBody: SectionBody,
-  }
+    editorGraft: GraftPopup,
+  };
   return (
     <EditorPack.Container {...props}>
       <EditorToolbar showToggles={false} onRenderToolbar={onRenderToolbar} />

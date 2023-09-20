@@ -4,9 +4,10 @@ import SectionHeading from './SectionHeading';
 import RecursiveBlock from './RecursiveBlock';
 import { HtmlPerfEditor } from '@xelah/type-perf-html';
 import { Highlighted } from '../../findr/highlights/components/Highlighted';
+import { EditorGraft } from './EditorGraft'
 
 export function EditorMain({ components, ...props }) {
-  const { block, sectionHeading, ..._components } = components ?? {};
+  const { block, sectionHeading, editorGraft, ..._components } = components ?? {};
 
   const {
     state: {
@@ -60,7 +61,12 @@ export function EditorMain({ components, ...props }) {
     }
     return retVal
   }
-
+  const graftProps = {
+    ...htmlEditorProps,
+    sequenceIds: [htmlEditorProps.graftSequenceId],
+    options: { ...htmlEditorProps.options, sectionable: false },
+  }
+  const GraftEditor = editorGraft ?? EditorGraft
   return (
     <div key="1" className="Editor" style={style} ref={editorRef} {...props}>
       {/* The below safeguarding 'allValidSeqIds' might become unnecessary, 
@@ -73,6 +79,7 @@ export function EditorMain({ components, ...props }) {
           ping={sectionIndices}
         >
           <HtmlPerfEditor {...htmlEditorProps} />
+          <GraftEditor graftProps={graftProps} />
         </Highlighted>
       ) : null}
     </div>

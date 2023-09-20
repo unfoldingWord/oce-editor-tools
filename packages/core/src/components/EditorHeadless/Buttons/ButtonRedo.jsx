@@ -19,10 +19,12 @@ export default function ButtonRedo({ component, children, ...props }) {
   return (
     <ButtonHeadless
       component={component}
-      value="redo"
-      aria-label="redo"
-      title="Redo"
-      {...props}
+      componentProps={{
+        value: 'redo',
+        'aria-label': 'redo',
+        title: 'Redo',
+        ...props,
+      }}
       disabled={!canRedo}
       onClick={redo}
     >
