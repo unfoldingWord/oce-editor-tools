@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 
 export function BlockHeadless({
   component,
+  componentProps,
   children,
   ...props
 }) {
@@ -9,14 +10,14 @@ export function BlockHeadless({
     if (typeof component?.render === 'function') {
       return component;
     }
-    return ({ children, ...props }) => <div {...props}>{children}</div>;
+    return ({ children, ...componentProps }) => <div {...componentProps}>{children}</div>;
   }, [component]);
   const renderChildren = useMemo(
     () => (typeof children === 'function' ? children : () => children),
     [children]
   );
   return (
-    <BlockComponent {...props}>
+    <BlockComponent {...componentProps}>
       {renderChildren({ ...props })}
     </BlockComponent>
   );

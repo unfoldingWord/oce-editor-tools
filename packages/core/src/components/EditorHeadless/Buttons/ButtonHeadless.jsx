@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 export function ButtonHeadless({
   disabled,
   component,
+  componentProps,
   children,
   onClick,
   ...props
@@ -11,7 +12,9 @@ export function ButtonHeadless({
     if (typeof component?.render === 'function') {
       return component;
     }
-    return ({ children, ...props }) => <button {...props}>{children}</button>;
+    return ({ children, ...componentProps }) => (
+      <button {...componentProps}>{children}</button>
+    );
   }, [component]);
   const renderChildren = useMemo(
     () => (typeof children === 'function' ? children : () => children),
@@ -19,7 +22,7 @@ export function ButtonHeadless({
   );
   return (
     <ButtonComponent
-      {...props}
+      {...componentProps}
       disabled={disabled}
       onClick={onClick}
     >

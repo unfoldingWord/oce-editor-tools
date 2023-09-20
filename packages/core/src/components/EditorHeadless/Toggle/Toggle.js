@@ -49,6 +49,7 @@ function Button({
   selected: defaultSelected,
   disabled,
   component,
+  componentProps,
   children,
   onClick: _onClick,
   ...props
@@ -65,7 +66,9 @@ function Button({
     if (typeof component?.render === 'function') {
       return component;
     }
-    return ({ children, ...props }) => <button {...props}>{children}</button>;
+    return ({ children, ...componentProps }) => (
+      <button {...componentProps}>{children}</button>
+    );
   }, [component]);
   useEffect(
     (e) => {
@@ -92,14 +95,14 @@ function Button({
   );
   return (
     <Button
-      {...props}
+      {...componentProps}
       selected={selected}
       disabled={disabled}
       value={buttonValue}
       onClick={toggleValue}
       className={selected ? 'selected' : ''}
     >
-      {renderChildren({ selected, disabled, value: buttonValue })}
+      {renderChildren({ selected, disabled, value: buttonValue, ...props })}
     </Button>
   );
 }

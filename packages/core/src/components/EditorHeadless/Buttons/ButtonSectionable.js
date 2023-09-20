@@ -5,10 +5,12 @@ export default function ButtonSectionable({ children, component, ...props }) {
   return (
     <Toggle.Button
       component={component}
-      value="sectionable"
-      aria-label="sectionable"
-      title="Sectionable"
-      {...props}
+      value={'sectionable'}
+      componentProps={{
+        'aria-label': 'sectionable',
+        title: 'Sectionable',
+        ...props,
+      }}
     >
       {children}
     </Toggle.Button>
