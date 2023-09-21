@@ -32,7 +32,7 @@ const getStyles = (type, subType, asObject = false) => {
     return styles[type].default
   }
   const stylesObject = { ...styles[type].default, ...styles[type][subType] }
-  if (!stylesObject) {
+  if (!asObject) {
     return styleObjectToString(stylesObject)
   }
   return stylesObject
