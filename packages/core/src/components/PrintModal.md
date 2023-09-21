@@ -3,10 +3,14 @@
 The demo demonstrates using the PrintModal for renderring an Usfm text
 
 ```js
-import React, { useState } from 'react'
-import { usfmText } from '../data/Acts.1.usfm.js'
+import React, {useState} from 'react'
+import * as UsfmEN from '../data/Acts.1.usfm.js'
+import * as UsfmEn1Pe from '../data/1pe.en.ult.usfm.js'
+import * as UsfmHbo from '../data/hbo_uhb_57-TIT.usfm.js'
 import useUsfmPreviewRenderer from "../hooks/useUsfmPreviewRenderer"
 import DOMPurify from 'dompurify'
+
+const usfmText = UsfmEn1Pe.usfmText
 
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
