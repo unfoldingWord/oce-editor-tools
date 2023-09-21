@@ -4,9 +4,10 @@ import SectionHeading from './SectionHeading';
 import RecursiveBlock from './RecursiveBlock';
 import { HtmlPerfEditor } from '@xelah/type-perf-html';
 import { Highlighted } from '../../findr/highlights/components/Highlighted';
+import { EditorGraft } from './EditorGraft'
 
 export function EditorMain({ components, ...props }) {
-  const { block, sectionHeading, ..._components } = components ?? {};
+  const { block, sectionHeading, editorGraft, ..._components } = components ?? {};
 
   const {
     state: {
@@ -41,15 +42,44 @@ export function EditorMain({ components, ...props }) {
 
   const style = !sequenceIds ? { cursor: 'progress' } : {};
 
+  const validSeqIds = sequenceIds && htmlPerf
+
+  const allValidSeqIds = () => {
+  // This checking is no longer necessary once it is handled inside the HtmlPerfEditor 
+    let retVal = validSeqIds
+    if (validSeqIds) {
+      sequenceIds?.forEach(seqId => {
+        const isValid = (htmlPerf?.sequencesHtml)
+                          && (htmlPerf?.sequencesHtml[seqId] != null)
+        retVal = retVal && isValid
+        if (!isValid) {
+          console.log(`Invalid sequenceId ${seqId} in ${sequenceIds}`)
+          console.log(htmlPerf)
+          console.log(htmlPerf?.sequencesHtml)
+        }
+      })
+    }
+    return retVal
+  }
+  const graftProps = {
+    ...htmlEditorProps,
+    sequenceIds: [htmlEditorProps.graftSequenceId],
+    options: { ...htmlEditorProps.options, sectionable: false },
+  }
+  const GraftEditor = editorGraft ?? EditorGraft
   return (
     <div key="1" className="Editor" style={style} ref={editorRef} {...props}>
-      {sequenceIds && htmlPerf ? (
+      {/* The below safeguarding 'allValidSeqIds' might become unnecessary, 
+          once this is handled inside the HtmlPerfEditor instead
+          and at that point it will be enough to just check 'validSeqIds'  */}
+      {allValidSeqIds() ? (
         <Highlighted
           target={highlighterTarget}
           options={highlighterOptions}
           ping={sectionIndices}
         >
           <HtmlPerfEditor {...htmlEditorProps} />
+          <GraftEditor graftProps={graftProps} />
         </Highlighted>
       ) : null}
     </div>

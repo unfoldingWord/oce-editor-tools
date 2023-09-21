@@ -18,7 +18,7 @@ export default function GraftPopup(graftProps) {
     }, 50)
   }
 
-  return (
+  return (graftSequenceId ?
     <DraggableModal
       open={graftSequenceId !== null}
       handleClose={handleClickClose}
@@ -43,6 +43,6 @@ export default function GraftPopup(graftProps) {
           Done
         </Button>
       </Card>
-    </DraggableModal>
+    </DraggableModal> : null
   )
 }

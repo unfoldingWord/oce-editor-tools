@@ -28,11 +28,13 @@ export default function ButtonSave({ component, children, ...props }) {
   return (
     <ButtonHeadless
       component={component}
-      value="save"
-      aria-label="save"
-      title="Save"
+      componentProps={{
+        value: 'save',
+        'aria-label': 'save',
+        title: 'Save',
+        ...props,
+      }}
       canSave={canSave}
-      {...props}
       disabled={!canSave}
       onClick={save}
     >

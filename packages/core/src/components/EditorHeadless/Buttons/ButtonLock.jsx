@@ -8,10 +8,12 @@ export default function ButtonLock({ children, component, ...props }) {
   return isControlled ? (
     <Toggle.Button
       component={component}
-      value="locked"
-      aria-label="lock"
-      title="Lock"
-      {...props}
+      value={'locked'}
+      componentProps={{
+        'aria-label': 'lock',
+        title: 'Lock',
+        ...props,
+      }}
     >
       {children}
     </Toggle.Button>
