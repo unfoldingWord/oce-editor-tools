@@ -27,6 +27,8 @@ import { usfmText as usfmTextFra } from "../data/86-TITfraLSG.usfm.js";
 import { usfmText as usfmTextPe } from "../data/1pe.en.ult.usfm.js";
 import { usfm2perf } from "../helpers/usfm2perf";
 
+import './HtmlPerfEditor.css';
+
 function MyEditor({
   bookId,
   reference,
