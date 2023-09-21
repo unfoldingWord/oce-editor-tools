@@ -14,7 +14,7 @@ const getStyles = (type, subType) => {
   const retObj = { ...styles[type].default, ...styles[type][subType] }
   let retArr = []
   Object.entries(retObj).forEach(([key, value]) => {
-    retArr.push(`${camelToKebabCase(key)}: ${value}`)
+    retArr.push(`${camelToKebabCase(key)}: ${value};`)
   })
   return retArr.flat(100).join(' ')
 }
