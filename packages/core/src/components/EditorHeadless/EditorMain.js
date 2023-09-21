@@ -41,6 +41,26 @@ export function EditorMain({ components, ...props }) {
   };
 
   const style = !sequenceIds ? { cursor: 'progress' } : {};
+
+  const validSeqIds = sequenceIds && htmlPerf
+
+  const allValidSeqIds = () => {
+  // This checking is no longer necessary once it is handled inside the HtmlPerfEditor 
+    let retVal = validSeqIds
+    if (validSeqIds) {
+      sequenceIds?.forEach(seqId => {
+        const isValid = (htmlPerf?.sequencesHtml)
+                          && (htmlPerf?.sequencesHtml[seqId] != null)
+        retVal = retVal && isValid
+        if (!isValid) {
+          console.log(`Invalid sequenceId ${seqId} in ${sequenceIds}`)
+          console.log(htmlPerf)
+          console.log(htmlPerf?.sequencesHtml)
+        }
+      })
+    }
+    return retVal
+  }
   const graftProps = {
     ...htmlEditorProps,
     sequenceIds: [htmlEditorProps.graftSequenceId],
@@ -49,7 +69,10 @@ export function EditorMain({ components, ...props }) {
   const GraftEditor = editorGraft ?? EditorGraft
   return (
     <div key="1" className="Editor" style={style} ref={editorRef} {...props}>
-      {sequenceIds && htmlPerf ? (
+      {/* The below safeguarding 'allValidSeqIds' might become unnecessary, 
+          once this is handled inside the HtmlPerfEditor instead
+          and at that point it will be enough to just check 'validSeqIds'  */}
+      {allValidSeqIds() ? (
         <Highlighted
           target={highlighterTarget}
           options={highlighterOptions}

@@ -28,7 +28,7 @@ export default function useUsfmPreviewRenderer(props) {
   })
 
   useEffect(() => {
-    if ((pk != null) && (usfmText != null)) {
+    if ((pk != null) && (usfmText != null) && !imported) {
       const res = pk.importDocument(
         {lang: 'xxx', abbr: 'XXX'}, // doesn't matter...
         "usfm",
@@ -39,7 +39,7 @@ export default function useUsfmPreviewRenderer(props) {
         setImported(true)
       }
     }
-  },[pk, usfmText])
+  },[imported, pk, usfmText])
 
   useEffect(() => {
     async function doQueryPk() {

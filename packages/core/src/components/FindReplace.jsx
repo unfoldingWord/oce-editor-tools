@@ -13,7 +13,13 @@ export function FindReplace({
   onChangeTarget: _onChangeTarget = () => null,
 }) {
   const {
-    actions: { setHighlighterTarget, setHighlighterOptions, setOption: setEditorOption, setReference: onSetReference },
+    actions: {
+      setHighlighterTarget,
+      setHighlighterOptions,
+      setOption: setEditorOption,
+      setReference: onSetReference,
+      setHtmlPerf,
+    },
     state: { epiteleteHtml, bookCode, options: editorOptions, sourceId },
   } = useEditorContext();
 
@@ -76,8 +82,8 @@ export function FindReplace({
     if (!epiteleteHtml) return;
     const report = await findOrReplace(params);
     const sequenceId = report.perf.main_sequence_id;
-    const perfHtml = epiteleteHtml._outputHtml(report.perf);
-    await epiteleteHtml.write(bookCode, sequenceId, perfHtml);
+    await epiteleteHtml.writePerf(bookCode, sequenceId, report.perf.sequences[sequenceId]);
+    setHtmlPerf(await epiteleteHtml.read(bookCode));
     const results = buildResults(report, sourceKey)
     _onReplace(results);
     return results;

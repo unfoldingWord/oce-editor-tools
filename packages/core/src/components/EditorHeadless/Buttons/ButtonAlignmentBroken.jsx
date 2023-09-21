@@ -50,10 +50,10 @@ export function ButtonAlignmentBroken({
         componentProps={{
           value: 'alignment',
           'aria-label': 'show broken alignment',
-          disabled: { allAligned },
           title: 'Alignment',
           ...props,
         }}
+        disabled={allAligned}
         onClick={handleClick}
         brokenAlignedWords={brokenAlignedWords}
         allAligned={allAligned}
