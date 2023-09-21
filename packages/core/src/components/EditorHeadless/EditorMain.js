@@ -79,7 +79,7 @@ export function EditorMain({ components, ...props }) {
           ping={sectionIndices}
         >
           <HtmlPerfEditor {...htmlEditorProps} />
-          <GraftEditor graftProps={graftProps} />
+          <GraftEditor {...graftProps} />
         </Highlighted>
       ) : null}
     </div>
