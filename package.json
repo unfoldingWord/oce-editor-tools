@@ -6,8 +6,10 @@
   "scripts": {
     "start:core": "yarn nx start @oce-editor-tools/core",
     "start:pk": "yarn nx start @oce-editor-tools/pk",
+    "start:simple": "yarn nx start @oce-editor-tools/simple",
     "publish:core": "yarn workspace @oce-editor-tools/core publish",
-    "publish:pk": "yarn workspace @oce-editor-tools/pk publish"
+    "publish:pk": "yarn workspace @oce-editor-tools/pk publish",
+    "publish:simple": "yarn workspace @oce-editor-tools/simple publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
