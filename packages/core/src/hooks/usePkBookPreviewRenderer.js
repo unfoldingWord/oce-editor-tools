@@ -7,7 +7,7 @@ import { Proskomma } from 'proskomma-core'
 import { SofriaRenderFromProskomma } from 'proskomma-json-tools'
 import sofria2WebActions from '../renderer/sofria2web'
 import { renderers as renderersReact } from '../renderer/render2react'
-import { renderers as renderersHtml } from '../renderer/render2html'
+import { Render2Html } from '../renderer/render2html'
 import { getBcvVerifyStruct, isVerifiedWithBcvStruct } from '../helpers/bcvVerify'
 
 const defaultFlags = {
@@ -28,6 +28,7 @@ export default function usePkBookPreviewRenderer(props) {
     pk, 
     docId, 
     bookId,
+    renderStyles,
   } = props
 
   const [ready,setReady] = useState(false)
@@ -50,7 +51,13 @@ export default function usePkBookPreviewRenderer(props) {
         proskomma: pk,
         actions: sofria2WebActions,
       })
-    
+
+      let renderers = renderersReact; // default to react
+      if (htmlRender) { // create a class instance of Render2Html and then get render functions bound to instance
+        const newRenderer = new Render2Html(renderStyles)
+        renderers = newRenderer.getRenderers()
+      }
+
       const config = {
         ...defaultFlags,
         ...renderFlags,
@@ -58,7 +65,7 @@ export default function usePkBookPreviewRenderer(props) {
         extInfo,
         verifyBcv: getBcvVerifyStruct(extInfo),
         doVerify: isVerifiedWithBcvStruct,
-        renderers: htmlRender ? renderersHtml : renderersReact,
+        renderers,
       }
       try {
         renderer.renderDocument({
@@ -72,7 +79,7 @@ export default function usePkBookPreviewRenderer(props) {
       }
     }
     return output.paras
-  },[bookId, docId, pk])
+  },[bookId, docId, pk, renderStyles])
 
   return {
     ready,
@@ -90,6 +97,10 @@ export default function usePkBookPreviewRenderer(props) {
   htmlRender: PropTypes.bool,
 */
 
+usePkBookPreviewRenderer.defaultProps = {
+  renderStyles: null,
+}
+
 usePkBookPreviewRenderer.propTypes = {
   /** Instance of Proskomma class */
   pk: PropTypes.instanceOf(Proskomma),
@@ -97,5 +108,7 @@ usePkBookPreviewRenderer.propTypes = {
   docId: PropTypes.string, 
   /** bookId selector for what content to show in the preview */
   bookId: PropTypes.string,
+  /** app preferred styles to use */
+  renderStyles: PropTypes.object,
 }
 

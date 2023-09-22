@@ -11,7 +11,8 @@ export default function useUsfmPreviewRenderer(props) {
     verbose, 
     extInfo, 
     renderFlags,
-    htmlRender
+    htmlRender,
+    renderStyles,
   } = props
 
   const [docId, setDocId] = useState()
@@ -25,6 +26,7 @@ export default function useUsfmPreviewRenderer(props) {
     pk, 
     docId, 
     bookId,
+    renderStyles,
   })
 
   useEffect(() => {

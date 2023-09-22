@@ -8,9 +8,12 @@ import * as UsfmEN from '../data/Acts.1.usfm.js'
 import * as UsfmEn1Pe from '../data/1pe.en.ult.usfm.js'
 import * as UsfmHbo from '../data/hbo_uhb_57-TIT.usfm.js'
 import useUsfmPreviewRenderer from "../hooks/useUsfmPreviewRenderer"
+import {renderStyles as styles_} from "../renderer/renderStyles"
 import DOMPurify from 'dompurify'
 
 const usfmText = UsfmEn1Pe.usfmText
+const renderStyles = { ... styles_}
+renderStyles.paras.default.fontSize = 'large' // modify the style so we can be sure it's working
 
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
@@ -33,7 +36,8 @@ function Component () {
   const { renderedData, ready } = useUsfmPreviewRenderer({ 
     usfmText,
     renderFlags,
-    htmlRender: true
+    htmlRender: true,
+    renderStyles,
   })
 
   const previewProps = {

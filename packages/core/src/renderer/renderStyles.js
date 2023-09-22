@@ -5,6 +5,13 @@ const renderStyles = {
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },
+    defaultInline: {
+      paddingLeft: "0.5em",
+      paddingRight: "0.5em",
+      backgroundColor: "#CCC",
+      marginTop: "1em",
+      marginBottom: "1em"
+    },
     'usfm:b': {
       height: '1em',
     },
