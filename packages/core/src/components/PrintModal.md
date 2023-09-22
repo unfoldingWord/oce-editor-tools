@@ -12,8 +12,7 @@ import {renderStyles as styles_} from "../renderer/renderStyles"
 import DOMPurify from 'dompurify'
 
 const usfmText = UsfmEn1Pe.usfmText
-const renderStyles = { ... styles_}
-renderStyles.paras.default.fontSize = 'large' // modify the style so we can be sure it's working
+const renderStyles = styles_ // set to use default render styles
 
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
