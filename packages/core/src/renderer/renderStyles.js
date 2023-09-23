@@ -5,12 +5,20 @@ const renderStyles = {
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },
-    defaultInline: {
+    displayInline: {
       paddingLeft: "0.5em",
       paddingRight: "0.5em",
       backgroundColor: "#CCC",
       marginTop: "1em",
       marginBottom: "1em"
+    },
+    nonDisplayInline: {
+      verticalAlign: 'super',
+      fontSize: 'x-small',
+      fontWeight: 'bold',
+      marginRight: '0.25em',
+      padding: '2px',
+      backgroundColor: '#CCC',
     },
     'usfm:b': {
       height: '1em',

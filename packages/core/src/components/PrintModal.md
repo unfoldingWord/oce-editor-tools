@@ -1,6 +1,6 @@
 # PrintModal demo
 
-The demo demonstrates using the PrintModal for renderring an Usfm text
+The demo demonstrates using the PrintModal for rendering an Usfm text
 
 ```js
 import React, {useState} from 'react'

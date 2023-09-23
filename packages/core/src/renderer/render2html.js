@@ -50,12 +50,11 @@ export class Render2Html {
 
   InlineElement(props) {
     const newStyles = {
-      ...this.getStyles('paras', 'defaultInline', true),
+      ...this.getStyles('paras', 'displayInline', true),
       ...props.style,
     }
     return `<span
-            style="${(styleObjectToString(newStyles))}"
-            onClick={toggleDisplay}
+          style="${(styleObjectToString(newStyles))}"
         >
             ${props.children}
         </span>`
@@ -114,19 +113,20 @@ export class Render2Html {
               ${Object.entries(atts).map(
                 (a) =>
                     `<div
-                              style={{
-                                  fontSize: "xx-small",
-                                  fontWeight: "bold"
-                              }}
-                          >
+                        style={{
+                            fontSize: "xx-small",
+                            fontWeight: "bold"
+                        }}
+                      >
                           {${a[0]} = ${a[1]}} 
-                          </div>`
+                      </div>`
             )}
           </span>`
       },
       mergeParas: (paras) => paras.join('\n'),
     }
 
+    // bind all the renderer methods to this object instance
     const renderers_ = {}
     for (const [key, method] of Object.entries(renderers)) {
       const boundMethod = method.bind(this)

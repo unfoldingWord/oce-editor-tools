@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { Proskomma } from 'proskomma-core'
 import { SofriaRenderFromProskomma } from 'proskomma-json-tools'
 import sofria2WebActions from '../renderer/sofria2web'
-import { renderers as renderersReact } from '../renderer/render2react'
+import { Render2React } from '../renderer/render2react'
 import { Render2Html } from '../renderer/render2html'
 import { getBcvVerifyStruct, isVerifiedWithBcvStruct } from '../helpers/bcvVerify'
 
@@ -52,9 +52,12 @@ export default function usePkBookPreviewRenderer(props) {
         actions: sofria2WebActions,
       })
 
-      let renderers = renderersReact; // default to react
+      let renderers = null
       if (htmlRender) { // create a class instance of Render2Html and then get render functions bound to instance
         const newRenderer = new Render2Html(renderStyles)
+        renderers = newRenderer.getRenderers()
+      } else {
+        const newRenderer = new Render2React(renderStyles)
         renderers = newRenderer.getRenderers()
       }
 
