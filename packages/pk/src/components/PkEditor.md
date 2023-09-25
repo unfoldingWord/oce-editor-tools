@@ -29,6 +29,8 @@ import Container from "@mui/material/Container";
 
 import BibleReference, { useBibleReference } from 'bible-reference-rcl'
 
+import './HtmlPerfEditor.css';
+
 function MyEditor({
   bookId,
   reference,
