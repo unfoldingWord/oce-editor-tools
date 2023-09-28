@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import EditorPack from './EditorHeadless';
-import Button from './EditorHeadless/Buttons';
+import { Toolbar, Button } from "@oce-editor-tools/base"
 import { Box, ToggleButton, Popper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import {
@@ -59,7 +58,7 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
         zIndex: 'appBar',
       }}
     >
-      <EditorPack.Toolbar
+      <Toolbar
         component={Box}
         sx={{
           width: 'fit-content',
@@ -109,7 +108,7 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
             <Search />
           </Button.Search>
         </Extensible>
-      </EditorPack.Toolbar>
+      </Toolbar>
       <Box>
         <FindReplace />
       </Box>

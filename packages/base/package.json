@@ -1,19 +1,14 @@
 {
-  "name": "@oce-editor-tools/mui-core",
+  "name": "@oce-editor-tools/base",
   "description": "A React Component Library for editing PERF.",
   "version": "0.1.21-beta",
-  "homepage": "https://oce-editor-tools-core.netlify.app/",
+  "homepage": "https://oce-editor-tools-base.netlify.app/",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/unfoldingword/oce-editor-tools"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/lab": "^5.0.0-alpha.134",
-    "@mui/material": "^5.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,12 +16,7 @@
     "@findr/mui": "^1.0.0-beta.17",
     "@findr/react": "^1.0.0-beta.3",
     "@findr/text": "^1.0.7-beta.4",
-    "@gwdevs/extensible-rcl": "^1.0.1",
-    "@xelah/type-perf-html": "^1.0.2",
-    "epitelete-html": "0.2.21-beta.2",
-    "pagedjs": "^0.4.1",
-    "proskomma-core": "^0.10.1",
-    "react-draggable": "^4.4.6"
+    "@xelah/type-perf-html": "^1.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -39,11 +29,6 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.12.10",
     "@babel/runtime": "7.13.8",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.11.7",
-    "@mui/lab": "^5.0.0-alpha.134",
-    "@mui/material": "^5.11.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -68,11 +53,8 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "npx styleguidist server",
-    "build:styleguide": "npx styleguidist build",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
     "test": "react-scripts test",
-    "sections": "node styleguide.sections.js",
     "prepublishOnly": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline"
   },
   "eslintConfig": {

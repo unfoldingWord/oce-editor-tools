@@ -1,10 +1,10 @@
 import React, { createContext, useContext } from 'react';
-import useEditorState from './useEditorState';
+import useEditorState from '../components/useEditorState';
 
 export const EditorContext = createContext({});
 export const useEditorContext = () => useContext(EditorContext);
 
-export function EditorContainer({
+export function EditorCacheProvider({
   onSave,
   epiteleteHtml,
   sourceId,
@@ -43,4 +43,4 @@ export function EditorContainer({
   );
 }
 
-export default EditorContainer;
+export default EditorCacheProvider;

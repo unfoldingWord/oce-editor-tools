@@ -1,6 +1,6 @@
 import React from 'react';
 import Toggle from '../Toggle/Toggle';
-import { useEditorContext } from '../Editor';
+import { useEditorContext } from '../../context/EditorCacheProvider';
 
 export default function ButtonLock({ children, component, ...props }) {
   const { state } = useEditorContext();

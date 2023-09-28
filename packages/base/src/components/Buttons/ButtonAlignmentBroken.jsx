@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useEditorContext } from '../Editor';
-import { getFlatWordObj } from '../../../helpers/getFlatWordObj';
+import { useEditorContext } from '../../context/EditorCacheProvider';
+import { getFlatWordObj } from '../../helpers/getFlatWordObj';
 import ButtonHeadless from './ButtonHeadless';
-import { isFunction } from '../../../helpers';
+import { isFunction } from '../../helpers';
 
 export function ButtonAlignmentBroken({
   children,

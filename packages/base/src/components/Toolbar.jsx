@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { useEditorContext } from "./Editor";
+import { useEditorContext } from "../context/EditorCacheProvider";
 import Toggle from "./Toggle/Toggle";
 import BlockHeadless from "./BlockHeadless";
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useEditorContext } from './Editor';
+import { useEditorContext } from '../context/EditorCacheProvider';
 import SectionHeading from './SectionHeading';
 import RecursiveBlock from './RecursiveBlock';
 import { HtmlPerfEditor } from '@xelah/type-perf-html';
-import { Highlighted } from '../../findr/highlights/components/Highlighted';
+import { Highlighted } from '../findr/highlights/components/Highlighted';
 import { EditorGraft } from './EditorGraft'
 
 export function EditorMain({ components, ...props }) {

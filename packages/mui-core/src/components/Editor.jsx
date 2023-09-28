@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import EditorPack from "./EditorHeadless"
+import {
+  EditorCacheProvider,
+  EditorMain
+} from "@oce-editor-tools/base"
 import GraftPopup from "./GraftPopup"
 import { EditorToolbar } from './EditorToolbar';
 import { styled } from '@mui/material/styles';
@@ -43,12 +46,12 @@ function Editor({
     editorGraft: GraftPopup,
   };
   return (
-    <EditorPack.Container {...props}>
+    <EditorCacheProvider{...props}>
       <EditorToolbar showToggles={false} onRenderToolbar={onRenderToolbar} />
       <EditorContainer>
-        <EditorPack.Main components={components} />
+        <EditorMain components={components} />
       </EditorContainer>
-    </EditorPack.Container>
+    </EditorCacheProvider>
   );
 }
 

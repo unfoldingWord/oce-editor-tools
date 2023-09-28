@@ -3,8 +3,8 @@ import React,
 { useEffect }
 from 'react'
 import { HtmlPerfEditor } from '@xelah/type-perf-html'
-import { getCurrentVerse, getCurrentChapter } from '../../helpers/getReferences'
-import { useEditorContext } from './Editor'
+import { getCurrentVerse, getCurrentChapter } from '../helpers/getReferences'
+import { useEditorContext } from '../context/EditorCacheProvider'
 
 const getTarget = ({ content }) => {
   const div = document.createElement("div")

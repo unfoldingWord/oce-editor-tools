@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react'
 import ButtonHeadless from './ButtonHeadless';
-import { useEditorContext } from '../Editor';
+import { useEditorContext } from '../../context/EditorCacheProvider';
 
 export default function ButtonUndo({ component, children, ...props }) {
   const { state: { htmlPerf, epiteleteHtml, bookCode } } = useEditorContext()

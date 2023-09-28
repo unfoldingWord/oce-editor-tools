@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ButtonHeadless from './ButtonHeadless';
-import { useEditorContext } from '../Editor';
+import { useEditorContext } from '../../context/EditorCacheProvider';
 
 export default function ButtonSave({ component, children, ...props }) {
   const {

@@ -3,7 +3,7 @@ import React,
 { useState, useCallback, useMemo, useEffect, useRef }
 from 'react';
 import PropTypes from 'prop-types';
-import { readOptions, writeOptions } from '../../constants';
+import { readOptions, writeOptions } from '../constants';
 import useEditorOptions from './useEditorOptions';
 import useEditorProps from './useEditorProps';
 import useReferenceHandler from './useReferenceHandler';

@@ -2,7 +2,7 @@ import React from 'react';
 import { FindrMUI, Mark } from '@findr/mui';
 import { useFindr } from '@findr/react';
 import { Collapse, Paper } from '@mui/material';
-import { useEditorContext } from './EditorHeadless/Editor';
+import { useEditorContext } from "@oce-editor-tools/base";
 
 //TODO: create a headless version of find replace
 export function FindReplace({
