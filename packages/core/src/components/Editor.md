@@ -163,6 +163,8 @@ import EpiteleteHtml from "epitelete-html"
 import { usfmText } from '../data/Acts.1.usfm.js'
 import { usfm2perf } from '../helpers/usfm2perf'
 
+import './HtmlPerfEditor.css';
+
 function Component () {
   const verbose = true
   const docSetId = "Xxx/en_act" // just dummy values

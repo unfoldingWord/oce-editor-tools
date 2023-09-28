@@ -1,7 +1,7 @@
 {
   "name": "@oce-editor-tools/core",
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.20-beta",
+  "version": "0.1.20-beta.2",
   "homepage": "https://oce-editor-tools-core.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -15,8 +15,7 @@
     "@mui/lab": "^5.0.0-alpha.134",
     "@mui/material": "^5.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "translation-helps-rcl": "3.3.4-rc.2"
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@findr/mui": "^1.0.0-beta.17",
@@ -27,6 +26,7 @@
     "epitelete-html": "0.2.21-beta.2",
     "pagedjs": "^0.4.1",
     "proskomma-core": "^0.10.1",
+    "react-draggable": "^4.4.6",
     "react-uuid": "^2.0.0"
   },
   "devDependencies": {
@@ -66,7 +66,6 @@
     "react-scripts": "^5.0.1",
     "react-styleguidist": "^13.0.0",
     "styled-components": "^5.2.1",
-    "translation-helps-rcl": "3.3.4-rc.3",
     "webpack-cli": "^4.10.0"
   },
   "scripts": {

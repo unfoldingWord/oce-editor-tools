@@ -3779,11 +3779,11 @@ __metadata:
     proskomma-core: ^0.10.1
     react: latest
     react-dom: latest
+    react-draggable: ^4.4.6
     react-scripts: ^5.0.1
     react-styleguidist: ^13.0.0
     react-uuid: ^2.0.0
     styled-components: ^5.2.1
-    translation-helps-rcl: 3.3.4-rc.3
     webpack-cli: ^4.10.0
   peerDependencies:
     "@emotion/react": ^11.10.0
@@ -3793,7 +3793,6 @@ __metadata:
     "@mui/material": ^5.11.0
     react: ^18.2.0
     react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
   languageName: unknown
   linkType: soft
 
@@ -17529,6 +17528,19 @@ react-dom@latest:
     react: ">= 16.3.0"
     react-dom: ">= 16.3.0"
   checksum: 21c3775db086e13020967627c20acd41d1ddbc7c7d7fca51491a5bbb54a0aa7e1730a4bc9af17141eb50a4954e547a5e25b2368f5f54b70db6f2686a897bacf2
+  languageName: node
+  linkType: hard
+
+"react-draggable@npm:^4.4.6":
+  version: 4.4.6
+  resolution: "react-draggable@npm:4.4.6"
+  dependencies:
+    clsx: ^1.1.1
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ">= 16.3.0"
+    react-dom: ">= 16.3.0"
+  checksum: 9b15aac59244873ac4561c5a2bead43a56e18d406e0a5f242bd4f9d151c074530c02b99387983104bf43417292f9cf8d063e554ed08d88792235e3fbc965f1b8
   languageName: node
   linkType: hard
 

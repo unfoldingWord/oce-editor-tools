@@ -1,12 +1,26 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-import { Button } from '@mui/material'
-import DraggableModal from 'translation-helps-rcl/dist/components/DraggableModal'
-import Card from 'translation-helps-rcl/dist/components/Card'
 import { HtmlPerfEditor } from "@xelah/type-perf-html";
+import Button from '@mui/material/Button';
+import Card from "@mui/material/Card";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import Paper from '@mui/material/Paper';
+import Draggable from 'react-draggable';
+
+function PaperComponent(props) {
+  return (
+    <Draggable
+      handle="#draggable-dialog-title"
+      cancel={'[class*="MuiDialogContent-root"]'}
+    >
+      <Paper {...props} />
+    </Draggable>
+  );
+}
 
 export default function GraftPopup(graftProps) {
-
   const {
     graftSequenceId,
     setGraftSequenceId,
@@ -19,30 +33,33 @@ export default function GraftPopup(graftProps) {
   }
 
   return (graftSequenceId ?
-    <DraggableModal
-      open={graftSequenceId !== null}
-      handleClose={handleClickClose}
-    >
-      <Card
-        closeable
-        title={`Edit a Graft`}
+    <div>
+      <Dialog
+        open={graftSequenceId !== null}
         onClose={handleClickClose}
-        classes={{
-          dragIndicator: 'draggable-dialog-title',
-          root: 'w-96'
-        }}
+        PaperComponent={PaperComponent}
+        aria-labelledby="draggable-dialog-title"
       >
-        { graftSequenceId ? <HtmlPerfEditor key="2" {...graftProps} /> : ''}
-        <Button
-          size='large'
-          color='primary'
-          className='my-3'
-          variant='contained'
-          onClick={handleClickClose}
-        >
-          Done
-        </Button>
-      </Card>
-    </DraggableModal> : null
+        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+          Edit a Graft
+        </DialogTitle>
+        <DialogContent>
+          <Card
+            onClose={handleClickClose}
+            classes={{
+              dragIndicator: 'draggable-dialog-title',
+              root: 'w-96'
+            }}
+          >
+            { graftSequenceId ? <HtmlPerfEditor key="2" {...graftProps} /> : ''}
+          </Card>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClickClose}>
+            Done
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div> : null
   )
 }
