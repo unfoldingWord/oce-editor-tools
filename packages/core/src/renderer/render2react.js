@@ -36,6 +36,7 @@ export class Render2React {
    */
   constructor(styles) {
       this.styles = styles || styles_;
+      this.chapter = "0";
   }
 
   getStyles = (type, subType) => {
@@ -52,11 +53,12 @@ export class Render2React {
   getRenderers() {
     const renderers = {
       text: (text) => text,
-      chapter_label: (number) => (
-        <span style={this.getStyles('marks', 'chapter_label')}>{number}</span>
-      ),
+      chapter_label: (number) => {
+        this.chapter = number
+        return <span id={"chapter-"+number} style={this.getStyles('marks', 'chapter_label')}>{number}</span>
+      },
       verses_label: (number) => (
-        <span style={this.getStyles('marks', 'verses_label')}>{number}</span>
+        <span id={"chapter-"+this.chapter+"-verse-"+number} style={this.getStyles('marks', 'verses_label')}>{number}</span>
       ),
       extended_bcv_info: (verseId,extInfo) => {
         if (extInfo?.onRenderItem) {
