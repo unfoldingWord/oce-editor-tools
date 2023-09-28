@@ -1,6 +1,8 @@
+// render stles for RTL
 const renderStyles = {
   paras: {
     default: {
+      direction: 'rtl',
       fontSize: 'medium',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
@@ -16,7 +18,7 @@ const renderStyles = {
       verticalAlign: 'super',
       fontSize: 'x-small',
       fontWeight: 'bold',
-      marginRight: '0.25em',
+      marginLeft: '0.25em',
       padding: '2px',
       backgroundColor: '#CCC',
     },
@@ -52,11 +54,11 @@ const renderStyles = {
       textIndent: '1.5em',
     },
     'usfm:ipi': {
-      paddingLeft: '1.5em',
+      paddingRight: '1.5em',
       textIndent: '1.5em',
     },
     'usfm:io': {
-      paddingLeft: '1.5em',
+      paddingRight: '1.5em',
     },
     'usfm:iot': {
       fontWeight: 'bold',
@@ -76,17 +78,17 @@ const renderStyles = {
     },
     'usfm:li': {
       listStyleType: 'disc',
-      paddingLeft: '3em',
+      paddingRight: '3em',
       textIndent: '-1.5em',
     },
     'usfm:li2': {
       listStyleType: 'disc',
-      paddingLeft: '4.5em',
+      paddingRight: '4.5em',
       textIndent: '-1.5em',
     },
     'usfm:li3': {
       listStyleType: 'disc',
-      paddingLeft: '6em',
+      paddingRight: '6em',
       textIndent: '-1.5em',
     },
     'usfm:m': {},
@@ -130,34 +132,34 @@ const renderStyles = {
       textAlign: 'center',
     },
     'usfm:pi': {
-      paddingLeft: '1.5em',
+      paddingRight: '1.5em',
       textIndent: '1.5em',
     },
     'usfm:pi2': {
-      paddingLeft: '3em',
+      paddingRight: '3em',
       textIndent: '1.5em',
     },
     'usfm:pi3': {
-      paddingLeft: '4.5em',
+      paddingRight: '4.5em',
       textIndent: '1.5em',
     },
     'usfm:q': {
-      paddingLeft: '1.5em',
+      paddingRight: '1.5em',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },
     'usfm:q2': {
-      paddingLeft: '3em',
+      paddingRight: '3em',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },
     'usfm:q3': {
-      paddingLeft: '4.5em',
+      paddingRight: '4.5em',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },
     'usfm:q4': {
-      paddingLeft: '6em',
+      paddingRight: '6em',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },
@@ -194,15 +196,15 @@ const renderStyles = {
   marks: {
     default: {},
     chapter_label: {
-      float: 'left',
+      float: 'right',
       fontSize: 'xx-large',
-      marginRight: '0.5em',
+      marginLeft: '0.5em',
     },
     verses_label: {
       fontWeight: 'bold',
       fontSize: 'small',
       verticalAlign: 'super',
-      marginRight: '0.5em',
+      marginLeft: '0.5em',
     },
   },
   extendedBcvInfo: {
@@ -210,7 +212,7 @@ const renderStyles = {
       fontSize: 'xx-large',
       fontWeight: 'bold',
       verticalAlign: 'super',
-      marginRight: '0.5em',
+      marginLeft: '0.5em',
     },
   },
   wrappers: {
@@ -250,7 +252,7 @@ const renderStyles = {
       textTransform: 'uppercase',
     },
     'usfm:qs': {
-      float: 'right',
+      float: 'left',
       fontStyle: 'italic',
     },
     'usfm:sc': {

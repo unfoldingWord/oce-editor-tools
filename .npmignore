@@ -1,0 +1,6 @@
+.yalc/
+.vscode/
+.idea/
+.editorconfig
+yalc.lock
+node_modules/
