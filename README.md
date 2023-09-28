@@ -37,7 +37,7 @@ This project is organized as a mono-repository. The packages defined in this rep
 
 | Local Package | 📦 NPM Package | Demo | ✏️ Description |
 | - | - | - | - |
-| [core](./packages/core) | [@oce-editor-tools/core](https://npmjs.com/@oce-editor-tools/core)  | [Core Styleguidist](https://oce-editor-tools-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
+| [mui-core](./packages/mui-core) | [@oce-editor-tools/mui-core](https://npmjs.com/@oce-editor-tools/mui-core)  | [Core Styleguidist](https://oce-editor-tools-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
 | [pk](./packages/pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/pk)  | [Pk Styleguidist](https://oce-editor-tools-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
 | [simple](./packages/simple) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/simple)  | [Simple Styleguidist](https://simple-oce-editor-tools.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
 
@@ -106,21 +106,21 @@ To get a local copy up and running follow these simple example steps.
 
 If you wish to use a package from this library in your app you will need to add it as a dependency with, for example:
 ```sh
-npm install @oce-editor-tools/core
+npm install @oce-editor-tools/mui-core
 ```
 OR
 ```shell
-yarn add @oce-editor-tools/core
+yarn add @oce-editor-tools/mui-core
 ```
 (just replace `core` above with `pk` or `simple` in order to install one of the other packages)
 
 Also you will need to add the peer dependencies:
 ```shell
-npm install @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@mui/styled-engine-sc@latest react react-dom translation-helps-rcl
+npm install @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@mui/styled-engine-sc@latest react react-dom 
 ```
 OR 
 ```shell
-yarn add @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@mui/styled-engine-sc@latest react react-dom translation-helps-rcl
+yarn add @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@mui/styled-engine-sc@latest react react-dom 
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 

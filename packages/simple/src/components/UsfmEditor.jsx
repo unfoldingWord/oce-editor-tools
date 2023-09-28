@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { usfm2perf } from '../helpers/usfm2perf'
 import EpiteleteHtml from "epitelete-html";
-import { Editor } from "@oce-editor-tools/core"
+import { Editor } from "@oce-editor-tools/mui-core"
 
 export default function UsfmEditor( props ) {
   const {

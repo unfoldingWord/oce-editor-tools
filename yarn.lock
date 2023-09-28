@@ -2318,7 +2318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gwdevs/extensible-rcl@npm:^1.0.0, @gwdevs/extensible-rcl@npm:^1.0.1":
+"@gwdevs/extensible-rcl@npm:^1.0.1":
   version: 1.0.1
   resolution: "@gwdevs/extensible-rcl@npm:1.0.1"
   peerDependencies:
@@ -3682,33 +3682,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@npm:0.1.15-beta.3":
-  version: 0.1.15-beta.3
-  resolution: "@oce-editor-tools/core@npm:0.1.15-beta.3"
-  dependencies:
-    "@findr/mui": ^1.0.0-beta.17
-    "@findr/react": ^1.0.0-beta.3
-    "@findr/text": ^1.0.7-beta.4
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@xelah/type-perf-html": ^1.0.2
-    epitelete-html: 0.2.21-beta.2
-    pagedjs: ^0.4.1
-    proskomma-core: ^0.10.1
-    react-uuid: ^2.0.0
-  peerDependencies:
-    "@emotion/react": ^11.10.0
-    "@emotion/styled": ^11.10.0
-    "@mui/icons-material": ^5.11.0
-    "@mui/lab": ^5.0.0-alpha.134
-    "@mui/material": ^5.11.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
-  checksum: 6c25ad853313f07ee1392f71693b99432f46fafef76f041d40b476cd5a390ca9e72cf5056e42481572f34609a70e77db612ee00e56395db345eaabe6b1b662d9
-  languageName: node
-  linkType: hard
-
-"@oce-editor-tools/core@npm:^0.1.19":
+"@oce-editor-tools/core@npm:0.1.19, @oce-editor-tools/core@npm:^0.1.19":
   version: 0.1.19
   resolution: "@oce-editor-tools/core@npm:0.1.19"
   dependencies:
@@ -3734,9 +3708,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/core@workspace:packages/core":
+"@oce-editor-tools/mui-core@workspace:packages/mui-core":
   version: 0.0.0-use.local
-  resolution: "@oce-editor-tools/core@workspace:packages/core"
+  resolution: "@oce-editor-tools/mui-core@workspace:packages/mui-core"
   dependencies:
     "@babel/cli": ^7.17.10
     "@babel/core": ^7.17.10
@@ -3813,7 +3787,7 @@ __metadata:
     "@mui/material": ^5.8.7
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     "@mui/styles": ^5.8.7
-    "@oce-editor-tools/core": 0.1.15-beta.3
+    "@oce-editor-tools/core": 0.1.19
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
@@ -3839,7 +3813,6 @@ __metadata:
     shorthash: ^0.0.2
     string-punctuation-tokenizer: ^2.2.0
     styled-components: ^5.2.1
-    translation-helps-rcl: 3.3.4-rc.3
     webpack-cli: ^4.10.0
     word-aligner-rcl: ^0.9.3
   peerDependencies:
@@ -3849,7 +3822,6 @@ __metadata:
     "@mui/styles": ^5.10.10
     react: ^18.2.0
     react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
   languageName: unknown
   linkType: soft
 
@@ -3900,7 +3872,6 @@ __metadata:
     shorthash: ^0.0.2
     style-to-object: ^0.4.1
     styled-components: ^5.2.1
-    translation-helps-rcl: 3.3.4-rc.3
     webpack-cli: ^4.10.0
   peerDependencies:
     "@emotion/react": ^11.10.0
@@ -3910,7 +3881,6 @@ __metadata:
     "@mui/material": ^5.11.0
     react: ^18.2.0
     react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
   languageName: unknown
   linkType: soft
 
@@ -3956,7 +3926,6 @@ __metadata:
     react-scripts: ^5.0.1
     react-styleguidist: ^13.0.0
     styled-components: ^5.2.1
-    translation-helps-rcl: 3.3.4-rc.3
     webpack-cli: ^4.10.0
   peerDependencies:
     "@mui/icons-material": ^5.10.9
@@ -3965,7 +3934,6 @@ __metadata:
     "@mui/styles": ^5.10.10
     react: ^18.2.0
     react-dom: ^18.2.0
-    translation-helps-rcl: 3.3.4-rc.2
   languageName: unknown
   linkType: soft
 
@@ -6204,16 +6172,6 @@ __metadata:
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
   checksum: cab3b17bf6092c9387f7023d699db093cfa23650b56c4422cd474d124b78b2e3b5a520f932c330664a58ab85b867b1c25a95cace475ef72d236888c852b84e6d
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.27.2":
-  version: 0.27.2
-  resolution: "axios@npm:0.27.2"
-  dependencies:
-    follow-redirects: ^1.14.9
-    form-data: ^4.0.0
-  checksum: 38cb7540465fe8c4102850c4368053c21683af85c5fdf0ea619f9628abbcb59415d1e22ebc8a6390d2bbc9b58a9806c874f139767389c862ec9b772235f06854
   languageName: node
   linkType: hard
 
@@ -8562,7 +8520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dequal@npm:^2.0.2, dequal@npm:^2.0.3":
+"dequal@npm:^2.0.3":
   version: 2.0.3
   resolution: "dequal@npm:2.0.3"
   checksum: 8679b850e1a3d0ebbc46ee780d5df7b478c23f335887464023a631d1b9af051ad4a6595a44220f9ff8ff95a8ddccf019b5ad778a976fd7bbf77383d36f412f90
@@ -10460,7 +10418,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.9, follow-redirects@npm:^1.15.0, follow-redirects@npm:^1.15.2":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.15.0, follow-redirects@npm:^1.15.2":
   version: 1.15.3
   resolution: "follow-redirects@npm:1.15.3"
   peerDependenciesMeta:
@@ -17518,19 +17476,6 @@ react-dom@latest:
   languageName: node
   linkType: hard
 
-"react-draggable@npm:^4.4.3":
-  version: 4.4.5
-  resolution: "react-draggable@npm:4.4.5"
-  dependencies:
-    clsx: ^1.1.1
-    prop-types: ^15.8.1
-  peerDependencies:
-    react: ">= 16.3.0"
-    react-dom: ">= 16.3.0"
-  checksum: 21c3775db086e13020967627c20acd41d1ddbc7c7d7fca51491a5bbb54a0aa7e1730a4bc9af17141eb50a4954e547a5e25b2368f5f54b70db6f2686a897bacf2
-  languageName: node
-  linkType: hard
-
 "react-draggable@npm:^4.4.6":
   version: 4.4.6
   resolution: "react-draggable@npm:4.4.6"
@@ -20423,35 +20368,6 @@ react@latest:
   languageName: node
   linkType: hard
 
-"translation-helps-rcl@npm:3.3.4-rc.3":
-  version: 3.3.4-rc.3
-  resolution: "translation-helps-rcl@npm:3.3.4-rc.3"
-  dependencies:
-    "@gwdevs/extensible-rcl": ^1.0.0
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
-    axios: ^0.27.2
-    deep-equal: ^2.0.5
-    react-draggable: ^4.4.3
-    styled-components: ^5.2.1
-    tsv: ^0.2.0
-    use-deep-compare-effect: ^1.6.1
-  peerDependencies:
-    "@material-ui/core": ^4.x
-    "@material-ui/lab": ^4.x
-    "@mui/icons-material": ^5.x
-    "@mui/lab": ^5.x
-    "@mui/material": ^5.x
-    "@mui/styles": ^5.x
-    gitea-react-toolkit: ^1.10.0
-    markdown-translatable: ^1.x
-    prop-types: ^15.x
-    react: "^17.x || ^18.x "
-    react-dom: ^17.x || ^18.x
-    scripture-resources-rcl: ^5.x
-  checksum: d915e52d436be700e9fc7a62032a53c0880aa7b2918728c8e2c62712cc97a4cd6ab7fdf872f1dda9032e17dbeabb07a3dafd12bc7a668efd27bf2e6f0d014a6c
-  languageName: node
-  linkType: hard
-
 "trough@npm:^1.0.0":
   version: 1.0.5
   resolution: "trough@npm:1.0.5"
@@ -20518,13 +20434,6 @@ react@latest:
   peerDependencies:
     typescript: ">=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta"
   checksum: 1843f4c1b2e0f975e08c4c21caa4af4f7f65a12ac1b81b3b8489366826259323feb3fc7a243123453d2d1a02314205a7634e048d4a8009921da19f99755cdc48
-  languageName: node
-  linkType: hard
-
-"tsv@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "tsv@npm:0.2.0"
-  checksum: b655d3b22824c76ffdc292b437dfa784d0643c7472d29fc9c199affa6e218746ca21c7d3666b10fc3f0d2000c0416e7c3654450b6971bd74ef944ac9a4cd03c4
   languageName: node
   linkType: hard
 
@@ -21056,18 +20965,6 @@ react@latest:
   version: 8.0.2
   resolution: "urlpattern-polyfill@npm:8.0.2"
   checksum: d2cc0905a613c77e330c426e8697ee522dd9640eda79ac51160a0f6350e103f09b8c327623880989f8ba7325e8d95267b745aa280fdcc2aead80b023e16bd09d
-  languageName: node
-  linkType: hard
-
-"use-deep-compare-effect@npm:^1.6.1":
-  version: 1.8.1
-  resolution: "use-deep-compare-effect@npm:1.8.1"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    dequal: ^2.0.2
-  peerDependencies:
-    react: ">=16.13"
-  checksum: 2b9b6291df3f772f44d259b352e5d998963ccee0db2efeb76bb05525d928064aeeb69bb0dee5a5e428fea7cf3db67c097a770ebd30caa080662b565f6ef02b2e
   languageName: node
   linkType: hard
 

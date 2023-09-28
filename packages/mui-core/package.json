@@ -1,5 +1,5 @@
 {
-  "name": "@oce-editor-tools/core",
+  "name": "@oce-editor-tools/mui-core",
   "description": "A React Component Library for editing PERF.",
   "version": "0.1.20-beta.2",
   "homepage": "https://oce-editor-tools-core.netlify.app/",
