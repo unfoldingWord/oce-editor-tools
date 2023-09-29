@@ -24,6 +24,7 @@ export class Render2Html {
    */
   constructor(styles) {
     this.styles = styles || styles_;
+    this.chapter = "0";
   }
   
   /**
@@ -84,10 +85,12 @@ export class Render2Html {
   getRenderers() {
     const renderers = {
       text: (text) => text,
-      chapter_label: (number) =>
-          `<span style="${this.getStyles('marks', 'chapter_label')}">${number}</span>`,
+      chapter_label: (number) => {
+        this.chapter = number
+        return `<span id="chapter-${number}" style="${this.getStyles('marks', 'chapter_label')}">${number}</span>`
+      },
       verses_label: (number) =>
-          `<span style="${this.getStyles('marks', 'verses_label')}">${number}</span>`,
+          `<span id="chapter-${this.chapter}-verse-${number}" style="${this.getStyles('marks', 'verses_label')}">${number}</span>`,
       paragraph: (subType, content, footnoteNo) => {
         return ['usfm:f', 'usfm:x'].includes(subType)
             ? this.InlineElement({
