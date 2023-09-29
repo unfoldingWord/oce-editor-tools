@@ -7,15 +7,17 @@ import React, {useState} from 'react'
 import * as UsfmEN from '../data/Acts.1.usfm.js'
 import * as UsfmEn1Pe from '../data/1pe.en.ult.usfm.js'
 import * as UsfmHbo from '../data/hbo_uhb_57-TIT.usfm.js'
-import useUsfmPreviewRenderer from "../hooks/useUsfmPreviewRenderer"
-import {renderStyles as stylesLtr_} from "../renderer/renderStyles"
-import {renderStyles as stylesRtl_} from "../renderer/renderStylesRtl"
+import { 
+  useUsfmPreviewRenderer, 
+  renderStyles as renderStylesLtr, 
+  renderStylesRtl 
+} from "@oce-editor-tools/base"
 import DOMPurify from 'dompurify'
 
 const usfmText = UsfmEN.usfmText
   // could also use UsfmEn1Pe.usfmText for a multi-chapter example
   //   or UsfmHbo.usfmText for a right to left example
-const renderStyles = stylesLtr_ // use default Left to right languages
+const renderStyles = renderStylesLtr // use default Left to right languages
   // for right to left languages use stylesRtl_
 
 function Component () {
@@ -78,7 +80,7 @@ The demo demonstrates how to use the PrintModal with markup content.
 ```js
 
 import React, { useState, useEffect } from 'react'
-import markup from "../lib/drawdown"
+import { markup } from "@oce-editor-tools/base"
 
 const range = (start, end) => Array.from(
   Array(end - start + 1).keys()
