@@ -2,7 +2,7 @@
   "description": "A React Component Library for editing and viewing usfm.",
   "name": "@oce-editor-tools/mui-simple",
   "version": "0.1.22-beta.4",
-  "homepage": "https://simple-oce-editor-tools.netlify.app/",
+  "homepage": "https://oce-editor-tools-mui-simple.netlify.app/",
   "license": "MIT",
   "repository": {
     "type": "git",
