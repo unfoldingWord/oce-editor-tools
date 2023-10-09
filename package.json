@@ -6,16 +6,16 @@
   "scripts": {
     "start:base": "yarn nx start @oce-editor-tools/base",
     "start:mui-core": "yarn nx start @oce-editor-tools/mui-core",
-    "start:pk": "yarn nx start @oce-editor-tools/pk",
-    "start:simple": "yarn nx start @oce-editor-tools/simple",
+    "start:mui-pk": "yarn nx start @oce-editor-tools/mui-pk",
+    "start:mui-simple": "yarn nx start @oce-editor-tools/mui-simple",
     "build:base": "yarn nx build @oce-editor-tools/base",
     "build:mui-core": "yarn nx build @oce-editor-tools/mui-core",
-    "build:pk": "yarn nx build @oce-editor-tools/pk",
-    "build:simple": "yarn nx build @oce-editor-tools/simple",
+    "build:mui-pk": "yarn nx build @oce-editor-tools/mui-pk",
+    "build:mui-simple": "yarn nx build @oce-editor-tools/mui-simple",
     "publish:base": "yarn workspace @oce-editor-tools/base publish",
     "publish:mui-core": "yarn workspace @oce-editor-tools/mui-core publish",
-    "publish:pk": "yarn workspace @oce-editor-tools/pk publish",
-    "publish:simple": "yarn workspace @oce-editor-tools/simple publish"
+    "publish:mui-pk": "yarn workspace @oce-editor-tools/mui-pk publish",
+    "publish:mui-simple": "yarn workspace @oce-editor-tools/mui-simple publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

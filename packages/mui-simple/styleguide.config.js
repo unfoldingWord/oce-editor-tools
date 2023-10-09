@@ -20,11 +20,10 @@ module.exports = {
   exampleMode: 'expand',
   moduleAliases: {},
   components: [
-    'src/components/Editor.jsx',
-    'src/components/BookPreview.jsx',
-    'src/components/PrintModal.jsx',
+    'src/components/UsfmEditor.jsx',
+    'src/components/UsfmPreview.jsx',
   ],
-  getComponentPathLine: (componentPath) => {
+  getComponentPathLine: componentPath => {
     const name = path.basename(componentPath, '.jsx');
     return `import { ${name} } from '${packageName}';`;
   },

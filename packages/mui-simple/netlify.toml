@@ -1,0 +1,4 @@
+[build]
+  base = "packages/mui-simple/"
+  command = "nx build-dev @oce-editor-tools/mui-simple --skip-nx-cache"
+  publish = "styleguide"

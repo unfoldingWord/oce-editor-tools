@@ -1,0 +1,4 @@
+[build]
+  base = "/packages/mui-pk/"
+  command = "yarn nx build:styleguide @oce-editor-tools/mui-pk"
+  publish = "styleguide"

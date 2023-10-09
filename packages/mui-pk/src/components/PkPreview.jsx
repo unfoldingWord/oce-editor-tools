@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { usePkBookPreviewRenderer } from "@oce-editor-tools/mui-core";
+import { usePkBookPreviewRenderer } from "@oce-editor-tools/base";
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 import {
   Typography,

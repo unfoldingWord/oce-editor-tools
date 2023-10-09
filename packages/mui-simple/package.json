@@ -1,7 +1,7 @@
 {
   "description": "A React Component Library for editing and viewing usfm.",
-  "name": "@oce-editor-tools/simple",
-  "version": "0.1.19",
+  "name": "@oce-editor-tools/mui-simple",
+  "version": "0.1.22-beta.4",
   "homepage": "https://simple-oce-editor-tools.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -17,7 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@oce-editor-tools/core": "^0.1.19",
+    "@oce-editor-tools/mui-core": "^0.1.22-beta.2",
     "@xelah/type-perf-html": "^1.0.3",
     "epitelete-html": "0.2.21-beta.2",
     "proskomma-core": "^0.10.4"
@@ -32,6 +32,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.12.10",
     "@babel/runtime": "7.13.8",
+    "@craco/craco": "^7.1.0",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.12",
     "@mui/styled-engine": "^5.14.12",
