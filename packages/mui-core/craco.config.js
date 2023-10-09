@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   webpack: {
     configure: (config) => {
@@ -7,7 +9,18 @@ module.exports = {
         throw new Error('File loader not found');
       }
       fileLoaderRule.exclude.push(/\.cjs$/);
-      // ...
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /react-styleguidist\/lib\/loaders\/utils\/client\/requireInRuntime$/,
+          "react-styleguidist/lib/loaders/utils/client/requireInRuntime"
+        )
+      );
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /react-styleguidist\/lib\/loaders\/utils\/client\/evalInContext$/,
+          "react-styleguidist/lib/loaders/utils/client/evalInContext"
+        )
+      );
       return config;
     },
   },
