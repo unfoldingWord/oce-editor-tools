@@ -6,14 +6,17 @@
   "scripts": {
     "start:base": "yarn nx start @oce-editor-tools/base",
     "start:mui-core": "yarn nx start @oce-editor-tools/mui-core",
+    "start:joy-core": "yarn nx start @oce-editor-tools/joy-core",
     "start:mui-pk": "yarn nx start @oce-editor-tools/mui-pk",
     "start:mui-simple": "yarn nx start @oce-editor-tools/mui-simple",
     "build:base": "yarn nx build @oce-editor-tools/base",
     "build:mui-core": "yarn nx build @oce-editor-tools/mui-core",
+    "build:joy-core": "yarn nx build @oce-editor-tools/joy-core",
     "build:mui-pk": "yarn nx build @oce-editor-tools/mui-pk",
     "build:mui-simple": "yarn nx build @oce-editor-tools/mui-simple",
     "publish:base": "yarn workspace @oce-editor-tools/base publish",
     "publish:mui-core": "yarn workspace @oce-editor-tools/mui-core publish",
+    "publish:joy-core": "yarn workspace @oce-editor-tools/joy-core publish",
     "publish:mui-pk": "yarn workspace @oce-editor-tools/mui-pk publish",
     "publish:mui-simple": "yarn workspace @oce-editor-tools/mui-simple publish"
   },
