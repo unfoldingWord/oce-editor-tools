@@ -2,9 +2,9 @@
 
 ## Other packages in the same monorepo
 
-pk - https://oce-editor-tools-pk.netlify.app
+pk - <https://oce-editor-tools-pk.netlify.app>
 
-simple - https://simple-oce-editor-tools.netlify.app
+simple - <https://simple-oce-editor-tools.netlify.app>
 
 ## Editor demo 1
 
