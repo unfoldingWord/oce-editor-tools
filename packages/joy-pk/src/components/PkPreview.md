@@ -70,13 +70,13 @@ function Component () {
     return (
       <Button
         key={"update-from-master"+verseId}
-        variant="contained"
+        variant="outlined"
         value="update-from-master"
         color={color}
         title={messageStr}
         aria-label={verseId}
         style={{ cursor: 'pointer' }}
-        startIcon={<MdError/>}
+        startDecorator={<MdError/>}
       >Conflict</Button>
     )
   }
@@ -96,7 +96,7 @@ Your edited text:
 Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla porttitor `
                 },
                 8: { 
-                  color: 'error',
+                  color: 'danger',
                   onRenderItem,
                   messageStr: `Existing changes:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.
@@ -104,7 +104,7 @@ Your edited text:
 Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla porttitor `
                 },
                 10: { 
-                  color: 'secondary',
+                  color: 'primary',
                   onRenderItem,
                   messageStr: `Existing changes:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.
@@ -116,7 +116,7 @@ Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla portti
           2: { 
               v: {
                 1: { 
-                  color: 'error',
+                  color: 'danger',
                   onRenderItem,
                   messageStr: `Existing changes:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.

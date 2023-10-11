@@ -58,7 +58,7 @@ function MyEditor({
 
 function GridCard({ title, children }) {
   return (
-    <Grid item key="Test" xs={12} sm={6}>
+    <Grid key="Test" xs={12} sm={6}>
       <Card sx={{ display: "flex", flexDirection: "column", resize: "vertical", height: "60vh" }}>
         <Typography subheader={title}/>
         <CardContent
@@ -97,7 +97,7 @@ function MyWorkspace() {
     <Container sx={{ py: 4 }}>
       <Button 
         variant='outlined' 
-        startIcon={<PreviewIcon/>}
+        startDecorator={<PreviewIcon/>}
         onClick={handleClick}
       >
         Toggle view

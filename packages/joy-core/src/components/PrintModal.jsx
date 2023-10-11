@@ -142,7 +142,7 @@ export default function PrintModal({
               container
               sx={{ display: 'flex', flexDirection: 'column' }}
             >
-              {canChangeAtts && (<Grid item sx={{ margin: '2%' }}>
+              {canChangeAtts && (<Grid sx={{ margin: '2%' }}>
                 <form
                   sx={{
                     display: 'flex',
@@ -173,7 +173,7 @@ export default function PrintModal({
                   </Select>
                 </form>
               </Grid>)}
-              <Grid item sx={{ margin: '2%' }}>
+              <Grid sx={{ margin: '2%' }}>
                 <PageSizeSelector
                   formLabelTitle={'PAGE_SIZE'}
                   listItems={printModalResources.pageSizes}
@@ -181,7 +181,7 @@ export default function PrintModal({
                   setFormatData={setFormatData}
                 />
               </Grid>
-              {canChangeColumns && (<Grid item sx={{ margin: '2%' }}>
+              {canChangeColumns && (<Grid sx={{ margin: '2%' }}>
                 <ColumnsSelector
                   formLabelTitle={'COLUMNS'}
                   listItems={columnsList}

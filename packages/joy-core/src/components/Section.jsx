@@ -6,7 +6,6 @@ export default function Section({ children, show, dir, ...props }) {
 
   return (
     <Accordion
-      TransitionProps={{ unmountOnExit: true, timeout: 0 }}
       expanded={show}
       className={"section " + dir}
       dir={dir}

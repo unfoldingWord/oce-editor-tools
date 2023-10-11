@@ -173,13 +173,13 @@ export function FindReplace({
   };
 
   return (
-    <Dropdown in={open} timeout={0}>
-      <Sheet elevation={1} sx={{ mb: '1em', pb: '0.5em', position: 'sticky' }}>
+    <Dropdown>
+      {open && (<Sheet elevation={1} sx={{ mb: '1em', pb: '0.5em', position: 'sticky' }}>
         <FindrMUI
           sx={{ padding: '0.5em', margin: '0em 0.5em' }}
           {...fnrProps}
         />
-      </Sheet>
+      </Sheet>)}
     </Dropdown>
   );
 }

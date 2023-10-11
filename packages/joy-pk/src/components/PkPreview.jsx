@@ -52,7 +52,7 @@ export default function PkPreview(props) {
 
   return (
     <Grid container style={{ fontFamily: 'Arial' }}>
-      <Grid key={2} item xs={12}>
+      <Grid key={2} xs={12}>
         {(done && renderedData) ? <>{renderedData}</> : <Typography>{'LOADING'}...</Typography>}
       </Grid>
     </Grid>

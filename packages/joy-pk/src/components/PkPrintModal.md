@@ -47,7 +47,7 @@ function Component () {
       <div key="1">
         <Button 
           variant='outlined' 
-          startIcon={<PrintIcon/>}
+          startDecorator={<PrintIcon/>}
           onClick={handleClick}
         >
           Print preview
