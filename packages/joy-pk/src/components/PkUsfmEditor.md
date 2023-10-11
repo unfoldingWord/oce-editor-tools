@@ -10,13 +10,13 @@ import { usfmText as usfmTextPe } from "../data/1pe.en.ult.usfm.js"
 import PkCacheProvider from '../context/LocalPkCacheContext'
 import useUnsavedDataState from '../hooks/useUnsavedDataState'
 import PreviewIcon from '@mui/icons-material/Preview'
-import Button from '@mui/material/Button'
+import Button from '@mui/joy/Button'
 
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+import Card from "@mui/joy/Card";
+import Typography from "@mui/joy/Typography";
+import CardContent from "@mui/joy/CardContent";
+import Grid from "@mui/joy/Grid";
+import Container from "@mui/joy/Container";
 
 const bookId = "TIT"
 const bookIdPe = "1PE"
@@ -58,9 +58,9 @@ function MyEditor({
 
 function GridCard({ title, children }) {
   return (
-    <Grid item key="Test" xs={12} sm={6}>
+    <Grid key="Test" xs={12} sm={6}>
       <Card sx={{ display: "flex", flexDirection: "column", resize: "vertical", height: "60vh" }}>
-        <CardHeader subheader={title}/>
+        <Typography subheader={title}/>
         <CardContent
           sx={{
             flexGrow: 1,
@@ -97,7 +97,7 @@ function MyWorkspace() {
     <Container sx={{ py: 4 }}>
       <Button 
         variant='outlined' 
-        startIcon={<PreviewIcon/>}
+        startDecorator={<PreviewIcon/>}
         onClick={handleClick}
       >
         Toggle view

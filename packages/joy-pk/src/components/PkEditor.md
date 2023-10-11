@@ -2,9 +2,9 @@
 
 ## Other packages in the same monorepo
 
-core - https://oce-editor-tools-pk.netlify.app
+core - <https://oce-editor-tools-pk.netlify.app>
 
-simple - https://simple-oce-editor-tools.netlify.app
+simple - <https://simple-oce-editor-tools.netlify.app>
 
 ## PkEditor demo
 
@@ -20,12 +20,12 @@ import { usfmText as usfmTextFra } from "../data/86-TITfraLSG.usfm.js"
 import { usfmText as usfmTextPe } from "../data/1pe.en.ult.usfm.js"
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
+import Card from "@mui/joy/Card";
+import Typography from "@mui/joy/Typography";
+import CardContent from "@mui/joy/CardContent";
 
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+import Grid from "@mui/joy/Grid";
+import Container from "@mui/joy/Container";
 
 import BibleReference, { useBibleReference } from 'bible-reference-rcl'
 
@@ -59,9 +59,9 @@ function MyEditor({
 
 function GridCard({ title, children }) {
   return (
-    <Grid item key="Test" xs={12} sm={6}>
+    <Grid key="Test" xs={12} sm={6}>
       <Card sx={{ display: "flex", flexDirection: "column", resize: "vertical", height: "60vh" }}>
-        <CardHeader subheader={title}/>
+        <Typography subheader={title}/>
         <CardContent
           sx={{
             flexGrow: 1,
@@ -178,7 +178,7 @@ import usePkBookImport from "../hooks/usePkBookImport"
 import { usfmText } from '../data/tit.en.ult.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
 
-import { Button } from '@mui/material'
+import { Button } from '@mui/joy'
 import { MdUpdate } from 'react-icons/md'
 import { FiShare } from 'react-icons/fi'
 
