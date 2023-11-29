@@ -8,8 +8,9 @@ export default function ColumnsSelector({
   setFormatData,
 }) {
   const setFormatValue = (field, value) => {
-    if (field) setFormatData((prev) => ({ ...prev, [field]: value})) 
+    if ((field) && (value)) setFormatData((prev) => ({ ...prev, [field]: value})) 
   }
+
   return (
     <>
       <form
@@ -24,11 +25,11 @@ export default function ColumnsSelector({
         <Select
           aria-labelledby="page-size-group-label"
           name="page-size-buttons-group"
-          defaultValue={listItems[0]}
+          defaultValue={listItems ? listItems[0] : "1"}
           size="small"
           sx={{ width: '70px' }}
           color="primary"
-          onChange={(e) => setFormatValue('nColumns', e?.target?.value)}
+          onChange={(_e,newValue) => setFormatValue('nColumns', newValue)}
         >
           {listItems.map((nc, n) => (
             <Option
