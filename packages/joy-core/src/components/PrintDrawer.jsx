@@ -11,7 +11,7 @@ import {
 } from '@mui/joy'
 import PrintIcon from '@mui/icons-material/Print'
 import PropTypes from 'prop-types'
-import printModalResources from '../lib/printModalResources'
+import printResources from '../lib/printResources'
 import ColumnsSelector from './ColumnsSelector'
 import PageSizeSelector from './PageSizeSelector'
 import PageOrientationSelector from './PageOrientationSelector'
@@ -82,16 +82,16 @@ export default function PrintDrawer({
     }
   }
 
-  const pageCss = substituteCss(printModalResources.pageCssTemplate, [
+  const pageCss = substituteCss(printResources.pageCssTemplate, [
     ['%pageWidth%', 
       pageOrientation !== "L" 
-      ? printModalResources.pageSizesP[formatData?.pageFormatP || defaultPageSize].width
-      : printModalResources.pageSizesL[formatData?.pageFormatL || defaultPageSize].width,
+      ? printResources.pageSizesP[formatData?.pageFormatP || defaultPageSize].width
+      : printResources.pageSizesL[formatData?.pageFormatL || defaultPageSize].width,
     ],
     ['%pageHeight%',
       pageOrientation !== "L" 
-        ? printModalResources.pageSizesP[formatData?.pageFormatP || defaultPageSize].height
-        : printModalResources.pageSizesL[formatData?.pageFormatL || defaultPageSize].height,
+        ? printResources.pageSizesP[formatData?.pageFormatP || defaultPageSize].height
+        : printResources.pageSizesL[formatData?.pageFormatL || defaultPageSize].height,
     ],
     ['%nColumns%', formatData.nColumns],
   ])
@@ -166,8 +166,8 @@ export default function PrintDrawer({
             <Grid sx={{ margin: '4%' }}>
               <PageSizeSelector
                 formLabelTitle={'Page Size'}
-                listItemsP={printModalResources.pageSizesP}
-                listItemsL={printModalResources.pageSizesL}
+                listItemsP={printResources.pageSizesP}
+                listItemsL={printResources.pageSizesL}
                 pageOrientation={pageOrientation}
                 setFormatData={setFormatData}
               />

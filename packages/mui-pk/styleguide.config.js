@@ -23,7 +23,7 @@ module.exports = {
     'src/components/PkEditor.jsx',
     'src/components/PkUsfmEditor.jsx',
     'src/components/PkPreview.jsx',
-    'src/components/PkPrintModal.jsx',
+    'src/components/PkPrintDrawer.jsx',
   ],
   getComponentPathLine: componentPath => {
     const name = path.basename(componentPath, '.jsx');

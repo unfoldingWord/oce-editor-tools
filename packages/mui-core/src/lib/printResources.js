@@ -1,4 +1,4 @@
-const printModalResources = {
+const printResources = {
   pageCssTemplate: `
     @page {
         size: %pageWidth% %pageHeight%;
@@ -117,4 +117,4 @@ const printModalResources = {
   },
 };
 
-export default printModalResources;
+export default printResources;

@@ -1,6 +1,6 @@
-# PkPrintModal demo
+# PkPrintDrawer demo
 
-The demo demonstrates using the PkPrintModal in standalone mode
+The demo demonstrates using the PkPrintDrawer in standalone mode
 (with all Proskomma handling done through a PkCacheProvider,
 which is included as a wrapper in the app).
 
@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 import usePkBookImport from "../hooks/usePkBookImport"
 import { usfmText } from '../data/tit.en.ult.usfm.js'
 import PkCacheProvider from '../context/LocalPkCacheContext'
-import Button from '@mui/joy/Button'
+import Button from '@mui/material/Button'
 import PrintIcon from '@mui/icons-material/Print'
 
 function Component () {
@@ -31,9 +31,9 @@ function Component () {
   }
 
   const previewProps = {
-    openPrintModal: isOpen && done,
-    handleClosePrintModal: () => {
-      console.log('closePrintModal')
+    openPrintDrawer: isOpen && done,
+    handleClosePrintDrawer: () => {
+      console.log('closePrintDrawer')
       setIsOpen(false)
     },
     repoIdStr,
@@ -47,12 +47,12 @@ function Component () {
       <div key="1">
         <Button 
           variant='outlined' 
-          startDecorator={<PrintIcon/>}
+          startIcon={<PrintIcon/>}
           onClick={handleClick}
         >
           Print preview
         </Button>
-        { done ? <PkPrintModal {...previewProps} /> : 'Loading...'}
+        { done ? <PkPrintDrawer {...previewProps} /> : 'Loading...'}
       </div>
   )
 } 
