@@ -5,14 +5,11 @@ import { FormGroup, FormLabel, MenuItem, Select } from '@mui/material'
 export default function ColumnsSelector({
   formLabelTitle,
   listItems,
-  formatData,
   setFormatData,
 }) {
   const setFormatValue = (field, value) => {
-    const newData = { ...formatData };
-    newData[field] = value;
-    setFormatData(newData);
-  };
+    if (field) setFormatData((prev) => ({ ...prev, [field]: value})) 
+  }
   return (
     <>
       <FormGroup
@@ -30,7 +27,7 @@ export default function ColumnsSelector({
           defaultValue="1"
           size="small"
           color="primary"
-          sx={{ marginRight: '1em', backgroundColor: '#FFF' }}
+          sx={{ width: '70px', marginRight: '1em', backgroundColor: '#FFF' }}
           onChange={(e) => setFormatValue('nColumns', e.target.value)}
         >
           {listItems.map((nc, n) => (
@@ -50,7 +47,6 @@ export default function ColumnsSelector({
 ColumnsSelector.propTypes = {
   formLabelTitle: PropTypes.string,
   listItems: PropTypes.any,
-  formatData: PropTypes.any,
   setFormatData: PropTypes.func,
 };
 

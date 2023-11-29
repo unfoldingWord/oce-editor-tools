@@ -1,6 +1,6 @@
-# PrintModal demo
+# PrintDrawer demo
 
-The demo demonstrates using the PrintModal for rendering an Usfm text
+The demo demonstrates using the PrintDrawer for rendering an Usfm text
 
 ```js
 import React, {useState} from 'react'
@@ -46,13 +46,13 @@ function Component () {
   })
 
   const previewProps = {
-    openPrintModal: isOpen && ready,
-    handleClosePrintModal: () => {
-      console.log('closePrintModal')
+    openPrintDrawer: isOpen && ready,
+    handleClosePrintDrawer: () => {
+      console.log('closePrintDrawer')
       setIsOpen(false)
     },
     onRenderContent: () => renderedData,
-    canChangeAtts: true,
+    canChangeAtts: false,
     canChangeColumns: true,
   }
   
@@ -61,7 +61,7 @@ function Component () {
         { ready && (<button onClick={handleClick}>
           Print preview
         </button>)}
-        { ready ? <PrintModal {...previewProps} /> : 'Loading...'}
+        { ready ? <PrintDrawer {...previewProps} /> : 'Loading...'}
         { ready && (<div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(renderedData)}}/>)}
       </div>
   )
@@ -73,9 +73,9 @@ function Component () {
 
 ```
 
-## PrintModal demo 2 - with OBS content
+## PrintDrawer demo 2 - with OBS content
 
-The demo demonstrates how to use the PrintModal with markup content.
+The demo demonstrates how to use the PrintDrawer with markup content.
 
 ```js
 
@@ -152,9 +152,9 @@ function Component () {
   }
 
   const previewProps = {
-    openPrintModal: isOpen && done,
-    handleClosePrintModal: () => {
-      console.log('closePrintModal')
+    openPrintDrawer: isOpen && done,
+    handleClosePrintDrawer: () => {
+      console.log('closePrintDrawer')
       setIsOpen(false)
     },
     onRenderContent: () => markup(markupStr),
@@ -165,7 +165,7 @@ function Component () {
       <button onClick={handleClick}>
         Print preview
       </button>
-      { done ? <PrintModal {...previewProps} /> : 'Fetching OBS data'}
+      { done ? <PrintDrawer {...previewProps} /> : 'Fetching OBS data'}
     </div>
   )
 }  
