@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { usePkBookPreviewRenderer } from "@oce-editor-tools/base"
-import { PrintModal } from "@oce-editor-tools/mui-core"
+import { PrintDrawer } from "@oce-editor-tools/mui-core"
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 
 const defaultIncludeNames = [
@@ -16,9 +16,9 @@ const defaultIncludeNames = [
   'versesLabels',
 ];
 
-export default function PkPrintModal({
-  openPrintModal,
-  handleClosePrintModal,
+export default function PkPrintDrawer({
+  openPrintDrawer,
+  handleClosePrintDrawer,
   repoIdStr, 
   langIdStr, 
   bookId, 
@@ -91,21 +91,21 @@ export default function PkPrintModal({
   }
 
   const previewProps = {
-    openPrintModal,
-    handleClosePrintModal,
+    openPrintDrawer,
+    handleClosePrintDrawer,
     onRenderContent: handleRender,
   }
 
   return (
-    <PrintModal {...previewProps} />
+    <PrintDrawer {...previewProps} />
   );
 }
 
-PkPrintModal.propTypes = {
-  /** PkPrintModal is open when this is set true */
-  openPrintModal: PropTypes.bool,
+PkPrintDrawer.propTypes = {
+  /** PkPrintDrawer is open when this is set true */
+  openPrintDrawer: PropTypes.bool,
   /** handle the needed actions, when modal is closed */
-  handleClosePrintModal: PropTypes.func,
+  handleClosePrintDrawer: PropTypes.func,
   /** repoIdStr identifies a set of documents in proskomma, usually contains org and language code */
   repoIdStr: PropTypes.string,
   /** langIdStr identifies the language of a set of documents in proskomma */
@@ -120,6 +120,6 @@ PkPrintModal.propTypes = {
   verbose: PropTypes.bool,
 };
 
-PkPrintModal.defaultProps = {
+PkPrintDrawer.defaultProps = {
   verbose: false,
 };

@@ -1,47 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { FormLabel, Menu, MenuItem } from '@mui/joy'
+import { Typography, Select, Option } from '@mui/joy'
 
 export default function ColumnsSelector({
   formLabelTitle,
   listItems,
-  formatData,
   setFormatData,
 }) {
   const setFormatValue = (field, value) => {
-    const newData = { ...formatData };
-    newData[field] = value;
-    setFormatData(newData);
-  };
+    if ((field) && (value)) setFormatData((prev) => ({ ...prev, [field]: value})) 
+  }
+
   return (
     <>
       <form
         sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}
       >
-        <FormLabel
+        <Typography
           id="page-size-group-label"
           sx={{ marginRight: '5%', marginTop: '1%' }}
         >
           {formLabelTitle}
-        </FormLabel>
-        <Menu
+        </Typography>
+        <Select
           aria-labelledby="page-size-group-label"
           name="page-size-buttons-group"
-          defaultValue="1"
+          defaultValue={listItems ? listItems[0] : "1"}
           size="small"
+          sx={{ width: '70px' }}
           color="primary"
-          sx={{ marginRight: '1em', backgroundColor: '#FFF' }}
-          onChange={(e) => setFormatValue('nColumns', e.target.value)}
+          onChange={(_e,newValue) => setFormatValue('nColumns', newValue)}
         >
           {listItems.map((nc, n) => (
-            <MenuItem
+            <Option
               key={n}
               value={nc}
             >
               {`${nc}`}
-            </MenuItem>
+            </Option>
           ))}
-        </Menu>
+        </Select>
       </form>
     </>
   );
@@ -50,7 +48,6 @@ export default function ColumnsSelector({
 ColumnsSelector.propTypes = {
   formLabelTitle: PropTypes.string,
   listItems: PropTypes.any,
-  formatData: PropTypes.any,
   setFormatData: PropTypes.func,
 };
 
