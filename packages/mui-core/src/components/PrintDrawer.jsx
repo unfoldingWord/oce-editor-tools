@@ -102,7 +102,9 @@ export default function PrintDrawer({
     const renderedData = onRenderContent && onRenderContent()
     const newPage = window.open()
     newPage.document.body.innerHTML = `<div id="paras">${renderedData}</div>`
-    newPage.document.body.setAttribute('onLoad',"window.print()")
+    // ToDo: LG - Find another way of triggering the print action
+    // This onLoad triggers too early in Chrome and doesn't work in Firefox
+    // newPage.document.body.setAttribute('onLoad',"window.print()");
     newPage.document.head.innerHTML = '<title>PDF Preview</title>'
     const script = document.createElement('script')
     script.src = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`
