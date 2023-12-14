@@ -12,6 +12,7 @@ import {
   Preview,
   Redo,
   Save,
+  Print,
   Search,
   Subject,
   Undo,
@@ -105,6 +106,9 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
           <Button.Save component={ToolbarButton}>
             <Save />
           </Button.Save>
+          <Button.Print component={ToolbarButton}>
+            <Print />
+          </Button.Print>
           <Button.Search component={ToolbarButton}>
             <Search />
           </Button.Search>

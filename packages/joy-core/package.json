@@ -1,7 +1,7 @@
 {
   "name": "@oce-editor-tools/joy-core",
   "description": "A React Component Library for editing PERF.",
-  "version": "0.1.27-alpha.2",
+  "version": "0.1.27",
   "homepage": "https://oce-editor-tools-joy-core.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -22,7 +22,7 @@
     "@findr/react": "^1.0.0-beta.3",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@mui/base": "^5.0.0-beta.18",
-    "@oce-editor-tools/base": "^0.1.26",
+    "@oce-editor-tools/base": "^0.1.27",
     "@xelah/type-perf-html": "^1.0.3",
     "epitelete-html": "0.2.21-beta.2",
     "pagedjs": "^0.4.3",

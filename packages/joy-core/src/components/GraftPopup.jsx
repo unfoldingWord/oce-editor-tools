@@ -37,7 +37,7 @@ export default function GraftPopup(graftProps) {
       <ModalDialog
         open={graftSequenceId !== null}
         onClose={handleClickClose}
-        PaperComponent={PaperComponent}
+        component={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">

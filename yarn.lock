@@ -3564,7 +3564,64 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/base@^0.1.26, @oce-editor-tools/base@workspace:packages/base":
+"@oce-editor-tools/base-core@workspace:packages/base-core":
+  version: 0.0.0-use.local
+  resolution: "@oce-editor-tools/base-core@workspace:packages/base-core"
+  dependencies:
+    "@babel/cli": ^7.17.10
+    "@babel/core": ^7.17.10
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
+    "@babel/plugin-proposal-object-rest-spread": ^7.12.1
+    "@babel/plugin-proposal-optional-chaining": ^7.12.7
+    "@babel/plugin-proposal-private-property-in-object": ^7.21.11
+    "@babel/plugin-syntax-logical-assignment-operators": ^7.10.4
+    "@babel/preset-env": ^7.17.10
+    "@babel/preset-react": ^7.12.10
+    "@babel/runtime": 7.13.8
+    "@craco/craco": ^7.1.0
+    "@findr/mui": ^1.0.0-beta.17
+    "@findr/react": ^1.0.0-beta.3
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@mui/base": ^5.0.0-beta.25
+    "@mui/icons-material": ^5.14.12
+    "@mui/system": ^5.14.19
+    "@oce-editor-tools/base": ^0.1.26
+    "@testing-library/jest-dom": ^6.1.3
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.5.1
+    "@xelah/type-perf-html": ^1.0.3
+    babel-loader: ^8.2.2
+    crypto-browserify: ^3.12.0
+    css-loader: ^6.8.1
+    epitelete-html: 0.2.21-beta.2
+    eslint: ^8.51.0
+    eslint-config-prettier: ^9.0.0
+    eslint-config-react-app: ^7.0.1
+    eslint-plugin-import: ^2.28.1
+    eslint-plugin-jest: ^27.4.2
+    eslint-plugin-prettier: ^5.0.0
+    eslint-plugin-react: ^7.33.2
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-test-selectors: ^2.1.1
+    pagedjs: ^0.4.3
+    prettier: ^3.0.3
+    proskomma-core: ^0.10.4
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-draggable: ^4.4.6
+    react-scripts: ^5.0.1
+    react-styleguidist: ^13.1.1
+    react-transition-group: ^4.4.5
+    styled-components: ^6.0.8
+    webpack-cli: ^5.1.4
+  peerDependencies:
+    "@mui/icons-material": ^5.14.12
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  languageName: unknown
+  linkType: soft
+
+"@oce-editor-tools/base@^0.1.27-alpha.8, @oce-editor-tools/base@workspace:packages/base":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/base@workspace:packages/base"
   dependencies:
@@ -3610,34 +3667,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@oce-editor-tools/joy-core@npm:^0.1.26":
+"@oce-editor-tools/base@npm:^0.1.26":
   version: 0.1.26
-  resolution: "@oce-editor-tools/joy-core@npm:0.1.26"
+  resolution: "@oce-editor-tools/base@npm:0.1.26"
   dependencies:
-    "@findr/mui": ^1.0.0-beta.17
     "@findr/react": ^1.0.0-beta.3
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@mui/base": ^5.0.0-beta.18
-    "@oce-editor-tools/base": ^0.1.26
+    "@findr/text": ^1.0.7-beta.4
     "@xelah/type-perf-html": ^1.0.3
-    epitelete-html: 0.2.21-beta.2
-    pagedjs: ^0.4.3
-    proskomma-core: ^0.10.4
-    react-draggable: ^4.4.6
-    react-transition-group: ^4.4.5
   peerDependencies:
-    "@emotion/react": ^11.11.1
-    "@emotion/styled": ^11.11.0
-    "@mui/icons-material": ^5.14.12
-    "@mui/joy": ^5.0.0-beta.9
-    "@mui/lab": ^5.0.0-alpha.147
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: d810e19eed308951237b340469875e378ceef7fd2ce123d5e6e9983f6322674a6dd28da2020e2185ac6ec21c39c31a03461671f294c19e1bb98bdb50fadded10
+  checksum: 080d9733f81a3aff474fc74e59a38611b421559079d6156c70800bf08e47b9d05298a46d0998397b1ed356bb6e1f624e8920ecf94487b195655f8b75355d5519
   languageName: node
   linkType: hard
 
-"@oce-editor-tools/joy-core@workspace:packages/joy-core":
+"@oce-editor-tools/joy-core@^0.1.27-alpha.8, @oce-editor-tools/joy-core@workspace:packages/joy-core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/joy-core@workspace:packages/joy-core"
   dependencies:
@@ -3661,7 +3705,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/joy": ^5.0.0-beta.9
     "@mui/lab": ^5.0.0-alpha.147
-    "@oce-editor-tools/base": ^0.1.26
+    "@oce-editor-tools/base": ^0.1.27-alpha.8
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3720,7 +3764,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/joy": ^5.0.0-beta.9
     "@mui/lab": ^5.0.0-alpha.147
-    "@oce-editor-tools/joy-core": ^0.1.26
+    "@oce-editor-tools/joy-core": ^0.1.27-alpha.8
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3808,7 +3852,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@oce-editor-tools/mui-core@0.1.26, @oce-editor-tools/mui-core@^0.1.26, @oce-editor-tools/mui-core@workspace:packages/mui-core":
+"@oce-editor-tools/mui-core@^0.1.27-alpha.8, @oce-editor-tools/mui-core@workspace:packages/mui-core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/mui-core@workspace:packages/mui-core"
   dependencies:
@@ -3831,7 +3875,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.14.12
-    "@oce-editor-tools/base": ^0.1.26
+    "@oce-editor-tools/base": ^0.1.27-alpha.8
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3870,6 +3914,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@oce-editor-tools/mui-core@npm:0.1.26":
+  version: 0.1.26
+  resolution: "@oce-editor-tools/mui-core@npm:0.1.26"
+  dependencies:
+    "@findr/mui": ^1.0.0-beta.17
+    "@findr/react": ^1.0.0-beta.3
+    "@gwdevs/extensible-rcl": ^1.0.1
+    "@oce-editor-tools/base": ^0.1.26
+    "@xelah/type-perf-html": ^1.0.3
+    epitelete-html: 0.2.21-beta.2
+    pagedjs: ^0.4.3
+    proskomma-core: ^0.10.4
+    react-draggable: ^4.4.6
+  peerDependencies:
+    "@emotion/react": ^11.11.1
+    "@emotion/styled": ^11.11.0
+    "@mui/icons-material": ^5.14.12
+    "@mui/lab": ^5.0.0-alpha.147
+    "@mui/material": ^5.14.12
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 1cd64f0e0b776bf70143c400a7538f6f5c12a26f2b2e06fa2e7fd97065d39a28b6e68aad09f6f8c3b6ce26e968d93153c4975bb575a9ac0d18c024cec28f1e66
+  languageName: node
+  linkType: hard
+
 "@oce-editor-tools/mui-pk@workspace:packages/mui-pk":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/mui-pk@workspace:packages/mui-pk"
@@ -3889,7 +3958,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.14.12
-    "@oce-editor-tools/mui-core": ^0.1.26
+    "@oce-editor-tools/mui-core": ^0.1.27-alpha.8
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3949,7 +4018,7 @@ __metadata:
     "@mui/styled-engine": ^5.14.12
     "@mui/styles": ^5.14.12
     "@netlify/plugin-nextjs": ^4.40.2
-    "@oce-editor-tools/mui-core": ^0.1.26
+    "@oce-editor-tools/mui-core": ^0.1.27-alpha.8
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -4034,63 +4103,6 @@ __metadata:
     "@mui/material": ^5.10.12
     "@mui/styled-engine": "*"
     "@mui/styles": ^5.10.10
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  languageName: unknown
-  linkType: soft
-
-"@oce-editor-tools/tw-core@workspace:packages/tw-core":
-  version: 0.0.0-use.local
-  resolution: "@oce-editor-tools/tw-core@workspace:packages/tw-core"
-  dependencies:
-    "@babel/cli": ^7.17.10
-    "@babel/core": ^7.17.10
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
-    "@babel/plugin-proposal-object-rest-spread": ^7.12.1
-    "@babel/plugin-proposal-optional-chaining": ^7.12.7
-    "@babel/plugin-proposal-private-property-in-object": ^7.21.11
-    "@babel/plugin-syntax-logical-assignment-operators": ^7.10.4
-    "@babel/preset-env": ^7.17.10
-    "@babel/preset-react": ^7.12.10
-    "@babel/runtime": 7.13.8
-    "@craco/craco": ^7.1.0
-    "@findr/mui": ^1.0.0-beta.17
-    "@findr/react": ^1.0.0-beta.3
-    "@gwdevs/extensible-rcl": ^1.0.1
-    "@mui/base": ^5.0.0-beta.25
-    "@mui/icons-material": ^5.14.12
-    "@mui/system": ^5.14.19
-    "@oce-editor-tools/base": ^0.1.26
-    "@testing-library/jest-dom": ^6.1.3
-    "@testing-library/react": ^14.0.0
-    "@testing-library/user-event": ^14.5.1
-    "@xelah/type-perf-html": ^1.0.3
-    babel-loader: ^8.2.2
-    crypto-browserify: ^3.12.0
-    css-loader: ^6.8.1
-    epitelete-html: 0.2.21-beta.2
-    eslint: ^8.51.0
-    eslint-config-prettier: ^9.0.0
-    eslint-config-react-app: ^7.0.1
-    eslint-plugin-import: ^2.28.1
-    eslint-plugin-jest: ^27.4.2
-    eslint-plugin-prettier: ^5.0.0
-    eslint-plugin-react: ^7.33.2
-    eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-test-selectors: ^2.1.1
-    pagedjs: ^0.4.3
-    prettier: ^3.0.3
-    proskomma-core: ^0.10.4
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-draggable: ^4.4.6
-    react-scripts: ^5.0.1
-    react-styleguidist: ^13.1.1
-    react-transition-group: ^4.4.5
-    styled-components: ^6.0.8
-    webpack-cli: ^5.1.4
-  peerDependencies:
-    "@mui/icons-material": ^5.14.12
     react: ^18.2.0
     react-dom: ^18.2.0
   languageName: unknown
