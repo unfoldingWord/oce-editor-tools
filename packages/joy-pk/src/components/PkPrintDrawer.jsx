@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { usePkBookPreviewRenderer } from "@oce-editor-tools/base"
-import { PrintDrawer } from "@oce-editor-tools/mui-core"
+import { PrintDrawer } from "@oce-editor-tools/joy-core"
 import { LocalPkCacheContext } from '../context/LocalPkCacheContext';
 
 const defaultIncludeNames = [

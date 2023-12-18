@@ -101,7 +101,7 @@
   },
   "nx": {
     "implicitDependencies": [
-      "@oce-editor-tools/mui-core"
+      "@oce-editor-tools/joy-core"
     ]
   },
   "publishConfig": {
