@@ -141,7 +141,7 @@ export default function PrintDrawer({
                   id="included-content-group-label"
                   sx={{ marginRight: '5%', marginTop: '2%' }}
                 >
-                  INCLUDED_CONTENT
+                  Included Content
                 </Typography>
                 <Select
                   id="included-content"

@@ -125,8 +125,8 @@ export default function PrintDrawer({
         onClose={handleClosePrintDrawer}
       >
         <Box>
-          <Typography variant="h4" sx={{ textAlign: 'center' }}>
-            PREVIEW_DOCUMENT
+          <Typography variant="h5" sx={{ textAlign: 'center' }}>
+            Page Format
           </Typography>
           <Grid
             container
@@ -144,7 +144,7 @@ export default function PrintDrawer({
                   id="included-content-group-label"
                   sx={{ marginRight: '5%', marginTop: '2%' }}
                 >
-                  INCLUDED_CONTENT
+                  Included Content
                 </InputLabel>
                 <Select
                   labelId="included-content-group-label"
@@ -171,6 +171,7 @@ export default function PrintDrawer({
             </Grid>
             <Grid item sx={{ margin: '4%' }}>
               <PageSizeSelector
+                formLabelTitle={'Page Size'}
                 listItemsP={printResources.pageSizesP}
                 listItemsL={printResources.pageSizesL}
                 pageOrientation={pageOrientation}
@@ -179,7 +180,7 @@ export default function PrintDrawer({
             </Grid>
             {canChangeColumns && (<Grid item sx={{ margin: '4%' }}>
               <ColumnsSelector
-                formLabelTitle={'COLUMNS'}
+                formLabelTitle={'Columns'}
                 listItems={columnsList}
                 setFormatData={setFormatData}
               />

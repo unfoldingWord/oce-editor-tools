@@ -3621,7 +3621,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@oce-editor-tools/base@^0.1.27-alpha.8, @oce-editor-tools/base@workspace:packages/base":
+"@oce-editor-tools/base@^0.1.26, @oce-editor-tools/base@^0.1.27, @oce-editor-tools/base@workspace:packages/base":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/base@workspace:packages/base"
   dependencies:
@@ -3667,21 +3667,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@oce-editor-tools/base@npm:^0.1.26":
-  version: 0.1.26
-  resolution: "@oce-editor-tools/base@npm:0.1.26"
-  dependencies:
-    "@findr/react": ^1.0.0-beta.3
-    "@findr/text": ^1.0.7-beta.4
-    "@xelah/type-perf-html": ^1.0.3
-  peerDependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  checksum: 080d9733f81a3aff474fc74e59a38611b421559079d6156c70800bf08e47b9d05298a46d0998397b1ed356bb6e1f624e8920ecf94487b195655f8b75355d5519
-  languageName: node
-  linkType: hard
-
-"@oce-editor-tools/joy-core@^0.1.27-alpha.8, @oce-editor-tools/joy-core@workspace:packages/joy-core":
+"@oce-editor-tools/joy-core@^0.1.27, @oce-editor-tools/joy-core@workspace:packages/joy-core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/joy-core@workspace:packages/joy-core"
   dependencies:
@@ -3705,7 +3691,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/joy": ^5.0.0-beta.9
     "@mui/lab": ^5.0.0-alpha.147
-    "@oce-editor-tools/base": ^0.1.27-alpha.8
+    "@oce-editor-tools/base": ^0.1.27
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3764,7 +3750,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/joy": ^5.0.0-beta.9
     "@mui/lab": ^5.0.0-alpha.147
-    "@oce-editor-tools/joy-core": ^0.1.27-alpha.8
+    "@oce-editor-tools/joy-core": ^0.1.27
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3852,7 +3838,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@oce-editor-tools/mui-core@^0.1.27-alpha.8, @oce-editor-tools/mui-core@workspace:packages/mui-core":
+"@oce-editor-tools/mui-core@^0.1.27, @oce-editor-tools/mui-core@workspace:packages/mui-core":
   version: 0.0.0-use.local
   resolution: "@oce-editor-tools/mui-core@workspace:packages/mui-core"
   dependencies:
@@ -3875,7 +3861,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.14.12
-    "@oce-editor-tools/base": ^0.1.27-alpha.8
+    "@oce-editor-tools/base": ^0.1.27
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -3958,7 +3944,7 @@ __metadata:
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.14.12
-    "@oce-editor-tools/mui-core": ^0.1.27-alpha.8
+    "@oce-editor-tools/mui-core": ^0.1.27
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
@@ -4018,7 +4004,7 @@ __metadata:
     "@mui/styled-engine": ^5.14.12
     "@mui/styles": ^5.14.12
     "@netlify/plugin-nextjs": ^4.40.2
-    "@oce-editor-tools/mui-core": ^0.1.27-alpha.8
+    "@oce-editor-tools/mui-core": ^0.1.27
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1

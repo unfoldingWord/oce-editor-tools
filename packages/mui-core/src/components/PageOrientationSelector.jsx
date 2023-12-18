@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { 
   FormControl, 
   FormLabel,
+  FormControlLabel,
   RadioGroup,
   Radio,
  } from '@mui/material'
@@ -14,7 +15,7 @@ export default function PageOrientationSelector({
   return (
     <>
       <FormControl
-        sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}
+        sx={{ width: '100%' }}
       >
         <FormLabel
           id="page-size-group-label"
@@ -28,15 +29,12 @@ export default function PageOrientationSelector({
           name="radio-buttons-group-focus"
           onChange={(e) => setPageOrientation(e?.target?.value)}
         >
-          <Radio value="P" label="Portrait" />
-          <Radio
-            value="L"
-            label="Landscape"
-          />
+          <FormControlLabel value="P" control={<Radio />} label="Portrait" />
+          <FormControlLabel value="L" control={<Radio />} label="Landscape" />
         </RadioGroup>
       </FormControl>
     </>
-  );
+);
 }
 
 PageOrientationSelector.propTypes = {
