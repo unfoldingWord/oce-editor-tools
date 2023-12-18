@@ -10,7 +10,7 @@ import {
 import GraftPopup from "./GraftPopup"
 import { EditorToolbar } from './EditorToolbar';
 import { styled } from '@mui/material/styles';
-import CircularProgressUI from "@mui/joy/CircularProgress";
+import CircularProgressUI from "@mui/material/CircularProgress";
 import { Box } from '@mui/material';
 import Section from './Section';
 import SectionBody from './SectionBody';
