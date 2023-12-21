@@ -13,6 +13,7 @@
     "start:mui-simple": "yarn nx start @oce-editor-tools/mui-simple",
     "start:verse-mapper": "yarn nx start @oce-editor-tools/verse-mapper",
     "start:joy-verse-navigator": "yarn nx start @oce-editor-tools/joy-verse-navigator",
+    "start:mui-verse-navigator": "yarn nx start @oce-editor-tools/mui-verse-navigator",
     "build:base": "yarn nx build @oce-editor-tools/base",
     "build:mui-core": "yarn nx build @oce-editor-tools/mui-core",
     "build:joy-core": "yarn nx build @oce-editor-tools/joy-core",
@@ -22,6 +23,7 @@
     "build:mui-simple": "yarn nx build @oce-editor-tools/mui-simple",
     "build:verse-mapper": "yarn nx build @oce-editor-tools/verse-mapper",
     "build:joy-verse-navigator": "yarn nx build @oce-editor-tools/joy-verse-navigator",
+    "build:mui-verse-navigator": "yarn nx build @oce-editor-tools/mui-verse-navigator",
     "publish:base": "yarn workspace @oce-editor-tools/base publish",
     "publish:mui-core": "yarn workspace @oce-editor-tools/mui-core publish",
     "publish:joy-core": "yarn workspace @oce-editor-tools/joy-core publish",
@@ -30,7 +32,8 @@
     "publish:joy-pk": "yarn workspace @oce-editor-tools/joy-pk publish",
     "publish:mui-simple": "yarn workspace @oce-editor-tools/mui-simple publish",
     "publish:verse-mapper": "yarn workspace @oce-editor-tools/verse-mapper publish",
-    "publish:joy-verse-navigator": "yarn workspace @oce-editor-tools/joy-verse-navigator publish"
+    "publish:joy-verse-navigator": "yarn workspace @oce-editor-tools/joy-verse-navigator publish",
+    "publish:mui-verse-navigator": "yarn workspace @oce-editor-tools/mui-verse-navigator publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

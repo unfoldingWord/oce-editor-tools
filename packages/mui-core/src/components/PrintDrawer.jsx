@@ -32,7 +32,7 @@ const defaultIncludeNames = [
 
 export default function PrintDrawer({
   openPrintDrawer,
-  handleClosePrintDrawer,
+  onClosePrintDrawer,
   onRenderContent,
   canChangeAtts,
   canChangeColumns,
@@ -122,7 +122,7 @@ export default function PrintDrawer({
         anchor="right"
         variant="temporary"
         open={openPrintDrawer}
-        onClose={handleClosePrintDrawer}
+        onClose={onClosePrintDrawer}
       >
         <Box>
           <Typography variant="h5" sx={{ textAlign: 'center' }}>
@@ -202,7 +202,7 @@ PrintDrawer.propTypes = {
   /** PrintDrawer is open when this is set true */
   openPrintDrawer: PropTypes.bool,
   /** handle the needed actions, when modal is closed */
-  handleClosePrintDrawer: PropTypes.func,
+  onClosePrintDrawer: PropTypes.func,
   /** needs to return the content that needs to be rendered */
   onRenderContent: PropTypes.func,
   canChangeAtts: PropTypes.bool,

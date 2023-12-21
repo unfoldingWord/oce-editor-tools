@@ -34,10 +34,6 @@ function Editor({
   const [printUsfmText, setPrintUsfmText] = useState()
   const [isOpenPrintDrawer,setIsOpenPrintDrawer] = useState(false)
 
-  const onPrintPreview = (_bookCode, usfmText) => {
-    setIsOpenPrintDrawer(!isOpenPrintDrawer)
-    setPrintUsfmText(usfmText)
-  }
   const renderStyles = renderStylesLtr // use default Left to right languages
   // ToDo: LG - for right to left languages use stylesRtl_ !!!
 
@@ -48,18 +44,23 @@ function Editor({
     showIntroductions: true,
     showFootnotes: false,
     showXrefs: false,
-    showParaStyles: false,
+    showParaStyles: true,
     showCharacterMarkup: false,
     showChapterLabels: true,
     showVersesLabels: true,
   }
 
-  const { renderedData, ready } = useUsfmPreviewRenderer({ 
+  const { renderedData, ready, resetPreviewData } = useUsfmPreviewRenderer({ 
     usfmText: printUsfmText,
     renderFlags,
     htmlRender: true,
     renderStyles,
   })
+
+  const onPrintPreview = (_bookCode, usfmText) => {
+    setIsOpenPrintDrawer(!isOpenPrintDrawer)
+    setPrintUsfmText(usfmText)
+  }
 
   const props = {
     sourceId,
@@ -81,9 +82,14 @@ function Editor({
     sectionBody: SectionBody,
     editorGraft: GraftPopup,
   }
+  const onClosePrintDrawer = () => {
+    setIsOpenPrintDrawer(false)
+    setPrintUsfmText(undefined)
+    resetPreviewData()
+  }
   const previewProps = {
     openPrintDrawer: isOpenPrintDrawer && ready,
-    handleClosePrintDrawer: () => setIsOpenPrintDrawer(false),
+    onClosePrintDrawer,
     onRenderContent: () => renderedData,
     canChangeAtts: false,
     canChangeColumns: true,

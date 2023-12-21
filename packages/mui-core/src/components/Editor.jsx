@@ -48,13 +48,13 @@ function Editor({
     showIntroductions: true,
     showFootnotes: false,
     showXrefs: false,
-    showParaStyles: false,
+    showParaStyles: true,
     showCharacterMarkup: false,
     showChapterLabels: true,
     showVersesLabels: true,
   }
 
-  const { renderedData, ready } = useUsfmPreviewRenderer({ 
+  const { renderedData, ready, resetPreviewData } = useUsfmPreviewRenderer({ 
     usfmText: printUsfmText,
     renderFlags,
     htmlRender: true,
@@ -81,9 +81,14 @@ function Editor({
     sectionBody: SectionBody,
     editorGraft: GraftPopup,
   }
+  const onClosePrintDrawer = () => {
+    setIsOpenPrintDrawer(false)
+    setPrintUsfmText(undefined)
+    resetPreviewData()
+  }
   const previewProps = {
     openPrintDrawer: isOpenPrintDrawer && ready,
-    handleClosePrintDrawer: () => setIsOpenPrintDrawer(false),
+    onClosePrintDrawer,
     onRenderContent: () => renderedData,
     canChangeAtts: false,
     canChangeColumns: true,

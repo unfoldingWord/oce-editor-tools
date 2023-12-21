@@ -8,7 +8,7 @@ simple - <https://simple-oce-editor-tools.netlify.app>
 
 ## Editor demo 1
 
-The demo demonstrates using four Editor instances (side by side) including synchronised navigation.
+The demo demonstrates using two Editor instances (side by side) including synchronised navigation.
 
 **Note:** Uncontrolled editors use a local editor reference state, while controlled editors use reference state and onSetReference passed in as an argument, use the lock icon to force the editor to be uncontrolled.
 
@@ -32,8 +32,6 @@ import './HtmlPerfEditor.css';
 
 function MyEditor({
   bookId,
-  reference,
-  onReferenceSelected,
   docSetId,
   usfmText,
   ...props
@@ -66,8 +64,6 @@ function MyEditor({
   const editorProps = {
     epiteleteHtml,
     bookId,
-    reference,
-    onReferenceSelected,
     onSave,
     verbose,
     ...props,
@@ -99,12 +95,6 @@ const bookId1 = "TIT";
 const bookId2 = "1PE";
 
 function MyWorkspace() {
-  const [reference, setReference] = useState({ bookId: bookId1, chapter: 1, verse: 1 });
-
-  const onReferenceSelected = ({ sourceId, bookId, chapter, verse }) => {
-    setReference({ sourceId, bookId: bookId, chapter, verse });
-  };
-
   return (
     <Container sx={{ py: 4 }}>
       <h2>Workspace</h2>
@@ -120,27 +110,7 @@ function MyWorkspace() {
           <MyEditor
             docSetId={"ORG2-en_ult/1pe"}
             bookId={bookId2}
-            reference={reference}
-            onReferenceSelected={onReferenceSelected}
             usfmText={usfmTextPe}
-          />
-        </GridCard>
-        <GridCard title={`Org3: Titus (Controlled)`}>
-          <MyEditor
-            docSetId={"Xxx/en_tit"}
-            bookId={bookId1}
-            reference={reference}
-            onReferenceSelected={onReferenceSelected}
-            usfmText={usfmText}
-          />
-        </GridCard>
-        <GridCard title={`Org4: Titus (Controlled)`}>
-          <MyEditor
-            docSetId={"LSG/fra_tit"}
-            bookId={bookId1}
-            reference={reference}
-            onReferenceSelected={onReferenceSelected}
-            usfmText={usfmTextFra}
           />
         </GridCard>
       </Grid>
@@ -179,9 +149,6 @@ function Component () {
   const onSave = (bookCode,usfmText) => {
     console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
   }
-  const onReferenceSelected = (reference) => {
-    console.log(`onReferenceSelected: ${reference}`)
-  }
   
   useEffect(() => {
     async function loadUsfm() {
@@ -196,12 +163,6 @@ function Component () {
     epiteleteHtml,
     bookId: 'act',
     onSave,
-    onReferenceSelected,
-    reference: {
-      bookId: 'act',
-      chapter: 1,
-      verse: 4,
-    },
     verbose
   }
  

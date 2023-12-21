@@ -63,6 +63,10 @@ export default function useUsfmPreviewRenderer(props) {
     }
   },[pk, imported, doRender, extInfo, renderFlags, verbose, ready, htmlRender])
 
-  return {renderedData, ready}
+  const resetPreviewData = () => {
+    setPk(new Proskomma())
+    setImported(false)
+  }
+  return {renderedData, ready, resetPreviewData}
 }
 

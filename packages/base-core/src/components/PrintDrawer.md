@@ -32,7 +32,7 @@ function Component () {
     showIntroductions: true,
     showFootnotes: false,
     showXrefs: false,
-    showParaStyles: false,
+    showParaStyles: true,
     showCharacterMarkup: false,
     showChapterLabels: true,
     showVersesLabels: true,
@@ -47,7 +47,7 @@ function Component () {
 
   const previewProps = {
     openPrintDrawer: isOpen && ready,
-    handleClosePrintDrawer: () => {
+    onClosePrintDrawer: () => {
       console.log('closePrintDrawer')
       setIsOpen(false)
     },
@@ -153,8 +153,7 @@ function Component () {
 
   const previewProps = {
     openPrintDrawer: isOpen && done,
-    handleClosePrintDrawer: () => {
-      console.log('closePrintDrawer')
+    onClosePrintDrawer: () => {
       setIsOpen(false)
     },
     onRenderContent: () => markup(markupStr),

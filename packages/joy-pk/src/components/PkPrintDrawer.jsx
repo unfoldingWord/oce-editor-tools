@@ -18,7 +18,7 @@ const defaultIncludeNames = [
 
 export default function PkPrintDrawer({
   openPrintDrawer,
-  handleClosePrintDrawer,
+  onClosePrintDrawer,
   repoIdStr, 
   langIdStr, 
   bookId, 
@@ -92,7 +92,7 @@ export default function PkPrintDrawer({
 
   const previewProps = {
     openPrintDrawer,
-    handleClosePrintDrawer,
+    onClosePrintDrawer,
     onRenderContent: handleRender,
   }
 
@@ -105,7 +105,7 @@ PkPrintDrawer.propTypes = {
   /** PkPrintDrawer is open when this is set true */
   openPrintDrawer: PropTypes.bool,
   /** handle the needed actions, when modal is closed */
-  handleClosePrintDrawer: PropTypes.func,
+  onClosePrintDrawer: PropTypes.func,
   /** repoIdStr identifies a set of documents in proskomma, usually contains org and language code */
   repoIdStr: PropTypes.string,
   /** langIdStr identifies the language of a set of documents in proskomma */
