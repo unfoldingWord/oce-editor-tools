@@ -10,11 +10,12 @@
   },
   "peerDependencies": {
     "@mui/icons-material": "^5.14.12",
+    "@mui/x-tree-view": "^6.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@findr/mui": "^1.0.0-beta.17",
+    "@findr/mui": "^1.0.0-beta.18",
     "@findr/react": "^1.0.0-beta.3",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@mui/base": "^5.0.0-beta.25",
