@@ -14,7 +14,8 @@ import InputAdornment from '@mui/material/InputAdornment';
 import {
   engBibleBookName,
   bRefLastChapterInBook, 
-  bRefLastVerseInChapter 
+  bRefLastVerseInChapter,
+  normalisedBookId
 } from '@oce-editor-tools/verse-mapper'
 
 const LISTBOX_PADDING = 6 // px
@@ -138,48 +139,47 @@ export default function VerseNavigator({defaultBibleRef}) {
   const [localRef,setLocalRef] = React.useState(defaultBibleRef)
   const [value, setValue] = React.useState(curDefaultValue)
   const [inputValue, setInputValue] = React.useState(curDefaultValue.label)
-
+  const curEngBookname = engBibleBookName[normalisedBookId(localRef.bookId)]
   const curLastCh = bRefLastChapterInBook(localRef)
   const curLastV = bRefLastVerseInChapter(localRef)
-  // const curOptions = deriveAllVersesInCurChapter
   
-// Final version
-// Group: Chapter (from current Book), Book, Verse (under Chapter heading)
-// Sort: Chapter (from current Book), Verses (from current Chapter), Book, Verses (under Book, Chapter heading) 
-
-// Go for less involving first (only part of the above - especially no book selection)
-
   const curChapterOptions = Array.from(Array(curLastCh), (x, i) => ({
     label: `${i+1}`, 
-    groupLabel: `${localRef.bookId}`, 
+    groupLabel: `${curEngBookname}`,
+    type: "Ch",
     value: i
   }))
 
   const curVerseOptions = Array.from(Array(curLastV), (x, i) => ({
     label: `${localRef.chapter}:${i+1}`, 
-    groupLabel: `${localRef.bookId} ${localRef.chapter}`, 
+    groupLabel: `${curEngBookname} ${localRef.chapter}`, 
     chapter: localRef.chapter,
+    type: "V",
     value: i
   }))
 
-// options={
-//   curOptions.sort((a, b) => a.chapter - b.chapter)
-// }
-/*
-options={[...labels].sort((a, b) => {
-                // Display the selected labels first.
-                let ai = value.indexOf(a);
-                ai = ai === -1 ? value.length + labels.indexOf(a) : ai;
-                let bi = value.indexOf(b);
-                bi = bi === -1 ? value.length + labels.indexOf(b) : bi;
-                return ai - bi;
-              })}
-*/
-  const curOptions = [...curChapterOptions, ...curVerseOptions]
+  const getMultilevelCVOptions = () => {
+    let array2D = [], ch = curLastCh 
+    for (let i = 0; i < ch; i++){
+      if (i !== localRef.chapter-1) { // Skip the current chapter
+        const getLastV = bRefLastVerseInChapter({...localRef, chapter: i +1})
+        const temp = Array.from(Array(getLastV), (x, j) => ({
+          label: `${i+1}:${j+1}`, 
+          groupLabel: `${curEngBookname} ${i+1}`, 
+          chapter: i+1,
+          type: "CV",
+          value: j
+        }))
+        array2D.push(...temp)
+      }
+    }
+    return array2D
+  }
+  
+  const curOptions = [...curChapterOptions, ...curVerseOptions, ...getMultilevelCVOptions()]
 
-  const isEquualOption = (option, value) => (option.value === value.value)
+  const isEquualOption = (option, value) => (option.label === value.label)
   const onSelectBookClick = () => console.log("onSelectBookClick")
-
   return (
     <FormControl id="virtualize-demo">
       <Autocomplete
@@ -188,7 +188,7 @@ options={[...labels].sort((a, b) => {
             <TextField
               {...params}
               variant="standard"
-              label={engBibleBookName(`${localRef.bookId}`)}
+              label={curEngBookname}
               placeholder="Chapter and verse"
               fullWidth
               InputProps={{
@@ -209,20 +209,32 @@ options={[...labels].sort((a, b) => {
         }}
         value={value}
         onChange={(_event, newValue) => {
-          console.log(`value ${newValue}`)
-          setValue(newValue);
+          let setNewValue = newValue
+          let newV = newValue?.value+1
+          let newCh = undefined
+          if (newValue?.type === "Ch") {
+            newCh = newValue?.value+1
+            setNewValue = {
+              label: `${newValue.value+1}:1`, 
+            }
+          }
+          setLocalRef(prev => ({
+            bookId: prev.bookId,
+            chapter: newCh || prev.chapter,
+            verse: newV,
+          }))
+          setValue(setNewValue);
         }}
         inputValue={inputValue}
         isOptionEqualToValue={isEquualOption}
-        onInputChange={(event, newInputValue) => {
-          console.log(`inputValue ${newInputValue}`)
+        onInputChange={(_event, newInputValue) => {
           setInputValue(newInputValue);
         }}
         id="virtualize-demo"
         disableListWrap
         PopperComponent={StyledPopper}
         ListboxComponent={ListboxComponent}
-        sx={{ width: 300 }}
+        sx={{ width: 150 }}
         options={curOptions}
         groupBy={(option) => option.groupLabel}
         getOptionLabel={(option)=>option.label}

@@ -1,6 +1,7 @@
 import { 
   versification_ESV,
-  short3LetterId2osis
+  short3LetterId2osis,
+  normaliseBooksExceptions,
 } from "../constants/bcvVerseMap"
 
 export const cumulativeSum = ([head, ...tail]) =>
@@ -82,6 +83,15 @@ const findBinaryInRange = (arr, target) => {
   return -1
 }
 
+export function normalisedBookId (bookId) {
+  const lowerStr = bookId.toLowerCase()
+  let retVal = normaliseBooksExceptions[lowerStr]
+  if (!retVal) {
+    retVal = lowerStr.substring(0,3)
+  }
+  return retVal
+}
+
 const defaultVerseMap = verseMapExtended(versification_ESV)
 
 export function vInx2bRef (vInx, verseMap) {
@@ -145,8 +155,6 @@ export function bRefLastVerseInChapter (bRefObj, verseMap) {
   if (bRefObj?.bookId) {
     const curBookName = idToOsis(bRefObj.bookId)
     if (curBookName) {
-      console.log(vMap)
-      console.log(curBookName)
       const bookInx = vMap.osisBibleBookIndex[curBookName]
       if ((bRefObj?.chapter) && (bookInx)) {
         const curCh = vMap.bookInitialChCount[bookInx] +bRefObj.chapter -1
