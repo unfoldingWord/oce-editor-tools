@@ -1,6 +1,6 @@
 # Package: VerseNavigator
 
-## VerseNavigator demo
+## BibleReference demo
 
 ```js
 
@@ -9,7 +9,7 @@ import Container from "@mui/material/Container";
 function MyWorkspace() {
   return (
     <Container sx={{ py: 4 }}>
-      <VerseNavigator defaultBibleRef={{
+      <BibleReference defaultBibleRef={{
         bookId: 'Psa',
         chapter: 119,
         verse: 1

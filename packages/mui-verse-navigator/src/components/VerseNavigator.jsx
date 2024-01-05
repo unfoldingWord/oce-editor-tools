@@ -128,7 +128,17 @@ ListboxComponent.propTypes = {
   children: PropTypes.any,
 };
 
-export default function VerseNavigator({defaultBibleRef}) {
+export default function VerseNavigator({
+  defaultBibleRef, 
+  inputValue,
+  onInputChange,
+  // bookId,
+  // chapter,
+  // verse,
+  // onChangeBook,
+  // onChangeChapter,
+  // onChangeVerse
+}) {
   const curDefaultValue = {
     label: `${defaultBibleRef.chapter}:${defaultBibleRef.verse}`, 
     chapter: defaultBibleRef.chapter,
@@ -137,8 +147,8 @@ export default function VerseNavigator({defaultBibleRef}) {
 
   // eslint-disable-next-line no-unused-vars
   const [localRef,setLocalRef] = React.useState(defaultBibleRef)
-  const [value, setValue] = React.useState(curDefaultValue)
-  const [inputValue, setInputValue] = React.useState(curDefaultValue.label)
+  const [localValue, setLocalValue] = React.useState(curDefaultValue)
+  const [localInputValue, setLocalInputValue] = React.useState(curDefaultValue.label)
   const curEngBookname = engBibleBookName[normalisedBookId(localRef.bookId)]
   const curLastCh = bRefLastChapterInBook(localRef)
   const curLastV = bRefLastVerseInChapter(localRef)
@@ -175,7 +185,31 @@ export default function VerseNavigator({defaultBibleRef}) {
     }
     return array2D
   }
-  
+
+  const handleChange = (event, newValue) => {
+    // if (onChange) onChange(event, newValue)
+    let setNewValue = newValue
+    let newV = newValue?.value+1
+    let newCh = undefined
+    if (newValue?.type === "Ch") {
+      newCh = newValue?.value+1
+      setNewValue = {
+        label: `${newValue.value+1}:1`, 
+      }
+    }
+    setLocalRef(prev => ({
+      bookId: prev.bookId,
+      chapter: newCh || prev.chapter,
+      verse: newV,
+    }))
+    setLocalValue(setNewValue);
+  }
+
+  const handleInputChange = (event, newInputValue) => {
+    if (onInputChange) onInputChange(event, newInputValue)
+    setLocalInputValue(newInputValue);
+  }
+
   const curOptions = [...curChapterOptions, ...curVerseOptions, ...getMultilevelCVOptions()]
 
   const isEquualOption = (option, value) => (option.label === value.label)
@@ -207,29 +241,12 @@ export default function VerseNavigator({defaultBibleRef}) {
             />
           );
         }}
-        value={value}
-        onChange={(_event, newValue) => {
-          let setNewValue = newValue
-          let newV = newValue?.value+1
-          let newCh = undefined
-          if (newValue?.type === "Ch") {
-            newCh = newValue?.value+1
-            setNewValue = {
-              label: `${newValue.value+1}:1`, 
-            }
-          }
-          setLocalRef(prev => ({
-            bookId: prev.bookId,
-            chapter: newCh || prev.chapter,
-            verse: newV,
-          }))
-          setValue(setNewValue);
-        }}
-        inputValue={inputValue}
+        // value={value|| localValue}
+        value={localValue}
+        onChange={handleChange}
+        inputValue={inputValue || localInputValue}
         isOptionEqualToValue={isEquualOption}
-        onInputChange={(_event, newInputValue) => {
-          setInputValue(newInputValue);
-        }}
+        onInputChange={handleInputChange}
         id="virtualize-demo"
         disableListWrap
         PopperComponent={StyledPopper}
