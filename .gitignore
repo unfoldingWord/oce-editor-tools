@@ -42,3 +42,6 @@ yalc.lock
 # System Files
 .DS_Store
 Thumbs.db
+
+#nx files
+.nx

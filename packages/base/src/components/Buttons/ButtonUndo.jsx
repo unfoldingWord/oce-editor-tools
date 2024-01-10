@@ -10,7 +10,7 @@ export default function ButtonUndo({ component, children, ...props }) {
   );
   const undo = useCallback(
     (e) => {
-      epiteleteHtml.undoHtml(bookCode);
+      epiteleteHtml.undo(bookCode);
     },
     [epiteleteHtml,bookCode]
   );

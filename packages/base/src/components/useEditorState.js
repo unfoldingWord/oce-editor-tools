@@ -84,6 +84,12 @@ export default function useEditorState({
         writeOptions
       );
     };
+    epiteleteHtml.undo = (bookCode) => {
+      return epiteleteHtml.undoHtml(bookCode, readOptions);
+    };
+    epiteleteHtml.redo = (bookCode) => {
+      return epiteleteHtml.redoHtml(bookCode, readOptions);
+    };
     const unobserveHtml = epiteleteHtml?.observeHtml(({ data: htmlPerf }) =>
       setHtmlPerf(htmlPerf)
     );
