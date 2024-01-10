@@ -116,7 +116,7 @@ export function bRef2vInx (bRefObj, verseMap) {
   const vMap = verseMap || defaultVerseMap
   let retVal = -1
   if (bRefObj?.bookId) {
-    const bookInx = vMap.osisBibleBookIndex[idToOsis(bRefObj.bookId)]
+    const bookInx = vMap.osisBibleBookIndex[idToOsis(normalisedBookId(bRefObj.bookId))]
     retVal = vMap.bookInitialVCount[bookInx]
     if (bRefObj?.chapter) {
       const curChInx = vMap.bookInitialChCount[bookInx] +bRefObj.chapter -1
@@ -141,8 +141,8 @@ export function bRefLastChapterInBook (bRefObj, verseMap) {
   const vMap = verseMap || defaultVerseMap
   let retVal = -1
   if (bRefObj?.bookId) {
-    const bookInx = vMap.osisBibleBookIndex[idToOsis(bRefObj.bookId)]
-    if (bookInx) {
+    const bookInx = vMap.osisBibleBookIndex[idToOsis(normalisedBookId(bRefObj.bookId))]
+    if (bookInx>=0) {
       retVal = vMap.chaptersInBook[bookInx]
     }
   }
@@ -153,10 +153,10 @@ export function bRefLastVerseInChapter (bRefObj, verseMap) {
   const vMap = verseMap || defaultVerseMap
   let retVal = -1
   if (bRefObj?.bookId) {
-    const curBookName = idToOsis(bRefObj.bookId)
+    const curBookName = idToOsis(normalisedBookId(bRefObj.bookId))
     if (curBookName) {
       const bookInx = vMap.osisBibleBookIndex[curBookName]
-      if ((bRefObj?.chapter) && (bookInx)) {
+      if ((bRefObj?.chapter) && (bookInx>=0)) {
         const curCh = vMap.bookInitialChCount[bookInx] +bRefObj.chapter -1
         retVal = vMap.lastVerseInChapter[curCh]
       }

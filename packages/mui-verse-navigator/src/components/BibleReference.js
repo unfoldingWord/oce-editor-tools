@@ -21,24 +21,27 @@ export function BibleReference(props) {
       goToNextChapter,
       goToPrevVerse,
       goToNextVerse,
-      // onChangeBook,
-      // onChangeChapter,
-      // onChangeVerse,
+      onChangeBook,
+      onChangeChapter,
+      onChangeVerse,
     }
   } = props
 
-  // Render the UI for your table
+  const verseNavigatorProps = {
+    bookId,
+    chapter,
+    verse,
+    onChangeBook,
+    onChangeChapter,
+    onChangeVerse,
+  }
   return (
       <div>
 
         <NavButtons id="prev_ch" title='Previous chapter' onClick={goToPrevChapter} type={NAV_TYPES_DOUBLE_PREV} />
         <NavButtons id="prev_v" title='Previous verse' onClick={goToPrevVerse} type={NAV_TYPES_PREV} />
 
-        <VerseNavigator defaultBibleRef={{
-          bookId,
-          chapter,
-          verse
-        }}/>
+        <VerseNavigator {...verseNavigatorProps}/>
 
         <NavButtons id="next_v" title='Next verse' onClick={goToNextVerse} type={NAV_TYPES_NEXT} />
         <NavButtons id="next_ch" title='Next chapter' onClick={goToNextChapter} type={NAV_TYPES_DOUBLE_NEXT} />
@@ -65,11 +68,11 @@ BibleReference.propTypes = {
     goToPrevVerse: PropTypes.func.isRequired,
     /** (function()) - method to trigger state change to next verse */
     goToNextVerse: PropTypes.func.isRequired,
-    /** (function(bookID: string)) - method to change to specific book */
+    /** triggered when there is a change to specific book */
     onChangeBook: PropTypes.func.isRequired,
-    /** (function(bookID: string)) - method to change to specific chapter */
+    /** triggered when there is a change to specific chapter */
     onChangeChapter: PropTypes.func.isRequired,
-    /** (function(bookID: string)) - method to change to specific verse */
+    /** triggered when there is a change to specific verse */
     onChangeVerse: PropTypes.func.isRequired,
   }).isRequired,
 }

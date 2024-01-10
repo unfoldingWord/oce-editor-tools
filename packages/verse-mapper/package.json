@@ -1,7 +1,7 @@
 {
   "name": "@oce-editor-tools/verse-mapper",
   "description": "React Component Library with Bible verse structure data",
-  "version": "0.0.6-alpha.1",
+  "version": "0.0.6",
   "homepage": "https://oce-editor-tools-verse-mapper.netlify.app/",
   "license": "MIT",
   "repository": {
