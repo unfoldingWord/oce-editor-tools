@@ -21,6 +21,7 @@ module.exports = {
   moduleAliases: {},
   components: [
     'src/components/VerseNavigator.jsx',
+    'src/components/BibleReference.jsx',
   ],
   getComponentPathLine: componentPath => {
     const name = path.basename(componentPath, '.jsx');

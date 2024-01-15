@@ -147,31 +147,33 @@ export default function VerseNavigator({
 }) {
 
   // eslint-disable-next-line no-unused-vars
-  const [localRef,setLocalRef] = React.useState(defaultBibleRef)
-
-  const controlledBRef = (!defaultBibleRef) && (bookId) && (chapter) && (verse)
-
-  const getBRef = () => {
-    return controlledBRef ? { 
-      bookId, 
-      chapter: (typeof chapter === "string") ? parseInt(chapter) : chapter, 
-      verse: (typeof verse === "string") ? parseInt(verse) : verse
-    } : localRef
-  }
+  const [localBookId,setLocalBookId] = React.useState(bookId || defaultBibleRef?.bookId)
+  const [localCh,setLocalCh] = React.useState(
+    (typeof chapter === "string") ? parseInt(chapter) : chapter || defaultBibleRef?.chapter
+  )
+  const [localV,setLocalV] = React.useState(
+    (typeof verse === "string") ? parseInt(verse) : verse || defaultBibleRef?.verse
+  )
 
   const curValue = {
-    label: `${getBRef()?.chapter}:${getBRef()?.verse}`, 
-    chapter: getBRef()?.chapter,
-    value: getBRef()?.verse
+    label: `${localCh}:${localV}`, 
+    chapter: localCh,
+    value: localV
+  }
+
+  const localRef = {
+    bookId: localBookId, 
+    chapter: localCh, 
+    verse: localV
   }
 
   const [localValue, setLocalValue] = React.useState(curValue)
   const [localInputValue, setLocalInputValue] = React.useState(curValue.label)
 
-  const curEngBookname = getBRef() && engBibleBookName[normalisedBookId(getBRef()?.bookId)]
+  const curEngBookname = localBookId && engBibleBookName[normalisedBookId(localBookId)]
 
-  const curLastCh = bRefLastChapterInBook(getBRef())
-  const curLastV = bRefLastVerseInChapter(getBRef())
+  const curLastCh = bRefLastChapterInBook(localRef)
+  const curLastV = bRefLastVerseInChapter(localRef)
 
   const [openDialog, setOpenDialog] = React.useState(false)
 
@@ -183,18 +185,19 @@ export default function VerseNavigator({
   }))
 
   const curVerseOptions = Array.from(Array(curLastV), (x, i) => ({
-    label: `${getBRef()?.chapter}:${i+1}`, 
-    groupLabel: `${curEngBookname} ${getBRef()?.chapter}`, 
-    chapter: getBRef()?.chapter,
+    label: `${localCh}:${i+1}`, 
+    groupLabel: `${curEngBookname} ${localCh}`, 
+    chapter: localCh,
     type: "V",
     value: i
   }))
+  console.log(curVerseOptions)
 
   const getMultilevelCVOptions = () => {
     let array2D = [], ch = curLastCh 
     for (let i = 0; i < ch; i++){
-      if (i !== getBRef().chapter-1) { // Skip the current chapter
-        const getLastV = bRefLastVerseInChapter({...getBRef(), chapter: i +1})
+      if (i !== localCh-1) { // Skip the current chapter
+        const getLastV = bRefLastVerseInChapter({...localRef, localCh: i +1})
         const temp = Array.from(Array(getLastV), (x, j) => ({
           label: `${i+1}:${j+1}`, 
           groupLabel: `${curEngBookname} ${i+1}`, 
@@ -222,19 +225,14 @@ export default function VerseNavigator({
       }
       setNewValue = {label: `${newCh}:${newV}`}
     }
-    if (newCh && (chapter !== newCh)) {
+    if (newCh && (localCh !== newCh)) {
       if (onChangeChapter) onChangeChapter(newCh)
     }
-    if (newV && (verse !== newV)) {
+    if (newV && (localV !== newV)) {
       if (onChangeVerse) onChangeVerse(newV)
     }
-    if (!controlledBRef) {
-      setLocalRef(prev => ({
-        bookId: prev?.bookId,
-        chapter: newCh || prev?.chapter,
-        verse: newV,
-      }))
-    }
+    if (newCh) setLocalCh(newCh)
+    setLocalV(newV)
     setLocalValue(setNewValue)
   }
 
@@ -245,27 +243,24 @@ export default function VerseNavigator({
 
   const handleSelectClick = (event,val) => {
     const newBook = versification_ESV.osisOrderedBibleBooks[val]
-    if (verse !== 1) {
+    if (localV !== 1) {
       onChangeVerse && onChangeVerse(1)
     }
-    if (chapter !== 1) {
+    if (localCh !== 1) {
       onChangeChapter && onChangeChapter(1)
     }
     onChangeBook && onChangeBook(newBook)
-    if (!controlledBRef) {
-      setLocalValue({label: "1:1"})
-      setLocalRef({
-        bookId: newBook,
-        chapter: 1,
-        verse: 1,
-      })
-    }
+    setLocalValue({label: "1:1"})
+    setLocalBookId(newBook)
+    setLocalCh(1)
+    setLocalV(1)
     setOpenDialog(false)
   }
 
   const handleSelectClose = (event) => setOpenDialog(false)
 
   const curOptions = [...curChapterOptions, ...curVerseOptions, ...getMultilevelCVOptions()]
+  console.log(curOptions)
 
   const isEqualOption = (option, value) => (option.label === value.label)
   const onSelectBookClick = () => setOpenDialog(true)
@@ -337,7 +332,6 @@ export default function VerseNavigator({
           onInputChange={handleInputChange}
           id="virtualize-demo"
           disableListWrap
-          disableClearable
           PopperComponent={StyledPopper}
           ListboxComponent={ListboxComponent}
           sx={{ width: 150 }}

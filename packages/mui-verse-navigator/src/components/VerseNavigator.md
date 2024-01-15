@@ -29,9 +29,9 @@ function MyWorkspace() {
 import Container from "@mui/material/Container";
 import React from 'react';
 
-const [chapter,setChapter] = React.useState(1)
+const [chapter,setChapter] = React.useState(4)
 const [verse,setVerse] = React.useState(1)
-const [bookId,setBookId] = React.useState("Mat")
+const [bookId,setBookId] = React.useState("Mal")
 
 function handleChChange (newCh) {
   console.log(`new chapter: ${newCh}`)
