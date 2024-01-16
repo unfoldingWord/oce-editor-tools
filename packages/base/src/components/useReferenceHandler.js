@@ -69,7 +69,7 @@ export default function useReferenceHandler({
       }));
 
       setTimeout(() => {
-        const verseElem = editorRef.current.querySelector(
+        const verseElem = editorRef?.current?.querySelector(
           `.mark.verses[data-atts-number='${verse}']`
         );
         if (reference.sourceId !== sourceId && verseElem) {

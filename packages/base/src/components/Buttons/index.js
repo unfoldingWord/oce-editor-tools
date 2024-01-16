@@ -6,6 +6,7 @@ import Preview from './ButtonPreview';
 import Undo from './ButtonUndo';
 import Redo from './ButtonRedo';
 import Save from './ButtonSave';
+import Print from './ButtonPrint';
 import Search from './ButtonSearch';
 import AlignmentBroken from './ButtonAlignmentBroken';
 import Headless from './ButtonHeadless';
@@ -19,6 +20,7 @@ const Button = {
   Undo,
   Redo,
   Save,
+  Print,
   Search,
   AlignmentBroken,
   Headless,

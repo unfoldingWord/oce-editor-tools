@@ -1,6 +1,7 @@
 import { 
   versification_ESV,
-  short3LetterId2osis
+  short3LetterId2osis,
+  normaliseBooksExceptions,
 } from "../constants/bcvVerseMap"
 
 export const cumulativeSum = ([head, ...tail]) =>
@@ -82,6 +83,15 @@ const findBinaryInRange = (arr, target) => {
   return -1
 }
 
+export function normalisedBookId (bookId) {
+  const lowerStr = bookId.toLowerCase()
+  let retVal = normaliseBooksExceptions[lowerStr]
+  if (!retVal) {
+    retVal = lowerStr.substring(0,3)
+  }
+  return retVal
+}
+
 const defaultVerseMap = verseMapExtended(versification_ESV)
 
 export function vInx2bRef (vInx, verseMap) {
@@ -106,7 +116,7 @@ export function bRef2vInx (bRefObj, verseMap) {
   const vMap = verseMap || defaultVerseMap
   let retVal = -1
   if (bRefObj?.bookId) {
-    const bookInx = vMap.osisBibleBookIndex[idToOsis(bRefObj.bookId)]
+    const bookInx = vMap.osisBibleBookIndex[idToOsis(normalisedBookId(bRefObj.bookId))]
     retVal = vMap.bookInitialVCount[bookInx]
     if (bRefObj?.chapter) {
       const curChInx = vMap.bookInitialChCount[bookInx] +bRefObj.chapter -1
@@ -131,8 +141,8 @@ export function bRefLastChapterInBook (bRefObj, verseMap) {
   const vMap = verseMap || defaultVerseMap
   let retVal = -1
   if (bRefObj?.bookId) {
-    const bookInx = vMap.osisBibleBookIndex[idToOsis(bRefObj.bookId)]
-    if (bookInx) {
+    const bookInx = vMap.osisBibleBookIndex[idToOsis(normalisedBookId(bRefObj.bookId))]
+    if (bookInx>=0) {
       retVal = vMap.chaptersInBook[bookInx]
     }
   }
@@ -143,12 +153,10 @@ export function bRefLastVerseInChapter (bRefObj, verseMap) {
   const vMap = verseMap || defaultVerseMap
   let retVal = -1
   if (bRefObj?.bookId) {
-    const curBookName = idToOsis(bRefObj.bookId)
+    const curBookName = idToOsis(normalisedBookId(bRefObj.bookId))
     if (curBookName) {
-      console.log(vMap)
-      console.log(curBookName)
       const bookInx = vMap.osisBibleBookIndex[curBookName]
-      if ((bRefObj?.chapter) && (bookInx)) {
+      if ((bRefObj?.chapter) && (bookInx>=0)) {
         const curCh = vMap.bookInitialChCount[bookInx] +bRefObj.chapter -1
         retVal = vMap.lastVerseInChapter[curCh]
       }

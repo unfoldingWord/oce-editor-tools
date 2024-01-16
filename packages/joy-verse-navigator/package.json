@@ -1,7 +1,7 @@
 {
   "name": "@oce-editor-tools/joy-verse-navigator",
   "description": "A React Component Library for editing PERF.",
-  "version": "0.0.3-alpha.2",
+  "version": "0.0.6",
   "homepage": "https://oce-editor-tools-joy-verse-navigator.netlify.app/",
   "license": "MIT",
   "repository": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "@mui/base": "^5.0.0-beta.22",
     "@mui/joy": "^5.0.0-beta.13",
-    "@oce-editor-tools/verse-mapper": "^0.0.3-alpha.2",
+    "@oce-editor-tools/verse-mapper": "^0.0.6",
     "autosuggest-highlight": "^3.3.4",
     "react-window": "^1.8.9"
   },

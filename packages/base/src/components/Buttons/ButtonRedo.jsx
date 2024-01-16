@@ -12,7 +12,7 @@ export default function ButtonRedo({ component, children, ...props }) {
   );
   const redo = useCallback(
     (e) => {
-      epiteleteHtml.redoHtml(bookCode);
+      epiteleteHtml.redo(bookCode);
     },
     [epiteleteHtml, bookCode]
   );

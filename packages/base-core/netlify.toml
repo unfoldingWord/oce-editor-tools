@@ -1,0 +1,4 @@
+[build]
+  base = "packages/base-core/"
+  command = "nx build:styleguide @oce-editor-tools/base-core --skip-nx-cache"
+  publish = "styleguide"

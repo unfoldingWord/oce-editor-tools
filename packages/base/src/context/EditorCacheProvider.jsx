@@ -6,6 +6,7 @@ export const useEditorContext = () => useContext(EditorContext);
 
 export function EditorCacheProvider({
   onSave,
+  onPrintPreview,
   epiteleteHtml,
   sourceId,
   bookId,
@@ -35,6 +36,7 @@ export function EditorCacheProvider({
     },
     actions: {
       onSave,
+      onPrintPreview,
       ...actions
     }
   };

@@ -11,6 +11,7 @@ import {
   Preview,
   Redo,
   Save,
+  Print,
   Search,
   Subject,
   Undo,
@@ -85,26 +86,29 @@ export function EditorToolbar({ showToggles, onRenderToolbar }) {
           </>
         ) : null}
         <Extensible onRenderItems={onRenderToolbar}>
-          <Button.Lock component={ToolbarButton}>
+          <Button.Lock key="lock" component={ToolbarButton}>
             {({ selected }) => (selected ? <Lock /> : <LockOpen />)}
           </Button.Lock>
-          <Button.AlignmentBroken component={ToolbarButton} onClick={openPopup}>
+          <Button.AlignmentBroken key="alignmentBroken" component={ToolbarButton} onClick={openPopup}>
             {({ allAligned, brokenAlignedWords: b }) => {
               brokenAlignedWords = b;
               return allAligned ? <AssignmentTurnedIn /> : <AssignmentLate />;
             }}
           </Button.AlignmentBroken>
           <BrokenAlignmentsPopper anchorEl={anchorEl} brokenAlignedWords={brokenAlignedWords}/>
-          <Button.Undo component={ToolbarButton}>
+          <Button.Undo key="undo" component={ToolbarButton}>
             <Undo />
           </Button.Undo>
-          <Button.Redo component={ToolbarButton}>
+          <Button.Redo key="redo" component={ToolbarButton}>
             <Redo />
           </Button.Redo>
-          <Button.Save component={ToolbarButton}>
+          <Button.Save key="save" component={ToolbarButton}>
             <Save />
           </Button.Save>
-          <Button.Search component={ToolbarButton}>
+          <Button.Print key="print" component={ToolbarButton}>
+            <Print />
+          </Button.Print>
+          <Button.Search key="search" component={ToolbarButton}>
             <Search />
           </Button.Search>
         </Extensible>

@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import {
+import { 
+  useUsfmPreviewRenderer, 
+  renderStyles as renderStylesLtr, 
+  // renderStylesRtl 
   EditorCacheProvider,
   EditorMain
 } from "@oce-editor-tools/base"
 import GraftPopup from "./GraftPopup"
 import { EditorToolbar } from './EditorToolbar';
 import { styled } from '@mui/material/styles';
+import CircularProgressUI from "@mui/material/CircularProgress";
 import { Box } from '@mui/material';
 import Section from './Section';
 import SectionBody from './SectionBody';
 import SectionHeading from './SectionHeading';
+import PrintDrawer from "./PrintDrawer"
 
 function Editor({
   onSave,
@@ -26,9 +31,40 @@ function Editor({
   children,
   defaultOptions,
 }) {
+  const [printUsfmText, setPrintUsfmText] = useState()
+  const [isOpenPrintDrawer,setIsOpenPrintDrawer] = useState(false)
+
+  const onPrintPreview = (_bookCode, usfmText) => {
+    setIsOpenPrintDrawer(!isOpenPrintDrawer)
+    setPrintUsfmText(usfmText)
+  }
+  const renderStyles = renderStylesLtr // use default Left to right languages
+  // ToDo: LG - for right to left languages use stylesRtl_ !!!
+
+  const renderFlags = {
+    showWordAtts: false,
+    showTitles: true,
+    showHeadings: true,
+    showIntroductions: true,
+    showFootnotes: false,
+    showXrefs: false,
+    showParaStyles: true,
+    showCharacterMarkup: false,
+    showChapterLabels: true,
+    showVersesLabels: true,
+  }
+
+  const { renderedData, ready, resetPreviewData } = useUsfmPreviewRenderer({ 
+    usfmText: printUsfmText,
+    renderFlags,
+    htmlRender: true,
+    renderStyles,
+  })
+
   const props = {
     sourceId,
     onSave,
+    onPrintPreview,
     epiteleteHtml,
     bookId,
     verbose,
@@ -38,16 +74,30 @@ function Editor({
     scrollDelay,
     children,
     defaultOptions,
-  };
+  }
   const components = {
     section: Section,
     sectionHeading: SectionHeading,
     sectionBody: SectionBody,
     editorGraft: GraftPopup,
-  };
+  }
+  const onClosePrintDrawer = () => {
+    setIsOpenPrintDrawer(false)
+    setPrintUsfmText(undefined)
+    resetPreviewData()
+  }
+  const previewProps = {
+    openPrintDrawer: isOpenPrintDrawer && ready,
+    onClosePrintDrawer,
+    onRenderContent: () => renderedData,
+    canChangeAtts: false,
+    canChangeColumns: true,
+  }
+
   return (
     <EditorCacheProvider{...props}>
       <EditorToolbar showToggles={false} onRenderToolbar={onRenderToolbar} />
+      { ready ? <PrintDrawer {...previewProps} /> : isOpenPrintDrawer && <CircularProgressUI /> }
       <EditorContainer>
         <EditorMain components={components} />
       </EditorContainer>
@@ -55,9 +105,7 @@ function Editor({
   );
 }
 
-
 // children,
-
   Editor.propTypes = {
     /** Instance of EpiteleteHtml class */
     epiteleteHtml: PropTypes.any.isRequired,

@@ -11,7 +11,7 @@
 #### Bible resources editor tools 
 - using Proskomma underneath
 
-<a href="https://oce-editor-tools-core.netlify.app/"><strong>View Demo and examples</strong></a>
+<a href="https://oce-editor-tools-mui-core.netlify.app/"><strong>View Demo and examples</strong></a>
 
 <a href="https://github.com/unfoldingWord/oce-editor-tools/issues">Report Bug</a>
 ·
@@ -37,9 +37,9 @@ This project is organized as a mono-repository. The packages defined in this rep
 
 | Local Package | 📦 NPM Package | Demo | ✏️ Description |
 | - | - | - | - |
-| [mui-core](./packages/mui-core) | [@oce-editor-tools/mui-core](https://npmjs.com/@oce-editor-tools/mui-core)  | [Core Styleguidist](https://oce-editor-tools-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
-| [pk](./packages/pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/pk)  | [Pk Styleguidist](https://oce-editor-tools-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
-| [simple](./packages/simple) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/simple)  | [Simple Styleguidist](https://simple-oce-editor-tools.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
+| [mui-core](./packages/mui-core) | [@oce-editor-tools/mui-core](https://npmjs.com/@oce-editor-tools/mui-core)  | [Core Styleguidist](https://oce-editor-tools-mui-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
+| [pk](./packages/mui-pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/mui-pk)  | [Pk Styleguidist](https://oce-editor-tools-mui-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
+| [simple](./packages/mui-simple) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/mui-simple)  | [Simple Styleguidist](https://oce-editor-tools-mui-simple.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
 
 ---
 
@@ -112,7 +112,7 @@ OR
 ```shell
 yarn add @oce-editor-tools/mui-core
 ```
-(just replace `core` above with `pk` or `simple` in order to install one of the other packages)
+(just replace `mui-core` above with `mui-pk` or `mui-simple` in order to install one of the other packages)
 
 Also you will need to add the peer dependencies:
 ```shell
@@ -127,15 +127,15 @@ yarn add @mui/material @mui/styles @mui/icons-material  @mui/styled-engine npm:@
 <!-- USAGE EXAMPLES -->
 ## Usage/Integration
 
-See [Styleguidist link](https://oce-editor-tools-core.netlify.app/) for many usage examples.
+See [Styleguidist link](https://oce-editor-tools-mui-core.netlify.app/) for many usage examples.
 
 Other examples here:
 
- - [pk](https://oce-editor-tools-pk.netlify.app/) - with access to Proskomma features
+ - [mui-pk](https://oce-editor-tools-mui-pk.netlify.app/) - with access to Proskomma features
  
   and 
 
- - [simple](https://simple-oce-editor-tools.netlify.app/) - for simple usage
+ - [mui-simple](https://oce-editor-tools-mui-simple.netlify.app/) - for simple usage
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -168,7 +168,7 @@ If you would like to fork the repo and create a pull request.
    ```
 4. Run a package locally, for instance:
    ```sh
-   yarn nx start @oce-editor-tools/simple
+   yarn nx start @oce-editor-tools/mui-simple
    ```
 
 5. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

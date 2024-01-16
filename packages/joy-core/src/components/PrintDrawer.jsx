@@ -30,7 +30,7 @@ const defaultIncludeNames = [
 
 export default function PrintDrawer({
   openPrintDrawer,
-  handleClosePrintDrawer,
+  onClosePrintDrawer,
   onRenderContent,
   canChangeAtts,
   canChangeColumns,
@@ -100,7 +100,9 @@ export default function PrintDrawer({
     const renderedData = onRenderContent && onRenderContent()
     const newPage = window.open()
     newPage.document.body.innerHTML = `<div id="paras">${renderedData}</div>`
-    newPage.document.body.setAttribute('onLoad',"window.print()");
+    // ToDo: LG - Find another way of triggering the print action
+    // This onLoad triggers too early in Chrome and doesn't work in Firefox
+    // newPage.document.body.setAttribute('onLoad',"window.print()");
     newPage.document.head.innerHTML = '<title>PDF Preview</title>'
     const script = document.createElement('script')
     script.src = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`
@@ -117,7 +119,7 @@ export default function PrintDrawer({
       <Drawer
         anchor="right"
         open={openPrintDrawer}
-        onClose={handleClosePrintDrawer}
+        onClose={onClosePrintDrawer}
       >
         <Box>
           <Typography variant="h4" sx={{ textAlign: 'center' }}>
@@ -139,7 +141,7 @@ export default function PrintDrawer({
                   id="included-content-group-label"
                   sx={{ marginRight: '5%', marginTop: '2%' }}
                 >
-                  INCLUDED_CONTENT
+                  Included Content
                 </Typography>
                 <Select
                   id="included-content"
@@ -198,7 +200,7 @@ PrintDrawer.propTypes = {
   /** PrintDrawer is open when this is set true */
   openPrintDrawer: PropTypes.bool,
   /** handle the needed actions, when modal is closed */
-  handleClosePrintDrawer: PropTypes.func,
+  onClosePrintDrawer: PropTypes.func,
   /** needs to return the content that needs to be rendered */
   onRenderContent: PropTypes.func,
   canChangeAtts: PropTypes.bool,

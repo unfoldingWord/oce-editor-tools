@@ -32,7 +32,7 @@ function Component () {
 
   const previewProps = {
     openPrintDrawer: isOpen && done,
-    handleClosePrintDrawer: () => {
+    onClosePrintDrawer: () => {
       console.log('closePrintDrawer')
       setIsOpen(false)
     },

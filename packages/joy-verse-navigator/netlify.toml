@@ -1,4 +1,4 @@
 [build]
-  base = "packages/joy-bcv-autocomplete/"
-  command = "nx build:styleguide @oce-editor-tools/joy-bcv-autocomplete --skip-nx-cache"
+  base = "packages/joy-verse-navigator"
+  command = "nx build:styleguide @oce-editor-tools/joy-verse-navigator --skip-nx-cache"
   publish = "styleguide"
