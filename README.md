@@ -162,19 +162,32 @@ If you would like to fork the repo and create a pull request.
    ```sh
    git clone https://github.com/unfoldingWord/oce-editor-tools.git
    ```
-3. Install NPM packages
+3. Delete .yarnrc.yml
+4. Confirm which version of yarn is running on this project
    ```sh
-   yarn
+   yarn -v
    ```
-4. Run a package locally, for instance:
+   If 3.x then add interactive-tools. (If 4.x then skip this step as interactive tools are already included.)
+   ```sh
+   yarn plugin import interactive-tools
+   ```
+5. Install NPM packages
+   ```sh
+   yarn install
+   ```
+6. Defines linker for installing Node packages
+   ```sh
+   yarn config set nodeLinker node-modules
+   ```
+7. Run a package locally, for instance:
    ```sh
    yarn nx start @oce-editor-tools/mui-simple
    ```
 
-5. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-6. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-7. Push to the Branch (`git push origin feature/AmazingFeature`)
-8. Open a Pull Request
+8. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+9. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+10. Push to the Branch (`git push origin feature/AmazingFeature`)
+11. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
