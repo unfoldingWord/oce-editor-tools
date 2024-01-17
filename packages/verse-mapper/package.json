@@ -47,9 +47,9 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
+    "build": "rimraf ./dist && babel ./src --out-dir ./dist -s inline",
     "test": "react-scripts test",
-    "prepublishOnly": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline"
+    "prepublishOnly": "rimraf ./dist && babel ./src --out-dir ./dist -s inline"
   },
   "eslintConfig": {
     "extends": [

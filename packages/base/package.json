@@ -54,11 +54,11 @@
   },
   "scripts": {
     "start": "npx styleguidist server",
-    "build": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline",
+    "build": "rimraf ./dist && babel ./src --out-dir ./dist -s inline",
     "build:styleguide": "npx styleguidist build",
     "test": "react-scripts test",
     "sections": "node styleguide.sections.js",
-    "prepublishOnly": "rm -rf ./dist && babel ./src --out-dir ./dist -s inline"
+    "prepublishOnly": "rimraf ./dist && babel ./src --out-dir ./dist -s inline"
   },
   "eslintConfig": {
     "extends": [
