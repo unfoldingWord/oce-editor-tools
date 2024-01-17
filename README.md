@@ -38,8 +38,8 @@ This project is organized as a mono-repository. The packages defined in this rep
 | Local Package | 📦 NPM Package | Demo | ✏️ Description |
 | - | - | - | - |
 | [mui-core](./packages/mui-core) | [@oce-editor-tools/mui-core](https://npmjs.com/@oce-editor-tools/mui-core)  | [Core Styleguidist](https://oce-editor-tools-mui-core.netlify.app/) | Various editor and preview components - the core library used by other packages|
-| [pk](./packages/mui-pk) | [@oce-editor-tools/pk](https://npmjs.com/@oce-editor-tools/mui-pk)  | [Pk Styleguidist](https://oce-editor-tools-mui-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
-| [simple](./packages/mui-simple) | [@oce-editor-tools/simple](https://npmjs.com/@oce-editor-tools/mui-simple)  | [Simple Styleguidist](https://oce-editor-tools-mui-simple.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
+| [mui-pk](./packages/mui-pk) | [@oce-editor-tools/mui-pk](https://npmjs.com/@oce-editor-tools/mui-pk)  | [Pk Styleguidist](https://oce-editor-tools-mui-pk.netlify.app/) | Designed to make it easy to have access to various Proskomma functions |
+| [mui-simple](./packages/mui-simple) | [@oce-editor-tools/mui-simple](https://npmjs.com/@oce-editor-tools/mui-simple)  | [Simple Styleguidist](https://oce-editor-tools-mui-simple.netlify.app/) | A simplified implementation completely hiding Proskomma *(while also loosing some repository handling as a result of this)* |
 
 ---
 
