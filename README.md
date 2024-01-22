@@ -187,7 +187,7 @@ If you would like to fork the repo and create a pull request.
 9. Make your changes, then update what will be committed (`git add <file>`)
 10. Commit your changes with comment (`git commit -m "Add some AmazingFeature"`)
 11. Change the remote url to your fork (`git remote set-url origin https://github.com/(YourFork)/oce-editor-tools.git`)
-12. Push to the Branch (`git push origin feature/AmazingFeature`)
+12. Push to the Branch
 13. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
