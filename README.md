@@ -171,23 +171,24 @@ If you would like to fork the repo and create a pull request.
    ```sh
    yarn plugin import interactive-tools
    ```
-5. Install NPM packages
-   ```sh
-   yarn install
-   ```
-6. Defines linker for installing Node packages
+5. Define linker for installing Node packages
    ```sh
    yarn config set nodeLinker node-modules
+   ```
+6. Install NPM packages
+   ```sh
+   yarn install
    ```
 7. Run a package locally, for instance:
    ```sh
    yarn nx start @oce-editor-tools/mui-simple
-   ```
-
-8. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-9. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-10. Push to the Branch (`git push origin feature/AmazingFeature`)
-11. Open a Pull Request
+   ``` 
+8. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+9. Make your changes, then update what will be committed (`git add <file>`)
+10. Commit your changes with comment (`git commit -m "Add some AmazingFeature"`)
+11. Change the remote url to your fork (`git remote set-url origin https://github.com/(YourFork)/oce-editor-tools.git`)
+12. Push to the Branch
+13. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
