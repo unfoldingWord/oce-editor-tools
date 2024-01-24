@@ -36,6 +36,9 @@ export default function PrintDrawer({
   onRenderContent,
   canChangeAtts,
   canChangeColumns,
+  printFont,
+  printFontSize,
+  printLineHeight,
 }) {
 
   const allNames = [
@@ -101,7 +104,8 @@ export default function PrintDrawer({
   const onPrintClick = () => {
     const renderedData = onRenderContent && onRenderContent()
     const newPage = window.open()
-    newPage.document.body.innerHTML = `<div id="paras">${renderedData}</div>`
+    newPage.document.body.innerHTML = `<div id="paras" style="
+    font-family: ${printFont}; font-size: ${printFontSize}; line-height: ${printLineHeight};">${renderedData}</div>`
     // ToDo: LG - Find another way of triggering the print action
     // This onLoad triggers too early in Chrome and doesn't work in Firefox
     // newPage.document.body.setAttribute('onLoad',"window.print()");
@@ -206,7 +210,13 @@ PrintDrawer.propTypes = {
   /** needs to return the content that needs to be rendered */
   onRenderContent: PropTypes.func,
   canChangeAtts: PropTypes.bool,
-  canChangeColumns: PropTypes.bool
+  canChangeColumns: PropTypes.bool,
+  /** Print font */
+  printFont: PropTypes.string,
+  /** Print font size */
+  printFontSize: PropTypes.string,
+  /** Print line height */
+  printLineHeight: PropTypes.string,
 }
 
 PrintDrawer.defaultProps = {
