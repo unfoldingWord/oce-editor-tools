@@ -2,9 +2,9 @@
 
 #### Other packages in the same monorepo: 
 
-pk - https://oce-editor-tools-pk.netlify.app
+pk - https://oce-editor-tools-mui-pk.netlify.app/
 
-simple - https://simple-oce-editor-tools.netlify.app
+simple - https://oce-editor-tools-mui-simple.netlify.app/
 
 ## Editor demo 1
 
@@ -73,7 +73,17 @@ function MyEditor({
     ...props,
   };
 
-  return <>{ready ? <Editor {...editorProps} /> : "Loading..."}</>;
+  const displayFont = 'sans-serif';
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
+  return (
+    <>
+      <div style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
+        {ready ? <Editor {...editorProps} /> : "Loading..."}
+      </div>
+    </>
+  )
 }
 
 function GridCard({ title, children }) {
@@ -205,9 +215,13 @@ function Component () {
     verbose
   }
  
+  const displayFont = 'sans-serif';
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
   return (
     <>
-    <div key="1">
+    <div key="1" style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
       { ready ? <Editor key="1" {...editorProps} /> : 'Loading...' }
     </div>
     </>
@@ -324,10 +338,14 @@ function Component () {
     onRenderToolbar,
     verbose
   }
+
+  const displayFont = 'sans-serif';
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
   
   return (
     <>
-    <div key="1">
+    <div key="1" style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
       { ready ? <Editor key="1" {...editorProps} /> : 'Loading...'}
     </div>
     </>
