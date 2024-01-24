@@ -25,6 +25,9 @@ export default function PkPrintDrawer({
   verbose, 
   extInfo, 
   renderFlags: _renderFlags,
+  printFont,
+  printFontSize,
+  printLineHeight,
 }) {
 
   const allNames = [
@@ -94,6 +97,9 @@ export default function PkPrintDrawer({
     openPrintDrawer,
     onClosePrintDrawer,
     onRenderContent: handleRender,
+    printFont,
+    printFontSize,
+    printLineHeight
   }
 
   return (
@@ -118,6 +124,12 @@ PkPrintDrawer.propTypes = {
   extInfo: PropTypes.any,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
+  /** Print font */
+  printFont: PropTypes.string,
+  /** Print font size */
+  printFontSize: PropTypes.string,
+  /** Print line height */
+  printLineHeight: PropTypes.string,
 };
 
 PkPrintDrawer.defaultProps = {
