@@ -3,7 +3,6 @@ const renderStyles = {
   paras: {
     default: {
       direction: 'rtl',
-      fontSize: 'medium',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },

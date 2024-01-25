@@ -149,8 +149,6 @@ const EditorContainer = styled(Box)`
   p.p {
     margin: 0;
     padding: 1em 0.5em;
-    line-height: 1.4;
-    font-family: sans-serif;
   }
   span.mark:is(.verses, .chapter) {
     display: inline-block;

@@ -1,10 +1,9 @@
 ## Package: Simple
 #### Other packages in the same monorepo: 
 
-core - https://oce-editor-tools-pk.netlify.app
+core - https://oce-editor-tools-mui-core.netlify.app/
 
-pk - https://oce-editor-tools-pk.netlify.app
-
+pk - https://oce-editor-tools-mui-pk.netlify.app/
 
 # UsfmEditor demo
 
@@ -34,9 +33,13 @@ function Component () {
       verse: "24-25",
     }
   }
-  
+
+  const displayFont = 'sans-serif';
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
   return (
-    <div key="1">
+    <div key="1" style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
       <UsfmEditor {...editorProps} />
     </div>
   );

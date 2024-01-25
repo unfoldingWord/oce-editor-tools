@@ -23,16 +23,22 @@ function Component () {
     showVersesLabels: true,
   };
 
+  const displayFont = 'sans-serif';
+
   const previewProps = {
     repoIdStr,
     langIdStr,
     bookId,
     renderFlags,
     verbose: true,
+    pkFont: displayFont,
   }
   
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
   return (
-      <div key="1">
+      <div key="1" style={{ fontSize: displayFontSize, lineHeight: displayLineHeight }}>
         { done ? <PkPreview {...previewProps} /> : 'Loading...'}
       </div>
   );
@@ -136,6 +142,7 @@ const renderFlags = {
     showVersesLabels: true,
   };
 
+  const displayFont = 'sans-serif';
 
   const previewProps = {
     repoIdStr,
@@ -144,10 +151,14 @@ const renderFlags = {
     renderFlags,
     extInfo,
     verbose: true,
+    pkFont: displayFont,
   }
-  
+
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
   return (
-      <div key="1">
+      <div key="1" style={{ fontSize: displayFontSize, lineHeight: displayLineHeight }}>
         { done ? <PkPreview {...previewProps} /> : 'Loading...'}
       </div>
   );
