@@ -45,6 +45,10 @@ function Component () {
     renderStyles,
   })
 
+  const displayFont = 'sans-serif';
+  const displayFontSize = '100%';
+  const displayLineHeight = '1.13';
+
   const previewProps = {
     openPrintDrawer: isOpen && ready,
     onClosePrintDrawer: () => {
@@ -54,10 +58,13 @@ function Component () {
     onRenderContent: () => renderedData,
     canChangeAtts: false,
     canChangeColumns: true,
+    printFont: displayFont,
+    printFontSize: displayFontSize,
+    printLineHeight: displayLineHeight,
   }
-  
+
   return (
-      <div key="1">
+      <div key="1" style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
         { ready && (<button onClick={handleClick}>
           Print preview
         </button>)}
@@ -160,8 +167,12 @@ function Component () {
     onRenderContent: () => markup(markupStr),
   }
   
+  const displayFont = 'sans-serif';
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
   return (
-    <div>
+    <div style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
       <button onClick={handleClick}>
         Print preview
       </button>

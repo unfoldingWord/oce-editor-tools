@@ -1,7 +1,6 @@
 const renderStyles = {
   paras: {
     default: {
-      fontSize: 'medium',
       marginTop: '0.5ex',
       marginBottom: '0.5ex',
     },

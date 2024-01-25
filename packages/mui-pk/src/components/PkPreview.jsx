@@ -9,7 +9,7 @@ import {
 
 export default function PkPreview(props) {
   const {
-    repoIdStr, langIdStr, bookId, verbose, extInfo, renderFlags,
+    repoIdStr, langIdStr, bookId, verbose, extInfo, renderFlags, pkFont,
   } = props;
 
   const [docIdFromCache, setDocIdFromCache] = useState(undefined)
@@ -27,7 +27,7 @@ export default function PkPreview(props) {
     bookId,
     renderFlags,
     extInfo, 
-    verbose
+    verbose,
   })
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function PkPreview(props) {
 
 
   return (
-    <Grid container style={{ fontFamily: 'Arial' }}>
+    <Grid container style={{ fontFamily: pkFont }}>
       <Grid key={2} item xs={12}>
         {(done && renderedData) ? <>{renderedData}</> : <Typography>{'LOADING'}...</Typography>}
       </Grid>
@@ -72,8 +72,11 @@ PkPreview.propTypes = {
   extInfo: PropTypes.any,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
+  /** PK Display font */
+  pkFont: PropTypes.string,
 };
 
 PkPreview.defaultProps = {
   verbose: false,
+  pkFont: 'Arial',
 };

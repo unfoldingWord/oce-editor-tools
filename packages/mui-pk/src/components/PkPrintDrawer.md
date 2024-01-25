@@ -30,6 +30,10 @@ function Component () {
     setIsOpen(!isOpen)
   }
 
+  const displayFont = 'sans-serif';
+  const displayFontSize = '100%';
+  const displayLineHeight = '1.13';
+
   const previewProps = {
     openPrintDrawer: isOpen && done,
     onClosePrintDrawer: () => {
@@ -41,6 +45,9 @@ function Component () {
     bookId,
     renderFlags,
     verbose: true,
+    printFont: displayFont,
+    printFontSize: displayFontSize,
+    printLineHeight: displayLineHeight,
   }
   
   return (

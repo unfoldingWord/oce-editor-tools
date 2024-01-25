@@ -53,7 +53,15 @@ function MyEditor({
     ...props,
   }
 
-  return <PkUsfmEditor {...editorProps} />
+  const displayFont = 'sans-serif';
+  const displayFontSize = 'medium';
+  const displayLineHeight = '1.4';
+
+  return (
+      <div style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
+        <PkUsfmEditor {...editorProps} />
+      </div>
+  );
 }
 
 function GridCard({ title, children }) {
