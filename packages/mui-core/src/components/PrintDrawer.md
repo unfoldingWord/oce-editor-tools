@@ -13,12 +13,19 @@ import {
   renderStylesRtl 
 } from "@oce-editor-tools/base"
 import DOMPurify from 'dompurify'
+import { useDetectDir } from 'font-detect-rhl'
 
 const usfmText = UsfmEN.usfmText
   // could also use UsfmEn1Pe.usfmText for a multi-chapter example
   //   or UsfmHbo.usfmText for a right to left example
-const renderStyles = renderStylesLtr // use default Left to right languages
-  // for right to left languages use stylesRtl_
+
+const useDetectDirProps = { text: usfmText, ratioThreshold: 0.2 };
+  // The ratioThreshhold of RTL:LTR characters has been lowered from the default of 0.3 for the UsfmHbo example in the comment above. Included alignment data alters the needed threshhold ratio needed to trigger as RTL.
+
+const textDir = useDetectDir( useDetectDirProps );
+  // To hardcode the text direction, change useDetectDir( useDetectDirProps ); above to 'ltr'; or 'rtl'; as applicable.
+
+const renderStyles = (textDir === 'ltr' ? renderStylesLtr : renderStylesRtl);
 
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
