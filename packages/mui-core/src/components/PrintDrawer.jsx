@@ -17,6 +17,7 @@ import printResources from '../lib/printResources'
 import ColumnsSelector from './ColumnsSelector'
 import PageSizeSelector from './PageSizeSelector'
 import PageOrientationSelector from './PageOrientationSelector'
+import { useDetectDir } from 'font-detect-rhl'
 
 const defaultIncludeNames = [
   'titles',
@@ -101,6 +102,9 @@ export default function PrintDrawer({
     ['%nColumns%', formatData.nColumns],
   ])
 
+  const useDetectDirProps = { text: onRenderContent && onRenderContent(), ratioThreshold: 0.3 };
+  const textDir = useDetectDir( useDetectDirProps );
+
   const onPrintClick = () => {
     const renderedData = onRenderContent && onRenderContent()
     const newPage = window.open()
@@ -116,6 +120,7 @@ export default function PrintDrawer({
     const style = document.createElement('style')
     style.innerHTML = pageCss
     newPage.document.head.appendChild(style)
+    newPage.document.body.setAttribute('dir', textDir);
   }
 
   const columnsList = [1, 2, 3]
