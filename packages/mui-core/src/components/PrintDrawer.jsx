@@ -41,6 +41,7 @@ export default function PrintDrawer({
   printFontSize,
   printLineHeight,
   pagedJsSource,
+  openNewWindow,
 }) {
 
   const allNames = [
@@ -106,10 +107,18 @@ export default function PrintDrawer({
   const useDetectDirProps = { text: onRenderContent && onRenderContent(), ratioThreshold: 0.3 };
   const textDir = useDetectDir( useDetectDirProps );
 
+  const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   const onPrintClick = () => {
     const renderedData = onRenderContent && onRenderContent()
-    const newPage = window.open("", "_self")
-    newPage.document.write(`<div id="paras" style="font-family: ${printFont}; font-size: ${printFontSize}; line-height: ${printLineHeight};">${renderedData}</div>`);
+    const newPage = (openNewWindow ? window.open() : window.open("", "_self"))
+    if (openNewWindow) newPage.document.body.innerHTML = `<div id="paras" style="font-family: ${printFont}; font-size: ${printFontSize}; line-height: ${printLineHeight};">${renderedData}</div>`
+      // ToDo: LG - Find another way of triggering the print action
+      // This onLoad triggers too early in Chrome and doesn't work in Firefox
+      // newPage.document.body.setAttribute('onLoad',"window.print()");
+    !openNewWindow && newPage.document.write(`<div id="paras" style="font-family: ${printFont}; font-size: ${printFontSize}; line-height: ${printLineHeight};">${renderedData}</div>`);
     newPage.document.head.innerHTML = '<title>PDF Preview</title>'
     const script = document.createElement('script')
     script.src = (pagedJsSource.substring(0,4) === "http", pagedJsSource, process.env.PUBLIC_URL + pagedJsSource)
@@ -117,7 +126,10 @@ export default function PrintDrawer({
     const style = document.createElement('style')
     style.innerHTML = pageCss
     newPage.document.head.appendChild(style)
-    newPage.document.body.setAttribute('dir', textDir);
+    // For a new window PagedJS can need more time (varies with content length) before textDir is applied
+    sleep(openNewWindow ? renderedData.length / 300 : 0).then(() => { 
+      newPage.document.body.setAttribute('dir', textDir);
+    });
   }
 
   const columnsList = [1, 2, 3]
@@ -221,10 +233,13 @@ PrintDrawer.propTypes = {
   printLineHeight: PropTypes.string,
   /** PagedJS source */
   pagedJsSource: PropTypes.string,
+  /** Preview in new window */
+  openNewWindow: PropTypes.bool,
 }
 
 PrintDrawer.defaultProps = {
   canChangeAtts: false,
   canChangeColumns: false,
-  pagedJsSource: `https://unpkg.com/pagedjs/dist/paged.polyfill.js`
+  pagedJsSource: `https://unpkg.com/pagedjs/dist/paged.polyfill.js`,
+  openNewWindow: true
 }

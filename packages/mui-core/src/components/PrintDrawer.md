@@ -19,7 +19,7 @@ import { useDetectDir } from 'font-detect-rhl'
 const usfmText = UsfmEN.usfmText
   // could also use UsfmEn1Pe.usfmText for a multi-chapter example
   //   or UsfmHbo.usfmText for a right to left example
-  //   or UsfmArLk.usfmText with Firefox and Awami Nastaliq font for a RLT graphite-enabled example
+  //   or UsfmArLk.usfmText with Firefox and Awami Nastaliq font for a RLT graphite-enabled example (needs openNewWindow = false;)
 
 const useDetectDirProps = { text: usfmText, ratioThreshold: 0.2 };
   // The ratioThreshhold of RTL:LTR characters has been lowered from the default of 0.3 for the UsfmHbo example in the comment above. Included alignment data alters the threshhold ratio needed to trigger as RTL.
@@ -57,6 +57,9 @@ function Component () {
   const pagedJsSource = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`;
   // To use asset hosted here change pagedJsSource to 'paged.polyfill.min.js'
 
+  const openNewWindow = true;
+  // To keep print preview in the same window change to false (needed for Graphite rendering in Firefox)
+
   const displayFont = 'sans-serif';
   const displayFontSize = '100%';
   const displayLineHeight = '1.13';
@@ -74,6 +77,7 @@ function Component () {
     printFont: displayFont,
     printFontSize: displayFontSize,
     printLineHeight: displayLineHeight,
+    openNewWindow: openNewWindow,
   }
 
   return (
