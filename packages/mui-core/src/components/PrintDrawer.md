@@ -7,18 +7,27 @@ import React, {useState} from 'react'
 import * as UsfmEN from '../data/Acts.1.usfm.js'
 import * as UsfmEn1Pe from '../data/1pe.en.ult.usfm.js'
 import * as UsfmHbo from '../data/hbo_uhb_57-TIT.usfm.js'
+import * as UsfmArLk from '../data/72-LUKarb-vd.usfm.js'
 import { 
   useUsfmPreviewRenderer, 
   renderStyles as renderStylesLtr, 
   renderStylesRtl 
 } from "@oce-editor-tools/base"
 import DOMPurify from 'dompurify'
+import { useDetectDir } from 'font-detect-rhl'
 
 const usfmText = UsfmEN.usfmText
   // could also use UsfmEn1Pe.usfmText for a multi-chapter example
   //   or UsfmHbo.usfmText for a right to left example
-const renderStyles = renderStylesLtr // use default Left to right languages
-  // for right to left languages use stylesRtl_
+  //   or UsfmArLk.usfmText with Firefox and Awami Nastaliq font for a RLT graphite-enabled example (needs openNewWindow = false;)
+
+const useDetectDirProps = { text: usfmText, ratioThreshold: 0.2 };
+  // The ratioThreshhold of RTL:LTR characters has been lowered from the default of 0.3 for the UsfmHbo example in the comment above. Included alignment data alters the threshhold ratio needed to trigger as RTL.
+
+const textDir = useDetectDir( useDetectDirProps );
+  // To hardcode the text direction, change useDetectDir( useDetectDirProps ); above to 'ltr'; or 'rtl'; as applicable.
+
+const renderStyles = (textDir === 'ltr' ? renderStylesLtr : renderStylesRtl);
 
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
@@ -45,6 +54,12 @@ function Component () {
     renderStyles,
   })
 
+  const pagedJsSource = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`;
+  // To use asset hosted here change pagedJsSource to 'paged.polyfill.min.js'
+
+  const openNewWindow = true;
+  // To keep print preview in the same window change to false (needed for Graphite rendering in Firefox)
+
   const displayFont = 'sans-serif';
   const displayFontSize = '100%';
   const displayLineHeight = '1.13';
@@ -58,9 +73,11 @@ function Component () {
     onRenderContent: () => renderedData,
     canChangeAtts: false,
     canChangeColumns: true,
+    pagedJsSource: pagedJsSource,
     printFont: displayFont,
     printFontSize: displayFontSize,
     printLineHeight: displayLineHeight,
+    openNewWindow: openNewWindow,
   }
 
   return (
