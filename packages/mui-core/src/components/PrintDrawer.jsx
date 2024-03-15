@@ -1,3 +1,4 @@
+// import React, { useState, useEffect } from 'react'
 import React, { useState } from 'react'
 import {
   Box,
@@ -10,14 +11,17 @@ import {
   OutlinedInput,
   Select,
   Typography,
+  Tooltip,
 } from '@mui/material'
 import PrintIcon from '@mui/icons-material/Print'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import PropTypes from 'prop-types'
 import printResources from '../lib/printResources'
 import ColumnsSelector from './ColumnsSelector'
 import PageSizeSelector from './PageSizeSelector'
 import PageOrientationSelector from './PageOrientationSelector'
-import { useDetectDir } from 'font-detect-rhl'
+// import { useDetectDir } from 'font-detect-rhl'
+import { useReactToPrint } from "react-to-print";
 
 const defaultIncludeNames = [
   'titles',
@@ -37,12 +41,16 @@ export default function PrintDrawer({
   onRenderContent,
   canChangeAtts,
   canChangeColumns,
+  printOptions,
+  canPrint,
+  setPrintOptions,
   printFont,
   printFontSize,
   printLineHeight,
   pagedJsSource,
   openNewWindow,
 }) {
+  // const [pageSize, setPageSize] = useState('A4')
 
   const allNames = [
     'wordAtts',
@@ -57,15 +65,30 @@ export default function PrintDrawer({
     'versesLabels',
   ]
 
-  const defaultPageSize = 'A4'
+  const printReactComponent = useReactToPrint({
+    documentTitle: `Test`,
+    content: () => onRenderContent && onRenderContent(),
+  })
+
+  const printPreviewState = "rendered"
+
+  const handlePrint = () => {
+    if(printPreviewState !== "rendered") {
+      alert("The document is not yet ready to print. Please wait...")
+      return false
+    }
+    printReactComponent()
+  }
+
+  // const defaultPageSize = 'A4'
 
   const [includedNames, setIncludedNames] = useState(defaultIncludeNames)
   const [pageOrientation,setPageOrientation] = useState('P')
-  const [formatData, setFormatData] = useState({
-    pageFormatP: defaultPageSize,
-    pageFormatL: defaultPageSize,
-    nColumns: 1,
-  })
+  // const [formatData, setFormatData] = useState({
+  //   pageFormatP: defaultPageSize,
+  //   pageFormatL: defaultPageSize,
+  //   nColumns: 1,
+  // })
 
   const getStyles = (name) => {
     return {
@@ -73,13 +96,13 @@ export default function PrintDrawer({
     }
   }
 
-  const substituteCss = (template, replaces) => {
-    let ret = template
-    for (const [placeholder, replacement] of replaces) {
-      ret = ret.replace(placeholder, replacement)
-    }
-    return ret
-  }
+  // const substituteCss = (template, replaces) => {
+  //   let ret = template
+  //   for (const [placeholder, replacement] of replaces) {
+  //     ret = ret.replace(placeholder, replacement)
+  //   }
+  //   return ret
+  // }
 
   const handleIncludedChange = (event, value) => {
     if (event) {
@@ -90,6 +113,12 @@ export default function PrintDrawer({
     }
   }
 
+  // useEffect(() => {
+  //   // Reset to A4 whenever orientation changes
+  //   setPageSize('A4')
+  // }, [pageOrientation])
+
+  /*
   const pageCss = substituteCss(printResources.pageCssTemplate, [
     ['%pageWidth%', 
       pageOrientation !== "L" 
@@ -131,6 +160,7 @@ export default function PrintDrawer({
       newPage.document.body.setAttribute('dir', textDir);
     });
   }
+  */
 
   const columnsList = [1, 2, 3]
 
@@ -143,6 +173,9 @@ export default function PrintDrawer({
         onClose={onClosePrintDrawer}
       >
         <Box>
+          <Button onClick={onClosePrintDrawer}>
+            <ChevronRightIcon/>
+          </Button>
           <Typography variant="h5" sx={{ textAlign: 'center' }}>
             Page Format
           </Typography>
@@ -193,23 +226,29 @@ export default function PrintDrawer({
                 listItemsP={printResources.pageSizesP}
                 listItemsL={printResources.pageSizesL}
                 pageOrientation={pageOrientation}
-                setFormatData={setFormatData}
+                // setFormatData={setFormatData}
               />
             </Grid>
             {canChangeColumns && (<Grid item sx={{ margin: '4%' }}>
               <ColumnsSelector
                 formLabelTitle={'Columns'}
                 listItems={columnsList}
-                setFormatData={setFormatData}
+                // setFormatData={setFormatData}
               />
             </Grid>)}
           </Grid>
+            <Tooltip title={canPrint ? "Print" : "Print Preview Still Rendering"} arrow>
+              <span>
+
           <Button
             sx={{ margin: '4%' }}
-            onClick={onPrintClick}
+            onClick={handlePrint}
           >
             <PrintIcon color="primary" sx={{ fontSize: 50 }} />
           </Button>
+              </span>
+            </Tooltip>
+
         </Box>
       </Drawer>
     </>

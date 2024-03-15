@@ -3,7 +3,7 @@
 The demo demonstrates using the PrintDrawer for rendering an Usfm text
 
 ```js
-import React, {useState} from 'react'
+import React, { useState, useRef } from 'react'
 import * as UsfmEN from '../data/Acts.1.usfm.js'
 import * as UsfmEn1Pe from '../data/1pe.en.ult.usfm.js'
 import * as UsfmHbo from '../data/hbo_uhb_57-TIT.usfm.js'
@@ -13,6 +13,8 @@ import {
   renderStyles as renderStylesLtr, 
   renderStylesRtl 
 } from "@oce-editor-tools/base"
+import { PrintPreviewComponent } from './PrintPreviewComponent'
+import { WebPreviewComponent } from './WebPreviewComponent'
 import DOMPurify from 'dompurify'
 import { useDetectDir } from 'font-detect-rhl'
 
@@ -29,10 +31,65 @@ const textDir = useDetectDir( useDetectDirProps );
 
 const renderStyles = (textDir === 'ltr' ? renderStylesLtr : renderStylesRtl);
 
+const webCss = `
+h1 {
+  column-span: all;
+}
+
+.new-page {
+  break-after: page;
+  column-span: all;
+}
+`
+
+const printCss = `
+@page {
+  @footnote { 
+    float: bottom;
+    border-top: solid black 1px;
+    padding-top: 1em;
+    margin-top: 1em;
+ }
+}
+
+span.footnote {
+  float: footnote;
+  position: note(footnotes);
+}
+  
+::footnote-call { 
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 0; 
+}
+  
+::footnote-marker {
+  /* content: counter(footnote, lower-alpha) ". "; */
+  font-weight: 700;
+  line-height: 0; 
+  font-style: italic !important;
+}
+
+.pagedjs_footnote_area * {
+  background-color: white !important;
+}
+
+a.footnote {
+  font-style: italic !important;
+}
+`
+
+
 function Component () {
   const [isOpen,setIsOpen] = useState(false)
 
   const handleClick = () => setIsOpen(!isOpen)
+  const webPreviewRef = useRef()
+  const printPreviewRef = useRef()
+  const printOptions = {}
+  // const [printPreviewState, setPrintPreviewState] = useState("not started")
+  const [printPreviewState, setPrintPreviewState] = useState("rendered")
+  const [htmlSections, setHtmlSections] = useState({toc: "", body: ""})
 
   const renderFlags = {
     showWordAtts: false,
@@ -85,6 +142,31 @@ function Component () {
         { ready && (<button onClick={handleClick}>
           Print preview
         </button>)}
+        { ready && (<WebPreviewComponent
+          html={renderedData}
+          webCss={webCss + printCss}
+          style={{
+            // display: view == "web" ? "block" : "none",
+            display: "block",
+            direction: "ltr",
+          }}
+          ref={webPreviewRef}
+        />)}
+        { ready && (<PrintPreviewComponent
+          webCss={webCss}
+          printCss={printCss}
+          printOptions={printOptions}
+          printPreviewState={printPreviewState}
+          setPrintPreviewState={setPrintPreviewState}
+          setHtmlSections={setHtmlSections}
+          style={{
+            // display: view == "print" || printPreviewState == "not started" || printPreviewState == "started" ? "block" : "none",
+            display: "block",
+            direction: "ltr",
+          }}
+          webPreviewRef={webPreviewRef}
+          ref={printPreviewRef}
+        />)}
         { ready ? <PrintDrawer {...previewProps} /> : 'Loading...'}
         { ready && (<div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(renderedData)}}/>)}
       </div>

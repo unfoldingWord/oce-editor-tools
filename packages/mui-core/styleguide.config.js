@@ -20,7 +20,7 @@ module.exports = {
   exampleMode: 'expand',
   moduleAliases: {},
   components: [
-    'src/components/Editor.jsx',
+    // 'src/components/Editor.jsx',
     'src/components/PrintDrawer.jsx',
   ],
   getComponentPathLine: (componentPath) => {
