@@ -23,7 +23,7 @@
     "bible-reference-rcl": "^1.2.2",
     "dompurify": "^3.0.6",
     "epitelete-html": "0.2.21-beta.2",
-    "proskomma-core": "0.10.4",
+    "proskomma-core": "0.10.5",
     "react-to-print": "^2.14.15",
     "shorthash": "^0.0.2",
     "style-to-object": "^0.4.2"
