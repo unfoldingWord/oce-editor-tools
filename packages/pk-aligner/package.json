@@ -20,7 +20,7 @@
     "@oce-editor-tools/mui-core": "0.1.30",
     "@xelah/type-perf-html": "^1.0.3",
     "epitelete-html": "0.2.21-beta.2",
-    "proskomma-core": "0.10.4",
+    "proskomma-core": "0.10.5",
     "shorthash": "^0.0.2",
     "string-punctuation-tokenizer": "^2.2.0",
     "word-aligner-rcl": "^1.0.3"

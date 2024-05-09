@@ -19,7 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@findr/mui": "^1.0.0-beta.18",
+    "@findr/mui": "^1.0.1-beta.19",
     "@findr/react": "^1.0.0-beta.3",
     "@gwdevs/extensible-rcl": "^1.0.1",
     "@mui/base": "^5.0.0-beta.18",
@@ -27,7 +27,7 @@
     "@xelah/type-perf-html": "^1.0.3",
     "epitelete-html": "0.2.21-beta.2",
     "pagedjs": "^0.4.3",
-    "proskomma-core": "^0.10.4",
+    "proskomma-core": "^0.10.5",
     "react-draggable": "^4.4.6",
     "react-transition-group": "^4.4.5"
   },
