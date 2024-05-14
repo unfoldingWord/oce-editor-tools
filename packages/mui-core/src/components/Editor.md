@@ -171,6 +171,11 @@ import React, { useState, useEffect } from 'react'
 
 import EpiteleteHtml from "epitelete-html"
 
+import PreviewIcon from '@mui/icons-material/Preview';
+import Button from '@mui/material/Button';
+
+import { hasUnsavedData } from "../helpers/hasUnsavedData";
+
 import { usfmText } from '../data/Acts.1.usfm.js'
 import { usfm2perf } from '../helpers/usfm2perf'
 
@@ -179,13 +184,22 @@ import './HtmlPerfEditor.css';
 function Component () {
   const verbose = true
   const docSetId = "Xxx/en_act" // just dummy values
+  const bookId = 'act'
+
   const [ready,setReady] = useState(false)
+  const [isOpen,setIsOpen] = useState(true);
   const [epiteleteHtml, setEpiteleteHtml] = useState(
     new EpiteleteHtml(
       { proskomma: undefined, docSetId, options: { historySize: 100 } }
     )
   )
-  
+  const handleClick = (epiteleteHtml, bookId) => {
+    setIsOpen(!isOpen)
+    if (hasUnsavedData(epiteleteHtml, bookId)) {
+      console.log("Warning: Unsaved data!")
+    }
+  }
+
   const onSave = (bookCode,usfmText) => {
     console.log(`save button clicked: ${bookCode}, ${usfmText}`) 
   }
@@ -204,11 +218,11 @@ function Component () {
  
   const editorProps = {
     epiteleteHtml,
-    bookId: 'act',
+    bookId: bookId,
     onSave,
     onReferenceSelected,
     reference: {
-      bookId: 'act',
+      bookId: bookId,
       chapter: 1,
       verse: 4,
     },
@@ -221,9 +235,16 @@ function Component () {
 
   return (
     <>
-    <div key="1" style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
-      { ready ? <Editor key="1" {...editorProps} /> : 'Loading...' }
-    </div>
+      <Button 
+        variant='outlined' 
+        startIcon={<PreviewIcon/>}
+        onClick={() => handleClick(epiteleteHtml,bookId)}
+      >
+        Toggle view
+      </Button>
+      {!isOpen ? <div/> : (<div key="1" style={{ fontFamily: displayFont, fontSize: displayFontSize, lineHeight: displayLineHeight }}>
+        { ready ? <Editor key="1" {...editorProps} /> : 'Loading...' }
+      </div>)}
     </>
   )
 }  
