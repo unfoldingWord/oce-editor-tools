@@ -121,7 +121,7 @@ export default function PrintDrawer({
     !openNewWindow && newPage.document.write(`<div id="paras" style="font-family: ${printFont}; font-size: ${printFontSize}; line-height: ${printLineHeight};">${renderedData}</div>`);
     newPage.document.head.innerHTML = '<title>PDF Preview</title>'
     const script = document.createElement('script')
-    script.src = (pagedJsSource.substring(0,4) === "http", pagedJsSource, process.env.PUBLIC_URL + pagedJsSource)
+    script.src = pagedJsSource;
     newPage.document.head.appendChild(script)
     const style = document.createElement('style')
     style.innerHTML = pageCss
