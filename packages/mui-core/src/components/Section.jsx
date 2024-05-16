@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Accordion } from '@mui/material';
 
-export default function Section({ children, show, dir, ...props }) {
+export default function Section(sectionProps) {
+  const { children, show, dir, ...props } = sectionProps;
 
   return (
     <Accordion

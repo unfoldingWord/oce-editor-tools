@@ -1,16 +1,18 @@
 import React from 'react';
 import { AccordionSummary, Typography } from '@mui/material';
 
-export default function SectionHeading({
-  type,
-  chapterNumber: chNum,
-  content,
-  show,
-  index,
-  verbose,
-  sx,
-  ...props
-}) {
+export default function SectionHeading(sectionHeadingProps) {
+  const {
+    type,
+    chapterNumber: chNum,
+    content,
+    show,
+    index,
+    verbose,
+    sx,
+    ...props
+  } = sectionHeadingProps;
+  
   return (
     <AccordionSummary
       className="sectionHeading"

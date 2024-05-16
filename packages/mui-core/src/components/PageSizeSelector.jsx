@@ -2,13 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormGroup, FormLabel, MenuItem, Select } from '@mui/material'
 
-export default function PageSizeSelector({
-  formLabelTitle,
-  listItemsP,
-  listItemsL,
-  pageOrientation,
-  setFormatData,
-}) {
+export default function PageSizeSelector(pageSizeSelectorProps) {
+  const {
+    formLabelTitle,
+    listItemsP,
+    listItemsL,
+    pageOrientation,
+    setFormatData,
+  } = pageSizeSelectorProps;
+  
   const setFormatValue = (field, value) => {
     if (field) setFormatData((prev) => ({ ...prev, [field]: value})) 
   }

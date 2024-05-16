@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { useDeepCompareMemo } from 'use-deep-compare';
 import { AccordionDetails } from '@mui/material';
 
-export default function SectionBody({ children, show, ...props }) {
+export default function SectionBody(sectionBodyProps) {
+  const { children, show, ...props } = sectionBodyProps;
 
   const component = useDeepCompareMemo(() => {
     let _component = <></>;
