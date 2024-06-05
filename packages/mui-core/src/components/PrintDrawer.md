@@ -19,17 +19,16 @@ import { useDetectDir } from 'font-detect-rhl'
 const usfmText = UsfmEN.usfmText
   // could also use UsfmEn1Pe.usfmText for a multi-chapter example
   //   or UsfmHbo.usfmText for a right to left example
-  //   or UsfmArLk.usfmText with Firefox and Awami Nastaliq font for a RLT graphite-enabled example (needs openNewWindow = false;)
-
-const useDetectDirProps = { text: usfmText, ratioThreshold: 0.2 };
-  // The ratioThreshhold of RTL:LTR characters has been lowered from the default of 0.3 for the UsfmHbo example in the comment above. Included alignment data alters the threshhold ratio needed to trigger as RTL.
-
-const textDir = useDetectDir( useDetectDirProps );
-  // To hardcode the text direction, change useDetectDir( useDetectDirProps ); above to 'ltr'; or 'rtl'; as applicable.
-
-const renderStyles = (textDir === 'ltr' ? renderStylesLtr : renderStylesRtl);
+  //   or UsfmArLk.usfmText with Awami Nastaliq font and Firefox(FF) for a RLT graphite-enabled example (also needs openNewWindow = false; for at least some versions of FF prior to v125)
 
 function Component () {
+  const useDetectDirProps = { text: usfmText, ratioThreshold: 0.5, isMarkup: true };
+
+  const textDir = useDetectDir( useDetectDirProps );
+    // To hardcode the text direction, change useDetectDir( useDetectDirProps ); above to 'ltr'; or 'rtl'; as applicable.
+
+  const renderStyles = (textDir === 'ltr' ? renderStylesLtr : renderStylesRtl);
+
   const [isOpen,setIsOpen] = useState(false)
 
   const handleClick = () => setIsOpen(!isOpen)

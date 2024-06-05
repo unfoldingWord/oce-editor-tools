@@ -30,14 +30,16 @@ import { usfm2perf } from "../helpers/usfm2perf";
 
 import './HtmlPerfEditor.css';
 
-function MyEditor({
-  bookId,
-  reference,
-  onReferenceSelected,
-  docSetId,
-  usfmText,
-  ...props
-}) {
+function MyEditor(myEditorProps) {
+  const {
+    bookId,
+    reference,
+    onReferenceSelected,
+    docSetId,
+    usfmText,
+    ...props
+  } = myEditorProps;
+  
   const verbose = true;
   const [ready, setReady] = useState(false);
   const epiteleteHtml = useMemo(

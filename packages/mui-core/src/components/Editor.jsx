@@ -17,20 +17,22 @@ import SectionBody from './SectionBody';
 import SectionHeading from './SectionHeading';
 import PrintDrawer from "./PrintDrawer"
 
-function Editor({
-  onSave,
-  epiteleteHtml,
-  sourceId,
-  bookId,
-  verbose,
-  onRenderToolbar,
-  reference,
-  onReferenceSelected,
-  scrollLock,
-  scrollDelay = 200,
-  children,
-  defaultOptions,
-}) {
+function Editor(editorProps) {
+  const {
+    onSave,
+    epiteleteHtml,
+    sourceId,
+    bookId,
+    verbose,
+    onRenderToolbar,
+    reference,
+    onReferenceSelected,
+    scrollLock,
+    scrollDelay = 200,
+    children,
+    defaultOptions,
+  } = editorProps;
+  
   const [printUsfmText, setPrintUsfmText] = useState()
   const [isOpenPrintDrawer,setIsOpenPrintDrawer] = useState(false)
 

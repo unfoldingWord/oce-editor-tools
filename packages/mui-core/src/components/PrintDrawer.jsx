@@ -31,18 +31,19 @@ const defaultIncludeNames = [
   'versesLabels',
 ]
 
-export default function PrintDrawer({
-  openPrintDrawer,
-  onClosePrintDrawer,
-  onRenderContent,
-  canChangeAtts,
-  canChangeColumns,
-  printFont,
-  printFontSize,
-  printLineHeight,
-  pagedJsSource,
-  openNewWindow,
-}) {
+export default function PrintDrawer(printDrawerProps) {
+  const {
+    openPrintDrawer,
+    onClosePrintDrawer,
+    onRenderContent,
+    canChangeAtts,
+    canChangeColumns,
+    printFont,
+    printFontSize,
+    printLineHeight,
+    pagedJsSource,
+    openNewWindow,
+  } = printDrawerProps;
 
   const allNames = [
     'wordAtts',

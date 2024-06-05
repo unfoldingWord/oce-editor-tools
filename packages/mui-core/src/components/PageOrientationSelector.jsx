@@ -8,10 +8,12 @@ import {
   Radio,
  } from '@mui/material'
 
-export default function PageOrientationSelector({
-  formLabelTitle,
-  setPageOrientation,
-}) {
+export default function PageOrientationSelector(pageOrientationSelectorProps) {
+  const {
+    formLabelTitle,
+    setPageOrientation,
+  } = pageOrientationSelectorProps;
+  
   return (
     <>
       <FormControl

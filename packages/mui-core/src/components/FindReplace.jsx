@@ -5,13 +5,14 @@ import { Collapse, Paper } from '@mui/material';
 import { useEditorContext } from "@oce-editor-tools/base";
 
 //TODO: create a headless version of find replace
-export function FindReplace({
-  onClickResult = () => null,
-  onReplace: _onReplace = () => null,
-  onSearch: _onSearch = () => null,
-  onChangeOptions: _onChangeOptions = () => null,
-  onChangeTarget: _onChangeTarget = () => null,
-}) {
+export function FindReplace(findReplaceComponents) {
+  const {
+    onClickResult = () => null,
+    onReplace: _onReplace = () => null,
+    onSearch: _onSearch = () => null,
+    onChangeOptions: _onChangeOptions = () => null,
+    onChangeTarget: _onChangeTarget = () => null,
+  } = findReplaceComponents;
   const {
     actions: {
       setHighlighterTarget,

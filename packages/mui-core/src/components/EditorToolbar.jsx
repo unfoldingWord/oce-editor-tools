@@ -28,7 +28,9 @@ const ToolbarButton = styled(ToggleButton)({
   },
 });
 
-export function BrokenAlignmentsPopper({ anchorEl, brokenAlignedWords }) {
+export function BrokenAlignmentsPopper(brokenAlignmentsPopperProps) {
+  const { anchorEl, brokenAlignedWords } = brokenAlignmentsPopperProps;
+  
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popper' : undefined;
   return <Popper id={id} open={open} anchorEl={anchorEl}>

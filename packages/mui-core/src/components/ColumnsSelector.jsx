@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { FormGroup, FormLabel, MenuItem, Select } from '@mui/material'
 
-export default function ColumnsSelector({
-  formLabelTitle,
-  listItems,
-  setFormatData,
-}) {
+export default function ColumnsSelector(columnSelectorProps) {
+  const {
+    formLabelTitle,
+    listItems,
+    setFormatData,
+  } = columnSelectorProps;
+  
   const setFormatValue = (field, value) => {
     if (field) setFormatData((prev) => ({ ...prev, [field]: value})) 
   }
