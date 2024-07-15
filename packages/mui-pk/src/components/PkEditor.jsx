@@ -6,7 +6,7 @@ import { LocalPkCacheContext } from '../context/LocalPkCacheContext'
 
 export default function PkEditor( props) {
   const {
-    repoIdStr, langIdStr, bookId
+    repoIdStr, langIdStr, bookId, verbose = false,
   } = props;
   const [epiteleteHtml, setEpiteleteHtml] = useState();
 
@@ -28,8 +28,9 @@ export default function PkEditor( props) {
   }, [epCache, repoIdStr, langIdStr]);
 
   const editorProps = {
-    ...props,
+    verbose,
     epiteleteHtml,
+    ...props,
   }
 
   return (epiteleteHtml ? <Editor { ...editorProps } /> : null)
@@ -63,6 +64,3 @@ PkEditor.propTypes = {
   })
 };
 
-PkEditor.defaultProps = {
-  verbose: false
-}

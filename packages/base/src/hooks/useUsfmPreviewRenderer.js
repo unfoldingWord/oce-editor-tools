@@ -1,14 +1,12 @@
-// eslint-disable-next-line no-unused-vars
-import React,
-{ useState, useEffect }
-from 'react'
+import { useState, useEffect } from 'react'
 import usePkBookPreviewRenderer from "./usePkBookPreviewRenderer"
 import { Proskomma } from 'proskomma-core'
 
 export default function useUsfmPreviewRenderer(props) {
   const {
     usfmText,
-    verbose, 
+    verbose,
+    bcvFilter,
     extInfo, 
     renderFlags,
     htmlRender,
@@ -58,10 +56,10 @@ export default function useUsfmPreviewRenderer(props) {
           console.log(e)
         }
       } else {
-        setRenderedData(doRender({renderFlags, extInfo, verbose, htmlRender}))
+        setRenderedData(doRender({renderFlags, bcvFilter, extInfo, verbose, htmlRender}))
       }
     }
-  },[pk, imported, doRender, extInfo, renderFlags, verbose, ready, htmlRender])
+  },[pk, imported, doRender, extInfo, renderFlags, verbose, ready, htmlRender, bcvFilter])
 
   const resetPreviewData = () => {
     setPk(new Proskomma())

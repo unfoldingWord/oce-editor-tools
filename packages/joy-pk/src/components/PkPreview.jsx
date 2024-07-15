@@ -9,7 +9,7 @@ import {
 
 export default function PkPreview(props) {
   const {
-    repoIdStr, langIdStr, bookId, verbose, extInfo, renderFlags,
+    repoIdStr, langIdStr, bookId, verbose = false, extInfo, renderFlags,
   } = props;
 
   const [docIdFromCache, setDocIdFromCache] = useState(undefined)
@@ -74,6 +74,3 @@ PkPreview.propTypes = {
   verbose: PropTypes.bool,
 };
 
-PkPreview.defaultProps = {
-  verbose: false,
-};

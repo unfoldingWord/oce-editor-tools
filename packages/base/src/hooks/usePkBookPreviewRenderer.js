@@ -28,7 +28,7 @@ export default function usePkBookPreviewRenderer(props) {
     pk, 
     docId, 
     bookId,
-    renderStyles,
+    renderStyles = null,
   } = props
 
   const [ready,setReady] = useState(false)
@@ -43,6 +43,7 @@ export default function usePkBookPreviewRenderer(props) {
     renderFlags,
     htmlRender,
     verbose,
+    bcvFilter,
     extInfo,
   }) => {
     const output = {}
@@ -65,7 +66,9 @@ export default function usePkBookPreviewRenderer(props) {
         ...defaultFlags,
         ...renderFlags,
         bookId,
+        bcvFilter,
         extInfo,
+        filterBcv: getBcvVerifyStruct(bcvFilter),
         verifyBcv: getBcvVerifyStruct(extInfo),
         doVerify: isVerifiedWithBcvStruct,
         renderers,
@@ -99,10 +102,6 @@ export default function usePkBookPreviewRenderer(props) {
   /** Whether to render in html - default is to render React  *
   htmlRender: PropTypes.bool,
 */
-
-usePkBookPreviewRenderer.defaultProps = {
-  renderStyles: null,
-}
 
 usePkBookPreviewRenderer.propTypes = {
   /** Instance of Proskomma class */

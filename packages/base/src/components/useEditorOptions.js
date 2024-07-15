@@ -11,6 +11,7 @@ export function useEditorOptions(defaultOptions) {
       editable: true,
       preview: true,
       locked: false,
+      stripAlignment: false,
       ...defaultOptions,
     }),
     [defaultOptions]

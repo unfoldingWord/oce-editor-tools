@@ -22,7 +22,7 @@ export default function PkPrintDrawer({
   repoIdStr, 
   langIdStr, 
   bookId, 
-  verbose, 
+  verbose = false, 
   extInfo, 
   renderFlags: _renderFlags,
 }) {
@@ -118,8 +118,4 @@ PkPrintDrawer.propTypes = {
   extInfo: PropTypes.any,
   /** Whether to show extra info in the js console */
   verbose: PropTypes.bool,
-};
-
-PkPrintDrawer.defaultProps = {
-  verbose: false,
 };

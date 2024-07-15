@@ -36,15 +36,15 @@ export default function PrintDrawer(printDrawerProps) {
     openPrintDrawer,
     onClosePrintDrawer,
     onRenderContent,
-    canChangeAtts,
-    canChangeColumns,
+    canChangeAtts = false,
+    canChangeColumns = false,
     printFont,
     printFontSize,
     printLineHeight,
-    pagedJsSource,
-    openNewWindow,
+    pagedJsSource = `https://unpkg.com/pagedjs/dist/paged.polyfill.js`,
+    openNewWindow = true,
   } = printDrawerProps;
-
+  
   const allNames = [
     'wordAtts',
     'titles',
@@ -236,11 +236,4 @@ PrintDrawer.propTypes = {
   pagedJsSource: PropTypes.string,
   /** Preview in new window */
   openNewWindow: PropTypes.bool,
-}
-
-PrintDrawer.defaultProps = {
-  canChangeAtts: false,
-  canChangeColumns: false,
-  pagedJsSource: `https://unpkg.com/pagedjs/dist/paged.polyfill.js`,
-  openNewWindow: true
 }

@@ -4,14 +4,19 @@ import PkEditor from "./PkEditor";
 import usePkBookImport from "../hooks/usePkBookImport";
 
 export default function PkUsfmEditor( props) {
-  const { repoIdStr, langIdStr, bookId, usfmText } = props;
+  const { repoIdStr, langIdStr, bookId, usfmText, verbose = false } = props;
 
   const { loading, done } = usePkBookImport( repoIdStr, langIdStr, bookId, usfmText )
+
+  const editorProps = {
+    verbose,
+    ...props
+  }
 
   return (
     <div>
       {loading && (<div>Loading...</div>)}
-      {done && <PkEditor { ...props } />}
+      {done && <PkEditor { ...editorProps } />}
     </div>
   )
 };
@@ -33,6 +38,3 @@ PkUsfmEditor.propTypes = {
   verbose: PropTypes.bool,
 };
 
-PkUsfmEditor.defaultProps = {
-  verbose: false
-}

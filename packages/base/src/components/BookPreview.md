@@ -1,9 +1,8 @@
 # BookPreview demo
 
-The demo demonstrates the BookPreview component.
-
 ```js
-import { usfmText } from '../data/tit.en.ult.usfm.js';
+import { usfmText } from '../data/John.usfm.js'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 
 function Component () {
   const renderFlags = {
@@ -12,9 +11,89 @@ function Component () {
     showVersesLabels: true,
   };
 
+  const onRenderItem = (props) => {
+    const {verseId, extInfo} = props
+    const {messageStr,color} = extInfo
+    return (
+      <span
+        key={"update-from-master"+verseId}
+        variant="contained"
+        value="update-from-master"
+        color={color}
+        title={messageStr}
+        aria-label={verseId}
+        style={{ cursor: 'pointer' }}
+      ><ErrorOutlineIcon/> Conflict! </span>
+    )
+  }
+
+  const bcvFilter = {
+    book: { 
+      jhn: {
+        ch: { 
+          1: { 
+            v: { 1: {}, 2: {}, 3: {}, 6: {}, 7: {}, 8: {}, 9: {}, 10: {}, 20: {}, 21: {} } 
+          },
+          2: {} 
+        } 
+      } 
+    } 
+  }
+
+  const extInfo = {
+    book: {
+      jhn: {
+        ch: {
+          1: { 
+              v: {
+                7: { 
+                  color: 'success',
+                  onRenderItem,
+                  messageStr: `Existing changes:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.
+Your edited text: 
+Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla porttitor `
+                },
+                8: { 
+                  color: 'danger',
+                  onRenderItem,
+                  messageStr: `Existing changes:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.
+Your edited text: 
+Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla porttitor `
+                },
+                10: { 
+                  color: 'primary',
+                  onRenderItem,
+                  messageStr: `Existing changes:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.
+Your edited text: 
+Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla porttitor `
+                },
+              } 
+          },
+          2: { 
+              v: {
+                1: { 
+                  color: 'danger',
+                  onRenderItem,
+                  messageStr: `Existing changes:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum consequat ex a varius. Fusce varius ac nisl.
+Your edited text: 
+Vivamus ante ligula, tempor vel suscipit nec, elementum vel lectus. Nulla porttitor `
+                },
+              } 
+          },
+        },
+      },
+    },
+  }
+
   const previewProps = {
     usfmText,
     renderFlags,
+    bcvFilter,
+    extInfo,
     verbose: true,
   }
   

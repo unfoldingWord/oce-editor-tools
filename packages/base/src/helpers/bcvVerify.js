@@ -26,7 +26,9 @@
 export const getBcvVerifyStruct = (bcvFilter) => {
   const retObj = {
     bookIds: new Set(),
+    bookIdsInUse: new Set(),
     chIds: new Set(),
+    chIdsInUse: new Set(),
     vIds: new Set()
   }
   if (bcvFilter) {
@@ -39,10 +41,13 @@ export const getBcvVerifyStruct = (bcvFilter) => {
           if (vList?.length>0) {
             vList.forEach(([verse]) => {
               retObj.vIds.add(`${bookId}.${chapter}.${verse}`)
+              retObj.chIdsInUse.add(`${bookId}.${chapter}`)
+              retObj.bookIdsInUse.add(`${bookId}`)
             })
           } else {
             retObj.chIds.add(`${bookId}.${chapter}`)
-          }
+            retObj.bookIdsInUse.add(`${bookId}`)
+        }
         })  
       } else {
         retObj.bookIds.add(`${bookId}`)
@@ -56,16 +61,24 @@ export const getBcvVerifyStruct = (bcvFilter) => {
   Simple verification to check if any verse is included in the verify bcv structure
   (See function getBcvVerifyStruct for converting a hierarchical bcv tree structure 
     to a verify structure, such as is used here)
+  checkLevel is used to determine how deep to verify (default = 3, i.e. verse level).
+  Check level 3 = verse, 2 = chapter and 1 = Bible book
 */
-export const isVerifiedWithBcvStruct = (bcvIdStr, bcvVerifyStruct) => {
+export const isVerifiedWithBcvStruct = (bcvIdStr, bcvVerifyStruct, checkLevel = 3) => {
   const bcvIdParts = bcvIdStr?.split(".")
   let isVerified = false
   if (bcvIdParts?.length > 0) {
     isVerified = bcvVerifyStruct?.bookIds.has(bcvIdParts[0])
-    if ((!isVerified) && (bcvIdParts.length > 1)){
+    if ((!isVerified) && (checkLevel > 1) && (bcvIdParts.length > 1)){
       isVerified = bcvVerifyStruct?.chIds.has(`${bcvIdParts[0]}.${bcvIdParts[1]}`)
+      if ((!isVerified) && (checkLevel===2)) {
+        isVerified = bcvVerifyStruct?.chIdsInUse.has(`${bcvIdParts[0]}.${bcvIdParts[1]}`)
+      }
       if ((!isVerified) && (bcvIdParts.length > 2)){
         isVerified = bcvVerifyStruct?.vIds.has(`${bcvIdParts[0]}.${bcvIdParts[1]}.${bcvIdParts[2]}`)
+        if ((!isVerified) && (checkLevel===1)) {
+          isVerified = bcvVerifyStruct?.bookIdsInUse.has(`${bcvIdParts[0]}`)
+        }
       }  
     }
   }

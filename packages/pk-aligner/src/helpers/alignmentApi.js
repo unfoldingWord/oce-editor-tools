@@ -155,7 +155,7 @@ export class Aligner {
     }
   }
 
-  removeAlignment(sourceIndex, targetIndex) {
+  stripAlignment(sourceIndex, targetIndex) {
     let sWord = this.currentSourceSentence[sourceIndex];
     let tWord = this.currentSourceSentence[targetIndex];
 

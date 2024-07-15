@@ -1,12 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ButtonHeadless from './ButtonHeadless';
 import { useEditorContext } from '../../context/EditorCacheProvider';
+import { readOptions } from '../../constants';
 
 export default function ButtonSave({ component, children, ...props }) {
   const {
-    state: { htmlPerf, epiteleteHtml, bookCode },
+    state,
     actions: { onSave }
   } = useEditorContext();
+  const { htmlPerf, epiteleteHtml, bookCode, options } = state;
+
   const [canSave, setCanSave] = useState(false);
   useEffect(
     () => {
@@ -18,12 +21,12 @@ export default function ButtonSave({ component, children, ...props }) {
   );
   const save = useCallback(
     async (e) => {
-      const usfmText = await epiteleteHtml.readUsfm(bookCode);
+      const usfmText = await epiteleteHtml.readUsfm(bookCode, options?.stripAlignment ? readOptions : undefined );
       epiteleteHtml.savePerf(bookCode);
       setCanSave(false);
       onSave && onSave(bookCode, usfmText);
     },
-    [epiteleteHtml, bookCode, onSave]
+    [epiteleteHtml, bookCode, onSave, options.stripAlignment]
   );
   return (
     <ButtonHeadless
