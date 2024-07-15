@@ -15,7 +15,7 @@ function Editor({
   epiteleteHtml,
   sourceId,
   bookId,
-  verbose,
+  verbose = false,
   onRenderToolbar,
   reference,
   onReferenceSelected,
@@ -23,8 +23,9 @@ function Editor({
   scrollDelay = 200,
   children,
   defaultOptions,
+  ...props
 }) {
-  const props = {
+  const editorProps = {
     sourceId,
     onSave,
     epiteleteHtml,
@@ -36,6 +37,7 @@ function Editor({
     scrollDelay,
     children,
     defaultOptions,
+    ...props
   };
   const components = {
     section: Section,
@@ -44,7 +46,7 @@ function Editor({
     editorGraft: GraftPopup,
   };
   return (
-    <EditorCacheProvider{...props}>
+    <EditorCacheProvider{...editorProps}>
       <EditorToolbar showToggles={false} onRenderToolbar={onRenderToolbar} />
       <EditorMain components={components} />
     </EditorCacheProvider>
@@ -79,6 +81,7 @@ function Editor({
       editable: PropTypes.bool,
       preview: PropTypes.bool,
       locked: PropTypes.bool,
+      stripAlignment: PropTypes.bool,
     }),
     /** Method to call when save button is pressed */
     onSave: PropTypes.func,
@@ -87,9 +90,5 @@ function Editor({
     /** Callback triggered when a verse is clicked on */
     onReferenceSelected: PropTypes.func,
   };
-
-Editor.defaultProps = {
-  verbose: false
-}
 
 export default Editor;

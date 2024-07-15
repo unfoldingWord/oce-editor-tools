@@ -6,7 +6,7 @@ import { Editor } from "@oce-editor-tools/mui-core"
 
 export default function UsfmEditor( props ) {
   const {
-    usfmText, onSave, verbose,
+    usfmText, onSave, verbose = false,
     htmlMap, reference, 
     onRenderToolbar, onReferenceSelected 
   } = props;
@@ -72,7 +72,3 @@ UsfmEditor.propTypes = {
   /** Callback triggered when a verse is clicked on */
   onReferenceSelected: PropTypes.func,
 };
-
-UsfmEditor.defaultProps = {
-  verbose: false
-}

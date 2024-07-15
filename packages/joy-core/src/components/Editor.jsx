@@ -22,7 +22,7 @@ function Editor({
   epiteleteHtml,
   sourceId,
   bookId,
-  verbose,
+  verbose = false,
   onRenderToolbar,
   reference,
   onReferenceSelected,
@@ -132,6 +132,7 @@ function Editor({
       editable: PropTypes.bool,
       preview: PropTypes.bool,
       locked: PropTypes.bool,
+      stripAlignment: PropTypes.bool,
     }),
     /** Method to call when save button is pressed */
     onSave: PropTypes.func,
@@ -140,10 +141,6 @@ function Editor({
     /** Callback triggered when a verse is clicked on */
     onReferenceSelected: PropTypes.func,
   };
-
-Editor.defaultProps = {
-  verbose: false
-}
 
 const EditorContainer = styled(Box)`
   background-color: white;

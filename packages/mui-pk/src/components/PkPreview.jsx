@@ -9,9 +9,15 @@ import {
 
 export default function PkPreview(props) {
   const {
-    repoIdStr, langIdStr, bookId, verbose, extInfo, renderFlags, pkFont,
+    repoIdStr, 
+    langIdStr, 
+    bookId, 
+    verbose = false, 
+    extInfo, 
+    renderFlags, 
+    pkFont = 'Arial',
   } = props;
-
+  
   const [docIdFromCache, setDocIdFromCache] = useState(undefined)
   const [renderedData,setRenderedData] = useState()
   const [done,setDone] = useState(false)
@@ -74,9 +80,4 @@ PkPreview.propTypes = {
   verbose: PropTypes.bool,
   /** PK Display font */
   pkFont: PropTypes.string,
-};
-
-PkPreview.defaultProps = {
-  verbose: false,
-  pkFont: 'Arial',
 };

@@ -53,7 +53,7 @@ function getIcon(type) {
 export function NavButtons({
   id,
   type,
-  style,
+  style = {},
   title,
   onClick,
 }) {
@@ -65,10 +65,6 @@ export function NavButtons({
       </Button>
   )
 }
-
-NavButtons.defaultProps = {
-  style: {}
-};
 
 NavButtons.propTypes = {
   type: PropTypes.number.isRequired,

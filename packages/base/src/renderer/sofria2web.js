@@ -20,11 +20,13 @@ const sofria2WebActions = {
         ws.settings = { ...defaultSettings, ...config };
         ws.webParas = [];
         ws.doVerify = config.doVerify;
+        ws.filterBcv = config.filterBcv;
         ws.verifyBcv = config.verifyBcv;
         ws.extInfo = config.extInfo;
         ws.bookId = _bookId?.charAt(0).toUpperCase() + _bookId?.slice(1).toLowerCase()
         ws.chNum = 1
         ws.curBcvId = ''
+        ws.suppressBcv = !!config.bcvFilter;
         output.sofria = {};
         output.sofria.sequence = {};
         ws.currentSequence = output.sofria.sequence;
@@ -84,6 +86,9 @@ const sofria2WebActions = {
             const cachedSequencePointer = env.workspace.currentSequence;
             env.workspace.currentSequence = graftRecord.sequence;
             const cachedParaContentStack = env.workspace.paraContentStack;
+            if (currentBlock.subType === 'title') {
+              console.log(env)
+            }
             env.context.renderer.renderSequence(env);
             env.workspace.paraContentStack = cachedParaContentStack;
             env.workspace.currentSequence = cachedSequencePointer;
@@ -124,8 +129,8 @@ const sofria2WebActions = {
           const sequencePseudoParas = env.workspace.webParas;
           env.workspace.webParas = cachedWebParas;
           env.workspace.paraContentStack = cachedParaContentStack;
-          env.workspace.paraContentStack[0].content.push(
-            sequencePseudoParas
+          if (!env.workspace.suppressBcv) env.workspace.paraContentStack[0].content.push(
+              sequencePseudoParas
           );
           env.workspace.currentSequence = cachedSequencePointer;
         }
@@ -218,8 +223,8 @@ const sofria2WebActions = {
       test: ({ context }) => context.sequences[0].element.subType === 'usfm:w',
       action: ({ config, workspace: ws }) => {
         const popped = ws.paraContentStack.shift();
-        ws.paraContentStack[0].content.push(
-          config.renderers.wWrapper(
+        if (!ws.suppressBcv) ws.paraContentStack[0].content.push(
+            config.renderers.wWrapper(
             ws.settings.showWordAtts ? popped.atts : {},
             popped.content
           )
@@ -234,7 +239,7 @@ const sofria2WebActions = {
         ws.settings.showCharacterMarkup,
       action: ({ config, workspace: ws }) => {
         const popped = ws.paraContentStack.shift();
-        ws.paraContentStack[0].content.push(
+        if (!ws.suppressBcv) ws.paraContentStack[0].content.push(
           config.renderers.wrapper(popped.subType, popped.content)
         );
       },
@@ -268,7 +273,7 @@ const sofria2WebActions = {
         context.sequences[0].element.subType === 'usfm:zaln',
       action: ({ config, workspace: ws }) => {
         const popped = ws.paraContentStack.shift();
-        ws.paraContentStack[0].content.push(
+        if (!ws.suppressBcv) ws.paraContentStack[0].content.push(
           config.renderers.wWrapper(
             ws.settings.showWordAtts ? popped.atts : {},
             popped.content
@@ -285,7 +290,7 @@ const sofria2WebActions = {
       action: ({ config, context, workspace: ws }) => {
         const element = context.sequences[0].element;
         const renderedText = config.renderers.text(element.text);
-        ws.paraContentStack[0].content.push(renderedText);
+        if (!ws.suppressBcv) ws.paraContentStack[0].content.push(renderedText); // suppress filtered BCV
       },
     },
   ],
@@ -298,19 +303,27 @@ const sofria2WebActions = {
         if (element.subType === 'chapter_label') {
           ws.chNum = element.atts.number
           ws.curBcvId = `${ws.bookId}.${ws.chNum}.1`
-          if (ws.settings.showChapterLabels) {
+          // Do a limited check at chapter level = 2
+          const filteredOkChapterLabel = ((!config.bcvFilter) || ((ws?.doVerify) && ws.doVerify(ws?.curBcvId,ws.filterBcv,2)))
+          if ((ws.settings.showChapterLabels) && (filteredOkChapterLabel)) {
             ws.paraContentStack[0].content.push(
               config.renderers.chapter_label(element.atts.number)
             );
           }
         } else if (element.subType === 'verses_label') {
           ws.curBcvId = `${ws.bookId}.${ws.chNum}.${element.atts.number}`
-          if (ws.settings.showVersesLabels) {
+          // Do a check at verse level = 3
+          const suppressVerse = ((config.bcvFilter) && !ws.doVerify(ws?.curBcvId,ws.filterBcv,3))
+          const filteredOkVerseLabel = ((!config.bcvFilter) || !suppressVerse)
+          if ((ws.settings.showVersesLabels) && (filteredOkVerseLabel)) {
             ws.paraContentStack[0].content.push(
               config.renderers.verses_label(element.atts.number)
             );
           }
-          if (ws?.doVerify && ws.doVerify(ws?.curBcvId,ws.verifyBcv)) {
+          if (config.bcvFilter) {
+            ws.suppressBcv = suppressVerse
+          }
+          if (ws?.doVerify && ws.doVerify(ws?.curBcvId,ws.verifyBcv) && (!ws.suppressBcv)) {
             const bId = ws.bookId.toLowerCase()
             const vNum = element.atts.number
             ws.paraContentStack[0].content.push(

@@ -32,10 +32,10 @@ export default function PrintDrawer({
   openPrintDrawer,
   onClosePrintDrawer,
   onRenderContent,
-  canChangeAtts,
-  canChangeColumns,
+  canChangeAtts = false,
+  canChangeColumns = false,
 }) {
-
+  
   const allNames = [
     'wordAtts',
     'titles',
@@ -205,9 +205,4 @@ PrintDrawer.propTypes = {
   onRenderContent: PropTypes.func,
   canChangeAtts: PropTypes.bool,
   canChangeColumns: PropTypes.bool
-}
-
-PrintDrawer.defaultProps = {
-  canChangeAtts: false,
-  canChangeColumns: false
 }

@@ -136,7 +136,7 @@ export default function PkAligner(props) {
       let indexSrcSource = srcSourceToken[0]['index'];
       let indexSrcTarget = srcTargetToken[0]['index'];
       aligner.addAlignment(indexDestSource, indexDestTarget);
-      aligner.removeAlignment(indexSrcSource, indexSrcTarget);
+      aligner.stripAlignment(indexSrcSource, indexSrcTarget);
       // TODO
     }
   }

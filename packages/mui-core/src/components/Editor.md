@@ -356,7 +356,10 @@ function Component () {
   const editorProps = {
     epiteleteHtml: ep,
     bookId: 'TIT',
-    editable: true,
+    defaultOptions: {
+      editable: true,
+      stripAlignment: true,
+    },
     onSave,
     onRenderToolbar,
     verbose

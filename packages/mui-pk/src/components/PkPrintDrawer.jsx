@@ -22,7 +22,7 @@ export default function PkPrintDrawer({
   repoIdStr, 
   langIdStr, 
   bookId, 
-  verbose, 
+  verbose = false, 
   extInfo, 
   renderFlags: _renderFlags,
   printFont,
@@ -130,8 +130,4 @@ PkPrintDrawer.propTypes = {
   printFontSize: PropTypes.string,
   /** Print line height */
   printLineHeight: PropTypes.string,
-};
-
-PkPrintDrawer.defaultProps = {
-  verbose: false,
 };
