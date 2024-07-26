@@ -6,9 +6,16 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 
 function Component () {
   const renderFlags = {
-    showTitles: true,
+    showTitles: false,
     showChapterLabels: true,
     showVersesLabels: true,
+    showWordAtts: false,
+    showHeadings: false,
+    showIntroductions: false,
+    showFootnotes: false,
+    showXrefs: false,
+    showParaStyles: true,
+    showCharacterMarkup: true,
   };
 
   const onRenderItem = (props) => {

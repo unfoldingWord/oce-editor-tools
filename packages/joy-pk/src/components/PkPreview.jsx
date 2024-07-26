@@ -24,10 +24,7 @@ export default function PkPreview(props) {
   const { ready, doRender } = usePkBookPreviewRenderer({
     pk, 
     docId: docIdFromCache, 
-    bookId,
-    renderFlags,
-    extInfo, 
-    verbose
+    bookId
   })
 
   useEffect(() => {

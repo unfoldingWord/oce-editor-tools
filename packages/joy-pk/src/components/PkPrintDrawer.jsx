@@ -61,11 +61,7 @@ export default function PkPrintDrawer({
   const { ready, doRender } = usePkBookPreviewRenderer({
     pk, 
     docId: docIdFromCache, 
-    bookId,
-    renderFlags: makeIncludedFlags(allNames, includedNames),
-    extInfo, 
-    verbose,
-    htmlRender: true,
+    bookId
   })
 
   useEffect(() => {

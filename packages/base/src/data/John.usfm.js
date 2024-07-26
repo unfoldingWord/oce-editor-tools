@@ -1,995 +1,2057 @@
-/* eslint-disable */
-export const usfmText = String.raw`\id JHN - Elberfelder Übersetzung (Version 1.2 von bibelkommentare.de)
-\rem Elberfelder Übersetzung (Version 1.2 von bibelkommentare.de)
-\rem Sprachlich aufgearbeiteter Text der unrevidierten Elberfelder Übersetzung mit Fußnoten.
-\rem www.bibelkommentare.de
-\rem 2021-06-18
-\rem Copyright 2021 www.bibelkommentare.de
-\toc1 Johannes
-\toc2 Johannes
-\toc3 Joh.
-\mt Johannes
+export const usfmText = String.raw`\id JHN - Berean Study Bible
+\h John
+\toc2 John
+\toc1 John
+\mt1 John
 \c 1
-\p
-\v 1 Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott.
-\v 2 Dieses\f - \fr 1,2 \ft O. Er\f* war im Anfang bei Gott.
-\v 3 Alles wurde durch dasselbe\f - \fr 1,3 \ft O. ihn\f*, und ohne dasselbe\f - \fr 1,3 \ft O. ihn\f* wurde auch nicht eins, das geworden ist.
-\p
-\v 4 In ihm war Leben, und das Leben war das Licht der Menschen.
-\v 5 Und das Licht scheint in der Finsternis, und die Finsternis hat es nicht erfasst.
-\p
-\v 6 Da war ein Mensch, von Gott gesandt, sein Name Johannes.
-\v 7 Dieser kam zum Zeugnis, damit er zeugte von dem Licht, damit alle durch ihn glaubten.
-\v 8 Er war nicht das Licht, sondern damit er zeugte von dem Licht.
-\v 9 Das war das wahrhaftige Licht, das, in die Welt kommend, jeden Menschen erleuchtet\f - \fr 1,9 \ft d.h. jeden Menschen ins Licht stellt. And. üb.: das jeden in die Welt kommenden Menschen erleuchtet\f*.
-\v 10 Er war in der Welt, und die Welt wurde durch ihn, und die Welt kannte ihn nicht.
-\v 11 Er kam in das Seine, und die Seinen\f - \fr 1,11 \ft Eig. in das Eigene, und die Eigenen\f* nahmen ihn nicht an;
-\v 12 so viele ihn aber aufnahmen, denen gab er \add das\add* Recht, Kinder Gottes zu werden, denen, die an seinen Namen glauben,
-\v 13 die nicht aus Blut, noch aus dem Willen des Fleisches, noch aus dem Willen des Mannes, sondern aus Gott geboren sind.
-\p
-\v 14 Und das Wort wurde Fleisch und wohnte\f - \fr 1,14 \ft Eig. zeltete\f* unter uns (und wir haben seine Herrlichkeit angeschaut, eine Herrlichkeit als eines Eingeborenen vom Vater) voller Gnade und Wahrheit.
-\v 15 (Johannes zeugt von ihm und rief und sprach: Dieser war es, von dem ich sagte: Der nach mir Kommende ist mir vor\f - \fr 1,15 \ft W. vor geworden; so auch V. 30\f*, denn er war vor mir\f - \fr 1,15 \ft O. eher als ich\f*.)
-\v 16 Denn aus seiner Fülle haben \em wir\em* alle empfangen, und \add zwar\add* Gnade um Gnade.
-\v 17 Denn das Gesetz wurde durch Mose gegeben; die Gnade und die Wahrheit ist durch Jesus Christus geworden.
-\v 18 Niemand hat Gott jemals gesehen; der eingeborene Sohn, der im Schoß des Vaters ist, der hat \add ihn\add* kundgemacht.
-\p
-\v 19 Und dies ist das Zeugnis des Johannes, als die Juden aus Jerusalem Priester und Leviten sandten, damit sie ihn fragen sollten: Wer bist du?
-\v 20 Und er bekannte und leugnete nicht, und er bekannte: \em Ich\em* bin nicht der Christus.
-\v 21 Und sie fragten ihn: Was denn? Bist \em du\em* Elia? Und er sagt: Ich bin es nicht. Bist \em du\em* der Prophet? Und er antwortete: Nein.
-\v 22 Sie sprachen nun zu ihm: Wer bist du? Damit wir Antwort geben denen, die uns gesandt haben. Was sagst du von dir selbst?
-\v 23 Er sprach: Ich \add bin die\add* „Stimme eines Rufenden in der Wüste: Macht gerade den Weg \add des\add* Herrn\f - \fr 1,23 \ft S. die Anm. zu Matth. 1,20\f*“, wie Jesaja, der Prophet, gesagt hat.\f - \fr 1,23 \ft Jes. 40,3\f*
-\v 24 Und sie waren abgesandt von\f - \fr 1,24 \ft W. aus (aus der Mitte der)\f* den Pharisäern.
-\v 25 Und sie fragten ihn und sprachen zu ihm: Was taufst du denn, wenn du nicht der Christus bist noch Elia, noch der Prophet?
-\v 26 Johannes antwortete ihnen und sprach: \em Ich\em* taufe mit\f - \fr 1,26 \ft W. in\f* Wasser; mitten unter euch steht, den \em ihr\em* nicht kennt,
-\v 27 der nach mir Kommende, dessen \em ich\em* nicht würdig bin, \add ihm\add* den Riemen seiner Sandale zu lösen.
-\v 28 Dies geschah in Bethanien, jenseits des Jordan, wo Johannes taufte.
-\p
-\v 29 Des folgenden Tages sieht er Jesus zu sich kommen und spricht: Siehe, das Lamm Gottes, das die Sünde der Welt wegnimmt.
-\v 30 Dieser ist es, von dem \em ich\em* sagte: Nach mir kommt ein Mann, der mir vor ist, denn er war vor mir\f - \fr 1,30 \ft O. eher als ich\f*.
-\v 31 Und \em ich\em* kannte ihn nicht; aber damit er Israel offenbar werden möchte, deswegen bin ich gekommen, mit\f - \fr 1,31 \ft W. in\f* Wasser taufend.
-\v 32 Und Johannes zeugte und sprach: Ich schaute den Geist wie eine Taube aus dem Himmel herabfahren, und er blieb auf ihm.
-\v 33 Und \em ich\em* kannte ihn nicht; aber der mich gesandt hat, mit\f - \fr 1,33 \ft W. in\f* Wasser zu taufen, der sprach zu mir: Auf wen du sehen wirst den Geist herabfahren und auf ihm bleiben, dieser ist es, der mit\f - \fr 1,33 \ft W. in\f* Heiligem Geist tauft.
-\v 34 Und \em ich\em* habe gesehen und habe bezeugt, dass dieser der Sohn Gottes ist.
-\p
-\v 35 Des folgenden Tages stand wiederum Johannes und zwei von seinen Jüngern,
-\v 36 und hinblickend auf Jesus, der wandelte, spricht er: Siehe, das Lamm Gottes!
-\v 37 Und es hörten ihn die zwei Jünger reden und folgten Jesus nach.
-\v 38 Jesus aber wandte sich um und sah sie nachfolgen und spricht zu ihnen: \wj Was sucht ihr?\wj* \em Sie\em* aber sagten zu ihm: Rabbi, (was übersetzt heißt: Lehrer) wo hältst du dich auf?
-\v 39 Er spricht zu ihnen: \wj Kommt und seht!\wj*\f - \fr 1,39 \ft Nach and. Les.: und ihr werdet sehen\f* Sie kamen nun und sahen, wo er sich aufhielt, und blieben jenen Tag bei ihm. Es war um die zehnte Stunde.
-\v 40 Andreas, der Bruder des Simon Petrus, war einer von den zweien, die es von Johannes gehört hatten und ihm nachgefolgt waren.
-\v 41 Dieser findet zuerst seinen eigenen Bruder Simon und spricht zu ihm: Wir haben den Messias gefunden (was übersetzt ist: Christus\f - \fr 1,41 \ft O. Gesalbter\f*).
-\v 42 Und er führte ihn zu Jesus. Jesus blickte ihn an und sprach: \wj \+em Du\+em* bist Simon, der Sohn Jonas; du wirst Kephas heißen\wj* (was übersetzt wird: Stein\f - \fr 1,42 \ft Griech.: Petros (Petrus)\f*).
-\p
-\v 43 Des folgenden Tages wollte er aufbrechen nach Galiläa, und er findet Philippus; und Jesus spricht zu ihm: \wj Folge mir nach!\wj*
-\v 44 Philippus aber war von Bethsaida, aus der Stadt des Andreas und Petrus.
-\v 45 Philippus findet den Nathanael und spricht zu ihm: Wir haben den gefunden, von dem Mose in dem Gesetz geschrieben hat und die Propheten, Jesus, den Sohn des Joseph, den von Nazareth.
-\v 46 Und Nathanael sprach zu ihm: Kann aus Nazareth etwas Gutes kommen\f - \fr 1,46 \ft Eig. sein\f*? Philippus spricht zu ihm: Komm und sieh!
-\v 47 Jesus sah Nathanael zu sich kommen und spricht von ihm: \wj Siehe, wahrhaftig ein Israelit, in dem kein Trug ist.\wj*
-\v 48 Nathanael spricht zu ihm: Woher kennst du mich? Jesus antwortete und sprach zu ihm: \wj Ehe Philippus dich rief, als du unter dem Feigenbaum warst, sah ich dich.\wj*
-\v 49 Nathanael antwortete und sprach [zu ihm]: Rabbi, \em du\em* bist der Sohn Gottes, \em du\em* bist der König Israels.
-\v 50 Jesus antwortete und sprach zu ihm: \wj Weil ich dir sagte: Ich sah dich unter dem Feigenbaum, glaubst du? Du wirst Größeres als dieses sehen.\wj*
-\v 51 Und er spricht zu ihm: \wj Wahrlich, wahrlich, ich sage euch: [Von nun an] werdet ihr den Himmel geöffnet sehen und die Engel Gottes auf- und niedersteigen auf den Sohn des Menschen.\wj*
+\s1 The Beginning
+\r (Genesis 1:1–2; Hebrews 11:1–3)
+\m
+\v 1 In the beginning was the Word, and the Word was with God, and the Word was God.
+\v 2 He was with God in the beginning.
+\v 3 Through Him all things were made, and without Him nothing was made that has been made.
+\v 4 In Him was life, and that life was the light of men.
+\v 5 The Light shines in the darkness, and the darkness has not overcome \f + \fr 1:5 \ft Or comprehended\f* it.
+\s1 The Witness of John
+\b
+\m
+\v 6 There came a man who was sent from God. His name was John.
+\v 7 He came as a witness to testify about the Light, so that through him everyone might believe.
+\v 8 He himself was not the Light, but he came to testify about the Light.
+\b
+\m
+\v 9 The true Light who gives light to every man was coming into the world.
+\v 10 He was in the world, and though the world was made through Him, the world did not recognize Him.
+\v 11 He came to His own, and His own did not receive Him.
+\v 12 But to all who did receive Him, to those who believed in His name, He gave the right to become children of God—
+\v 13 children born not of blood, nor of the desire or will of man, but born of God.
+\s1 The Word Became Flesh
+\r (Psalms 84:1–12)
+\b
+\m
+\v 14 The Word became flesh and made His dwelling among us.\f + \fr 1:14 \ft Or and tabernacled among us\f* We have seen His glory, the glory of the one and only Son \f + \fr 1:14 \ft Or the Only Begotten or the Unique One\f* from the Father, full of grace and truth.
+\b
+\m
+\v 15 John testified concerning Him. He cried out, saying, “This is He of whom I said, ‘He who comes after me has surpassed me because He was before me.’”
+\b
+\m
+\v 16 From His fullness we have all received grace upon grace.
+\v 17 For the law was given through Moses; grace and truth came through Jesus Christ.
+\v 18 No one has ever seen God, but the one and only Son, who is Himself God and \f + \fr 1:18 \ft Or but the only begotten God, who; BYZ and TR but the only begotten Son, who\f* is at the Father’s side,\f + \fr 1:18 \ft Greek in the Father’s bosom\f* has made Him known.
+\s1 The Mission of John the Baptist
+\r (Isaiah 40:1–5; Matthew 3:1–12; Mark 1:1–8; Luke 3:1–20)
+\b
+\m
+\v 19 And this was John’s testimony when the Jews of Jerusalem sent priests and Levites to ask him, “Who are you?”
+\v 20 He did not refuse to confess, but openly declared, “I am not the Christ.”
+\b
+\m
+\v 21 “Then who are you?” they inquired. “Are you Elijah?”
+\b
+\m He said, “I am not.”
+\b
+\m “Are you the Prophet?”
+\b
+\m He answered, “No.”
+\b
+\m
+\v 22 So they said to him, “Who are you? We need an answer for those who sent us. What do you say about yourself?”
+\b
+\m
+\v 23 John replied in the words of Isaiah the prophet:
+\b
+\q1 “I am a voice of one calling in the wilderness,
+\q2 ‘Make straight the way for the Lord.’”\f + \fr 1:23 \ft Isaiah 40:3 (see also LXX)\f*
+\b
+\m
+\v 24 Then the Pharisees who had been sent
+\v 25 asked him, “Why then do you baptize, if you are not the Christ, nor Elijah, nor the Prophet?”
+\b
+\m
+\v 26 “I baptize with \f + \fr 1:26 \ft Or in; also in verse 31 and twice in 33\f* water,” John replied, “but among you stands One you do not know.
+\v 27 He is the One who comes after me, the straps of whose sandals I am not worthy to untie.”
+\b
+\m
+\v 28 All this happened at Bethany beyond the Jordan, where John was baptizing.
+\s1 Jesus the Lamb of God
+\r (Matthew 3:13–17; Mark 1:9–11; Luke 3:21–22)
+\b
+\m
+\v 29 The next day John saw Jesus coming toward him and said, “Look, the Lamb of God, who takes away the sin of the world!
+\v 30 This is He of whom I said, ‘A man who comes after me has surpassed me because He was before me.’
+\v 31 I myself did not know Him, but the reason I came baptizing with water was that He might be revealed to Israel.”
+\b
+\m
+\v 32 Then John testified, “I saw the Spirit descending from heaven like a dove and resting on Him.
+\v 33 I myself did not know Him, but the One who sent me to baptize with water told me, ‘The man on whom you see the Spirit descend and rest is He who will baptize with the Holy Spirit.’
+\v 34 I have seen and testified that this is the Son of God.\f + \fr 1:34 \ft SBL the Chosen One of God\f*”
+\s1 The First Disciples
+\r (Matthew 4:18–22; Mark 1:16–20; Luke 5:1–11)
+\b
+\m
+\v 35 The next day John was there again with two of his disciples.
+\v 36 When he saw Jesus walking by, he said, “Look, the Lamb of God!”
+\v 37 And when the two disciples heard him say this, they followed Jesus.
+\b
+\m
+\v 38 Jesus turned and saw them following. “What do you want?” He asked.
+\b
+\m They said to Him, “Rabbi” (which means Teacher), “where are You staying?”
+\b
+\m
+\v 39 “Come and see,” He replied. So they went and saw where He was staying, and spent that day with Him. It was about the tenth hour.\f + \fr 1:39 \ft That is, about four in the afternoon\f*
+\b
+\m
+\v 40 Andrew, Simon Peter’s brother, was one of the two who heard John’s testimony and followed Jesus.
+\v 41 He first found his brother Simon and told him, “We have found the Messiah” (which is translated as Christ).
+\b
+\m
+\v 42 Andrew brought him to Jesus, who looked at him and said, “You are Simon son of John. You will be called Cephas” (which is translated as Peter).
+\s1 Jesus Calls Philip and Nathanael
+\b
+\m
+\v 43 The next day Jesus decided to set out for Galilee. Finding Philip, He told him, “Follow Me.”
+\v 44 Now Philip was from Bethsaida, the same town as Andrew and Peter.
+\b
+\m
+\v 45 Philip found Nathanael and told him, “We have found the One Moses wrote about in the Law, the One the prophets foretold—Jesus of Nazareth, the son of Joseph.”
+\b
+\m
+\v 46 “Can anything good come from Nazareth?” Nathanael asked.
+\b
+\m “Come and see,” said Philip.
+\b
+\m
+\v 47 When Jesus saw Nathanael approaching, He said of him, “Here is a true Israelite, in whom there is no deceit.”
+\b
+\m
+\v 48 “How do You know me?” Nathanael asked.
+\b
+\m Jesus replied, “Before Philip called you, I saw you under the fig tree.”
+\b
+\m
+\v 49 “Rabbi,” Nathanael answered, “You are the Son of God! You are the King of Israel!”
+\b
+\m
+\v 50 Jesus said to him, “Do you believe just because I told you I saw you under the fig tree? You will see greater things than these.”
+\v 51 Then He declared, “Truly, truly, I tell you, you will all see heaven open and the angels of God ascending and descending on the Son of Man.”\f + \fr 1:51 \ft See Genesis 28:12.\f*
 \c 2
-\p
-\v 1 Und am dritten Tag war\f - \fr 2,1 \ft Eig. wurde\f* eine Hochzeit in Kana in Galiläa; und die Mutter Jesu war dort.
-\v 2 Es war aber auch Jesus mit seinen Jüngern zu der Hochzeit geladen.
-\v 3 Und als es an Wein gebrach, spricht die Mutter Jesu zu ihm: Sie haben keinen Wein.
-\v 4 Jesus spricht zu ihr: \wj Was habe ich mit \+em dir\+em* zu schaffen, Frau? Meine Stunde ist noch nicht gekommen.\wj*
-\v 5 Seine Mutter spricht zu den Dienern: Was irgend er euch sagen mag, tut!
-\v 6 Es waren aber dort sechs steinerne Wasserkrüge aufgestellt, nach der Reinigung\add ssitte\add* der Juden, wovon jeder zwei oder drei Maß\f - \fr 2,6 \ft Griech.: Metreten, ein Hohlmaß von etwa 39 Liter\f* fasste.
-\v 7 Jesus spricht zu ihnen: \wj Füllt die Wasserkrüge mit Wasser!\wj* Und sie füllten sie bis obenan.
-\v 8 Und er spricht zu ihnen: \wj Schöpft nun und bringt es dem Speisemeister!\wj* Und sie brachten es.
-\v 9 Als aber der Speisemeister das Wasser gekostet hatte, das Wein geworden war (und er wusste nicht, woher er war\f - \fr 2,9 \ft W. ist\f*, die Diener aber, die das Wasser geschöpft hatten, wussten es), ruft der Speisemeister den Bräutigam
-\v 10 und spricht zu ihm: Jeder Mensch setzt zuerst den guten Wein vor, und wenn sie betrunken geworden sind, dann den geringeren; du hast den guten Wein bis jetzt aufbewahrt.
-\v 11 Diesen Anfang der Zeichen machte Jesus in Kana in Galiläa und offenbarte seine Herrlichkeit; und seine Jünger glaubten an ihn.
-\p
-\v 12 Nach diesem ging er hinab nach Kapernaum, er und seine Mutter und seine Brüder und seine Jünger; und dort blieben sie nicht viele Tage.
-\p
-\v 13 Und das Passah der Juden war nahe, und Jesus ging hinauf nach Jerusalem.
-\v 14 Und er fand im Tempel\f - \fr 2,14 \ft die Gebäude; s. die Anm. zu Matth. 4,5\f* die Ochsen- und Schafe- und Taubenverkäufer, und die Wechsler dasitzen.
-\v 15 Und er machte eine Geißel aus Stricken und trieb sie alle zum Tempel\f - \fr 2,15 \ft die Gebäude; s. die Anm. zu Matth. 4,5\f* hinaus, sowohl die Schafe als auch die Ochsen\f - \fr 2,15 \ft O. auch die Schafe und die Ochsen\f*; und das Geld der Wechsler schüttete er aus, und die Tische warf er um;
-\v 16 und zu den Taubenverkäufern sprach er: \wj Nehmt dies weg von hier, macht nicht das Haus meines Vaters zu einem Kaufhaus!\wj*
-\v 17 Seine Jünger [aber] gedachten daran, dass geschrieben steht: „Der Eifer um dein Haus verzehrt mich“\f - \fr 2,17 \ft Ps. 69,10\f*.
-\v 18 Die Juden nun antworteten und sprachen zu ihm: Was für ein Zeichen zeigst du uns, dass du diese Dinge tust?
-\v 19 Jesus antwortete und sprach zu ihnen: \wj Brecht diesen Tempel\wj*\f - \fr 2,19 \ft das Heiligtum; s. die Anm. zu Matth. 4,5\f*\wj ab, und in drei Tagen werde ich ihn aufrichten.\wj*
-\v 20 Da sprachen die Juden: 46 Jahre ist an diesem Tempel\f - \fr 2,20 \ft das Heiligtum; s. die Anm. zu Matth. 4,5\f* gebaut worden, und du willst ihn in drei Tagen aufrichten?
-\v 21 Er aber sprach von dem Tempel\f - \fr 2,21 \ft das Heiligtum; s. die Anm. zu Matth. 4,5\f* seines Leibes.
-\v 22 Als er nun aus \add den\add* Toten auferweckt war, gedachten seine Jünger daran, dass er dies gesagt hatte, und sie glaubten der Schrift und dem Wort, das Jesus gesprochen hatte.
-\p
-\v 23 Als er aber in Jerusalem war, am Passah, auf dem Fest, glaubten viele an seinen Namen, als sie seine Zeichen sahen, die er tat.
-\v 24 Jesus selbst aber vertraute sich ihnen nicht an, weil er alle kannte
-\v 25 und nicht bedurfte, dass jemand Zeugnis gebe von dem Menschen; denn er selbst wusste, was in dem Menschen war.
+\s1 The Wedding at Cana
+\m
+\v 1 On the third day a wedding took place at Cana in Galilee. Jesus’ mother was there,
+\v 2 and Jesus and His disciples had also been invited to the wedding.
+\v 3 When the wine ran out, Jesus’ mother said to Him, “They have no more wine.”
+\b
+\m
+\v 4 “Woman, why does this concern us?” Jesus replied. “My hour has not yet come.”
+\b
+\m
+\v 5 His mother said to the servants, “Do whatever He tells you.”
+\b
+\m
+\v 6 Now six stone water jars had been set there for the Jewish rites of purification. Each could hold from twenty to thirty gallons.\f + \fr 2:6 \ft Greek two or three metretae; that is, approximately 20.8 to 31.2 gallons (78.8 to 118.1 liters)\f*
+\v 7 Jesus told the servants, “Fill the jars with water.”
+\b
+\m So they filled them to the brim.
+\b
+\m
+\v 8 “Now draw some out,” He said, “and take it to the master of the banquet.”
+\b
+\m They did so,
+\v 9 and the master of the banquet tasted the water that had been turned into wine. He did not know where it was from, but the servants who had drawn the water knew. Then he called the bridegroom aside
+\v 10 and said, “Everyone serves the fine wine first, and then the cheap wine after the guests are drunk. But you have saved the fine wine until now!”
+\b
+\m
+\v 11 Jesus performed this, the first of His signs, at Cana in Galilee. He thus revealed His glory, and His disciples believed in Him.
+\s1 Jesus Cleanses the Temple
+\r (Matthew 21:12–17; Mark 11:15–19; Luke 19:45–48)
+\b
+\m
+\v 12 After this, He went down to Capernaum with His mother and brothers and His disciples, and they stayed there a few days.
+\b
+\m
+\v 13 When the Jewish Passover was near, Jesus went up to Jerusalem.
+\v 14 In the temple courts \f + \fr 2:14 \ft Literally the temple; also in verse 15\f* He found men selling cattle, sheep, and doves, and money changers seated at their tables.
+\v 15 So He made a whip out of cords and drove all from the temple courts, both sheep and cattle. He poured out the coins of the money changers and overturned their tables.
+\v 16 To those selling doves He said, “Get these out of here! How dare you turn My Father’s house into a marketplace!”
+\b
+\m
+\v 17 His disciples remembered that it is written: “Zeal for Your house will consume Me.”\f + \fr 2:17 \ft Psalms 69:9\f*
+\b
+\m
+\v 18 On account of this, the Jews demanded, “What sign can You show us to prove Your authority to do these things?”
+\b
+\m
+\v 19 Jesus answered, “Destroy this temple, and in three days I will raise it up again.”
+\b
+\m
+\v 20 “This temple took forty-six years to build,” the Jews replied, “and You are going to raise it up in three days?”
+\b
+\m
+\v 21 But Jesus was speaking about the temple of His body.
+\v 22 After He was raised from the dead, His disciples remembered that He had said this. Then they believed the Scripture and the word that Jesus had spoken.
+\b
+\m
+\v 23 While He was in Jerusalem at the Passover Feast, many people saw the signs He was doing and believed in His name.
+\v 24 But Jesus did not entrust Himself to them, for He knew them all.
+\v 25 He did not need any testimony about man, for He knew what was in a man.
 \c 3
-\p
-\v 1 Es war aber ein Mensch aus den Pharisäern, sein Name Nikodemus, ein Oberster der Juden.
-\v 2 Dieser kam zu ihm bei Nacht und sprach zu ihm: Rabbi, wir wissen, dass du ein Lehrer bist, von Gott gekommen, denn niemand kann diese Zeichen tun, die \em du\em* tust, es sei denn Gott mit ihm.
-\v 3 Jesus antwortete und sprach zu ihm: \wj Wahrlich, wahrlich, ich sage dir: Es sei denn, dass jemand von neuem\wj*\f - \fr 3,3 \ft O. von oben her\f*\wj geboren werde, so kann er das Reich Gottes nicht sehen.\wj*
-\v 4 Nikodemus spricht zu ihm: Wie kann ein Mensch geboren werden, wenn er alt ist? Kann er etwa zum zweiten Mal in den Leib seiner Mutter eingehen und geboren werden?
-\v 5 Jesus antwortete: \wj Wahrlich, wahrlich, ich sage dir: Es sei denn dass jemand aus Wasser und Geist geboren werde, so kann er nicht in das Reich Gottes eingehen. \wj*
-\v 6 \wj Was aus dem Fleisch geboren ist, ist Fleisch, und was aus dem Geist geboren ist, ist Geist.\wj*
-\v 7 \wj Verwundere dich nicht, dass ich dir sagte: \+em Ihr\+em* müsst von neuem\wj*\f - \fr 3,7 \ft O. von oben her\f*\wj geboren werden.\wj*
-\v 8 \wj Der Wind weht, wo er will, und du hörst sein Sausen, aber du weißt nicht, woher er kommt und wohin er geht; so ist jeder, der aus dem Geist geboren ist.\wj*
-\v 9 Nikodemus antwortete und sprach zu ihm: Wie kann dies geschehen?
-\v 10 Jesus antwortete und sprach zu ihm: \wj \+em Du\+em* bist der Lehrer Israels und weißt dieses nicht? \wj*
-\v 11 \wj Wahrlich, wahrlich, ich sage dir: Wir reden, was wir wissen, und bezeugen, was wir gesehen haben, und unser Zeugnis nehmt ihr nicht an.\wj*
-\v 12 \wj Wenn ich euch das Irdische gesagt habe, und ihr glaubt nicht, wie werdet ihr glauben, wenn ich euch das Himmlische sage?\wj*
-\v 13 \wj Und niemand ist hinaufgestiegen in den Himmel als nur der aus dem Himmel herabgestiegen ist, der Sohn des Menschen, der im Himmel ist. \wj*
-\v 14 \wj Und wie Mose in der Wüste die Schlange erhöhte, so muss der Sohn des Menschen erhöht werden,\wj*
-\v 15 \wj damit jeder, der an ihn glaubt, [nicht verloren gehe, sondern] ewiges Leben habe.\wj*
-\v 16 \wj Denn so hat Gott die Welt geliebt, dass er seinen eingeborenen Sohn gab, damit jeder, der an ihn glaubt, nicht verloren gehe, sondern ewiges Leben habe.\wj*
-\v 17 \wj Denn Gott hat seinen Sohn nicht in die Welt gesandt, damit er die Welt richte, sondern damit die Welt durch ihn errettet werde.\wj*
-\v 18 \wj Wer an ihn glaubt, wird nicht gerichtet; wer aber nicht glaubt, ist schon gerichtet, weil er nicht geglaubt hat an den Namen des eingeborenen Sohnes Gottes.\wj*
-\v 19 \wj Dies aber ist das Gericht, dass das Licht in die Welt gekommen ist, und die Menschen haben die Finsternis mehr geliebt als das Licht, denn ihre Werke waren böse.\wj*
-\v 20 \wj Denn jeder, der Arges tut, hasst das Licht und kommt nicht zu dem Licht, damit seine Werke nicht bloßgestellt\wj*\f - \fr 3,20 \ft O. gestraft\f*\wj werden; \wj*
-\v 21 \wj wer aber die Wahrheit tut, kommt zu dem Licht, damit seine Werke offenbar werden, dass sie in Gott gewirkt sind.\wj*
-\p
-\v 22 Nach diesem kam Jesus mit seinen Jünger in das Land Judäa, und dort hielt er sich mit ihnen auf und taufte.
-\v 23 Aber auch Johannes taufte in Änon, nahe bei Salim, weil viel Wasser dort war; und sie kamen hin und wurden getauft.
-\v 24 Denn Johannes war noch nicht ins Gefängnis geworfen.
-\v 25 Es entstand nun eine Streitfrage unter den Jüngern \add des\add* Johannes mit einem Juden über die Reinigung.
-\v 26 Und sie kamen zu Johannes und sprachen zu ihm: Rabbi, der jenseits des Jordan bei dir war, dem du Zeugnis gegeben hast, siehe, der tauft, und alle kommen zu ihm.
-\v 27 Johannes antwortete und sprach: Ein Mensch kann nichts empfangen\f - \fr 3,27 \ft O. nehmen\f*, es sei ihm denn aus dem Himmel gegeben.
-\v 28 \em Ihr\em* selbst gebt mir Zeugnis, dass ich sagte: \em Ich\em* bin nicht der Christus, sondern dass ich vor ihm hergesandt bin.
-\v 29 Der die Braut hat, ist der Bräutigam; der Freund des Bräutigams aber, der dasteht und ihn hört, ist hoch erfreut über die Stimme des Bräutigams; diese meine Freude nun ist erfüllt.
-\v 30 Er muss wachsen, \em ich\em* aber abnehmen.
-\v 31 Der von oben kommt, ist über allen\f - \fr 3,31 \ft O. über allem\f*; der von der\f - \fr 3,31 \ft W. aus der, d.h. der dort seinen Ursprung hat\f* Erde ist, ist von der Erde und redet von der Erde\f - \fr 3,31 \ft d.h. wie einer, der von der Erde ist; od.: von der Erde aus\f*. Der vom\f - \fr 3,31 \ft W. aus dem\f* Himmel kommt, ist über allen\f - \fr 3,31 \ft O. über allem\f*,
-\v 32 [und] was er gesehen und gehört hat, dieses bezeugt er; und sein Zeugnis nimmt niemand an.
-\v 33 Wer sein Zeugnis angenommen hat\f - \fr 3,33 \ft O. annimmt\f*, hat besiegelt, dass Gott wahrhaftig ist.
-\v 34 Denn der, den Gott gesandt hat, redet die Worte Gottes; denn Gott gibt den Geist nicht nach Maß.
-\v 35 Der Vater liebt den Sohn und hat alles in seine Hand gegeben.
-\v 36 Wer an den Sohn glaubt, hat ewiges Leben; wer aber dem Sohn nicht glaubt\f - \fr 3,36 \ft O. sich nicht unterwirft, nicht gehorcht\f*, wird \add das\add* Leben nicht sehen, sondern der Zorn Gottes bleibt auf ihm.
+\s1 Jesus and Nicodemus
+\r (Genesis 22:1–10; Romans 5:6–11)
+\m
+\v 1 Now there was a man of the Pharisees named Nicodemus, a leader of the Jews.
+\v 2 He came to Jesus at night and said, “Rabbi, we know that You are a teacher who has come from God. For no one could perform the signs You are doing if God were not with him.”
+\b
+\m
+\v 3 Jesus replied, “Truly, truly, I tell you, no one can see the kingdom of God unless he is born again.\f + \fr 3:3 \ft Or born from above; also in verse 7.\f*”
+\b
+\m
+\v 4 “How can a man be born when he is old?” Nicodemus asked. “Can he enter his mother’s womb a second time to be born?”
+\b
+\m
+\v 5 Jesus answered, “Truly, truly, I tell you, no one can enter the kingdom of God unless he is born of water and the Spirit.
+\v 6 Flesh is born of flesh, but spirit is born of the Spirit.
+\v 7 Do not be amazed that I said, ‘You \f + \fr 3:7 \ft The Greek word for you is plural; also in verse 12.\f* must be born again.’
+\v 8 The wind blows where it wishes. You hear its sound, but you do not know where it comes from or where it is going. So it is with everyone born of the Spirit.”
+\b
+\m
+\v 9 “How can this be?” Nicodemus asked.
+\b
+\m
+\v 10 “You are Israel’s teacher,” said Jesus, “and you do not understand these things?
+\v 11 Truly, truly, I tell you, we speak of what we know, and we testify to what we have seen, and yet you people do not accept our testimony.
+\b
+\m
+\v 12 If I have told you about earthly things and you do not believe, how will you believe if I tell you about heavenly things?
+\v 13 No one has ascended into heaven except the One who descended from heaven—the Son of Man.\f + \fr 3:13 \ft BYZ and TR include who is in heaven.\f*
+\v 14 Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up,
+\v 15 that everyone who believes in Him may have eternal life.\f + \fr 3:15 \ft Or everyone who believes may have eternal life in Him.\f*
+\b
+\m
+\v 16 For God so loved the world that He gave His one and only \f + \fr 3:16 \ft Or only begotten or unique; also in verse 18\f* Son, that everyone who believes in Him shall not perish but have eternal life.
+\v 17 For God did not send His Son into the world to condemn the world, but to save the world through Him.
+\v 18 Whoever believes in Him is not condemned, but whoever does not believe has already been condemned, because he has not believed in the name of God’s one and only Son.
+\b
+\m
+\v 19 And this is the verdict: The Light has come into the world, but men loved the darkness rather than the Light because their deeds were evil.
+\v 20 Everyone who does evil hates the Light, and does not come into the Light for fear that his deeds will be exposed.
+\v 21 But whoever practices the truth comes into the Light, so that it may be seen clearly that what he has done has been accomplished in God.”\f + \fr 3:21 \ft Some translators close this quotation after verse 15.\f*
+\s1 John’s Testimony about Jesus
+\b
+\m
+\v 22 After this, Jesus and His disciples went into the Judean countryside, where He spent some time with them and baptized.
+\b
+\m
+\v 23 Now John was also baptizing at Aenon near Salim, because the water was plentiful there, and people kept coming to be baptized.
+\v 24 (For John had not yet been thrown into prison.)
+\b
+\m
+\v 25 Then a dispute arose between John’s disciples and a certain Jew \f + \fr 3:25 \ft TR and the Jews\f* over the issue of ceremonial washing.
+\v 26 So John’s disciples came to him and said, “Look, Rabbi, the One who was with you beyond the Jordan, the One you testified about—He is baptizing, and everyone is going to Him.”
+\b
+\m
+\v 27 John replied, “A man can receive only what is given him from heaven.
+\v 28 You yourselves can testify that I said, ‘I am not the Christ, but am sent ahead of Him.’
+\v 29 The bride belongs to the bridegroom. The friend of the bridegroom stands and listens for him, and is overjoyed to hear the bridegroom’s voice. That joy is mine, and it is now complete.
+\v 30 He must increase; I must decrease.
+\b
+\m
+\v 31 The One who comes from above is above all. The one who is from the earth belongs to the earth and speaks as one from the earth. The One who comes from heaven is above all.\f + \fr 3:31 \ft Tischendorf The One comes from heaven.\f*
+\v 32 He testifies to what He has seen and heard, yet no one accepts His testimony.
+\v 33 Whoever accepts His testimony has certified that God is truthful.
+\v 34 For the One whom God has sent speaks the words of God, for God gives the Spirit without limit.
+\b
+\m
+\v 35 The Father loves the Son and has placed all things in His hands.
+\v 36 Whoever believes in the Son has eternal life. Whoever rejects the Son will not see life. Instead, the wrath of God remains on him.”\f + \fr 3:36 \ft Some translators close this quotation after verse 30.\f*
 \c 4
-\p
-\v 1 Als nun der Herr erkannte, dass die Pharisäer gehört hatten, dass Jesus mehr Jünger mache und taufe als Johannes
-\v 2 (obwohl Jesus selbst nicht taufte, sondern seine Jünger),
-\v 3 verließ er Judäa und zog wieder nach Galiläa.
-\v 4 Er musste aber durch Samaria ziehen.
-\v 5 Er kommt nun in eine Stadt Samarias, genannt Sichar, nahe bei dem Feld, das Jakob seinem Sohn Joseph gab.
-\v 6 Es war aber dort eine Quelle Jakobs. Jesus nun, ermüdet von der Reise, setzte sich so an die Quelle nieder. Es war um die sechste Stunde.
-\v 7 \add Da\add* kommt eine Frau aus Samaria, Wasser zu schöpfen. Jesus spricht zu ihr: \wj Gib mir zu trinken!\wj*
-\v 8 (Denn seine Jünger waren weggegangen in die Stadt, um Speise zu kaufen.)
-\v 9 Die samaritische Frau spricht nun zu ihm: Wie bittest \em du\em*, der du ein Jude bist, von mir zu trinken, die ich eine samaritische Frau bin? (Denn die Juden verkehren nicht mit den Samaritern.)
-\v 10 Jesus antwortete und sprach zu ihr: \wj Wenn du die Gabe Gottes kenntest und wer es ist, der zu dir spricht: Gib mir zu trinken, so würdest du ihn gebeten haben, und er hätte dir lebendiges Wasser gegeben.\wj*
-\v 11 Die Frau spricht zu ihm: Herr, du hast kein Schöpfgefäß, und der Brunnen ist tief; woher hast du denn das lebendige Wasser?
-\v 12 \em Du\em* bist doch nicht größer als unser Vater Jakob, der uns den Brunnen gab, und er selbst trank aus demselben und seine Söhne und sein Vieh?
-\v 13 Jesus antwortete und sprach zu ihr: \wj Jeden, der von diesem Wasser trinkt, wird wiederum dürsten;\wj*
-\v 14 \wj jeder aber, der von dem Wasser trinken wird, das \+em ich\+em* ihm geben werde, den wird \+em nicht\+em* dürsten in Ewigkeit; sondern das Wasser, das ich ihm geben werde, wird in ihm eine Quelle Wassers werden, das ins ewige Leben quillt.\wj*
-\v 15 Die Frau spricht zu ihm: Herr, gib mir dieses Wasser, damit mich nicht dürste und ich nicht hierherkomme, um zu schöpfen.
-\v 16 Jesus spricht zu ihr: \wj Geh hin, rufe deinen Mann und komm hierher!\wj*
-\v 17 Die Frau antwortete und sprach: Ich habe keinen Mann. Jesus spricht zu ihr: \wj Du hast recht gesagt: Ich habe keinen Mann; \wj*
-\v 18 \wj denn fünf Männer hast du gehabt, und der, den du jetzt hast, ist nicht dein Mann; hierin\wj*\f - \fr 4,18 \ft W. dies\f*\wj hast du wahr geredet.\wj*
-\v 19 Die Frau spricht zu ihm: Herr, ich sehe, dass du ein Prophet bist.
-\v 20 Unsere Väter haben auf diesem Berg angebetet, und \em ihr\em* sagt, dass in Jerusalem der Ort sei, wo man anbeten müsse.
-\v 21 Jesus spricht zu ihr: \wj Frau, glaube mir, es kommt die\wj*\f - \fr 4,21 \ft O. eine\f*\wj Stunde, da ihr weder auf diesem Berg noch in Jerusalem den Vater anbeten werdet.\wj*
-\v 22 \wj \+em Ihr\+em* betet an \+add und\+add* wisst nicht, was\wj*\f - \fr 4,22 \ft O. was ihr nicht kennt\f*\wj ; \+em wir\+em* beten an \+add und\+add* wissen, was\wj*\f - \fr 4,22 \ft O. was wir kennen\f*\wj , denn das Heil ist aus den Juden.\wj*
-\v 23 \wj Es kommt aber die\wj*\f - \fr 4,23 \ft O. eine\f*\wj Stunde und ist jetzt, da die wahrhaftigen Anbeter den Vater in Geist und Wahrheit anbeten werden; denn auch der Vater sucht solche als seine Anbeter.\wj*
-\v 24 \wj Gott ist ein Geist, und die ihn anbeten, müssen in Geist und Wahrheit anbeten.\wj*
-\v 25 Die Frau spricht zu ihm: Ich weiß, dass \add der\add* Messias kommt, der Christus genannt wird; wenn jener kommt, wird er uns alles verkündigen.
-\v 26 Jesus spricht zu ihr: \wj Ich bin es, der mit dir redet.\wj*
-\v 27 Und über diesem kamen seine Jünger und verwunderten sich, dass er mit einer Frau redete. Dennoch sagte niemand: Was suchst du?, oder: Was redest du mit ihr?
-\v 28 Die Frau nun ließ ihren Wasserkrug stehen und ging weg in die Stadt und sagt zu den Leuten:
-\v 29 Kommt, seht einen Menschen, der mir alles gesagt hat, was irgend ich getan habe! Dieser ist doch nicht etwa der Christus?
-\v 30 Sie gingen zu der Stadt hinaus und kamen zu ihm.
-\p
-\v 31 In der Zwischenzeit [aber] baten ihn die Jünger und sprachen: Rabbi, iss.
-\v 32 Er aber sprach zu ihnen: \wj \+em Ich\+em* habe eine Speise zu essen, die \+em ihr\+em* nicht kennt.\wj*
-\v 33 Da sprachen die Jünger zueinander: Hat ihm wohl jemand zu essen gebracht?
-\v 34 Jesus spricht zu ihnen: \wj Meine Speise ist, dass ich den Willen dessen tue, der mich gesandt hat, und sein Werk vollbringe\wj*\f - \fr 4,34 \ft O. vollends\f*\wj .\wj*
-\v 35 \wj Sagt \+em ihr\+em* nicht: Es sind noch vier Monate, und die Ernte kommt? Siehe, ich sage euch: Hebt eure Augen auf und schaut die Felder an, denn sie sind schon weiß zur Ernte. \wj*
-\v 36 \wj Der erntet, empfängt Lohn\wj*\f - \fr 4,36 \ft O. ... sie sind weiß zur Ernte. Schon empfängt, der erntet, Lohn\f*\wj und sammelt Frucht zum ewigen Leben, damit beide, der sät und der erntet, zugleich sich freuen.\wj*
-\v 37 \wj Denn hierin ist der Spruch wahr: Ein anderer ist es, der sät, und ein anderer, der erntet. \wj*
-\v 38 \wj \+em Ich\+em* habe euch gesandt, zu ernten, woran \+em ihr\+em* nicht gearbeitet habt; andere haben gearbeitet, und \+em ihr\+em* seid in ihre Arbeit eingetreten.\wj*
-\p
-\v 39 Aus jener Stadt aber glaubten viele von den Samaritern an ihn um des Wortes der Frau willen, die bezeugte: Er hat mir alles gesagt, was irgend ich getan habe.
-\v 40 Als nun die Samariter zu ihm kamen, baten sie ihn, bei ihnen zu bleiben; und er blieb dort zwei Tage.
-\v 41 Und \add noch\add* viele mehr glaubten um seines Wortes willen;
-\v 42 und sie sagten zu der Frau: Wir glauben nicht mehr um deines Redens willen, denn wir selbst haben gehört und wissen, dass dieser wahrhaftig der Heiland der Welt ist.
-\p
-\v 43 Nach den zwei Tagen aber zog er von dort aus [und ging hin] nach Galiläa;
-\v 44 denn Jesus selbst bezeugte, dass ein Prophet in dem eigenen Vaterland\f - \fr 4,44 \ft O. in der eigenen Vaterstadt; wie anderswo\f* keine Ehre hat.
-\v 45 Als er nun nach Galiläa kam, nahmen die Galiläer ihn auf, da sie alles gesehen hatten, was er in Jerusalem auf dem Fest getan hatte; denn auch sie kamen zu dem Fest.
-\p
-\v 46 Er kam nun wiederum nach Kana in Galiläa, wo er das Wasser zu Wein gemacht hatte. Und es war ein gewisser königlicher \add Beamter\add*, dessen Sohn krank war, in Kapernaum.
-\v 47 Als dieser gehört hatte, dass Jesus aus Judäa nach Galiläa gekommen sei, ging er zu ihm hin und bat [ihn], dass er herabkomme und seinen Sohn heile; denn er lag im Sterben.
-\v 48 Jesus sprach nun zu ihm: \wj Wenn ihr nicht Zeichen und Wunder seht, so werdet ihr \+em nicht\+em* glauben.\wj*
-\v 49 Der königliche \add Beamte\add* spricht zu ihm: Herr, komm herab, ehe mein Kind stirbt!
-\v 50 Jesus spricht zu ihm: \wj Geh hin, dein Sohn lebt!\wj*
-\p Und der Mensch glaubte dem Wort, das Jesus zu ihm sagte, und ging hin.
-\v 51 Aber schon während er hinabging, begegneten ihm seine Knechte und berichteten, dass sein Knabe lebe.
-\v 52 Er erforschte nun von ihnen die Stunde, in der es besser mit ihm geworden sei; und sie sagten zu ihm: Gestern zur siebten Stunde verließ ihn das Fieber.
-\v 53 Da erkannte der Vater, dass es in jener Stunde war, in der Jesus zu ihm sagte: \wj Dein Sohn lebt.\wj* Und er glaubte, er und sein ganzes Haus.
-\v 54 Dies tat Jesus wiederum als zweites Zeichen, als er aus Judäa nach Galiläa gekommen war.
+\s1 Jesus and the Samaritan Woman
+\m
+\v 1 When Jesus realized that the Pharisees were aware He \f + \fr 4:1 \ft Literally When therefore Jesus knew that the Pharisees had heard that Jesus; NE, WH, BYZ, and TR When therefore the Lord knew that the Pharisees had heard that Jesus\f* was gaining and baptizing more disciples than John
+\v 2 (although it was not Jesus who baptized, but His disciples),
+\v 3 He left Judea and returned to Galilee.
+\b
+\m
+\v 4 Now He had to pass through Samaria.
+\v 5 So He came to a town of Samaria called Sychar, near the plot of ground that Jacob had given to his son Joseph.
+\v 6 Since Jacob’s well was there, Jesus, weary from His journey, sat down by the well. It was about the sixth hour.\f + \fr 4:6 \ft That is, about noon\f*
+\b
+\m
+\v 7 When a Samaritan woman came to draw water, Jesus said to her, “Give Me a drink.”
+\v 8 (His disciples had gone into the town to buy food.)
+\b
+\m
+\v 9 “You are a Jew,” said the woman. “How can You ask for a drink from me, a Samaritan woman?” (For Jews do not associate with Samaritans.)\f + \fr 4:9 \ft Tischendorf does not include this sentence.\f*
+\b
+\m
+\v 10 Jesus answered, “If you knew the gift of God and who is asking you for a drink, you would have asked Him, and He would have given you living water.”
+\b
+\m
+\v 11 “Sir,” the woman replied, “You have nothing to draw with and the well is deep. Where then will You get this living water?
+\v 12 Are You greater than our father Jacob, who gave us this well and drank from it himself, as did his sons and his livestock?”
+\b
+\m
+\v 13 Jesus said to her, “Everyone who drinks this water will be thirsty again.
+\v 14 But whoever drinks the water I give him will never thirst. Indeed, the water I give him will become in him a fount of water springing up to eternal life.”
+\b
+\m
+\v 15 The woman said to Him, “Sir, give me this water so that I will not get thirsty and have to keep coming here to draw water.”
+\b
+\m
+\v 16 Jesus told her, “Go, call your husband and come back.”
+\b
+\m
+\v 17 “I have no husband,” the woman replied.
+\b
+\m Jesus said to her, “You are correct to say that you have no husband.
+\v 18 In fact, you have had five husbands, and the man you now have is not your husband. You have spoken truthfully.”
+\b
+\m
+\v 19 “Sir,” the woman said, “I see that You are a prophet.
+\v 20 Our fathers worshiped on this mountain, but you Jews say that the place where one must worship is in Jerusalem.”
+\b
+\m
+\v 21 “Believe Me, woman,” Jesus replied, “a time is coming when you will worship the Father neither on this mountain nor in Jerusalem.
+\v 22 You worship what you do not know; we worship what we do know, for salvation is from the Jews.
+\v 23 But a time is coming and has now come when the true worshipers will worship the Father in spirit and in truth, for the Father is seeking such as these to worship Him.
+\v 24 God is Spirit, and His worshipers must worship Him in spirit and in truth.”
+\b
+\m
+\v 25 The woman said, “I know that Messiah” (called Christ) “is coming. When He comes, He will explain everything to us.”
+\b
+\m
+\v 26 Jesus answered, “I who speak to you am He.”
+\s1 The Disciples Return and Marvel
+\b
+\m
+\v 27 Just then His disciples returned and were surprised that He was speaking with a woman. But no one asked Him, “What do You want from her?” or “Why are You talking with her?”
+\b
+\m
+\v 28 Then the woman left her water jar, went back into the town, and said to the people,
+\v 29 “Come, see a man who told me everything I ever did. Could this be the Christ?”
+\v 30 So they left the town and made their way toward Jesus.
+\b
+\m
+\v 31 Meanwhile the disciples urged Him, “Rabbi, eat something.”
+\b
+\m
+\v 32 But He told them, “I have food to eat that you know nothing about.”
+\b
+\m
+\v 33 So the disciples asked one another, “Could someone have brought Him food?”
+\b
+\m
+\v 34 Jesus explained, “My food is to do the will of Him who sent Me and to finish His work.
+\v 35 Do you not say, ‘There are still four months until the harvest’? I tell you, lift up your eyes and look at the fields, for they are ripe \f + \fr 4:35 \ft Literally white\f* for harvest.
+\b
+\m
+\v 36 Already the reaper draws his wages and gathers a crop for eternal life, so that the sower and the reaper may rejoice together.
+\v 37 For in this case the saying ‘One sows and another reaps’ is true.
+\v 38 I sent you to reap what you have not worked for; others have done the hard work, and now you have taken up their labor.”
+\s1 Many Samaritans Believe
+\b
+\m
+\v 39 Many of the Samaritans from that town believed in Jesus because of the woman’s testimony, “He told me everything I ever did.”
+\v 40 So when the Samaritans came to Him, they asked Him to stay with them, and He stayed two days.
+\b
+\m
+\v 41 And many more believed because of His message.
+\v 42 They said to the woman, “We now believe not only because of your words; we have heard for ourselves, and we know that this man truly is the Savior of the world.”
+\s1 Jesus Heals the Official’s Son
+\r (Matthew 8:5–13; Luke 7:1–10)
+\b
+\m
+\v 43 After two days, Jesus left for Galilee.
+\v 44 Now He Himself had testified that a prophet has no honor in his own hometown.
+\v 45 Yet when He arrived, the Galileans welcomed Him. They had seen all the great things He had done in Jerusalem at the feast, for they had gone there as well.
+\b
+\m
+\v 46 So once again He came to Cana in Galilee, where He had turned the water into wine. And there was a royal official whose son lay sick at Capernaum.
+\v 47 When he heard that Jesus had come from Judea to Galilee, he went and begged Him to come down and heal his son, who was about to die.
+\b
+\m
+\v 48 Jesus said to him, “Unless you people see signs and wonders, you will never believe.”
+\b
+\m
+\v 49 “Sir,” the official said, “come down before my child dies.”
+\b
+\m
+\v 50 “Go,” said Jesus. “Your son will live.”
+\b
+\m The man took Jesus at His word and departed.
+\v 51 And while he was still on the way, his servants met him with the news that his boy was alive.
+\b
+\m
+\v 52 So he inquired as to the hour when his son had recovered, and they told him, “The fever left him yesterday at the seventh hour.\f + \fr 4:52 \ft That is, one in the afternoon\f*”
+\b
+\m
+\v 53 Then the father realized that this was the very hour in which Jesus had told him, “Your son will live.” And he and all his household believed.
+\b
+\m
+\v 54 This was now the second sign that Jesus performed after coming from Judea into Galilee.
 \c 5
-\p
-\v 1 Nach diesem war ein Fest der Juden, und Jesus ging hinauf nach Jerusalem.
-\v 2 Es ist aber in Jerusalem bei dem Schaftor ein Teich, der auf Hebräisch Bethesda genannt wird und fünf Säulenhallen hat.
-\v 3 In diesen lag eine Menge Kranker, Blinder, Lahmer, Dürrer, [die auf die Bewegung des Wassers warteten.
-\v 4 Denn zu gewissen Zeiten stieg ein Engel in den Teich herab und bewegte das Wasser. Wer nun nach der Bewegung des Wassers zuerst hineinstieg, wurde gesund, mit der Krankheit irgend er behaftet war.]
-\v 5 Es war aber ein gewisser Mensch dort, der 38 Jahre mit seiner Krankheit behaftet war.
-\v 6 Als Jesus diesen daliegen sah und wusste, dass es schon lange Zeit \add so\add* mit ihm war, spricht er zu ihm: \wj Willst du gesund werden?\wj*
-\v 7 Der Kranke antwortete ihm: Herr, ich habe keinen Menschen, dass er mich, wenn das Wasser bewegt worden ist, in den Teich werfe; indem ich aber komme, steigt ein anderer vor mir hinab.
-\v 8 Jesus spricht zu ihm: \wj Steh auf, nimm dein Bett auf und wandle!\wj*
-\v 9 Und sogleich wurde der Mensch gesund und nahm sein Bett auf und wandelte. Es war aber an jenem Tag Sabbat.
-\v 10 Es sagten nun die Juden zu dem Geheilten: Es ist Sabbat, es ist dir nicht erlaubt, das Bett zu tragen.
-\v 11 Er antwortete ihnen: Der mich gesund machte, \em der\em* sagte zu mir: \wj Nimm dein Bett auf und wandle.\wj*
-\v 12 [Da] fragten sie ihn: Wer ist der Mensch, der zu dir sagte: \wj Nimm [dein Bett] auf und wandle?\wj*
-\v 13 Der Geheilte aber wusste nicht, wer es sei; denn Jesus war entwichen, weil eine Volksmenge an dem Ort war.
-\v 14 Danach findet Jesus ihn im Tempel, und er sprach zu ihm: \wj Siehe, du bist gesund geworden; sündige nicht mehr, damit dir nichts Ärgeres widerfahre.\wj*
-\v 15 Der Mensch ging hin und verkündete den Juden, dass es Jesus sei, der ihn gesund gemacht habe.
-\v 16 Und darum verfolgten die Juden Jesus [und suchten ihn zu töten], weil er dies am Sabbat tat.
-\v 17 Jesus aber antwortete ihnen: \wj Mein Vater wirkt bis jetzt, und \+em ich\+em* wirke.\wj*
-\v 18 Darum nun suchten die Juden noch mehr, ihn zu töten, weil er nicht nur den Sabbat brach, sondern auch Gott seinen eigenen Vater nannte, sich selbst Gott gleichmachend.
-\v 19 Da antwortete Jesus und sprach zu ihnen: \wj Wahrlich, wahrlich, ich sage euch: Der Sohn kann nichts von sich selbst tun, außer was er den Vater tun sieht; denn was irgend \+em er\+em* tut, das tut auch in gleicher Weise der Sohn.\wj*
-\v 20 \wj Denn der Vater hat den Sohn lieb und zeigt ihm alles, was er selbst tut; und er wird ihm größere Werke als diese zeigen, damit \+em ihr\+em* euch verwundert.\wj*
-\v 21 \wj Denn wie der Vater die Toten auferweckt und lebendig macht, so macht auch der Sohn lebendig, welche er will.\wj*
-\v 22 \wj Denn der Vater richtet auch niemand, sondern das ganze Gericht hat er dem Sohn gegeben,\wj*
-\v 23 \wj damit alle den Sohn ehren, wie sie den Vater ehren. Wer den Sohn nicht ehrt, ehrt den Vater nicht, der ihn gesandt hat.\wj*
-\v 24 \wj Wahrlich, wahrlich, ich sage euch: Wer mein Wort hört und glaubt dem, der mich gesandt hat, hat ewiges Leben und kommt nicht ins Gericht, sondern er ist aus dem Tod in das Leben übergegangen.\wj*
-\v 25 \wj Wahrlich, wahrlich, ich sage euch, dass die\wj*\f - \fr 5,25 \ft O. eine\f*\wj Stunde kommt und jetzt ist, da die Toten die Stimme des Sohnes Gottes hören werden, und die sie gehört haben, werden leben. \wj*
-\v 26 \wj Denn wie der Vater Leben in sich selbst hat, so hat er auch dem Sohn gegeben, Leben zu haben in sich selbst;\wj*
-\v 27 \wj und er hat ihm Gewalt gegeben, [auch] Gericht zu halten, weil er des Menschen Sohn ist.\wj*
-\v 28 \wj Wundert euch darüber nicht, denn es kommt die\wj*\f - \fr 5,28 \ft O. eine\f*\wj Stunde, in der alle, die in den Gräbern sind, seine Stimme hören\wj*
-\v 29 \wj und hervorkommen werden: die das Gute getan haben, zur Auferstehung des Lebens, die aber das Böse\wj*\f - \fr 5,29 \ft Eig. das Schlechte\f*\wj verübt haben, zur Auferstehung des Gerichts.\wj*
-\v 30 \wj \+em Ich\+em* kann nichts von mir selbst tun; so wie ich höre, richte ich, und mein Gericht ist gerecht, denn ich suche nicht meinen Willen, sondern den Willen dessen, der mich gesandt hat.\wj*
-\v 31 \wj Wenn \+em ich\+em* von mir\wj*\f - \fr 5,31 \ft O. über mich, bezüglich meiner; so auch V. 32.36.37 usw.\f*\wj selbst zeuge, so ist mein Zeugnis nicht wahr.\wj*
-\v 32 \wj Ein anderer ist es, der von mir zeugt, und ich weiß, dass das Zeugnis wahr ist, das er von mir zeugt.\wj*
-\v 33 \wj \+em Ihr\+em* habt zu Johannes gesandt, und er hat der Wahrheit Zeugnis gegeben.\wj*
-\v 34 \wj \+em Ich\+em* aber nehme nicht Zeugnis von\wj*\f - \fr 5,34 \ft O. vonseiten; so auch V. 41.44\f*\wj einem Menschen, sondern dies sage ich, damit \+em ihr\+em* errettet werdet. \wj*
-\v 35 \wj Jener war die brennende und scheinende Lampe; \+em ihr\+em* aber wolltet für eine Zeit in seinem\wj*\f - \fr 5,35 \ft O. ihrem\f*\wj Lichte fröhlich sein. \wj*
-\v 36 \wj \+em Ich\+em* aber habe das Zeugnis, \+add das\+add* größer \+add ist\+add* als \+add das\+add* des Johannes; denn die Werke, die der Vater mir gegeben hat, damit ich sie vollbringe, die Werke selbst, die ich tue, zeugen von mir, dass der Vater mich gesandt hat.\wj*
-\v 37 \wj Und der Vater, der mich gesandt hat, er selbst hat Zeugnis von mir gegeben. Ihr habt weder jemals seine Stimme gehört, noch seine Gestalt gesehen,\wj*
-\v 38 \wj und sein Wort habt ihr nicht bleibend in euch; denn wen \+em er\+em* gesandt hat, diesem glaubt \+em ihr\+em* nicht.\wj*
-\v 39 \wj Ihr erforscht die Schriften\wj*\f - \fr 5,39 \ft O. Erforscht die Schriften\f*\wj , denn \+em ihr\+em* meint, in ihnen ewiges Leben zu haben, und \+em sie\+em* sind es, die von mir zeugen;\wj*
-\v 40 \wj und ihr wollt nicht zu mir kommen, damit ihr Leben habt.\wj*
-\v 41 \wj Ich nehme nicht Ehre von Menschen; \wj*
-\v 42 \wj sondern ich kenne euch, dass ihr die Liebe Gottes nicht in euch habt.\wj*
-\v 43 \wj \+em Ich\+em* bin in dem Namen meines Vaters gekommen, und ihr nehmt mich nicht auf; wenn ein anderer in seinem eigenen Namen kommt, den werdet ihr aufnehmen.\wj*
-\v 44 \wj Wie könnt \+em ihr\+em* glauben, die ihr Ehre voneinander nehmt und die Ehre, die von Gott allein\wj*\f - \fr 5,44 \ft O. von dem alleinigen Gott\f*\wj ist, nicht sucht?\wj*
-\v 45 \wj Wähnt nicht, dass \+em ich\+em* euch bei dem Vater verklagen werde; da ist \+add einer\+add*, der euch verklagt, Mose, auf den \+em ihr\+em* eure Hoffnung gesetzt habt. \wj*
-\v 46 \wj Denn wenn ihr Mose glaubtet, so würdet ihr mir glauben, denn er hat von mir geschrieben.\wj*
-\v 47 \wj Wenn ihr aber seinen Schriften nicht glaubt, wie werdet ihr meinen Worten glauben?\wj*
+\s1 The Pool of Bethesda
+\m
+\v 1 Some time later there was a feast of the Jews, and Jesus went up to Jerusalem.
+\b
+\m
+\v 2 Now there is in Jerusalem near the Sheep Gate a pool with five covered colonnades, which in Hebrew \f + \fr 5:2 \ft Or in Aramaic\f* is called Bethesda.\f + \fr 5:2 \ft NA, NE, and WH Bethzatha\f*
+\v 3 On these walkways \f + \fr 5:3 \ft Literally In these\f* lay a great number of the sick, the blind, the lame, and the paralyzed.\f + \fr 5:3 \ft NE, BYZ, and TR include awaiting the moving of the waters. 4 For from time to time an angel descended into the pool and stirred the water. As soon as it was stirred, the first to enter the pool would be healed of his disease.\f*
+\b
+\m
+\v 5 One man there had been an invalid for thirty-eight years.
+\v 6 When Jesus saw him lying there and realized that he had spent a long time in this condition, He asked him, “Do you want to get well?”
+\b
+\m
+\v 7 “Sir,” the invalid replied, “I have no one to help me into the pool when the water is stirred. While I am on my way, someone else goes in before me.”
+\b
+\m
+\v 8 Then Jesus told him, “Get up, pick up your mat, and walk.”
+\b
+\m
+\v 9 Immediately the man was made well, and he picked up his mat and began to walk.
+\b
+\m Now this happened on the Sabbath day,
+\v 10 so the Jews said to the man who had been healed, “This is the Sabbath! It is unlawful for you to carry your mat.”
+\b
+\m
+\v 11 But he answered, “The man who made me well told me, ‘Pick up your mat and walk.’”
+\b
+\m
+\v 12 “Who is this man who told you to pick it up and walk?” they asked.
+\b
+\m
+\v 13 But the man who was healed did not know who it was, for Jesus had slipped away while the crowd was there.
+\b
+\m
+\v 14 Afterward, Jesus found the man at the temple and said to him, “See, you have been made well. Stop sinning, or something worse may happen to you.”
+\b
+\m
+\v 15 And the man went away and told the Jews that it was Jesus who had made him well.
+\s1 The Father and the Son
+\b
+\m
+\v 16 Now because Jesus was doing these things on the Sabbath, the Jews began to persecute Him.
+\v 17 But Jesus answered them, “To this very day My Father is at His work, and I too am working.”
+\b
+\m
+\v 18 Because of this, the Jews tried all the harder to kill Him. Not only was He breaking the Sabbath, but He was even calling God His own Father, making Himself equal with God.
+\b
+\m
+\v 19 So Jesus replied, “Truly, truly, I tell you, the Son can do nothing by Himself, unless He sees the Father doing it. For whatever the Father does, the Son also does.
+\v 20 The Father loves the Son and shows Him all He does. And to your amazement, He will show Him even greater works than these.
+\v 21 For just as the Father raises the dead and gives them life, so also the Son gives life to whom He wishes.
+\b
+\m
+\v 22 Furthermore, the Father judges no one, but has assigned all judgment to the Son,
+\v 23 so that all may honor the Son just as they honor the Father. Whoever does not honor the Son does not honor the Father who sent Him.
+\b
+\m
+\v 24 Truly, truly, I tell you, whoever hears My word and believes Him who sent Me has eternal life and will not come under judgment. Indeed, he has crossed over from death to life.
+\b
+\m
+\v 25 Truly, truly, I tell you, the hour is coming and has now come when the dead will hear the voice of the Son of God, and those who hear will live.
+\v 26 For as the Father has life in Himself, so also He has granted the Son to have life in Himself.
+\v 27 And He has given Him authority to execute judgment, because He is the Son of Man.
+\b
+\m
+\v 28 Do not be amazed at this, for the hour is coming when all who are in their graves will hear His voice
+\v 29 and come out—those who have done good to the resurrection of life, and those who have done evil to the resurrection of judgment.\f + \fr 5:29 \ft See Daniel 12:2.\f*
+\b
+\m
+\v 30 I can do nothing by Myself; I judge only as I hear. And My judgment is just, because I do not seek My own will, but the will of Him who sent Me.
+\s1 Testimonies about Jesus
+\b
+\m
+\v 31 If I testify about Myself, My testimony is not valid.
+\v 32 There is another who testifies about Me, and I know that His testimony about Me is valid.
+\b
+\m
+\v 33 You have sent to John, and he has testified to the truth.
+\v 34 Even though I do not accept human testimony, I say these things so that you may be saved.
+\b
+\m
+\v 35 John was a lamp that burned and gave light, and you were willing for a season to bask in his light.
+\v 36 But I have testimony more substantial than that of John. For the works that the Father has given Me to accomplish—the very works I am doing—testify about Me that the Father has sent Me.
+\v 37 And the Father who sent Me has Himself testified about Me. You have never heard His voice nor seen His form,
+\v 38 nor does His word abide in you, because you do not believe the One He sent.
+\s1 The Witness of Scripture
+\r (Luke 16:19–31)
+\b
+\m
+\v 39 You pore over the Scriptures because you presume that by them you possess eternal life. These are the very words that testify about Me,
+\v 40 yet you refuse to come to Me to have life.
+\b
+\m
+\v 41 I do not accept glory from men,
+\v 42 but I know you, that you do not have the love of God within you.
+\v 43 I have come in My Father’s name, and you have not received Me; but if someone else comes in his own name, you will receive him.
+\v 44 How can you believe if you accept glory from one another, yet do not seek the glory that comes from the only God?
+\b
+\m
+\v 45 Do not think that I will accuse you before the Father. Your accuser is Moses, in whom you have put your hope.
+\v 46 If you had believed Moses, you would believe Me, because he wrote about Me.
+\v 47 But since you do not believe what he wrote, how will you believe what I say?”
 \c 6
-\p
-\v 1 Nach diesem ging Jesus weg auf die andere Seite des Sees von Galiläa \add oder\add* von Tiberias;
-\v 2 und es folgte ihm eine große Volksmenge, weil sie die Zeichen sahen, die er an den Kranken tat.
-\v 3 Jesus aber ging hinauf auf den Berg und setzte sich dort mit seinen Jüngern.
-\v 4 Es war aber das Passah nahe, das Fest der Juden.
-\v 5 Als nun Jesus die Augen aufhob und sah, dass eine große Volksmenge zu ihm kommt, spricht er zu Philippus: \wj Woher sollen wir Brote kaufen, damit diese essen?\wj*
-\v 6 Dies sagte er aber, ihn zu versuchen\f - \fr 6,6 \ft W. ihn versuchend\f*; denn er selbst wusste, was er tun wollte.
-\v 7 Philippus antwortete ihm: Für 200 Denare Brote reichen nicht für sie aus, damit jeder ein wenig bekomme.
-\v 8 Einer von seinen Jüngern, Andreas, der Bruder \add des\add* Simon Petrus, spricht zu ihm:
-\v 9 Es ist ein kleiner Knabe hier, der 5 Gerstenbrote und 2 Fische hat; aber was ist dies unter so viele?
-\p
-\v 10 Jesus [aber] sprach: \wj Macht, dass die Leute sich lagern.\wj* Es war aber viel Gras an dem Ort. Es lagerten sich nun die Männer, an Zahl etwa 5.000.
-\v 11 Jesus aber nahm die Brote, und als er gedankt hatte, teilte er \add sie\add* denen aus, die lagerten; ebenso auch von den Fischen, soviel sie wollten.
-\v 12 Als sie aber gesättigt waren, spricht er zu seinen Jüngern: \wj Sammelt die übrig gebliebenen Brocken, damit nichts umkomme.\wj*
-\v 13 Sie sammelten nun und füllten 12 Handkörbe mit Brocken von den 5 Gerstenbroten, die denen, die gegessen hatten, übrigblieben waren.
-\v 14 Als nun die Leute das Zeichen sahen, das Jesus tat, sprachen sie: Dieser ist wahrhaftig der Prophet, der in die Welt kommen soll.
-\v 15 Da nun Jesus erkannte, dass sie kommen und ihn ergreifen wollten, damit sie ihn zum König machten, entwich er wieder auf den Berg, er selbst allein.
-\p
-\v 16 Als es aber Abend geworden war, gingen seine Jünger hinab an den See;
-\v 17 und sie stiegen in das Schiff und fuhren über den See nach Kapernaum. Und es war schon finster geworden, und Jesus war noch nicht zu ihnen gekommen;
-\v 18 und der See erhob sich, indem ein starker Wind wehte.
-\v 19 Als sie nun etwa 25 oder 30 Stadien gerudert waren, sehen sie Jesus auf dem See wandeln und nahe an das Schiff herankommen, und sie fürchteten sich.
-\v 20 Er aber spricht zu ihnen: \wj \+em Ich\+em* bin es, fürchtet euch nicht!\wj*
-\v 21 Sie wollten ihn nun in das Schiff nehmen, und sogleich war das Schiff an dem Land, zu dem sie hinfuhren.
-\p
-\v 22 Des folgenden Tages, als die Volksmenge, die jenseits des Sees stand, gesehen hatte, dass dort kein anderes Boot war, als nur jenes, in das seine Jünger gestiegen waren, und dass Jesus nicht mit seinen Jüngern in das Schiff gestiegen, sondern seine Jünger allein weggefahren waren.
-\v 23 (Es kamen aber andere Boote aus Tiberias nahe an den Ort, wo sie das Brot gegessen hatten, nachdem der Herr gedankt hatte.)
-\v 24 Als nun die Volksmenge sah, dass Jesus nicht dort sei, noch seine Jünger, stiegen \em sie\em* in die Schiffe und kamen nach Kapernaum und suchten Jesus.
-\v 25 Und als sie ihn jenseits des Sees gefunden hatten, sprachen sie zu ihm: Rabbi, wann bist du hierhergekommen?
-\v 26 Jesus antwortete ihnen und sprach: \wj Wahrlich, wahrlich, ich sage euch: Ihr sucht mich, nicht weil ihr Zeichen gesehen, sondern weil ihr von den Broten gegessen habt und gesättigt worden seid.\wj*
-\v 27 \wj Wirkt nicht \+add für\+add* die Speise, die vergeht, sondern \+add für\+add* die Speise, die ins ewige Leben bleibt, die der Sohn des Menschen euch geben wird; denn diesen hat der Vater, Gott, versiegelt.\wj*
-\v 28 Da sprachen sie zu ihm: Was sollen wir tun, damit wir die Werke Gottes wirken?
-\v 29 Jesus antwortete und sprach zu ihnen: \wj Dies ist das Werk Gottes, dass ihr an den glaubt, den er gesandt hat.\wj*
-\v 30 Da sprachen sie zu ihm: Was tust du nun für ein Zeichen, damit wir sehen und dir glauben? Was wirkst du?
-\v 31 Unsere Väter aßen das Manna in der Wüste, wie geschrieben steht: „Brot aus dem Himmel gab er ihnen zu essen“\f - \fr 6,31 \ft Neh. 9,15\f*.
-\v 32 Da sprach Jesus zu ihnen: \wj Wahrlich, wahrlich, ich sage euch: Nicht Mose hat euch das Brot aus dem Himmel gegeben, sondern mein Vater gibt euch das wahrhaftige Brot aus dem Himmel.\wj*
-\v 33 \wj Denn das Brot Gottes ist der, der aus dem Himmel herabkommt und der Welt \+add das\+add* Leben gibt.\wj*
-\v 34 Da sprachen sie zu ihm: Herr, gib uns allezeit dieses Brot!
-\v 35 Jesus aber sprach zu ihnen: \wj \+em Ich\+em* bin das Brot des Lebens; wer zu mir kommt, wird \+em nicht\+em* hungern, und wer an mich glaubt, wird nimmermehr dürsten. \wj*
-\v 36 \wj Aber ich habe euch gesagt, dass ihr mich auch gesehen habt und nicht glaubt. \wj*
-\v 37 \wj Alles, was mir der Vater gibt, wird zu mir kommen, und wer zu mir kommt, den werde ich \+em nicht\+em* hinausstoßen;\wj*
-\v 38 \wj denn ich bin vom Himmel herabgekommen, nicht um \+em meinen\+em* Willen zu tun, sondern den Willen dessen, der mich gesandt hat.\wj*
-\v 39 \wj Dies aber ist der Wille dessen, der mich gesandt hat, dass ich von allem, was er mir gegeben hat, nichts verliere, sondern es auferwecke am letzten Tag.\wj*
-\v 40 \wj Denn dies ist der Wille meines Vaters, dass jeder, der den Sohn sieht und an ihn glaubt, ewiges Leben habe; und \+em ich\+em* werde ihn auferwecken am letzten Tag.\wj*
-\v 41 Da murrten die Juden über ihn, weil er sagte: \wj \+em Ich\+em* bin das Brot, das aus dem Himmel herabgekommen ist;\wj*
-\v 42 und sie sprachen: Ist dieser nicht Jesus, der Sohn Josephs, dessen Vater und Mutter \em wir\em* kennen? Wie sagt denn dieser: \wj Ich bin aus dem Himmel herabgekommen?\wj*
-\v 43 Da antwortete Jesus und sprach zu ihnen: \wj Murrt nicht untereinander!\wj*
-\v 44 \wj Niemand kann zu mir kommen, es sei denn dass der Vater, der mich gesandt hat, ihn zieht; und \+em ich\+em* werde ihn auferwecken am letzten Tag. \wj*
-\v 45 \wj Es steht in den Propheten geschrieben: „Und sie werden alle von Gott gelehrt sein“.\wj*\f - \fr 6,45 \ft Jes. 54,13\f*\wj Jeder, der von dem Vater\wj*\f - \fr 6,45 \ft Eig. vonseiten des Vaters\f*\wj gehört und gelernt hat, kommt zu mir.\wj*
-\v 46 \wj Nicht dass jemand den Vater gesehen habe, außer dem, der von Gott\wj*\f - \fr 6,46 \ft Eig. von Gott her\f*\wj ist, dieser hat den Vater gesehen.\wj*
-\v 47 \wj Wahrlich, wahrlich, ich sage euch: Wer [an mich] glaubt, hat ewiges Leben.\wj*
-\v 48 \wj \+em Ich\+em* bin das Brot des Lebens.\wj*
-\v 49 \wj Eure Väter haben das Manna in der Wüste gegessen und sind gestorben.\wj*
-\v 50 \wj Dies ist das Brot, das aus dem Himmel herabkommt, damit man davon esse und nicht sterbe.\wj*
-\v 51 \wj \+em Ich\+em* bin das lebendige Brot, das aus dem Himmel herabgekommen ist; wenn jemand von diesem Brot isst\wj*\f - \fr 6,51 \ft O. gegessen hat\f*\wj , so wird er leben in Ewigkeit. Das Brot aber\wj*\f - \fr 6,51 \ft Eig. Und das Brot aber\f*\wj , das \+em ich\+em* geben werde, ist mein Fleisch, das \+em ich\+em* geben werde für das Leben der Welt.\wj*
-\v 52 Die Juden stritten nun untereinander und sagten: Wie kann dieser uns sein Fleisch zu essen geben?
-\v 53 Da sprach Jesus zu ihnen: \wj Wahrlich, wahrlich, ich sage euch: Es sei denn dass ihr das Fleisch des Sohnes des Menschen esst und sein Blut trinkt\wj*\f - \fr 6,53 \ft O. gegessen ... getrunken habt\f*\wj , so habt ihr kein Leben in euch selbst. \wj*
-\v 54 \wj Wer mein Fleisch isst und mein Blut trinkt, hat ewiges Leben, und \+em ich\+em* werde ihn auferwecken am letzten Tag;\wj*
-\v 55 \wj denn mein Fleisch ist wahrhaftig Speise, und mein Blut ist wahrhaftig Trank.\wj*
-\v 56 \wj Wer mein Fleisch isst und mein Blut trinkt, bleibt in mir und ich in ihm.\wj*
-\v 57 \wj Wie der lebendige Vater mich gesandt hat und \+em ich\+em* lebe des Vaters wegen\wj*\f - \fr 6,57 \ft „wegen“ hier in dem Sinn von „infolge des“\f*\wj , so auch, wer mich isst, der wird auch leben meinetwegen\wj*\f - \fr 6,57 \ft „wegen“ hier in dem Sinn von „infolge des“\f*\wj .\wj*
-\v 58 \wj Dies ist das Brot, das aus dem Himmel herabgekommen ist. Nicht wie die Väter aßen und starben; wer dieses Brot isst, wird leben in Ewigkeit.\wj*
-\v 59 Dieses sprach er in der Synagoge, lehrend in Kapernaum.
-\p
-\v 60 Viele nun von seinen Jüngern, die es gehört hatten, sprachen: Diese Rede ist hart; wer kann sie hören?
-\v 61 Da aber Jesus bei sich selbst wusste\f - \fr 6,61 \ft Eig. in sich selbst erkannte\f*, dass seine Jünger hierüber murrten, sprach er zu ihnen: \wj Ärgert euch dieses? \wj*
-\v 62 \wj Wenn ihr nun den Sohn des Menschen \+add dahin\+add* auffahren seht, wo er zuvor war?\wj*
-\v 63 \wj Der Geist ist es, der lebendig macht; das Fleisch nützt nichts. Die Worte, die \+em ich\+em* zu euch geredet habe, sind Geist und sind Leben;\wj*
-\v 64 \wj aber es sind einige unter\wj*\f - \fr 6,64 \ft W. aus\f*\wj euch, die nicht glauben.\wj* Denn Jesus wusste von Anfang an, welche es seien, die nicht glaubten, und wer es sei, der ihn überliefern würde.
-\v 65 Und er sprach: \wj Darum habe ich euch gesagt, dass niemand zu mir kommen kann, es sei ihm denn von dem Vater gegeben.\wj*
-\v 66 Von da an gingen viele seiner Jünger zurück und wandelten nicht mehr mit ihm.
-\v 67 Da sprach Jesus zu den Zwölfen: \wj Wollt \+em ihr\+em* etwa auch weggehen?\wj*
-\v 68 Simon Petrus antwortete ihm: Herr, zu wem sollen wir gehen? Du hast Worte ewigen Lebens;
-\v 69 und \em wir\em* haben geglaubt und erkannt\f - \fr 6,69 \ft O. glauben und wissen\f*, dass \em du\em* der Heilige Gottes bist.
-\v 70 Jesus antwortete ihnen: \wj Habe \+em ich\+em* nicht euch, die Zwölf, auserwählt? Und von euch ist einer ein Teufel.\wj*
-\v 71 Er sprach aber von Judas, Simons \add Sohn\add*, dem Iskariot; denn dieser sollte ihn überliefern, \add er\add*, der einer von den Zwölfen war.
+\s1 The Feeding of the Five Thousand
+\r (Matthew 14:13–21; Mark 6:30–44; Luke 9:10–17)
+\m
+\v 1 After this, Jesus crossed to the other side of the Sea of Galilee (that is, the Sea of Tiberias).
+\v 2 A large crowd followed Him because they saw the signs He was performing on the sick.
+\v 3 Then Jesus went up on the mountain and sat down with His disciples.
+\b
+\m
+\v 4 Now the Jewish Feast of the Passover was near.
+\v 5 When Jesus looked up and saw a large crowd coming toward Him, He said to Philip, “Where can we buy bread for these people to eat?”
+\v 6 But He was asking this to test him, for He knew what He was about to do.
+\b
+\m
+\v 7 Philip answered, “Two hundred denarii \f + \fr 6:7 \ft A denarius was customarily a day’s wage for a laborer; see Matthew 20:2.\f* would not buy enough bread for each of them to have a small piece.”
+\b
+\m
+\v 8 One of His disciples, Andrew, Simon Peter’s brother, said to Him,
+\v 9 “Here is a boy with five barley loaves and two small fish. But what difference will these make among so many?”
+\b
+\m
+\v 10 “Have the people sit down,” Jesus said. Now there was plenty of grass in that place, so the men sat down, about five thousand of them.
+\b
+\m
+\v 11 Then Jesus took the loaves and the fish, gave thanks, and distributed to those who were seated as much as they wanted.
+\b
+\m
+\v 12 And when everyone was full, He said to His disciples, “Gather the pieces that are left over, so that nothing will be wasted.”
+\b
+\m
+\v 13 So they collected them and filled twelve baskets with the pieces of the five barley loaves left over by those who had eaten.
+\b
+\m
+\v 14 When the people saw the sign that Jesus had performed,\f + \fr 6:14 \ft SBL, NA, NE, and WH He had performed\f* they began to say, “Truly this is the Prophet who is to come into the world.”
+\b
+\m
+\v 15 Then Jesus, realizing that they were about to come and make Him king by force, withdrew again to a mountain by Himself.
+\s1 Jesus Walks on Water
+\r (Matthew 14:22–33; Mark 6:45–52)
+\b
+\m
+\v 16 When evening came, His disciples went down to the sea,
+\v 17 got into a boat, and started across the sea to Capernaum. It was already dark, and Jesus had not yet gone out to them.
+\v 18 A strong wind was blowing, and the sea grew agitated.
+\b
+\m
+\v 19 When they had rowed about three or four miles,\f + \fr 6:19 \ft Greek about twenty-five or thirty stadia; that is, approximately 2.87 to 3.45 miles (4.62 to 5.55 kilometers)\f* they saw Jesus approaching the boat, walking on the sea—and they were terrified.
+\v 20 But Jesus spoke up: “It is I; do not be afraid.”
+\v 21 Then they were willing to take Him into the boat, and at once the boat reached the shore where they were heading.
+\s1 Jesus the Bread of Life
+\b
+\m
+\v 22 The next day, the crowd that had remained on the other side of the sea realized that only one boat had been there, and that Jesus had not boarded it with His disciples, but they had gone away alone.
+\v 23 However, some boats from Tiberias landed near the place where the people had eaten the bread after the Lord had given thanks.
+\v 24 So when the crowd saw that neither Jesus nor His disciples were there, they got into the boats and went to Capernaum to look for Him.
+\v 25 When they found Him on the other side of the sea, they asked Him, “Rabbi, when did You get here?”
+\b
+\m
+\v 26 Jesus replied, “Truly, truly, I tell you, it is not because you saw these signs that you are looking for Me, but because you ate the loaves and had your fill.
+\v 27 Do not work for food that perishes, but for food that endures to eternal life, which the Son of Man will give you. For on Him God the Father has placed His seal of approval.”
+\b
+\m
+\v 28 Then they inquired, “What must we do to perform the works of God?”
+\b
+\m
+\v 29 Jesus replied, “The work of God is this: to believe in the One He has sent.”
+\b
+\m
+\v 30 So they asked Him, “What sign then will You perform, so that we may see it and believe You? What will You do?
+\v 31 Our fathers ate the manna in the wilderness, as it is written: ‘He gave them bread from heaven to eat.’\f + \fr 6:31 \ft Psalms 78:24; see also Exodus 16:4.\f*”
+\b
+\m
+\v 32 Jesus said to them, “Truly, truly, I tell you, it was not Moses who gave you the bread from heaven, but it is My Father who gives you the true bread from heaven.
+\v 33 For the bread of God is He who comes down from heaven and gives life to the world.”
+\b
+\m
+\v 34 “Sir,” they said, “give us this bread at all times.”
+\b
+\m
+\v 35 Jesus answered, “I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.
+\v 36 But as I stated, you have seen Me and still you do not believe.
+\b
+\m
+\v 37 Everyone the Father gives Me will come to Me, and the one who comes to Me I will never drive away.
+\v 38 For I have come down from heaven, not to do My own will, but to do the will of Him who sent Me.
+\b
+\m
+\v 39 And this is the will of Him who sent Me, that I shall lose none of those He has given Me, but raise them up at the last day.
+\v 40 For it is My Father’s will that everyone who looks to the Son and believes in Him shall have eternal life, and I will raise him up at the last day.”
+\b
+\m
+\v 41 At this, the Jews began to grumble about Jesus because He had said, “I am the bread that came down from heaven.”
+\v 42 They were asking, “Is this not Jesus, the son of Joseph, whose father and mother we know? How then can He say, ‘I have come down from heaven?’”
+\b
+\m
+\v 43 “Stop grumbling among yourselves,” Jesus replied.
+\v 44 “No one can come to Me unless the Father who sent Me draws him, and I will raise him up at the last day.
+\v 45 It is written in the Prophets: ‘And they will all be taught by God.’\f + \fr 6:45 \ft Isaiah 54:13\f* Everyone who has heard the Father and learned from Him comes to Me—
+\v 46 not that anyone has seen the Father except the One who is from God; only He has seen the Father.
+\b
+\m
+\v 47 Truly, truly, I tell you, he who believes has eternal life.
+\v 48 I am the bread of life.
+\v 49 Your fathers ate the manna in the wilderness, yet they died.
+\v 50 This is the bread that comes down from heaven, so that anyone may eat of it and not die.
+\v 51 I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And this bread, which I will give for the life of the world, is My flesh.”
+\b
+\m
+\v 52 At this, the Jews began to argue among themselves, “How can this man give us His flesh to eat?”
+\b
+\m
+\v 53 So Jesus said to them, “Truly, truly, I tell you, unless you eat the flesh and drink the blood of the Son of Man, you have no life in you.
+\v 54 Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day.
+\v 55 For My flesh is real food, and My blood is real drink.
+\b
+\m
+\v 56 Whoever eats My flesh and drinks My blood remains in Me, and I in him.
+\v 57 Just as the living Father sent Me and I live because of the Father, so also the one who feeds on Me will live because of Me.
+\v 58 This is the bread that came down from heaven. Unlike your fathers, who ate the manna and died, the one who eats this bread will live forever.”
+\s1 Many Disciples Turn Back
+\r (Matthew 8:18–22; Luke 9:57–62; Luke 14:25–33)
+\b
+\m
+\v 59 Jesus said this while teaching in the synagogue in Capernaum.
+\v 60 On hearing it, many of His disciples said, “This is a difficult teaching. Who can accept it?”
+\b
+\m
+\v 61 Aware that His disciples were grumbling about this teaching, Jesus asked them, “Does this offend you?
+\v 62 Then what will happen if you see the Son of Man ascend to where He was before?
+\b
+\m
+\v 63 The Spirit gives life; the flesh profits nothing. The words I have spoken to you are spirit and they are life.
+\v 64 However, there are some of you who do not believe.” (For Jesus had known from the beginning which of them did not believe and who would betray Him.)
+\b
+\m
+\v 65 Then Jesus said, “This is why I told you that no one can come to Me unless the Father has granted it to him.”
+\b
+\m
+\v 66 From that time on many of His disciples turned back and no longer walked with Him.
+\s1 Peter’s Confession of Faith
+\r (Matthew 16:13–20; Mark 8:27–30; Luke 9:18–20)
+\b
+\m
+\v 67 So Jesus asked the Twelve, “Do you want to leave too?”
+\b
+\m
+\v 68 Simon Peter replied, “Lord, to whom would we go? You have the words of eternal life.
+\v 69 We believe and know that You are the Holy One of God.\f + \fr 6:69 \ft BYZ and TR You are the Christ, the Son of the living God\f*”
+\b
+\m
+\v 70 Jesus answered them, “Have I not chosen you, the Twelve? Yet one of you is a devil!”
+\v 71 He was speaking about Judas, the son of Simon Iscariot. For although Judas was one of the Twelve, he was later to betray Jesus.
 \c 7
-\p
-\v 1 Und nach diesem wandelte Jesus in Galiläa; denn er wollte nicht in Judäa wandeln, weil die Juden ihn zu töten suchten.
-\v 2 Es war aber nahe das Fest der Juden, die Laubhütten.
-\v 3 Es sprachen nun seine Brüder zu ihm: Zieh von hier weg und geh nach Judäa, damit auch deine Jünger deine Werke sehen, die du tust;
-\v 4 denn niemand tut etwas im Verborgenen und sucht \add dabei\add* selbst öffentlich bekannt zu sein. Wenn du diese Dinge tust, so zeige dich der Welt;
-\v 5 denn auch seine Brüder glaubten nicht an ihn.
-\v 6 Da spricht Jesus zu ihnen: \wj Meine Zeit ist noch nicht da, eure Zeit aber ist stets bereit.\wj*
-\v 7 \wj Die Welt kann euch nicht hassen; mich aber hasst sie, weil \+em ich\+em* von ihr zeuge, dass ihre Werke böse sind.\wj*
-\v 8 \wj Geht \+em ihr\+em* hinauf zu diesem Fest; \+em ich\+em* gehe nicht hinauf zu diesem Fest; denn \+em meine\+em* Zeit ist noch nicht erfüllt.\wj*
-\v 9 Nachdem er dies zu ihnen gesagt hatte, blieb er in Galiläa.
-\v 10 Als aber seine Brüder hinaufgegangen waren, da ging auch \em er\em* hinauf zu dem Fest, nicht öffentlich, sondern wie im Verborgenen.
-\v 11 Die Juden nun suchten ihn auf dem Fest und sprachen: Wo ist jener?
-\v 12 Und viel Gemurmel war über ihn unter den Volksmengen; die einen sagten: Er ist gut; andere sagten: Nein, sondern er verführt die Volksmenge.
-\v 13 Niemand jedoch sprach öffentlich von ihm aus Furcht vor den Juden.
-\p
-\v 14 Als es aber schon um die Mitte des Festes war, ging Jesus hinauf in den Tempel und lehrte.
-\v 15 Da verwunderten sich die Juden und sagten: Wie besitzt dieser Gelehrsamkeit, da er doch nicht gelernt hat?
-\v 16 Da antwortete ihnen Jesus und sprach: \wj Meine Lehre ist nicht mein, sondern dessen, der mich gesandt hat.\wj*
-\v 17 \wj Wenn jemand seinen Willen tun will, so wird er von\wj*\f - \fr 7,17 \ft d.h. hinsichtlich\f*\wj der Lehre wissen, ob sie aus Gott ist, oder ob \+em ich\+em* aus\wj*\f - \fr 7,17 \ft W. von\f*\wj mir selbst rede. \wj*
-\v 18 \wj Wer aus\wj*\f - \fr 7,18 \ft W. von\f*\wj sich selbst redet, sucht seine eigene Ehre\wj*\f - \fr 7,18 \ft O. Herrlichkeit\f*\wj ; wer aber die Ehre\wj*\f - \fr 7,18 \ft O. Herrlichkeit\f*\wj dessen sucht, der ihn gesandt hat, dieser ist wahrhaftig, und Ungerechtigkeit ist nicht in ihm. \wj*
-\v 19 \wj Hat nicht Mose euch das Gesetz gegeben? Und keiner von euch tut das Gesetz. Was sucht ihr mich zu töten?\wj*
-\v 20 Die Volksmenge antwortete [und sprach]: Du hast einen Dämon; wer sucht dich zu töten?
-\v 21 Jesus antwortete und sprach zu ihnen: \wj \+em Ein\+em* Werk habe ich getan, und ihr alle verwundert euch.\wj*
-\v 22 \wj Deswegen gab Mose\wj*\f - \fr 7,22 \ft O. ... ihr alle verwundert euch deswegen. Mose gab usw.\f*\wj euch die Beschneidung (nicht dass sie von Mose sei, sondern von den Vätern), und am Sabbat beschneidet ihr einen Menschen. \wj*
-\v 23 \wj Wenn ein Mensch die Beschneidung am Sabbat empfängt, damit das Gesetz Moses nicht gebrochen werde, zürnt ihr mir, dass ich einen Menschen ganz\wj*\f - \fr 7,23 \ft Eig. einen ganzen Menschen\f*\wj gesund gemacht habe am Sabbat? \wj*
-\v 24 \wj Richtet nicht nach dem Schein, sondern richtet ein gerechtes\wj*\f - \fr 7,24 \ft Eig. das gerechte\f*\wj Gericht!\wj*
-\v 25 Es sagten nun einige von den Bewohnern Jerusalems: Ist das nicht der, den sie zu töten suchen?
-\v 26 Und siehe, er redet öffentlich, und sie sagen ihm nichts. Haben denn etwa die Obersten in Wahrheit erkannt, dass dieser der Christus ist?
-\v 27 Diesen aber kennen wir, woher er ist; wenn aber der Christus kommt, so weiß niemand, woher er ist.
-\v 28 Jesus nun rief im Tempel, lehrte und sprach: \wj Ihr kennt mich und wisst auch, woher ich bin; und ich bin nicht von mir selbst gekommen, sondern der mich gesandt hat ist wahrhaftig, den \+em ihr\+em* nicht kennt.\wj*
-\v 29 \wj \+em Ich\+em* kenne ihn, weil ich von ihm\wj*\f - \fr 7,29 \ft Eig. von ihm her\f*\wj bin, und \+em er\+em* mich gesandt hat.\wj*
-\v 30 Da suchten sie ihn zu greifen; und niemand legte die Hand an ihn, weil seine Stunde noch nicht gekommen war.
-\v 31 Viele aber von der Volksmenge glaubten an ihn und sprachen: Wenn der Christus kommt, wird er wohl mehr Zeichen tun als die, welche dieser getan hat?
-\v 32 Die Pharisäer hörten die Volksmenge dies über ihn murmeln; und die Pharisäer und die Hohenpriester sandten Diener, dass sie ihn greifen möchten.
-\v 33 Da sprach Jesus: \wj Noch eine kleine Zeit bin ich bei euch, und ich gehe hin zu dem, der mich gesandt hat.\wj*
-\v 34 \wj Ihr werdet mich suchen und nicht finden, und wo \+em ich\+em* bin, könnt \+em ihr\+em* nicht hinkommen.\wj*
-\v 35 Es sprachen nun die Juden zueinander: Wohin will dieser gehen, dass \em wir\em* ihn nicht finden sollen? Will er etwa in die Zerstreuung der Griechen\f - \fr 7,35 \ft d.h. zu den unter den Griechen zerstreut wohnenden Juden\f* gehen und die Griechen lehren?
-\v 36 Was ist das für ein Wort, das er sprach: Ihr werdet mich suchen und nicht finden, und: \wj Wo \+em ich\+em* bin, könnt \+em ihr\+em* nicht hinkommen?\wj*
-\p
-\v 37 An dem letzten, dem großen Tag des Festes aber stand Jesus und rief und sprach: \wj Wenn jemand dürstet, so komme er zu mir und trinke!\wj*
-\v 38 \wj Wer an mich glaubt, wie die Schrift gesagt hat, aus dessen Leib werden Ströme lebendigen Wassers fließen.\wj*
-\v 39 Dies aber sagte er von dem Geist, den die an ihn Glaubenden empfangen sollten; denn noch war \add der\add* Geist nicht da, weil Jesus noch nicht verherrlicht worden war.
-\v 40 \add Einige\add* nun aus der Volksmenge sagten, als sie diese Worte hörten: Dieser ist wahrhaftig der Prophet.
-\v 41 Andere sagten: Dieser ist der Christus. Andere sagten: Der Christus kommt doch nicht aus Galiläa?
-\v 42 Hat nicht die Schrift gesagt: Aus den Nachkommen Davids und aus Bethlehem, dem Dorf, wo David war, kommt der Christus?
-\v 43 Es entstand nun seinethalben eine Spaltung in der Volksmenge.
-\v 44 Einige aber von ihnen wollten ihn greifen, aber keiner legte die Hände an ihn.
-\v 45 Es kamen nun die Diener zu den Hohenpriestern und Pharisäern, und diese sprachen zu ihnen: Warum habt ihr ihn nicht gebracht?
-\v 46 Die Diener antworteten: Niemals hat ein Mensch so geredet wie dieser Mensch.
-\v 47 Da antworteten ihnen die Pharisäer: Seid \em ihr\em* denn auch verführt?
-\v 48 Hat wohl jemand von den Obersten an ihn geglaubt, oder von den Pharisäern?
-\v 49 Diese Volksmenge aber, die das Gesetz nicht kennt, sie ist verflucht!
-\v 50 \add Da\add* spricht Nikodemus zu ihnen, der einer von ihnen war:
-\v 51 Richtet denn unser Gesetz den Menschen, ehe es zuvor von ihm selbst gehört und erkannt hat, was er tut?
-\v 52 Sie antworteten und sprachen zu ihm: Bist \em du\em* etwa auch aus Galiläa? Forsche und sieh, dass aus Galiläa kein Prophet aufsteht.
-\v 53 [Und jeder ging nach seinem Haus.
+\s1 Jesus Teaches at the Feast
+\m
+\v 1 After this, Jesus traveled throughout Galilee. He did not want to travel in Judea, because the Jews there were trying to kill Him.
+\v 2 However, the Jewish Feast of Tabernacles \f + \fr 7:2 \ft That is, Sukkot, the autumn feast of pilgrimage to Jerusalem; also translated as the Feast of Booths or the Feast of Shelters and originally called the Feast of Ingathering (see Exodus 23:16 and Exodus 34:22).\f* was near.
+\v 3 So Jesus’ brothers said to Him, “Leave here and go to Judea, so that Your disciples there may see the works You are doing.
+\v 4 For no one who wants to be known publicly acts in secret. Since You are doing these things, show Yourself to the world.”
+\v 5 For even His own brothers did not believe in Him.
+\b
+\m
+\v 6 Therefore Jesus told them, “Although your time is always at hand, My time has not yet come.
+\v 7 The world cannot hate you, but it hates Me, because I testify that its works are evil.
+\v 8 Go up to the feast on your own. I am not \f + \fr 7:8 \ft NE, WH, BYZ, and TR I am not yet\f* going up to this feast, because My time has not yet come.”
+\b
+\m
+\v 9 Having said this, Jesus remained in Galilee.
+\v 10 But after His brothers had gone up to the feast, He also went—not publicly, but in secret.
+\b
+\m
+\v 11 So the Jews were looking for Him at the feast and asking, “Where is He?”
+\b
+\m
+\v 12 Many in the crowds were whispering about Him. Some said, “He is a good man.”
+\b
+\m But others replied, “No, He deceives the people.”
+\b
+\m
+\v 13 Yet no one would speak publicly about Him for fear of the Jews.
+\b
+\m
+\v 14 About halfway through the feast, Jesus went up to the temple courts \f + \fr 7:14 \ft Literally the temple; also in verse 28\f* and began to teach.
+\v 15 The Jews were amazed and asked, “How did this man attain such learning without having studied?”
+\b
+\m
+\v 16 “My teaching is not My own,” Jesus replied. “It comes from Him who sent Me.
+\v 17 If anyone desires to do His will, he will know whether My teaching is from God or whether I speak on My own.
+\v 18 He who speaks on his own authority seeks his own glory, but He who seeks the glory of the One who sent Him is a man of truth; in Him there is no falsehood.
+\v 19 Has not Moses given you the law? Yet not one of you keeps it. Why are you trying to kill Me?”
+\b
+\m
+\v 20 “You have a demon,” the crowd replied. “Who is trying to kill You?”
+\b
+\m
+\v 21 Jesus answered them, “I did one miracle, and you are all amazed.
+\v 22 But because Moses gave you circumcision, you circumcise a boy on the Sabbath (not that it is from Moses, but from the patriarchs.)
+\v 23 If a boy can be circumcised on the Sabbath so that the law of Moses will not be broken, why are you angry with Me for making the whole man well on the Sabbath?
+\v 24 Stop judging by outward appearances, and start judging justly.”
+\s1 Is Jesus the Christ?
+\b
+\m
+\v 25 Then some of the people of Jerusalem began to say, “Isn’t this the man they are trying to kill?
+\v 26 Yet here He is, speaking publicly, and they are not saying anything to Him. Have the rulers truly recognized that this is the Christ?
+\v 27 But we know where this man is from. When the Christ comes, no one will know where He is from.”
+\b
+\m
+\v 28 Then Jesus, still teaching in the temple courts, cried out, “You know Me, and you know where I am from. I have not come of My own accord, but He who sent Me is true. You do not know Him,
+\v 29 but I know Him, because I am from Him and He sent Me.”
+\b
+\m
+\v 30 So they tried to seize Him, but no one laid a hand on Him, because His hour had not yet come.
+\v 31 Many in the crowd, however, believed in Him and said, “When the Christ comes, will He perform more signs than this man?”
+\b
+\m
+\v 32 When the Pharisees heard the crowd whispering these things about Jesus, they and the chief priests sent officers to arrest Him.
+\v 33 So Jesus said, “I am with you only a little while longer, and then I am going to the One who sent Me.
+\v 34 You will look for Me, but you will not find Me; and where I am, you cannot come.”
+\b
+\m
+\v 35 At this, the Jews said to one another, “Where does He intend to go that we will not find Him? Will He go where the Jews are dispersed among the Greeks,\f + \fr 7:35 \ft Literally Will He go to the Diaspora among the Greeks; the Jewish people living outside the land of Israel since the Babylonian exile were referred to as the Diaspora.\f* and teach the Greeks?
+\v 36 What does He mean by saying, ‘You will look for Me, but you will not find Me,’ and, ‘Where I am, you cannot come’?”
+\s1 Living Water
+\b
+\m
+\v 37 On the last and greatest day of the feast, Jesus stood up and called out in a loud voice, “If anyone is thirsty, let him come to Me and drink.
+\v 38 Whoever believes in Me, as the Scripture has said: ‘Streams of living water will flow from within him.’”
+\v 39 He was speaking about the Spirit, whom those who believed in Him were later to receive. For the Spirit had not yet been given,\f + \fr 7:39 \ft Literally the Spirit was not yet; BYZ and TR the Holy Spirit was not yet\f* because Jesus had not yet been glorified.
+\s1 Division over Jesus
+\b
+\m
+\v 40 On hearing these words, some of the people said, “This is truly the Prophet.”
+\b
+\m
+\v 41 Others declared, “This is the Christ.”
+\b
+\m But still others asked, “How can the Christ come from Galilee?
+\v 42 Doesn’t the Scripture say that the Christ will come from the line of David and from Bethlehem, the village where David lived?\f + \fr 7:42 \ft See Micah 5:2.\f*”
+\b
+\m
+\v 43 So there was division in the crowd because of Jesus.
+\v 44 Some of them wanted to seize Him, but no one laid a hand on Him.
+\s1 The Unbelief of the Jewish Leaders
+\b
+\m
+\v 45 Then the officers returned to the chief priests and Pharisees, who asked them, “Why didn’t you bring Him in?”
+\b
+\m
+\v 46 “Never has anyone spoken like this man!” the officers answered.
+\b
+\m
+\v 47 “Have you also been deceived?” replied the Pharisees.
+\v 48 “Have any of the rulers or Pharisees believed in Him?
+\v 49 But this crowd that does not know the law, they are under a curse.”
+\b
+\m
+\v 50 Nicodemus, who had gone to Jesus earlier and who himself was one of them, asked,
+\v 51 “Does our law convict a man without first hearing from him to determine what he has done?”
+\b
+\m
+\v 52 “Aren’t you also from Galilee?” they replied. “Look into it, and you will see that no prophet comes out of Galilee.”\f + \fr 7:52 \ft Early manuscripts do not include John 7:53 through John 8:11.\f*
+\b
+\m
+\v 53 Then each went to his own home.
 \c 8
-\p
-\v 1 Jesus aber ging nach dem Ölberg.
-\p
-\v 2 Frühmorgens aber kam er wiederum in den Tempel, und alles Volk kam zu ihm; und er setzte sich und lehrte sie.
-\v 3 Die Schriftgelehrten und die Pharisäer aber bringen eine Frau [zu ihm], im Ehebruch ergriffen, und stellen sie in die Mitte
-\v 4 und sagen zu ihm: Lehrer, diese Frau ist im Ehebruch, auf der Tat selbst, ergriffen worden.
-\v 5 In dem Gesetz aber hat uns Mose geboten, solche zu steinigen; du nun, was sagst du?
-\v 6 Dies aber sagten sie, ihn zu versuchen, damit sie \add etwas\add* hätten, um ihn anzuklagen. Jesus aber bückte sich nieder und schrieb mit dem Finger auf die Erde.
-\v 7 Als sie aber fortfuhren, ihn zu fragen, richtete er sich auf und sprach zu ihnen: \wj Wer von euch ohne Sünde ist, werfe zuerst den Stein auf sie.\wj*
-\v 8 Und wiederum bückte er sich nieder und schrieb auf die Erde.
-\v 9 Als sie aber \add dies\add* hörten, gingen sie einer nach dem anderen hinaus, anfangend von den Ältesten bis zu den Letzten; und Jesus wurde allein gelassen mit der Frau in der Mitte.
-\v 10 Als aber Jesus sich aufrichtete [und außer der Frau niemand sah], sprach er zu ihr: \wj Frau, wo sind jene, [deine Verkläger]? Hat niemand dich verurteilt?\wj*
-\v 11 Sie aber sprach: Niemand, Herr. Jesus aber sprach zu ihr: \wj So verurteile auch \+em ich\+em* dich nicht; geh hin und sündige nicht mehr.]\wj*
-\p
-\v 12 Wiederum nun redete Jesus zu ihnen und sprach: \wj \+em Ich\+em* bin das Licht der Welt; wer mir nachfolgt, wird \+em nicht\+em* in der Finsternis wandeln, sondern wird das Licht des Lebens haben.\wj*
-\v 13 Da sprachen die Pharisäer zu ihm: \em Du\em* zeugst von dir\f - \fr 8,13 \ft O. über dich (mich); so auch V. 18\f* selbst; dein Zeugnis ist nicht wahr.
-\v 14 Jesus antwortete und sprach zu ihnen: \wj Auch wenn \+em ich\+em* von mir\wj*\f - \fr 8,14 \ft O. über dich (mich); so auch V. 18\f*\wj selbst zeuge, ist mein Zeugnis wahr, weil ich weiß, woher ich gekommen bin und wohin ich gehe; \+em ihr\+em* aber wisst nicht, woher ich komme und wohin ich gehe.\wj*
-\v 15 \wj \+em Ihr\+em* richtet nach dem Fleisch, \+em ich\+em* richte niemand.\wj*
-\v 16 \wj Wenn \+em ich\+em* aber auch richte, so ist mein Gericht wahr, weil ich nicht allein bin, sondern ich und der Vater, der mich gesandt hat.\wj*
-\v 17 \wj Aber auch in eurem Gesetz steht geschrieben, dass das Zeugnis zweier Menschen wahr ist.\wj*\f - \fr 8,17 \ft 5. Mose 17,6; 19,15\f*
-\v 18 \wj \+em Ich\+em* bin es, der von mir selbst zeugt, und der Vater, der mich gesandt hat, zeugt von mir.\wj*
-\v 19 Da sprachen sie zu ihm: Wo ist dein Vater? Jesus antwortete: \wj Ihr kennt weder mich noch meinen Vater; wenn ihr mich gekannt hättet, so würdet ihr auch meinen Vater gekannt haben.\wj*
-\v 20 Diese Worte redete er in der Schatzkammer, lehrend in dem Tempel; und niemand griff ihn, denn seine Stunde war noch nicht gekommen.
-\p
-\v 21 Er sprach nun wiederum zu ihnen: \wj \+em Ich\+em* gehe hin, und ihr werdet mich suchen und werdet in eurer Sünde sterben; wo \+em ich\+em* hingehe, könnt \+em ihr\+em* nicht hinkommen.\wj*
-\v 22 Da sagten die Juden: Er will sich doch nicht selbst töten, dass er spricht: \wj Wo \+em ich\+em* hingehe, könnt \+em ihr\+em* nicht hinkommen?\wj*
-\v 23 Und er sprach zu ihnen: \wj \+em Ihr\+em* seid von\wj*\f - \fr 8,23 \ft W. aus; so auch weiterhin in diesem Vers\f*\wj dem, was unten ist, \+em ich\+em* bin von dem, was oben ist; \+em ihr\+em* seid von dieser Welt, \+em ich\+em* bin nicht von dieser Welt.\wj*
-\v 24 \wj Daher sagte ich euch, dass ihr in euren Sünden sterben werdet; denn wenn ihr nicht glauben werdet, dass \+em ich\+em* es bin, so werdet ihr in euren Sünden sterben.\wj*
-\v 25 Da sprachen sie zu ihm: Wer bist \em du\em*? [Und] Jesus sprach zu ihnen: \wj Durchaus das, was ich auch zu euch rede\wj*\f - \fr 8,25 \ft d.h. die Worte Jesu stellten ihn als den dar, der er war: die Wahrheit\f*\wj .\wj*
-\v 26 \wj Vieles habe ich über euch zu reden und zu richten, aber der mich gesandt hat, ist wahrhaftig; und \+em ich\+em*, was ich von ihm gehört habe, das rede ich zu der Welt.\wj*
-\v 27 Sie erkannten nicht, dass er von dem Vater zu ihnen sprach.
-\v 28 Da sprach Jesus zu ihnen: \wj Wenn ihr den Sohn des Menschen erhöht haben werdet, dann werdet ihr erkennen, dass \+em ich\+em* es bin und \+add dass\+add* ich nichts von mir selbst tue, sondern wie der Vater mich gelehrt hat, das rede ich.\wj*
-\v 29 \wj Und der mich gesandt hat, ist mit mir; er hat mich nicht allein gelassen, weil \+em ich\+em* allezeit das ihm Wohlgefällige tue.\wj*
-\v 30 Als er dies redete, glaubten viele an ihn.
-\p
-\v 31 Jesus sprach nun zu den Juden, die ihm geglaubt hatten: \wj Wenn \+em ihr\+em* in meinem Wort bleibt, so seid ihr wahrhaft meine Jünger;\wj*
-\v 32 \wj und ihr werdet die Wahrheit erkennen, und die Wahrheit wird euch frei machen.\wj*
-\v 33 Sie antworteten ihm: Wir sind Abrahams Nachkommen und sind nie jemandes Knechte gewesen\f - \fr 8,33 \ft O. haben nie jemand Sklavendienste getan\f*; wie sagst \em du\em*: \wj Ihr sollt frei werden?\wj*
-\v 34 Jesus antwortete ihnen: \wj Wahrlich, wahrlich, ich sage euch: Jeder, der die Sünde tut, ist der Sünde Knecht\wj*\f - \fr 8,34 \ft O. Sklave\f*\wj .\wj*
-\v 35 \wj Der Knecht\wj*\f - \fr 8,35 \ft O. Sklave\f*\wj aber bleibt nicht für immer\wj*\f - \fr 8,35 \ft O. ewiglich\f*\wj in dem Haus; der Sohn bleibt für immer\wj*\f - \fr 8,35 \ft O. ewiglich\f*\wj . \wj*
-\v 36 \wj Wenn nun der Sohn euch frei machen wird, so werdet ihr wirklich frei sein. \wj*
-\v 37 \wj Ich weiß, dass ihr Abrahams Nachkommen seid; aber ihr sucht mich zu töten, weil mein Wort nicht Raum\wj*\f - \fr 8,37 \ft O. keinen Eingang, od. auch: Fortgang\f*\wj in euch findet. \wj*
-\v 38 \wj \+em Ich\+em* rede was ich bei meinem Vater gesehen habe, und ihr nun tut, was ihr von eurem Vater gehört habt.\wj*
-\v 39 Sie antworteten und sprachen zu ihm: Abraham ist unser Vater. Jesus spricht zu ihnen: \wj Wenn ihr Abrahams Kinder wäret, so würdet ihr die Werke Abrahams tun;\wj*
-\v 40 \wj jetzt aber sucht ihr mich zu töten, einen Menschen, der die Wahrheit zu euch geredet hat, die ich von Gott gehört habe; das hat Abraham nicht getan.\wj*
-\v 41 \wj \+em Ihr\+em* tut die Werke eures Vaters.\wj* [Da] sprachen sie zu ihm: \em Wir\em* sind nicht durch Hurerei geboren; wir haben \em einen\em* Vater, Gott.
-\v 42 Jesus sprach zu ihnen: \wj Wenn Gott euer Vater wäre, so würdet ihr mich lieben\wj*\f - \fr 8,42 \ft O. geliebt haben\f*\wj , denn \+em ich\+em* bin von Gott ausgegangen und gekommen; denn \+em ich\+em* bin auch nicht von mir selbst gekommen, sondern \+em er\+em* hat mich gesandt.\wj*
-\v 43 \wj Warum versteht ihr meine Sprache nicht? Weil ihr mein Wort nicht hören könnt.\wj*
-\v 44 \wj \+em Ihr\+em* seid aus dem Vater, dem Teufel, und die Begierden eures Vaters wollt ihr tun. Jener war ein Menschenmörder von Anfang an und steht nicht in der Wahrheit, weil keine Wahrheit in ihm ist. Wenn er die Lüge redet, so redet er aus seinem eigenen, denn er ist ein Lügner und der Vater derselben\wj*\f - \fr 8,44 \ft d.i. der Lüge; O. desselben (des Lügners)\f*\wj . \wj*
-\v 45 \wj Weil \+em ich\+em* aber die Wahrheit sage, glaubt \+em ihr\+em* mir nicht.\wj*
-\v 46 \wj Wer von euch überführt mich der\wj*\f - \fr 8,46 \ft O. einer; W. bezüglich Sünde\f*\wj Sünde? Wenn ich \+add die\+add* Wahrheit sage, warum glaubt \+em ihr\+em* mir nicht?\wj*
-\v 47 \wj Wer aus Gott ist, hört die Worte Gottes. Darum hört \+em ihr\+em* nicht, weil ihr nicht aus Gott seid.\wj*
-\v 48 Die Juden antworteten und sprachen zu ihm: Sagen wir nicht recht, dass du ein Samariter bist und einen Dämon hast?
-\v 49 Jesus antwortete: \wj \+em Ich\+em* habe keinen Dämon, sondern ich ehre meinen Vater, und \+em ihr\+em* verunehrt mich.\wj*
-\v 50 \wj \+em Ich\+em* aber suche nicht meine Ehre\wj*\f - \fr 8,50 \ft O. Herrlichkeit\f*\wj : es ist einer, der \+add sie\+add* sucht, und der richtet. \wj*
-\v 51 \wj Wahrlich, wahrlich, ich sage euch: Wenn jemand mein Wort bewahren\wj*\f - \fr 8,51 \ft O. halten; so auch V. 52.55\f*\wj wird, so wird er den Tod \+em nicht\+em* sehen ewiglich.\wj*
-\v 52 [Da] sprachen die Juden zu ihm: Jetzt erkennen wir\f - \fr 8,52 \ft O. haben wir erkannt\f*, dass du einen Dämon hast. Abraham ist gestorben und die Propheten, und du sagst: \wj Wenn jemand mein Wort bewahren wird, so wird er den Tod \+em nicht\+em* schmecken ewiglich.\wj*
-\v 53 Bist du etwa größer als unser Vater Abraham, der gestorben ist? Und die Propheten sind gestorben. Was machst du aus dir selbst?
-\v 54 Jesus antwortete: \wj Wenn ich mich selbst ehre\wj*\f - \fr 8,54 \ft O. verherrliche ... verherrlicht\f*\wj , so ist meine Ehre\wj*\f - \fr 8,54 \ft O. Herrlichkeit\f*\wj nichts; mein Vater ist es, der mich ehrt\wj*\f - \fr 8,54 \ft O. verherrliche ... verherrlicht\f*\wj , von dem ihr sagt: Er ist unser Gott.\wj*
-\v 55 \wj Und ihr habt ihn nicht erkannt, \+em ich\+em* aber kenne ihn; und wenn ich sagte: Ich kenne ihn nicht, so würde ich euch gleich sein – ein Lügner. Aber ich kenne ihn, und ich bewahre sein Wort.\wj*
-\v 56 \wj Abraham, euer Vater, frohlockte, dass er meinen Tag sehen sollte, und er sah \+add ihn\+add* und freute sich.\wj*
-\v 57 Da sprachen die Juden zu ihm: Du bist noch nicht 50 Jahre alt und hast Abraham gesehen?
-\v 58 Jesus sprach zu ihnen: \wj Wahrlich, wahrlich, ich sage euch: Ehe Abraham wurde, bin \+em ich\+em*.\wj*
-\v 59 Da hoben sie Steine auf, damit sie auf ihn würfen. Jesus aber verbarg sich und ging aus dem Tempel hinaus.
+\s1 The Woman Caught in Adultery
+\m
+\v 1 But Jesus went to the Mount of Olives.
+\b
+\m
+\v 2 Early in the morning He went back into the temple courts.\f + \fr 8:2 \ft Literally the temple; also in verse 20\f* All the people came to Him, and He sat down to teach them.
+\v 3 The scribes and Pharisees, however, brought to Him a woman caught in adultery. They made her stand before them
+\v 4 and said, “Teacher, this woman was caught in the act of adultery.
+\v 5 In the Law Moses commanded us to stone such a woman. So what do You say?”
+\b
+\m
+\v 6 They said this to test Him, in order to have a basis for accusing Him. But Jesus bent down and began to write on the ground with His finger.
+\b
+\m
+\v 7 When they continued to question Him, He straightened up and said to them, “Let him who is without sin among you be the first to cast a stone at her.”
+\v 8 And again He bent down and wrote on the ground.
+\b
+\m
+\v 9 When they heard this,\f + \fr 8:9 \ft NE, BYZ, and TR include and were convicted by their conscience,\f* they began to go away one by one, beginning with the older ones, until only Jesus was left, with the woman standing there.
+\v 10 Then Jesus straightened up \f + \fr 8:10 \ft NE, BYZ, and TR include and saw no one but the woman.\f* and asked her, “Woman, where are your accusers?\f + \fr 8:10 \ft WH and NA where are they\f* Has no one condemned you?”
+\b
+\m
+\v 11 “No one, Lord,” she answered.
+\b
+\m “Then neither do I condemn you,” Jesus declared. “Now go and sin no more.”
+\s1 Jesus the Light of the World
+\r (1 John 1:5–10)
+\b
+\m
+\v 12 Once again, Jesus spoke to the people and said, “I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.”
+\b
+\m
+\v 13 So the Pharisees said to Him, “You are testifying about Yourself; Your testimony is not valid.”
+\b
+\m
+\v 14 Jesus replied, “Even if I testify about Myself, My testimony is valid, because I know where I came from and where I am going. But you do not know where I came from or where I am going.
+\v 15 You judge according to the flesh; I judge no one.
+\v 16 But even if I do judge, My judgment is true, because I am not alone; I am with the Father who sent Me.\f + \fr 8:16 \ft Literally but (it is) I and the Father who sent Me; NE but (it is) I and the One who sent Me\f*
+\v 17 Even in your own Law it is written that the testimony of two men is valid.\f + \fr 8:17 \ft See Deuteronomy 19:15.\f*
+\v 18 I am One who testifies about Myself, and the Father, who sent Me, also testifies about Me.”
+\b
+\m
+\v 19 “Where is Your Father?” they asked Him.
+\b
+\m “You do not know Me or My Father,” Jesus answered. “If you knew Me, you would know My Father as well.”
+\b
+\m
+\v 20 He spoke these words while teaching in the temple courts, near the treasury. Yet no one seized Him, because His hour had not yet come.
+\b
+\m
+\v 21 Again He said to them, “I am going away, and you will look for Me, but you will die in your sin. Where I am going, you cannot come.”
+\b
+\m
+\v 22 So the Jews began to ask, “Will He kill Himself, since He says, ‘Where I am going, you cannot come’?”
+\b
+\m
+\v 23 Then He told them, “You are from below; I am from above. You are of this world; I am not of this world.
+\v 24 That is why I told you that you would die in your sins. For unless you believe that I am He, you will die in your sins.”
+\b
+\m
+\v 25 “Who are You?” they asked.
+\b
+\m “Just what I have been telling you from the beginning,” Jesus replied.
+\v 26 “I have much to say about you and much to judge. But the One who sent Me is truthful, and what I have heard from Him, I tell the world.”
+\b
+\m
+\v 27 They did not understand that He was telling them about the Father.
+\v 28 So Jesus said, “When you have lifted up the Son of Man, then you will know that I am He, and that I do nothing on My own, but speak exactly what the Father has taught Me.
+\v 29 He who sent Me is with Me. He has not left Me alone, because I always do what pleases Him.”
+\s1 The Truth Will Set You Free
+\r (2 John 1:4–6)
+\b
+\m
+\v 30 As Jesus spoke these things, many believed in Him.
+\v 31 So He said to the Jews who had believed Him, “If you continue in My word, you are truly My disciples.
+\v 32 Then you will know the truth, and the truth will set you free.”
+\b
+\m
+\v 33 “We are Abraham’s descendants,” they answered. “We have never been slaves to anyone. How can You say we will be set free?”
+\b
+\m
+\v 34 Jesus replied, “Truly, truly, I tell you, everyone who sins is a slave to sin.
+\v 35 A slave is not a permanent member of the family, but a son belongs to it forever.
+\v 36 So if the Son sets you free, you will be free indeed.
+\b
+\m
+\v 37 I know you are Abraham’s descendants, but you are trying to kill Me because My word has no place within you.
+\v 38 I speak of what I have seen in the presence of the Father, and you do what you have heard from your father.”
+\b
+\m
+\v 39 “Abraham is our father,” they replied.
+\b
+\m “If you were children of Abraham,” said Jesus, “you would do the works of Abraham.
+\v 40 But now you are trying to kill Me, a man who has told you the truth that I heard from God. Abraham never did such a thing.
+\v 41 You are doing the works of your father.”
+\b
+\m “We are not illegitimate children,” they declared. “Our only Father is God Himself.”
+\b
+\m
+\v 42 Jesus said to them, “If God were your Father, you would love Me, for I have come here from God. I have not come on My own, but He sent Me.
+\b
+\m
+\v 43 Why do you not understand what I am saying? It is because you are unable to accept My message.
+\v 44 You belong to your father, the devil, and you want to carry out his desires. He was a murderer from the beginning, refusing to uphold the truth, because there is no truth in him. When he lies, he speaks his native language, because he is a liar and the father of lies.
+\v 45 But because I speak the truth, you do not believe Me!
+\b
+\m
+\v 46 Which of you can prove Me guilty of sin? If I speak the truth, why do you not believe Me?
+\v 47 Whoever belongs to God hears the words of God. The reason you do not hear is that you do not belong to God.”
+\s1 Before Abraham Was Born, I Am
+\b
+\m
+\v 48 The Jews answered Him, “Are we not right to say that You are a Samaritan and You have a demon?”
+\b
+\m
+\v 49 “I do not have a demon,” Jesus replied, “but I honor My Father, and you dishonor Me.
+\v 50 I do not seek My own glory. There is One who seeks it, and He is the Judge.
+\v 51 Truly, truly, I tell you, if anyone keeps My word, he will never see death.”
+\b
+\m
+\v 52 “Now we know that You have a demon!” declared the Jews. “Abraham died, and so did the prophets, yet You say that anyone who keeps Your word will never taste death.
+\v 53 Are You greater than our father Abraham? He died, as did the prophets. Who do You claim to be?”
+\b
+\m
+\v 54 Jesus answered, “If I glorify Myself, My glory means nothing. The One who glorifies Me is My Father, of whom you say ‘He is our \f + \fr 8:54 \ft WH and TR Your\f* God.’
+\v 55 You do not know Him, but I know Him. If I said I did not know Him, I would be a liar like you. But I do know Him, and I keep His word.
+\v 56 Your father Abraham rejoiced that he would see My day. He saw it and was glad.”
+\b
+\m
+\v 57 Then the Jews said to Him, “You are not yet fifty years old, and You have seen Abraham?”
+\b
+\m
+\v 58 “Truly, truly, I tell you,” Jesus declared, “before Abraham was born, I am!\f + \fr 8:58 \ft Literally before Abraham was, I am!\f*”
+\b
+\m
+\v 59 At this, they picked up stones to throw at Him. But Jesus was hidden and went out of the temple area.\f + \fr 8:59 \ft BYZ and TR include going through the midst of them, and so He passed by.\f*
 \c 9
-\p
-\v 1 Und als er vorüberging, sah er einen Menschen, blind von Geburt.
-\v 2 Und seine Jünger fragten ihn und sagten: Rabbi, wer hat gesündigt, dieser oder seine Eltern, dass er blind geboren wurde?
-\v 3 Jesus antwortete: \wj Weder dieser hat gesündigt noch seine Eltern, sondern damit die Werke Gottes an ihm offenbart würden.\wj*
-\v 4 \wj Ich muss die Werke dessen wirken, der mich gesandt hat, solange es Tag ist; es kommt die Nacht, da niemand wirken kann.\wj*
-\v 5 \wj Solange ich in der Welt bin, bin ich \+add das\+add* Licht der Welt.\wj*
-\v 6 Als er dies gesagt hatte, spuckte er auf die Erde und bereitete einen Brei aus dem Speichel und strich den Brei wie Salbe auf seine Augen;
-\v 7 und er sprach zu ihm: \wj Geh hin, wasche dich in dem Teich Siloam\wj* (was übersetzt wird: Gesandt\f - \fr 9,7 \ft O. Gesandter\f*). Da ging er hin und wusch sich und kam sehend.
-\v 8 Die Nachbarn nun und die ihn früher gesehen hatten, dass er ein Bettler war, sprachen: Ist dieser nicht der, der dasaß und bettelte?
-\v 9 Einige sagten: Er ist es; andere sagten: Nein, sondern er ist ihm ähnlich; \em er\em* sagte: \em Ich\em* bin es.
-\v 10 Sie sprachen nun zu ihm: Wie sind deine Augen aufgetan worden?
-\v 11 Er antwortete [und sprach]: Ein Mensch, genannt Jesus, bereitete einen Brei und salbte meine Augen \add damit\add* und sprach zu mir: \wj Geh hin nach Siloam und wasche dich.\wj* Als ich aber hinging und mich wusch, wurde ich sehend.
-\v 12 Da sprachen sie zu ihm: Wo ist jener? Er sagt: Ich weiß es nicht.
-\p
-\v 13 Sie führen ihn, den einst Blinden, zu den Pharisäern.
-\v 14 Es war aber Sabbat, als Jesus den Brei bereitete und seine Augen auftat.
-\v 15 Nun fragten ihn wiederum auch die Pharisäer, wie er sehend geworden sei. Er aber sprach zu ihnen: Er legte Brei auf meine Augen, und ich wusch mich, und ich sehe.
-\v 16 Da sprachen einige von den Pharisäern: Dieser Mensch ist nicht von Gott\f - \fr 9,16 \ft Eig. von Gott her; so auch V. 33\f*, denn er hält den Sabbat nicht. Andere sagten: Wie kann ein sündiger Mensch solche Zeichen tun? Und es war Zwiespalt unter ihnen.
-\v 17 Sie sagen nun wiederum zu dem Blinden: Was sagst du von ihm, weil er deine Augen aufgetan hat? Er aber sprach: Er ist ein Prophet.
-\v 18 Es glaubten nun die Juden nicht von ihm, dass er blind war und sehend geworden, bis sie die Eltern dessen riefen, der sehend geworden war.
-\v 19 Und sie fragten sie und sprachen: Ist dieser euer Sohn, von dem \em ihr\em* sagt, dass er blind geboren wurde? Wie sieht er denn jetzt?
-\v 20 Seine Eltern antworteten [ihnen] und sprachen: Wir wissen, dass dieser unser Sohn ist und dass er blind geboren wurde;
-\v 21 wie er aber jetzt sieht, wissen wir nicht, oder wer seine Augen aufgetan hat, wissen \em wir\em* nicht. Er ist mündig; fragt \em ihn\em*, er wird selbst über sich reden.
-\v 22 Dies sagten seine Eltern, weil sie die Juden fürchteten; denn die Juden waren schon übereingekommen, dass, wenn jemand ihn als Christus bekennen würde, er aus der Synagoge ausgeschlossen werden sollte.
-\v 23 Deswegen sagten seine Eltern: Er ist mündig, fragt \em ihn\em*.
-\v 24 Sie riefen nun zum zweiten Mal den Menschen, der blind war, und sprachen zu ihm: Gib Gott \add die\add* Ehre! \em Wir\em* wissen, dass dieser Mensch ein Sünder ist.
-\v 25 Da antwortete \em er\em*: Ob er ein Sünder ist, weiß ich nicht; eins weiß ich, dass ich blind war und jetzt sehe.
-\v 26 Und sie sprachen wiederum zu ihm: Was hat er dir getan? Wie tat er deine Augen auf?
-\v 27 Er antwortete ihnen: Ich habe es euch schon gesagt, und ihr habt nicht gehört; warum wollt ihr es nochmals hören? Wollt \em ihr\em* etwa auch seine Jünger werden?
-\v 28 Sie schmähten ihn und sprachen: \em Du\em* bist sein Jünger; \em wir\em* aber sind Moses Jünger.
-\v 29 \em Wir\em* wissen, dass Gott zu Mose geredet hat; von diesem aber wissen wir nicht, woher er ist.
-\v 30 Der Mensch antwortete und sprach zu ihnen: Hierbei ist es doch wunderbar, dass \em ihr\em* nicht wisst, woher er ist, und er hat \add doch\add* meine Augen aufgetan.
-\v 31 Wir wissen [aber], dass Gott Sünder nicht hört, sondern wenn jemand gottesfürchtig ist und seinen Willen tut, den hört er.
-\v 32 Von Ewigkeit her ist es nicht erhört, dass jemand die Augen eines Blindgeborenen aufgetan habe.
-\v 33 Wenn dieser nicht von Gott wäre, so könnte er nichts tun.
-\v 34 Sie antworteten und sprachen zu ihm: \em Du\em* bist ganz in Sünden geboren, und \em du\em* lehrst uns? Und sie warfen ihn hinaus.
-\p
-\v 35 Jesus hörte, dass sie ihn hinausgeworfen hatten; und als er ihn fand, sprach er zu ihm: \wj Glaubst du an den Sohn Gottes?\wj*
-\v 36 Er antwortete und sprach: Und wer ist es, Herr, damit ich an ihn glaube?
-\v 37 Jesus sprach zu ihm: \wj Du hast ihn gesehen, und der mit dir redet, der ist es.\wj*
-\v 38 Er aber sprach: Ich glaube, Herr; und er warf sich vor ihm nieder.
-\p
-\v 39 Und Jesus sprach: \wj Zum Gericht bin \+em ich\+em* in diese Welt gekommen, damit die Nichtsehenden sehen und die Sehenden blind werden.\wj*
-\v 40 [Und] \add einige\add* von den Pharisäern, die bei ihm waren, hörten dies und sprachen zu ihm: Sind denn auch \em wir\em* blind?
-\v 41 Jesus sprach zu ihnen: \wj Wenn ihr blind wärt, so würdet ihr keine Sünde haben; nun ihr aber sagt: Wir sehen, so bleibt eure Sünde. \wj*
+\s1 Jesus Heals the Man Born Blind
+\m
+\v 1 Now as Jesus was passing by, He saw a man blind from birth,
+\v 2 and His disciples asked Him, “Rabbi, who sinned, this man or his parents, that he was born blind?”
+\b
+\m
+\v 3 Jesus answered, “Neither this man nor his parents sinned, but this happened so that the works of God would be displayed in him.
+\v 4 While it is daytime, we must do \f + \fr 9:4 \ft BYZ and TR I must do\f* the works of Him who sent Me. Night is coming, when no one can work.
+\v 5 While I am in the world, I am the light of the world.”
+\b
+\m
+\v 6 When Jesus had said this, He spit on the ground, made some mud, and applied it to the man’s eyes.
+\v 7 Then He told him, “Go, wash in the Pool of Siloam” (which means “Sent”). So the man went and washed, and came back seeing.
+\b
+\m
+\v 8 At this, his neighbors and those who had formerly seen him begging began to ask, “Isn’t this the man who used to sit and beg?”
+\b
+\m
+\v 9 Some claimed that he was, but others said, “No, he just looks like him.”
+\b
+\m But the man kept saying, “I am the one.”
+\b
+\m
+\v 10 “How then were your eyes opened?” they asked.
+\b
+\m
+\v 11 He answered, “The man they call Jesus made some mud and anointed my eyes, and He told me to go to Siloam and wash. So I went and washed and received my sight.”
+\b
+\m
+\v 12 “Where is He?” they asked.
+\b
+\m “I do not know,” he answered.
+\s1 The Pharisees Investigate the Healing
+\b
+\m
+\v 13 They brought to the Pharisees the man who had been blind.
+\v 14 Now the day on which Jesus had made the mud and opened his eyes was a Sabbath.
+\v 15 So the Pharisees also asked him how he had received his sight.
+\b
+\m The man answered, “He put mud on my eyes, and I washed, and now I can see.”
+\b
+\m
+\v 16 Because of this, some of the Pharisees said, “This man is not from God, for He does not keep the Sabbath.”
+\b
+\m But others said, “How can a sinful man perform such signs?”
+\b
+\m And there was division among them.
+\v 17 So once again they asked the man who had been blind, “What do you say about Him, since it was your eyes He opened?”
+\b
+\m “He is a prophet,” the man replied.
+\b
+\m
+\v 18 The Jews still did not believe that the man had been blind and had received his sight until they summoned his parents
+\v 19 and asked, “Is this your son, the one you say was born blind? So how is it that he can now see?”
+\b
+\m
+\v 20 His parents answered, “We know he is our son, and we know he was born blind.
+\v 21 But how he can now see or who opened his eyes, we do not know. Ask him. He is old enough to speak for himself.”
+\b
+\m
+\v 22 His parents said this because they were afraid of the Jews. For the Jews had already determined that anyone who confessed Jesus as the Christ would be put out of the synagogue.
+\v 23 That was why his parents said, “He is old enough. Ask him.”
+\b
+\m
+\v 24 So a second time they called for the man who had been blind and said, “Give glory to God! We know that this man is a sinner.”
+\b
+\m
+\v 25 He answered, “Whether He is a sinner I do not know. There is one thing I do know: I was blind, but now I see!”
+\b
+\m
+\v 26 “What did He do to you?” they asked. “How did He open your eyes?”
+\b
+\m
+\v 27 He replied, “I already told you, and you did not listen. Why do you want to hear it again? Do you also want to become His disciples?”
+\b
+\m
+\v 28 Then they heaped insults on him and said, “You are His disciple; we are disciples of Moses.
+\v 29 We know that God spoke to Moses, but we do not know where this man is from.”
+\b
+\m
+\v 30 “That is remarkable indeed!” the man said. “You do not know where He is from, and yet He opened my eyes.
+\v 31 We know that God does not listen to sinners, but He does listen to the one who worships Him and does His will.
+\v 32 Never before has anyone heard of opening the eyes of a man born blind.
+\v 33 If this man were not from God, He could do no such thing.”
+\b
+\m
+\v 34 They replied, “You were born in utter sin, and you are instructing us?” And they threw him out.
+\s1 Spiritual Blindness
+\b
+\m
+\v 35 When Jesus heard that they had thrown him out, He found the man and said, “Do you believe in the Son of Man \f + \fr 9:35 \ft BYZ and TR the Son of God\f*?”
+\b
+\m
+\v 36 “Who is He, Sir?” he replied. “Tell me so that I may believe in Him.”
+\b
+\m
+\v 37 “You have already seen Him,” Jesus answered. “He is the One speaking with you.”
+\b
+\m
+\v 38 “Lord, I believe,” he said. And he worshiped Jesus.
+\b
+\m
+\v 39 Then Jesus declared, “For judgment I have come into this world, so that the blind may see and those who see may become blind.”\f + \fr 9:39 \ft Literally so that those not seeing may see and those seeing may become blind. Some manuscripts do not include 38 “Lord, I believe.”... 39 Then Jesus declared.\f*
+\b
+\m
+\v 40 Some of the Pharisees who were with Him heard this, and they asked Him, “Are we blind too?”
+\b
+\m
+\v 41 “If you were blind,” Jesus replied, “you would not be guilty of sin. But since you claim you can see, your guilt remains.”
 \c 10
-\p
-\v 1 \wj Wahrlich, wahrlich, ich sage euch: Wer nicht durch die Tür in den Hof der Schafe eingeht, sondern anderswo hinübersteigt, der ist ein Dieb und ein Räuber. \wj*
-\v 2 \wj Wer aber durch die Tür eingeht, ist Hirte der Schafe.\wj*
-\v 3 \wj Diesem tut der Türhüter auf, und die Schafe hören seine Stimme, und er ruft seine eigenen Schafe mit Namen und führt sie heraus. \wj*
-\v 4 \wj Wenn er seine eigenen \+add Schafe\+add* alle herausgebracht hat, geht er vor ihnen her, und die Schafe folgen ihm, weil sie seine Stimme kennen.\wj*
-\v 5 \wj Einem Fremden aber werden sie \+em nicht\+em* folgen, sondern werden vor ihm fliehen, weil sie die Stimme der Fremden nicht kennen.\wj*
-\v 6 Dieses Gleichnis\f - \fr 10,6 \ft Eig. Diese sinnbildliche Rede\f* sprach Jesus zu ihnen; \em sie\em* aber verstanden nicht, was es war, das er zu ihnen redete.
-\p
-\v 7 Jesus sprach nun wiederum zu ihnen: \wj Wahrlich, wahrlich, ich sage euch: \+em Ich\+em* bin die Tür der Schafe.\wj*
-\v 8 \wj Alle, die irgend vor mir gekommen sind, sind Diebe und Räuber; aber die Schafe hörten nicht auf sie.\wj*
-\v 9 \wj \+em Ich\+em* bin die Tür; wenn jemand durch mich eingeht, so wird er errettet werden und wird ein- und ausgehen und Weide finden.\wj*
-\v 10 \wj Der Dieb kommt nur, um zu stehlen und zu schlachten und zu verderben. \+em Ich\+em* bin gekommen, damit sie Leben haben und \+add es\+add* in Überfluss\wj*\f - \fr 10,10 \ft And.: und Überfluss\f*\wj haben.\wj*
-\v 11 \wj \+em Ich\+em* bin der gute Hirte; der gute Hirte lässt\wj*\f - \fr 10,11 \ft Eig. setzt ein; legt dar; so auch V. 15.17.18\f*\wj sein Leben für die Schafe.\wj*
-\v 12 \wj Der Mietling aber und der nicht Hirte ist, dem die Schafe nicht eigen sind, sieht den Wolf kommen und verlässt die Schafe und flieht; und der Wolf raubt sie und zerstreut [die Schafe. \wj*
-\v 13 \wj Der Mietling aber flieht,] weil er ein Mietling ist und sich um die Schafe nicht kümmert\wj*\f - \fr 10,13 \ft O. ihm an den Schafen nichts liegt\f*\wj .\wj*
-\v 14 \wj \+em Ich\+em* bin der gute Hirte; und ich kenne die Meinen\wj*\f - \fr 10,14 \ft O. was mein ist\f*\wj und bin gekannt von den Meinen,\wj*
-\v 15 \wj wie der Vater mich kennt, und \+em ich\+em* den Vater kenne; und ich lasse mein Leben für die Schafe.\wj*
-\v 16 \wj Und ich habe andere Schafe, die nicht aus diesem Hof sind; auch diese muss ich bringen, und sie werden meine Stimme hören, und es wird \+em eine\+em* Herde, \+em ein\+em* Hirte sein\wj*\f - \fr 10,16 \ft O. werden\f*\wj .\wj*
-\v 17 \wj Darum liebt mich der Vater, weil \+em ich\+em* mein Leben lasse, damit ich es wiedernehme.\wj*
-\v 18 \wj Niemand nimmt es von mir, sondern \+em ich\+em* lasse es von mir selbst. Ich habe Gewalt, es zu lassen, und habe Gewalt, es wiederzunehmen. Dieses Gebot habe ich von meinem Vater empfangen.\wj*
-\v 19 Es entstand wiederum ein Zwiespalt unter den Juden dieser Worte wegen.
-\v 20 Viele aber von ihnen sagten: Er hat einen Dämon und ist von Sinnen; was hört ihr ihn?
-\v 21 Andere sagten: Diese Reden sind nicht \add die\add* eines Besessenen; kann etwa ein Dämon der Blinden Augen öffnen?
-\p
-\v 22 Es war aber das Fest der Tempelweihe in Jerusalem; [und] es war Winter.
-\v 23 Und Jesus wandelte in dem Tempel, in der Säulenhalle Salomos.
-\v 24 Da umringten ihn die Juden und sprachen zu ihm: Bis wann hältst du unsere Seele hin? Wenn du der Christus bist, so sage es uns frei heraus.
-\v 25 Jesus antwortete ihnen: \wj Ich habe es euch gesagt, und ihr glaubt nicht. Die Werke, die \+em ich\+em* in dem Namen meines Vaters tue, diese zeugen von mir;\wj*
-\v 26 \wj aber \+em ihr\+em* glaubt nicht, denn ihr seid nicht von meinen Schafen, wie ich euch gesagt habe.\wj*
-\v 27 \wj Meine Schafe hören meine Stimme, und \+em ich\+em* kenne sie, und sie folgen mir;\wj*
-\v 28 \wj und ich gebe ihnen ewiges Leben, und sie gehen \+em nicht\+em* verloren ewiglich, und niemand wird sie aus meiner Hand rauben. \wj*
-\v 29 \wj Mein Vater, der sie mir gegeben hat, ist größer als alles\wj*\f - \fr 10,29 \ft O. alle\f*\wj , und niemand kann sie aus der Hand meines Vaters rauben.\wj*
-\v 30 \wj Ich und der Vater sind eins.\wj*
-\p
-\v 31 Da hoben die Juden wiederum Steine auf, damit sie ihn steinigten.
-\v 32 Jesus antwortete ihnen: \wj Viele gute Werke habe ich euch von meinem Vater gezeigt; für welches Werk unter denselben steinigt ihr mich?\wj*
-\v 33 Die Juden antworteten ihm: Wegen eines guten Werkes steinigen wir dich nicht, sondern wegen Lästerung und weil \em du\em*, der du ein Mensch bist, dich selbst zu Gott machst.
-\v 34 Jesus antwortete ihnen: \wj Steht nicht in eurem Gesetz geschrieben: „\+em Ich\+em* habe gesagt: Ihr seid Götter“?\wj*\f - \fr 10,34 \ft Ps. 82,6\f*
-\v 35 \wj Wenn er jene Götter nannte, zu denen das Wort Gottes geschah, (und die Schrift kann nicht aufgelöst werden) \wj*
-\v 36 \wj sagt \+em ihr\+em* von dem, den der Vater geheiligt und in die Welt gesandt hat: Du lästerst, weil ich sagte: Ich bin Gottes Sohn?\wj*
-\v 37 \wj Wenn ich nicht die Werke meines Vaters tue, so glaubt mir nicht;\wj*
-\v 38 \wj wenn ich sie aber tue, so glaubt den Werken, wenn ihr auch mir nicht glaubt, damit ihr erkennt und glaubt, dass der Vater in mir ist, und ich in ihm.\wj*
-\p
-\v 39 Da suchten sie wiederum ihn zu greifen, und er entging ihrer Hand.
-\v 40 Und er ging wieder weg jenseits des Jordan an den Ort, wo Johannes zuerst taufte, und er blieb dort.
-\v 41 Und viele kamen zu ihm und sagten: Johannes tat zwar kein Zeichen; alles aber, was Johannes von diesem gesagt hat, war wahr.
-\v 42 Und viele glaubten dort an ihn.
+\s1 Jesus the Good Shepherd
+\r (Psalms 23:1–6; Ezekiel 34:11–24)
+\m
+\v 1 “Truly, truly, I tell you, whoever does not enter the sheepfold by the gate, but climbs in some other way, is a thief and a robber.
+\v 2 But the one who enters by the gate is the shepherd of the sheep.
+\v 3 The gatekeeper opens the gate for him, and the sheep listen for his voice. He calls his own sheep by name and leads them out.
+\b
+\m
+\v 4 When he has brought out all his own, he goes on ahead of them, and his sheep follow him because they know his voice.
+\v 5 But they will never follow a stranger; in fact, they will flee from him because they do not recognize his voice.”
+\b
+\m
+\v 6 Jesus spoke to them using this illustration, but they did not understand what He was telling them.
+\v 7 So He said to them again, “Truly, truly, I tell you, I am the gate for the sheep.
+\v 8 All who came before Me \f + \fr 10:8 \ft BYZ All who came\f* were thieves and robbers, but the sheep did not listen to them.
+\v 9 I am the gate. If anyone enters through Me, he will be saved. He will come in and go out and find pasture.
+\v 10 The thief comes only to steal and kill and destroy. I have come that they may have life, and have it in all its fullness.
+\b
+\m
+\v 11 I am the good shepherd. The good shepherd lays down His life for the sheep.
+\v 12 The hired hand is not the shepherd, and the sheep are not his own. When he sees the wolf coming, he abandons the sheep and runs away. Then the wolf pounces on them and scatters the flock.
+\v 13 The man runs away because he is a hired servant and is unconcerned for the sheep.
+\b
+\m
+\v 14 I am the good shepherd. I know My sheep and My sheep know Me,
+\v 15 just as the Father knows Me and I know the Father. And I lay down My life for the sheep.
+\v 16 I have other sheep that are not of this fold. I must bring them in as well, and they will listen to My voice. Then there will be one flock and one shepherd.
+\b
+\m
+\v 17 The reason the Father loves Me is that I lay down My life in order to take it up again.
+\v 18 No one takes it from Me, but I lay it down of My own accord. I have authority to lay it down and authority to take it up again. This charge I have received from My Father.”
+\b
+\m
+\v 19 Again there was division among the Jews because of Jesus’ message.
+\v 20 Many of them said, “He is demon-possessed and insane. Why would you listen to Him?”
+\b
+\m
+\v 21 But others replied, “These are not the words of a man possessed by a demon. Can a demon open the eyes of the blind?”
+\s1 Jesus at the Feast of Dedication
+\b
+\m
+\v 22 At that time the Feast of Dedication \f + \fr 10:22 \ft That is, Hanukkah, the historic celebration of the Maccabean Revolt and rededication of the temple\f* took place in Jerusalem. It was winter,
+\v 23 and Jesus was walking in the temple courts \f + \fr 10:23 \ft Literally the temple\f* in Solomon’s Colonnade.
+\v 24 So the Jews gathered around Him and demanded, “How long will You keep us in suspense? If You are the Christ, tell us plainly.”
+\b
+\m
+\v 25 “I already told you,” Jesus replied, “but you did not believe. The works I do in My Father’s name testify on My behalf.
+\v 26 But because you are not My sheep, you refuse to believe.
+\v 27 My sheep listen to My voice; I know them, and they follow Me.
+\v 28 I give them eternal life, and they will never perish. No one can snatch them out of My hand.
+\v 29 My Father who has given them to Me is greater than all. No one can snatch them out of My Father’s hand.
+\v 30 I and the Father are one.”
+\b
+\m
+\v 31 At this, the Jews again picked up stones to stone Him.
+\v 32 But Jesus responded, “I have shown you many good works from the Father. For which of these do you stone Me?”
+\b
+\m
+\v 33 “We are not stoning You for any good work,” said the Jews, “but for blasphemy, because You, who are a man, declare Yourself to be God.”
+\b
+\m
+\v 34 Jesus replied, “Is it not written in your Law: ‘I have said you are gods’\f + \fr 10:34 \ft Psalms 82:6\f*?
+\v 35 If he called them gods to whom the word of God came—and the Scripture cannot be broken—
+\v 36 then what about the One whom the Father sanctified and sent into the world? How then can you accuse Me of blasphemy for stating that I am the Son of God?
+\b
+\m
+\v 37 If I am not doing the works of My Father, then do not believe Me.
+\v 38 But if I am doing them, even though you do not believe Me, believe the works themselves, so that you may know and understand that the Father is in Me, and I am in the Father.”
+\b
+\m
+\v 39 At this, they tried again to seize Him, but He escaped their grasp.
+\s1 John’s Testimony Confirmed
+\b
+\m
+\v 40 Then Jesus went back across the Jordan to the place where John had first been baptizing, and He stayed there.
+\v 41 Many came to Him and said, “Although John never performed a sign, everything he said about this man was true.”
+\v 42 And many in that place believed in Jesus.
 \c 11
-\p
-\v 1 Es war aber ein Gewisser krank, Lazarus von Bethanien, aus dem Dorf der Maria und ihrer Schwester Martha.
-\v 2 (Maria aber war es, die\f - \fr 11,2 \ft O. Es war aber die Maria, die\f* den Herrn mit Salbe salbte und seine Füße mit ihren Haaren abtrocknete; deren Bruder Lazarus war krank.)
-\v 3 Da sandten die Schwestern zu ihm und ließen \add ihm\add* sagen: Herr, siehe, der, den du lieb hast, ist krank.
-\v 4 Als aber Jesus es hörte, sprach er: \wj Diese Krankheit ist nicht zum Tod, sondern um der Herrlichkeit Gottes willen, damit der Sohn Gottes durch sie verherrlicht werde.\wj*
-\v 5 Jesus aber liebte die Martha und ihre Schwester und den Lazarus.
-\v 6 Als er nun hörte, dass er krank sei, blieb er noch zwei Tage an dem Ort, wo er war.
-\v 7 Danach spricht er dann zu den Jüngern: \wj Lasst uns wieder nach Judäa gehen!\wj*
-\v 8 Die Jünger sagen zu ihm: Rabbi, eben suchten die Juden dich zu steinigen, und wiederum gehst du dahin?
-\v 9 Jesus antwortete: \wj Sind der Stunden des Tages nicht zwölf? Wenn jemand am Tag wandelt, stößt er nicht an, weil er das Licht dieser Welt sieht; \wj*
-\v 10 \wj wenn aber jemand in der Nacht wandelt, stößt er an, weil das Licht nicht in ihm ist.\wj*
-\v 11 Dies sprach er, und danach sagt er zu ihnen: \wj Lazarus, unser Freund, ist eingeschlafen\wj*\f - \fr 11,11 \ft O. entschlafen\f*\wj ; aber ich gehe hin, damit ich ihn aufwecke.\wj*
-\v 12 Da sprachen die Jünger zu ihm: Herr, wenn er eingeschlafen ist, so wird er geheilt\f - \fr 11,12 \ft O. gerettet\f* werden.
-\v 13 Jesus aber hatte von seinem Tod gesprochen; sie aber meinten, er rede von der Ruhe des Schlafes.
-\v 14 Dann nun sagte ihnen Jesus geradeheraus: \wj Lazarus ist gestorben;\wj*
-\v 15 \wj und ich bin froh um euretwillen, dass ich nicht dort war, damit ihr glaubt; aber lasst uns zu ihm gehen!\wj*
-\v 16 Da sprach Thomas, der Zwilling\f - \fr 11,16 \ft O. Didymus\f* genannt ist, zu den Mitjüngern: Lasst auch uns gehen, damit wir mit ihm sterben!
-\p
-\v 17 Als nun Jesus kam, fand er ihn schon vier Tage in der Gruft liegen.
-\v 18 Bethanien aber war nahe bei Jerusalem, etwa 15 Stadien\f - \fr 11,18 \ft eine Entfernung von etwa 40 Minuten\f* weit;
-\v 19 und viele von den Juden waren zu\f - \fr 11,19 \ft O. nach and. Les.: in das Haus, oder in die Umgebung von\f* Martha und Maria gekommen, damit sie dieselben über ihren Bruder trösteten.
-\v 20 Martha nun, als sie hörte, dass Jesus komme, ging ihm entgegen. Maria aber saß im Haus.
-\v 21 Da sprach Martha zu Jesus: Herr, wenn du hier gewesen wärest, so wäre mein Bruder nicht gestorben;
-\v 22 [aber] auch jetzt weiß ich, dass, was irgend du von Gott bitten magst, Gott dir geben wird.
-\v 23 Jesus spricht zu ihr: \wj Dein Bruder wird auferstehen.\wj*
-\v 24 Martha spricht zu ihm: Ich weiß, dass er auferstehen wird in der Auferstehung am letzten Tag.
-\v 25 Jesus sprach zu ihr: \wj \+em Ich\+em* bin die Auferstehung und das Leben; wer an mich glaubt, wird leben, auch wenn er gestorben ist; \wj*
-\v 26 \wj und jeder, der lebt und an mich glaubt, wird \+em nicht\+em* sterben in Ewigkeit. Glaubst du dies?\wj*
-\v 27 Sie spricht zu ihm: Ja, Herr, \em ich\em* glaube, dass \em du\em* der Christus bist, der Sohn Gottes, der in die Welt kommen soll.
-\v 28 Und als sie dies gesagt hatte, ging sie hin und rief ihre Schwester Maria heimlich und sagte: Der Lehrer ist da und ruft dich.
-\v 29 Als jene es hörte, stand sie schnell auf und ging zu ihm.
-\v 30 Jesus aber war noch nicht in das Dorf gekommen, sondern war an dem Ort, wo Martha ihm begegnet war.
-\v 31 Als nun die Juden, die bei ihr im Haus waren und sie trösteten, sahen, dass Maria schnell aufstand und hinausging, folgten sie ihr, indem sie sagten: Sie geht zur Gruft, damit sie dort weine.
-\v 32 Als nun Maria dahin kam, wo Jesus war, und ihn sah, fiel sie ihm zu Füßen und sprach zu ihm: Herr, wenn du hier gewesen wärest, so wäre mein Bruder nicht gestorben.
-\v 33 Als nun Jesus sie weinen sah, und die Juden weinen, die mit ihr gekommen waren, seufzte er tief\f - \fr 11,33 \ft O. wurde er heftig bewegt; so auch V. 38\f* im Geist und erschütterte sich
-\v 34 und sprach: \wj Wo habt ihr ihn hingelegt?\wj* Sie sagen zu ihm: Herr, komm und sieh!
-\v 35 Jesus vergoss Tränen.
-\v 36 Da sprachen die Juden: Siehe, wie lieb hat er ihn gehabt!
-\v 37 Einige aber von ihnen sagten: Konnte dieser, der die Augen des Blinden auftat, nicht machen, dass auch dieser nicht gestorben wäre?
-\v 38 Jesus nun, wiederum tief in sich selbst seufzend, kommt zur Gruft. Es war aber eine Höhle, und ein Stein lag darauf.
-\v 39 Jesus spricht: \wj Nehmt den Stein weg!\wj* Die Schwester des Verstorbenen, Martha, spricht zu ihm: Herr, er riecht schon, denn er ist vier Tage hier\f - \fr 11,39 \ft W. er ist viertägig\f*.
-\v 40 Jesus spricht zu ihr: \wj Habe ich dir nicht gesagt: Wenn du glauben würdest, so würdest du die Herrlichkeit Gottes sehen?\wj*
-\v 41 Sie nahmen nun den Stein weg. Jesus aber hob die Augen empor und sprach: \wj Vater, ich danke dir, dass du mich erhört\wj*\f - \fr 11,41 \ft Eig. gehört; so auch V. 42\f*\wj hast.\wj*
-\v 42 \wj \+em Ich\+em* aber wusste, dass du mich allezeit erhörst; doch um der Volksmenge willen, die umhersteht, habe ich es gesagt, damit sie glauben, dass du mich gesandt hast.\wj*
-\v 43 Und als er dies gesagt hatte, rief er mit lauter Stimme: \wj Lazarus, komm heraus!\wj*
-\v 44 Und der Verstorbene kam heraus, an Füßen und Händen mit Grabtüchern gebunden, und sein Gesicht war mit einem Schweißtuch umbunden. Jesus spricht zu ihnen: \wj Löst ihn auf und lasst ihn gehen.\wj*
-\p
-\v 45 Viele nun von den Juden, die zu Maria gekommen waren und sahen, was er getan hatte, glaubten an ihn.
-\v 46 Einige aber von ihnen gingen hin zu den Pharisäern und sagten ihnen, was Jesus getan hatte.
-\v 47 Da versammelten die Hohenpriester und die Pharisäer ein Synedrium und sprachen: Was tun wir? Denn dieser Mensch tut viele Zeichen.
-\v 48 Wenn wir ihn so lassen, werden alle an ihn glauben, und die Römer werden kommen und sowohl unseren Ort als auch unsere Nation wegnehmen.
-\v 49 Ein Gewisser aber von ihnen, Kajaphas, der jenes Jahr\f - \fr 11,49 \ft O. jenes Jahres; so auch V. 51\f* Hoherpriester war, sprach zu ihnen: \em Ihr\em* wisst nichts
-\v 50 und überlegt auch nicht, dass es euch nützlich ist, dass ein Mensch für das Volk sterbe und nicht die ganze Nation umkomme.
-\v 51 Dies aber sagte er nicht aus sich selbst, sondern da er jenes Jahr Hoherpriester war, weissagte er, dass Jesus für die Nation sterben sollte\f - \fr 11,51 \ft O. zu sterben im Begriff stand\f*;
-\v 52 und nicht für die Nation allein, sondern damit er auch die zerstreuten Kinder Gottes in \em eins\em* versammelte.
-\v 53 Von jenem Tag an ratschlagten sie nun, damit sie ihn töteten.
-\v 54 Jesus nun wandelte nicht mehr frei öffentlich unter den Juden, sondern ging von dort weg in die Gegend nahe bei der Wüste, in eine Stadt, genannt Ephraim; und dort hielt er sich mit den Jüngern auf.
-\p
-\v 55 Es war aber nahe das Passah der Juden, und viele gingen aus dem Land hinauf nach Jerusalem vor dem Passah, damit sie sich reinigten.
-\v 56 Sie suchten nun Jesus und sprachen, im Tempel stehend, untereinander: Was meint ihr? Dass er \em nicht\em* zu dem Fest kommen wird?
-\v 57 Es hatten aber die Hohenpriester und die Pharisäer Befehl gegeben, dass, wenn jemand wisse, wo er sei, er es anzeigen solle, damit sie ihn griffen.
+\s1 The Death of Lazarus
+\m
+\v 1 At this time a man named Lazarus was sick. He lived in Bethany, the village of Mary and her sister Martha.
+\v 2 (Mary, whose brother Lazarus was sick, was to anoint the Lord with perfume and wipe His feet \f + \fr 11:2 \ft Literally was the one having anointed the Lord with fragrant oil and having wiped His feet; see John 12:3.\f* with her hair.)
+\v 3 So the sisters sent word to Jesus, “Lord, the one You love is sick.”
+\b
+\m
+\v 4 When Jesus heard this, He said, “This sickness will not end in death. No, it is for the glory of God, so that the Son of God may be glorified through it.”
+\b
+\m
+\v 5 Now Jesus loved Martha and her sister and Lazarus.
+\v 6 So on hearing that Lazarus was sick, He stayed where He was for two days,
+\v 7 and then He said to the disciples, “Let us go back to Judea.”
+\b
+\m
+\v 8 “Rabbi,” they replied, “the Jews just tried to stone You, and You are going back there?”
+\b
+\m
+\v 9 Jesus answered, “Are there not twelve hours of daylight? If anyone walks in the daytime, he will not stumble, because he sees by the light of this world.
+\v 10 But if anyone walks at night, he will stumble, because he has no light.”
+\b
+\m
+\v 11 After He had said this, He told them, “Our friend Lazarus has fallen asleep, but I am going there to wake him up.”
+\b
+\m
+\v 12 His disciples replied, “Lord, if he is sleeping, he will get better.”
+\v 13 They thought that Jesus was talking about actual sleep, but He was speaking about the death of Lazarus.
+\b
+\m
+\v 14 So Jesus told them plainly, “Lazarus is dead,
+\v 15 and for your sake I am glad I was not there, so that you may believe. But let us go to him.”
+\b
+\m
+\v 16 Then Thomas called Didymus \f + \fr 11:16 \ft Didymus means the twin.\f* said to his fellow disciples, “Let us also go, so that we may die with Him.”
+\s1 Jesus Comforts Martha and Mary
+\b
+\m
+\v 17 When Jesus arrived, He found that Lazarus had already spent four days in the tomb.
+\v 18 Now Bethany was near Jerusalem, a little less than two miles \f + \fr 11:18 \ft Greek about fifteen stadia; that is, approximately 1.72 miles or 2.78 kilometers\f* away,
+\v 19 and many of the Jews had come to Martha and Mary to console them in the loss of their brother.
+\v 20 So when Martha heard that Jesus was coming, she went out to meet Him; but Mary stayed at home.
+\b
+\m
+\v 21 Martha said to Jesus, “Lord, if You had been here, my brother would not have died.
+\v 22 But even now I know that God will give You whatever You ask of Him.”
+\b
+\m
+\v 23 “Your brother will rise again,” Jesus told her.
+\b
+\m
+\v 24 Martha replied, “I know that he will rise again in the resurrection at the last day.”
+\b
+\m
+\v 25 Jesus said to her, “I am the resurrection and the life. Whoever believes in Me will live, even though he dies.
+\v 26 And everyone who lives and believes in Me will never die. Do you believe this?”
+\b
+\m
+\v 27 “Yes, Lord,” she answered, “I believe that You are the Christ, the Son of God, who was to come into the world.”
+\b
+\m
+\v 28 After Martha had said this, she went back and called her sister Mary aside to tell her, “The Teacher is here and is asking for you.”
+\v 29 And when Mary heard this, she got up quickly and went to Him.
+\b
+\m
+\v 30 Now Jesus had not yet entered the village, but was still at the place where Martha had met Him.
+\v 31 When the Jews who were in the house consoling Mary saw how quickly she got up and went out, they followed her, supposing she was going to the tomb to mourn there.
+\v 32 When Mary came to Jesus and saw Him, she fell at His feet and said, “Lord, if You had been here, my brother would not have died.”
+\b
+\m
+\v 33 When Jesus saw her weeping, and the Jews who had come with her also weeping, He was deeply moved in spirit \f + \fr 11:33 \ft Or He was indignant in spirit; similarly in verse 38\f* and troubled.
+\v 34 “Where have you put him?” He asked.
+\b
+\m “Come and see, Lord,” they answered.
+\b
+\m
+\v 35 Jesus wept.
+\b
+\m
+\v 36 Then the Jews said, “See how He loved him!”
+\b
+\m
+\v 37 But some of them asked, “Could not this man who opened the eyes of the blind also have kept Lazarus from dying?”
+\s1 Jesus Raises Lazarus
+\r (Acts 9:36–43)
+\b
+\m
+\v 38 Jesus, once again deeply moved, came to the tomb. It was a cave with a stone laid across the entrance.
+\v 39 “Take away the stone,” Jesus said.
+\b
+\m “Lord, by now he stinks,” said Martha, the sister of the dead man. “It has already been four days.”
+\b
+\m
+\v 40 Jesus replied, “Did I not tell you that if you believed, you would see the glory of God?”
+\b
+\m
+\v 41 So they took away the stone. Then Jesus lifted His eyes upward and said, “Father, I thank You that You have heard Me.
+\v 42 I knew that You always hear Me, but I say this for the benefit of the people standing here, so they may believe that You sent Me.”
+\b
+\m
+\v 43 After Jesus had said this, He called out in a loud voice, “Lazarus, come out!”
+\b
+\m
+\v 44 The man who had been dead came out with his hands and feet bound in strips of linen, and his face wrapped in a cloth.\f + \fr 11:44 \ft Greek soudariō\f*
+\b
+\m “Unwrap him and let him go,” Jesus told them.
+\s1 The Plot to Kill Jesus
+\r (Matthew 26:1–5; Mark 14:1–2; Luke 22:1–2)
+\b
+\m
+\v 45 Therefore many of the Jews who had come to Mary, and had seen what Jesus did, believed in Him.
+\v 46 But some of them went to the Pharisees and told them what Jesus had done.
+\b
+\m
+\v 47 Then the chief priests and Pharisees convened the Sanhedrin \f + \fr 11:47 \ft Or the Council\f* and said, “What are we to do? This man is performing many signs.
+\v 48 If we let Him go on like this, everyone will believe in Him, and then the Romans will come and take away both our place and our nation.”
+\b
+\m
+\v 49 But one of them, named Caiaphas, who was high priest that year, said to them, “You know nothing at all!
+\v 50 You do not realize that it is better for you that one man die for the people than that the whole nation perish.”
+\b
+\m
+\v 51 Caiaphas did not say this on his own. Instead, as high priest that year, he was prophesying that Jesus would die for the nation,
+\v 52 and not only for the nation, but also for the scattered children of God, to gather them together into one.
+\b
+\m
+\v 53 So from that day on they plotted to kill Him.
+\v 54 As a result, Jesus no longer went about publicly among the Jews, but He withdrew to a town called Ephraim in an area near the wilderness. And He stayed there with the disciples.
+\b
+\m
+\v 55 Now the Jewish Passover was near, and many people went up from the country to Jerusalem to purify themselves before the Passover.
+\v 56 They kept looking for Jesus and asking one another as they stood in the temple courts,\f + \fr 11:56 \ft Literally the temple\f* “What do you think? Will He come to the feast at all?”
+\v 57 But the chief priests and Pharisees had given orders that anyone who knew where He was must report it, so that they could arrest Him.
 \c 12
-\p
-\v 1 Jesus nun kam sechs Tage vor dem Passah nach Bethanien, wo Lazarus, der Gestorbene, war, den Jesus aus den Toten auferweckt hatte.
-\v 2 Sie machten ihm nun dort ein Abendessen, und Martha diente; Lazarus aber war einer von denen, die mit ihm zu Tisch lagen.
-\v 3 Da nahm Maria ein Pfund Salbe von echter\f - \fr 12,3 \ft O. flüssiger\f*, sehr kostbarer Narde und salbte die Füße Jesu und trocknete seine Füße mit ihren Haaren. Das Haus aber wurde von dem Geruch der Salbe erfüllt.
-\v 4 Es sagt nun einer von seinen Jüngern, Judas, Simons \add Sohn\add*, der Iskariot, der ihn überliefern sollte:
-\v 5 Warum ist diese Salbe nicht für 300 Denare verkauft und den Armen gegeben worden?
-\v 6 Er sagte dies aber, nicht weil er für die Armen besorgt war\f - \fr 12,6 \ft O. weil ihm an den Armen gelegen war\f*, sondern weil er ein Dieb war und die Kasse hatte und trug\f - \fr 12,6 \ft O. wegnahm\f*, was eingelegt wurde.
-\v 7 Da sprach Jesus: \wj Erlaube ihr, es auf den Tag meines Begräbnisses\wj*\f - \fr 12,7 \ft O. meiner Einbalsamierung\f*\wj aufbewahrt zu haben\wj*\f - \fr 12,7 \ft Eig. Lass sie, damit sie es ... aufbewahrt habe\f*\wj ;\wj*
-\v 8 \wj denn die Armen habt ihr allezeit bei euch, mich aber habt ihr nicht allezeit.\wj*
-\p
-\v 9 Eine große Volksmenge aus den Juden erfuhr nun, dass er dort sei; und sie kamen, nicht um Jesu willen allein, sondern damit sie auch den Lazarus sähen, den er aus den Toten auferweckt hatte.
-\v 10 Die Hohenpriester aber ratschlagten, damit sie auch den Lazarus töteten,
-\v 11 weil viele von den Juden um seinetwillen hingingen und an Jesus glaubten.
-\p
-\v 12 Des folgenden Tages, als eine große Volksmenge, die zu dem Fest gekommen war, hörte, dass Jesus nach Jerusalem komme,
-\v 13 nahmen sie Palmzweige und gingen hinaus, ihm entgegen, und schrien: Hosanna! Gepriesen \add sei\add*, der im Namen \add des\add* Herrn kommt, der König Israels!\f - \fr 12,13 \ft Vergl. Ps. 118,26\f*
-\v 14 Jesus aber fand einen jungen Esel und setzte sich darauf, wie geschrieben steht:
-\v 15 „Fürchte dich nicht, Tochter Zion! Siehe, dein König kommt, sitzend auf einem Eselsfüllen“.\f - \fr 12,15 \ft Sach. 9,9\f*
-\v 16 Dies [aber] verstanden seine Jünger zuerst nicht; jedoch als Jesus verherrlicht war, dann erinnerten sie sich, dass dies von ihm\f - \fr 12,16 \ft Eig. auf ihn\f* geschrieben war und sie ihm dies getan hatten.
-\v 17 Es bezeugte nun die Volksmenge, die bei ihm war, dass\f - \fr 12,17 \ft O. Da gab die Volksmenge Zeugnis ..., weil\f* er Lazarus aus dem Grab gerufen und ihn aus den Toten auferweckt habe.
-\v 18 Darum ging ihm auch die Volksmenge entgegen, weil sie hörten, dass er dieses Zeichen getan hatte.
-\v 19 Da sprachen die Pharisäer zueinander: Ihr seht, dass ihr gar nichts ausrichtet; siehe, die Welt ist ihm nachgegangen.
-\p
-\v 20 Es waren aber einige Griechen unter denen, die hinaufkamen, damit sie auf dem Fest anbeteten.
-\v 21 Diese nun kamen zu Philippus, dem von Bethsaida in Galiläa, und baten ihn und sagten: Herr, wir möchten Jesus sehen.
-\v 22 Philippus kommt und sagt es Andreas, [und wiederum] kommt Andreas und Philippus, und sie sagen es Jesus.
-\v 23 Jesus aber antwortete ihnen und sprach: \wj Die Stunde ist gekommen, dass der Sohn des Menschen verherrlicht werde.\wj*
-\v 24 \wj Wahrlich, wahrlich, ich sage euch: Wenn das Weizenkorn nicht in die Erde fällt und stirbt, bleibt es allein; wenn es aber stirbt, bringt es viel Frucht.\wj*
-\v 25 \wj Wer sein Leben liebt, wird es verlieren; und wer sein Leben in dieser Welt hasst, wird es zum ewigen Leben bewahren. \wj*
-\v 26 \wj Wenn mir jemand dient, so folge er mir nach; und wo \+em ich\+em* bin, da wird auch \+em mein\+em* Diener sein. Wenn mir jemand dient, so wird der Vater ihn ehren.\wj*
-\v 27 \wj Jetzt ist meine Seele bestürzt\wj*\f - \fr 12,27 \ft O. erschüttert\f*\wj , und was soll ich sagen? Vater, rette mich aus dieser Stunde! Doch darum bin ich in diese Stunde gekommen.\wj*
-\v 28 \wj Vater, verherrliche deinen Namen!\wj* Da kam eine Stimme aus dem Himmel: Ich habe \add ihn\add* verherrlicht und werde \add ihn\add* auch wiederum verherrlichen.
-\v 29 Die Volksmenge nun, die dastand und zuhörte, sagte, es habe gedonnert; andere sagten: Ein Engel hat mit ihm geredet.
-\v 30 Jesus antwortete und sprach: \wj Nicht um meinetwillen ist diese Stimme geschehen, sondern um euretwillen. \wj*
-\v 31 \wj Jetzt ist \+add das\+add* Gericht dieser Welt; jetzt wird der Fürst dieser Welt hinausgeworfen werden.\wj*
-\v 32 \wj Und ich, wenn ich von\wj*\f - \fr 12,32 \ft Eig. aus\f*\wj der Erde erhöht bin, werde alle zu mir ziehen.\wj*
-\v 33 (Dies aber sagte er, andeutend, was für \add einen\add* Tod er sterben sollte.)
-\v 34 Die Volksmenge antwortete ihm: \em Wir\em* haben aus dem Gesetz gehört, dass der Christus bleibe in Ewigkeit, und wie sagst \em du\em*, dass der Sohn des Menschen erhöht werden müsse? Wer ist dieser, der Sohn des Menschen?
-\v 35 Da sprach Jesus zu ihnen: \wj Noch eine kleine Zeit ist das Licht unter euch. Wandelt, während ihr das Licht habt, damit nicht Finsternis euch ergreife! Und wer in der Finsternis wandelt, weiß nicht, wohin er geht.\wj*
-\v 36 \wj Während ihr das Licht habt, glaubt an das Licht, damit ihr Söhne des Lichtes werdet. Dieses redete Jesus und ging weg und verbarg sich vor ihnen.\wj*
-\p
-\v 37 Obwohl er aber so viele Zeichen vor ihnen getan hatte, glaubten sie nicht an ihn,
-\v 38 damit das Wort des Propheten Jesajas erfüllt würde, das er sprach: „Herr, wer hat unserer Verkündigung\f - \fr 12,38 \ft O. Botschaft\f* geglaubt, und wem ist der Arm \add des\add* Herrn offenbart worden?“\f - \fr 12,38 \ft Jes. 53,1\f*
-\v 39 Darum konnten sie nicht glauben, weil Jesaja wiederum gesagt hat:
-\v 40 „Er hat ihre Augen verblendet und ihr Herz verstockt, damit sie nicht sehen mit den Augen und verstehen mit dem Herzen und sich bekehren und ich sie heile“.\f - \fr 12,40 \ft Jes. 6,10\f*
-\v 41 Dies sprach Jesaja, weil er seine Herrlichkeit sah und von ihm redete.
-\v 42 Dennoch aber glaubten auch von den Obersten viele an ihn; doch wegen der Pharisäer bekannten sie \add ihn\add* nicht, damit sie nicht aus der Synagoge ausgeschlossen würden;
-\v 43 denn sie liebten die Ehre bei den Menschen mehr als die Ehre bei Gott\f - \fr 12,43 \ft W. die Ehre der Menschen ... die Ehre Gottes\f*.
-\p
-\v 44 \wj Jesus aber rief und sprach: Wer an mich glaubt, glaubt nicht an mich, sondern an den, der mich gesandt hat;\wj*
-\v 45 \wj und wer mich sieht, sieht den, der mich gesandt hat.\wj*
-\v 46 \wj \+em Ich\+em* bin \+add als\+add* Licht in die Welt gekommen, damit jeder, der an mich glaubt, nicht in der Finsternis bleibe;\wj*
-\v 47 \wj und wenn jemand meine Worte hört und nicht bewahrt\wj*\f - \fr 12,47 \ft O. beobachtet\f*\wj , so richte \+em ich\+em* ihn nicht, denn ich bin nicht gekommen, damit ich die Welt richte, sondern damit ich die Welt errette. \wj*
-\v 48 \wj Wer mich verwirft und meine Worte nicht annimmt, hat den, der ihn richtet: Das Wort, das ich geredet habe, das wird ihn richten an dem letzten Tag. \wj*
-\v 49 \wj Denn \+em ich\+em* habe nicht aus mir selbst geredet, sondern der Vater, der mich gesandt hat, er hat mir ein Gebot gegeben, was ich sagen und was ich reden soll;\wj*
-\v 50 \wj und ich weiß, dass sein Gebot ewiges Leben ist. Was \+em ich\+em* nun rede, rede ich so, wie mir der Vater gesagt hat.\wj*
+\s1 Mary Anoints Jesus
+\r (Matthew 26:6–13; Mark 14:3–9; Luke 7:36–50)
+\m
+\v 1 Six days before the Passover, Jesus came to Bethany, the hometown of Lazarus, whom He had raised from the dead.
+\v 2 So they hosted a dinner for Jesus there. Martha served, and Lazarus was among those reclining at the table with Him.
+\v 3 Then Mary took about a pint \f + \fr 12:3 \ft Greek a litra; that is, approximately 12 ounces or 340 grams\f* of expensive perfume, made of pure nard, and she anointed Jesus’ feet and wiped them with her hair. And the house was filled with the fragrance of the perfume.
+\b
+\m
+\v 4 But one of His disciples, Judas Iscariot, who was going to betray Him, asked,
+\v 5 “Why wasn’t this perfume sold for three hundred denarii \f + \fr 12:5 \ft A denarius was customarily a day’s wage for a laborer; see Matthew 20:2.\f* and the money given to the poor?”
+\v 6 Judas did not say this because he cared about the poor, but because he was a thief. As keeper of the money bag, he used to take from what was put into it.
+\b
+\m
+\v 7 “Leave her alone,” Jesus replied. “She has kept this perfume in preparation for the day of My burial.
+\v 8 The poor you will always have with you,\f + \fr 12:8 \ft See Deuteronomy 15:11.\f* but you will not always have Me.”
+\s1 The Plot to Kill Lazarus
+\b
+\m
+\v 9 Meanwhile a large crowd of Jews learned that Jesus was there. And they came not only because of Him, but also to see Lazarus, whom He had raised from the dead.
+\v 10 So the chief priests made plans to kill Lazarus as well,
+\v 11 for on account of him many of the Jews were deserting them and believing in Jesus.
+\s1 The Triumphal Entry
+\r (Zechariah 9:9–13; Matthew 21:1–11; Mark 11:1–11; Luke 19:28–40)
+\b
+\m
+\v 12 The next day the great crowd that had come to the feast heard that Jesus was coming to Jerusalem.
+\v 13 They took palm branches and went out to meet Him, shouting:
+\b
+\q1 “Hosanna!”\f + \fr 12:13 \ft Hosanna is a transliteration of the Hebrew Hosia-na, meaning Save, we pray or Save now, which became a shout of praise; see Psalms 118:25.\f*
+\b
+\q1 “Blessed is He who comes in the name of the Lord!”\f + \fr 12:13 \ft Psalms 118:26\f*
+\b
+\q1 “Blessed is the King of Israel!”
+\b
+\m
+\v 14 Finding a young donkey, Jesus sat on it, as it is written:
+\b
+\q1
+\v 15 “Do not be afraid, O Daughter of Zion.
+\q2 See, your King is coming,
+\q2 seated on the colt of a donkey.”\f + \fr 12:15 \ft Zechariah 9:9\f*
+\b
+\m
+\v 16 At first His disciples did not understand these things, but after Jesus was glorified they remembered what had been done to Him, and they realized that these very things had also been written about Him.
+\b
+\m
+\v 17 Meanwhile, many people continued to testify that they had been with Jesus when He called Lazarus from the tomb and raised him from the dead.
+\v 18 That is also why the crowd went out to meet Him, because they heard that He had performed this sign.
+\b
+\m
+\v 19 Then the Pharisees said to one another, “You can see that this is doing you no good. Look how the whole world has gone after Him!”
+\s1 Jesus Predicts His Death
+\b
+\m
+\v 20 Now there were some Greeks among those who went up to worship at the feast.
+\v 21 They came to Philip, who was from Bethsaida in Galilee, and requested of him, “Sir, we want to see Jesus.”
+\v 22 Philip relayed this appeal to Andrew, and both of them went and told Jesus.
+\b
+\m
+\v 23 But Jesus replied, “The hour has come for the Son of Man to be glorified.
+\v 24 Truly, truly, I tell you, unless a kernel of wheat falls to the ground and dies, it remains only a seed; but if it dies, it bears much fruit.
+\v 25 Whoever loves his life will lose it, but whoever hates his life in this world will keep it for eternal life.
+\v 26 If anyone serves Me, he must follow Me; and where I am, My servant will be as well. If anyone serves Me, the Father will honor him.
+\b
+\m
+\v 27 Now My soul is troubled, and what shall I say? ‘Father, save Me from this hour’? No, it is for this purpose that I have come to this hour.
+\v 28 Father, glorify Your name!”
+\b
+\m Then a voice came from heaven: “I have glorified it, and I will glorify it again.”
+\b
+\m
+\v 29 The crowd standing there heard it and said that it had thundered. Others said that an angel had spoken to Him.
+\b
+\m
+\v 30 In response, Jesus said, “This voice was not for My benefit, but yours.
+\v 31 Now judgment is upon this world; now the prince of this world will be cast out.
+\v 32 And I, when I am lifted up from the earth, will draw everyone to Myself.”
+\v 33 He said this to indicate the kind of death He was going to die.
+\b
+\m
+\v 34 The crowd replied, “We have heard from the Law that the Christ will remain forever. So how can you say that the Son of Man must be lifted up? Who is this Son of Man?”
+\b
+\m
+\v 35 Then Jesus told them, “For a little while longer, the Light will be among you. Walk while you have the Light, so that darkness will not overtake you. The one who walks in the darkness does not know where he is going.
+\v 36 While you have the Light, believe in the Light, so that you may become sons of light.”
+\b
+\m After Jesus had spoken these things, He went away and was hidden from them.
+\s1 Belief and Unbelief
+\b
+\m
+\v 37 Although Jesus had performed so many signs in their presence, they still did not believe in Him.
+\v 38 This was to fulfill the word of Isaiah the prophet:
+\b
+\q1 “Lord, who has believed our message?
+\q2 And to whom has the arm of the Lord been revealed?”\f + \fr 12:38 \ft Isaiah 53:1\f*
+\b
+\m
+\v 39 For this reason they were unable to believe. For again, Isaiah says:
+\b
+\q1
+\v 40 “He has blinded their eyes
+\q2 and hardened their hearts,
+\q1 so that they cannot see with their eyes,
+\q2 and understand with their hearts,
+\q1 and turn,
+\q2 and I would heal them.”\f + \fr 12:40 \ft Isaiah 6:10\f*
+\b
+\m
+\v 41 Isaiah said these things because he saw Jesus’ glory and spoke about Him.
+\v 42 Nevertheless, many of the leaders believed in Him; but because of the Pharisees they did not confess Him, for fear that they would be put out of the synagogue.
+\v 43 For they loved praise from men more than praise from God.
+\b
+\m
+\v 44 Then Jesus cried out, “Whoever believes in Me does not believe in Me alone, but in the One who sent Me.
+\v 45 And whoever sees Me sees the One who sent Me.
+\v 46 I have come into the world as a light, so that no one who believes in Me should remain in darkness.
+\b
+\m
+\v 47 As for anyone who hears My words and does not keep them, I do not judge him. For I have not come to judge the world, but to save the world.
+\v 48 There is a judge for the one who rejects Me and does not receive My words: The word that I have spoken will judge him on the last day.
+\b
+\m
+\v 49 I have not spoken on My own, but the Father who sent Me has commanded Me what to say and how to say it.
+\v 50 And I know that His command leads to eternal life. So I speak exactly what the Father has told Me to say.”
 \c 13
-\p
-\v 1 Vor dem Fest des Passah aber, als Jesus wusste, dass seine Stunde gekommen war, dass er aus dieser Welt zu dem Vater hingehen sollte – da er die Seinen, die in der Welt waren, geliebt hatte, liebte er sie bis ans Ende.
-\v 2 Und während des Abendessens, als der Teufel schon dem Judas, Simons \add Sohn\add*, dem Iskariot, es ins Herz gegeben hatte, dass er ihn überliefere,
-\v 3 steht [Jesus], wissend, dass der Vater ihm alles in die Hände gegeben hatte, und dass er von Gott ausgegangen war und zu Gott hingehe,
-\v 4 von dem Abendessen auf und legt die Oberkleider ab; und er nahm ein leinenes Tuch und umgürtete sich.
-\v 5 Dann gießt er Wasser in das Waschbecken und fing an, die Füße der Jünger zu waschen und mit dem leinenen Tuch abzutrocknen, mit dem er umgürtet war.
-\v 6 Er kommt nun zu Simon Petrus, und der spricht zu ihm: Herr, \em du\em* wäschst meine Füße?
-\v 7 Jesus antwortete und sprach zu ihm: \wj Was ich tue, weißt \+em du\+em* jetzt nicht, du wirst es aber nachher verstehen.\wj*
-\v 8 Petrus spricht zu ihm: Du sollst nimmermehr\f - \fr 13,8 \ft O. in Ewigkeit nicht\f* meine Füße waschen! Jesus antwortete ihm: \wj Wenn ich dich nicht wasche, so hast du kein Teil mit mir.\wj*
-\v 9 Simon Petrus spricht zu ihm: Herr, nicht meine Füße allein, sondern auch die Hände und das Haupt!
-\v 10 Jesus spricht zu ihm: \wj Wer gebadet\wj*\f - \fr 13,10 \ft O. ganz gewaschen\f*\wj ist, hat nicht nötig sich zu waschen, ausgenommen die Füße, sondern ist ganz rein; und \+em ihr\+em* seid rein, aber nicht alle.\wj*
-\v 11 Denn er kannte den, der ihn überlieferte; darum sagte er: \wj Ihr seid nicht alle rein.\wj*
-\p
-\v 12 Als er nun ihre Füße gewaschen und seine Oberkleider genommen hatte, legte er sich wiederum zu Tisch und sprach zu ihnen: \wj Wisst ihr, was ich euch getan habe? \wj*
-\v 13 \wj \+em Ihr\+em* nennt mich Lehrer und Herr, und ihr sagt recht, denn ich bin es.\wj*
-\v 14 \wj Wenn nun \+em ich\+em*, der Herr und der Lehrer, eure Füße gewaschen habe, so seid auch \+em ihr\+em* schuldig, einander die Füße zu waschen. \wj*
-\v 15 \wj Denn ich habe euch ein Beispiel gegeben, damit, wie \+em ich\+em* euch getan habe, auch \+em ihr\+em* tut.\wj*
-\v 16 \wj Wahrlich, wahrlich, ich sage euch: Ein Knecht\wj*\f - \fr 13,16 \ft O. Sklave\f*\wj ist nicht größer als sein Herr, noch ein Gesandter\wj*\f - \fr 13,16 \ft O. Apostel\f*\wj größer als der, der ihn gesandt hat.\wj*
-\v 17 \wj Wenn ihr dies wisst, glückselig seid ihr, wenn ihr es tut.\wj*
-\v 18 \wj Ich rede nicht von euch allen, \+em ich\+em* weiß\wj*\f - \fr 13,18 \ft O. kenne die\f*, welche ich auserwählt habe; aber damit die Schrift erfüllt würde: „Der mit mir das Brot isst, hat seine Ferse gegen mich aufgehoben“.\f - \fr 13,18 \ft Ps. 41,10\f*
-\v 19 \wj Von jetzt an sage ich es euch, ehe es geschieht, damit ihr, wenn es geschieht, glaubt, dass \+em ich\+em* es bin.\wj*
-\v 20 \wj Wahrlich, wahrlich, ich sage euch: Wer aufnimmt, wen irgend ich senden werde, nimmt mich auf; wer aber mich aufnimmt, nimmt den auf, der mich gesandt hat.\wj*
-\p
-\v 21 Als Jesus dies gesagt hatte, wurde er im Geist erschüttert und bezeugte und sprach: \wj Wahrlich, wahrlich, ich sage euch: Einer von euch wird mich überliefern.\wj*
-\v 22 Da blickten die Jünger einander an, zweifelnd, von wem er rede.
-\v 23 Einer aber von seinen Jüngern, den Jesus liebte, lag zu Tisch in dem Schoß Jesu.
-\v 24 Diesem nun winkt Simon Petrus, damit er forschen möchte, wer es wohl wäre, von dem er rede.
-\v 25 Jener aber, sich an die Brust Jesu lehnend, spricht zu ihm: Herr, wer ist es?
-\v 26 Jesus antwortete: \wj Jener ist es, dem \+em ich\+em* den Bissen, wenn ich ihn eingetaucht habe, geben werde.\wj* Und als er den Bissen eingetaucht hatte, gibt er ihn dem Judas, Simons \add Sohn\add*, dem Iskariot.
-\v 27 Und nach dem Bissen fuhr dann der Satan in ihn. Jesus spricht nun zu ihm: \wj Was du tust, tu schnell.\wj*
-\v 28 Keiner aber von den zu Tisch Liegenden verstand, wozu er ihm dies sagte.
-\v 29 Denn einige meinten, weil Judas die Kasse hatte, dass Jesus zu ihm sage: Kaufe, was wir für das Fest bedürfen, oder dass er den Armen etwas geben solle.
-\v 30 Als nun jener den Bissen genommen hatte, ging er sogleich hinaus. Es war aber Nacht.
-\p
-\v 31 Als er nun hinausgegangen war, spricht Jesus: \wj Jetzt ist der Sohn des Menschen verherrlicht, und Gott ist verherrlicht in ihm.\wj*
-\v 32 \wj Wenn Gott verherrlicht ist in ihm, so wird auch Gott ihn verherrlichen in sich selbst, und sogleich wird er ihn verherrlichen.\wj*
-\v 33 \wj Kinder, noch eine kurze \+add Zeit\+add* bin ich bei euch; ihr werdet mich suchen, und wie ich den Juden sagte: Wo \+em ich\+em* hingehe, könnt \+em ihr\+em* nicht hinkommen, so sage ich jetzt auch euch. \wj*
-\v 34 \wj Ein neues Gebot gebe ich euch, dass ihr einander liebt, damit, wie ich euch geliebt habe, auch \+em ihr\+em* einander liebet.\wj*
-\v 35 \wj Daran werden alle erkennen, dass ihr meine\wj*\f - \fr 13,35 \ft Eig. mir\f*\wj Jünger seid, wenn ihr Liebe untereinander habt.\wj*
-\v 36 Simon Petrus spricht zu ihm: Herr, wo gehst du hin? Jesus antwortete ihm: \wj Wo ich hingehe, kannst du mir jetzt nicht folgen; du wirst mir aber später folgen.\wj*
-\v 37 Petrus spricht zu ihm: Herr, warum kann ich dir jetzt nicht folgen? Mein Leben will ich für dich lassen\f - \fr 13,37 \ft Eig. einsetzen, darlegen\f*.
-\v 38 Jesus antwortet: \wj Dein Leben willst du für mich lassen\wj*\f - \fr 13,38 \ft Eig. einsetzen, darlegen\f*\wj ? Wahrlich, wahrlich, ich sage dir, der Hahn wird \+em nicht\+em* krähen, bis du mich dreimal verleugnet hast.\wj*
+\s1 Jesus Washes His Disciples’ Feet
+\m
+\v 1 It was now just before the Passover Feast, and Jesus knew that His hour had come to leave this world and return to the Father. Having loved His own who were in the world, He loved them to the very end.\f + \fr 13:1 \ft Or He showed them the full extent of His love.\f*
+\v 2 The evening meal was underway, and the devil had already put into the heart of Judas, the son of Simon Iscariot, to betray Jesus.
+\b
+\m
+\v 3 Jesus knew that the Father had delivered all things into His hands, and that He had come from God and was returning to God.
+\v 4 So He got up from the supper, laid aside His outer garments, and wrapped a towel around His waist.
+\v 5 After that, He poured water into a basin and began to wash the disciples’ feet and dry them with the towel that was around Him.
+\b
+\m
+\v 6 He came to Simon Peter, who asked Him, “Lord, are You going to wash my feet?”
+\b
+\m
+\v 7 Jesus replied, “You do not realize now what I am doing, but later you will understand.”
+\b
+\m
+\v 8 “Never shall You wash my feet!” Peter told Him.
+\b
+\m Jesus answered, “Unless I wash you, you have no part with Me.”
+\b
+\m
+\v 9 “Then, Lord,” Simon Peter replied, “not only my feet, but my hands and my head as well!”
+\b
+\m
+\v 10 Jesus told him, “Whoever has already bathed needs only to wash his feet, and he will be completely clean. And you are clean, though not all of you.”
+\v 11 For He knew who would betray Him. That is why He said, “Not all of you are clean.”
+\b
+\m
+\v 12 When Jesus had washed their feet and put on His outer garments, He reclined with them again and asked, “Do you know what I have done for you?
+\v 13 You call Me Teacher and Lord, and rightly so, because I am.
+\v 14 So if I, your Lord and Teacher, have washed your feet, you also should wash one another’s feet.
+\v 15 I have set you an example so that you should do as I have done for you.
+\v 16 Truly, truly, I tell you, no servant is greater than his master,\f + \fr 13:16 \ft Cited in John 15:20\f* nor is a messenger greater than the one who sent him.
+\v 17 If you know these things, you will be blessed if you do them.
+\s1 Jesus Predicts His Betrayal
+\r (Psalms 41:1–13)
+\b
+\m
+\v 18 I am not speaking about all of you; I know whom I have chosen. But this is to fulfill the Scripture: ‘The one who shares My bread has lifted up his heel against Me.’\f + \fr 13:18 \ft Psalms 41:9\f*
+\v 19 I am telling you now before it happens, so that when it comes to pass, you will believe that I am He.
+\v 20 Truly, truly, I tell you, whoever receives the one I send receives Me, and whoever receives Me receives the One who sent Me.”
+\b
+\m
+\v 21 After Jesus had said this, He became troubled in spirit and testified, “Truly, truly, I tell you, one of you will betray Me.”
+\b
+\m
+\v 22 The disciples looked at one another, perplexed as to which of them He meant.
+\v 23 One of His disciples, the one whom Jesus loved, was reclining at His side.\f + \fr 13:23 \ft Greek was reclining in the bosom of Jesus\f*
+\v 24 So Simon Peter motioned to him to ask Jesus which one He was talking about.
+\v 25 Leaning back against Jesus, he asked, “Lord, who is it?”
+\b
+\m
+\v 26 Jesus answered, “It is the one to whom I give this morsel after I have dipped it.” Then He dipped the morsel and gave it to Judas son of Simon Iscariot.
+\v 27 And when Judas had taken the morsel, Satan entered into him.
+\b
+\m Then Jesus said to Judas, “What you are about to do, do quickly.”
+\v 28 But no one at the table knew why Jesus had said this to him.
+\v 29 Since Judas kept the money bag, some thought that Jesus was telling him to buy what was needed for the feast, or to give something to the poor.
+\v 30 As soon as he had received the morsel, Judas went out into the night.
+\s1 Love One Another
+\r (Romans 12:9–13; 1 John 3:11–24)
+\b
+\m
+\v 31 When Judas had gone out, Jesus said, “Now the Son of Man is glorified, and God is glorified in Him.
+\v 32 If God is glorified in Him,\f + \fr 13:32 \ft WH does not include If God is glorified in Him.\f* God will also glorify the Son in Himself—and will glorify Him at once.
+\b
+\m
+\v 33 Little children, I am with you only a little while longer. You will look for Me, and as I said to the Jews, so now I say to you: ‘Where I am going, you cannot come.’
+\b
+\m
+\v 34 A new commandment I give you: Love one another. As I have loved you, so you also must love one another.
+\v 35 By this everyone will know that you are My disciples, if you love one another.”
+\s1 Jesus Predicts Peter’s Denial
+\r (Matthew 26:31–35; Mark 14:27–31; Luke 22:31–38)
+\b
+\m
+\v 36 “Lord, where are You going?” Simon Peter asked.
+\b
+\m Jesus answered, “Where I am going, you cannot follow Me now, but you will follow later.”
+\b
+\m
+\v 37 “Lord,” said Peter, “why can’t I follow You now? I will lay down my life for You.”
+\b
+\m
+\v 38 “Will you lay down your life for Me?” Jesus replied. “Truly, truly, I tell you, before the rooster crows, you will deny Me three times.
 \c 14
-\p
-\v 1 \wj Euer Herz werde nicht bestürzt\wj*\f - \fr 14,1 \ft O. erschüttert, so auch V. 27\f*\wj . Ihr glaubt an\wj*\f - \fr 14,1 \ft And. üb.: Glaubt an\f*\wj Gott, glaubt auch an mich!\wj*
-\v 2 \wj In dem Haus meines Vaters sind viele Wohnungen; wenn es nicht so wäre, würde ich es euch gesagt haben; denn ich gehe hin, euch eine Stätte zu bereiten. \wj*
-\v 3 \wj Und wenn ich hingehe und euch eine Stätte bereite, so komme ich wieder und werde euch zu mir nehmen, damit, wo \+em ich\+em* bin, auch \+em ihr\+em* seid.\wj*
-\v 4 \wj Und wo ich hingehe, wisst ihr, und den Weg wisst ihr.\wj*
-\v 5 Thomas spricht zu ihm: Herr, wir wissen nicht, wo du hingehst, und wie können wir den Weg wissen?
-\v 6 Jesus spricht zu ihm: \wj \+em Ich\+em* bin der Weg und die Wahrheit und das Leben. Niemand kommt zum Vater, als nur durch mich.\wj*
-\v 7 \wj Wenn ihr mich erkannt hättet, so würdet ihr auch meinen Vater erkannt haben; und von jetzt an erkennt ihr ihn und habt ihn gesehen.\wj*
-\v 8 Philippus spricht zu ihm: Herr, zeige uns den Vater, und es genügt uns.
-\v 9 Jesus spricht zu ihm: \wj So lange Zeit bin ich bei euch, und du hast mich nicht erkannt, Philippus? Wer mich gesehen hat, hat den Vater gesehen, und wie sagst du: Zeige uns den Vater?\wj*
-\v 10 \wj Glaubst du nicht, dass ich in dem Vater bin und der Vater in mir ist? Die Worte, die \+em ich\+em* zu euch rede, rede ich nicht von mir selbst; der Vater aber, der in mir bleibt\wj*\f - \fr 14,10 \ft O. wohnt\f*\wj , er tut die Werke.\wj*
-\v 11 \wj Glaubt mir, dass ich in dem Vater bin und der Vater in mir ist; wenn aber nicht, so glaubt mir um der Werke selbst willen.\wj*
-\v 12 \wj Wahrlich, wahrlich, ich sage euch: Wer an mich glaubt, der wird auch die Werke tun, die \+em ich\+em* tue, und wird größere als diese tun, weil \+em ich\+em* zum Vater gehe.\wj*
-\v 13 \wj Und was irgend ihr bitten werdet in meinem Namen, das werde ich tun, damit der Vater verherrlicht werde in dem Sohn.\wj*
-\v 14 \wj Wenn ihr etwas bitten werdet in meinem Namen, so werde \+em ich\+em* es tun.\wj*
-\v 15 \wj Wenn ihr mich liebt, so haltet meine Gebote;\wj*
-\v 16 \wj und \+em ich\+em* werde den Vater bitten, und er wird euch einen anderen Sachwalter\wj*\f - \fr 14,16 \ft O. Fürsprecher, Tröster\f*\wj geben, dass er bei euch sei in Ewigkeit,\wj*
-\v 17 \wj den Geist der Wahrheit, den die Welt nicht empfangen kann, weil sie ihn nicht sieht noch ihn kennt. \+em Ihr\+em* [aber] kennt ihn, denn er bleibt bei euch und wird in euch sein.\wj*
-\v 18 \wj Ich werde euch nicht als Waisen\wj*\f - \fr 14,18 \ft Eig. verwaist\f*\wj lassen, ich komme zu euch. \wj*
-\v 19 \wj Noch eine kurze \+add Zeit\+add*, und die Welt sieht mich nicht mehr; \+em ihr\+em* aber seht mich: Weil \+em ich\+em* lebe, werdet auch \+em ihr\+em* leben. \wj*
-\v 20 \wj An jenem Tag werdet ihr erkennen, dass ich in meinem Vater bin und ihr in mir und ich in euch.\wj*
-\v 21 \wj Wer meine Gebote hat und sie hält, der ist es, der mich liebt; wer aber mich liebt, wird von meinem Vater geliebt werden; und \+em ich\+em* werde ihn lieben und mich selbst ihm offenbar machen.\wj*
-\v 22 Judas, nicht der Iskariot, spricht zu ihm: Herr, wie ist es\f - \fr 14,22 \ft Eig. was ist geschehen\f*, dass du dich uns offenbar machen willst und nicht der Welt?
-\v 23 Jesus antwortete und sprach zu ihm: \wj Wenn jemand mich liebt, so wird er mein Wort halten\wj*\f - \fr 14,23 \ft O. bewahren; so auch V. 24\f*\wj , und mein Vater wird ihn lieben, und wir werden zu ihm kommen und Wohnung bei ihm machen\wj*\f - \fr 14,23 \ft Eig. bei ihm uns machen\f*\wj .\wj*
-\v 24 \wj Wer mich nicht liebt, hält meine Worte nicht; und das Wort, das ihr hört, ist nicht mein, sondern des Vaters, der mich gesandt hat.\wj*
-\v 25 \wj Dies habe ich zu euch geredet, während ich bei euch bin\wj*\f - \fr 14,25 \ft Eig. bleibe, wohne\f*\wj .\wj*
-\v 26 \wj Der Sachwalter\wj*\f - \fr 14,26 \ft O. Fürsprecher, Tröster\f*\wj aber, der Heilige Geist, den der Vater senden wird in meinem Namen, jener wird euch alles lehren und euch an alles erinnern, was ich euch gesagt habe. \wj*
-\v 27 \wj Frieden lasse ich euch, \+em meinen\+em* Frieden gebe ich euch; nicht wie die Welt gibt, gebe \+em ich\+em* euch. Euer Herz werde nicht bestürzt, sei auch nicht furchtsam.\wj*
-\v 28 \wj Ihr habt gehört, dass \+em ich\+em* euch gesagt habe: Ich gehe hin, und ich komme zu euch. Wenn ihr mich liebtet, so würdet ihr euch freuen, dass ich zum Vater gehe, denn [mein] Vater ist größer als ich. \wj*
-\v 29 \wj Und jetzt habe ich es euch gesagt, ehe es geschieht, damit, wenn es geschieht, ihr glaubt.\wj*
-\v 30 \wj Ich werde nicht mehr vieles mit euch reden, denn der Fürst der Welt kommt und hat nichts in mir;\wj*
-\v 31 \wj aber damit die Welt erkenne, dass ich den Vater liebe und so tue, wie mir der Vater geboten hat. – Steht auf, lasst uns von hier weggehen!\wj*
+\s1 In My Father’s House Are Many Rooms
+\m
+\v 1 “Do not let your hearts be troubled. You believe in God;\f + \fr 14:1 \ft Or Believe in God\f* believe in Me as well.
+\v 2 In My Father’s house are many rooms. If it were not so, would I have told you that I am going there to prepare a place for you?\f + \fr 14:2 \ft Or If it were not so, I would have told you. I am going there to prepare a place for you.\f*
+\v 3 And if I go and prepare a place for you, I will come back and welcome you into My presence, so that you also may be where I am.
+\v 4 You know the way to the place where I am going.\f + \fr 14:4 \ft BYZ and TR And where I go you know, and the way you know.\f*”
+\s1 The Way, the Truth, and the Life
+\b
+\m
+\v 5 “Lord,” said Thomas, “we do not know where You are going, so how can we know the way?”
+\b
+\m
+\v 6 Jesus answered, “I am the way and the truth and the life. No one comes to the Father except through Me.
+\v 7 If you had known Me, you would know My Father as well. From now on you do know Him and have seen Him.”
+\b
+\m
+\v 8 Philip said to Him, “Lord, show us the Father, and that will be enough for us.”
+\b
+\m
+\v 9 Jesus replied, “Philip, I have been with you all this time, and still you do not know Me? Anyone who has seen Me has seen the Father. How can you say, ‘Show us the Father’?
+\v 10 Do you not believe that I am in the Father and the Father is in Me? The words I say to you, I do not speak on My own. Instead, it is the Father dwelling in Me, performing His works.
+\v 11 Believe Me that I am in the Father and the Father is in Me—or at least believe on account of the works themselves.
+\b
+\m
+\v 12 Truly, truly, I tell you, whoever believes in Me will also do the works that I am doing. He will do even greater things than these, because I am going to the Father.
+\v 13 And I will do whatever you ask in My name, so that the Father may be glorified in the Son.
+\v 14 If you ask Me \f + \fr 14:14 \ft TR does not include Me.\f* for anything in My name, I will do it.
+\s1 Jesus Promises the Holy Spirit
+\r (John 16:5–16)
+\b
+\m
+\v 15 If you love Me, you will keep \f + \fr 14:15 \ft Or If you love Me, keep\f* My commandments.
+\v 16 And I will ask the Father, and He will give you another Advocate \f + \fr 14:16 \ft Or Comforter or Helper or Counselor; Greek Paraclete; also in verse 26\f* to be with you forever—
+\v 17 the Spirit of truth. The world cannot receive Him, because it neither sees Him nor knows Him. But you do know Him, for He abides with you and will be in you.\f + \fr 14:17 \ft WH and is in you\f*
+\b
+\m
+\v 18 I will not leave you as orphans; I will come to you.
+\v 19 In a little while the world will see Me no more, but you will see Me. Because I live, you also will live.
+\v 20 On that day you will know that I am in My Father, and you are in Me, and I am in you.
+\v 21 Whoever has My commandments and keeps them is the one who loves Me. The one who loves Me will be loved by My Father, and I will love him and reveal Myself to him.”
+\b
+\m
+\v 22 Judas (not Iscariot) asked Him, “Lord, why are You going to reveal Yourself to us and not to the world?”
+\b
+\m
+\v 23 Jesus replied, “If anyone loves Me, he will keep My word. My Father will love him, and We will come to him and make Our home with him.
+\v 24 Whoever does not love Me does not keep My words. The word that you hear is not My own, but it is from the Father who sent Me.
+\b
+\m
+\v 25 All this I have spoken to you while I am still with you.
+\v 26 But the Advocate, the Holy Spirit, whom the Father will send in My name, will teach you all things and will remind you of everything I have told you.
+\s1 Peace I Leave with You
+\b
+\m
+\v 27 Peace I leave with you; My peace I give to you. I do not give to you as the world gives. Do not let your hearts be troubled; do not be afraid.
+\v 28 You heard Me say, ‘I am going away, and I am coming back to you.’ If you loved Me, you would rejoice that I am going to the Father, because the Father is greater than I.
+\v 29 And now I have told you before it happens, so that when it does happen, you will believe.
+\b
+\m
+\v 30 I will not speak with you much longer, for the prince of this world is coming, and he has no claim on Me.
+\v 31 But I do exactly what the Father has commanded Me, so that the world may know that I love the Father.
+\b
+\m Get up! Let us go on from here.
 \c 15
-\p
-\v 1 \wj \+em Ich\+em* bin der wahre Weinstock, und mein Vater ist der Weingärtner\wj*\f - \fr 15,1 \ft Eig. Ackerbauer\f*\wj .\wj*
-\v 2 \wj Jede Rebe an\wj*\f - \fr 15,2 \ft Eig. in\f*\wj mir, die nicht Frucht bringt, die nimmt er weg; und jede, die Frucht bringt, die reinigt er, damit sie mehr Frucht bringe.\wj*
-\v 3 \wj \+em Ihr\+em* seid schon rein um des Wortes willen, das ich zu euch geredet habe.\wj*
-\v 4 \wj Bleibt in mir, und ich in euch. Wie die Rebe nicht von sich selbst Frucht bringen kann, sie bleibe denn am Weinstock, so auch \+em ihr\+em* nicht, ihr bleibt denn in mir. \wj*
-\v 5 \wj \+em Ich\+em* bin der Weinstock, \+em ihr\+em* \+add seid\+add* die Reben. Wer in mir bleibt und ich in ihm, dieser bringt viel Frucht, denn außer mir\wj*\f - \fr 15,5 \ft Eig. außerhalb, getrennt von mir\f*\wj könnt ihr nichts tun.\wj*
-\v 6 \wj Wenn jemand nicht in mir bleibt, so wird er hinausgeworfen wie die Rebe und verdorrt\wj*\f - \fr 15,6 \ft Eig. in mir geblieben ist, so ist er hinausgeworfen worden ... und ist verdorrt\f*\wj ; und man sammelt sie und wirft sie ins Feuer, und sie verbrennen.\wj*
-\v 7 \wj Wenn ihr in mir bleibt und meine Worte in euch bleiben, so werdet ihr bitten was ihr wollt, und es wird euch geschehen.\wj*
-\v 8 \wj Hierin wird\wj*\f - \fr 15,8 \ft O. ist\f*\wj mein Vater verherrlicht, dass ihr viel Frucht bringt, und ihr werdet meine\wj*\f - \fr 15,8 \ft Eig. mir\f*\wj Jünger werden.\wj*
-\v 9 \wj Wie der Vater mich geliebt hat, habe auch \+em ich\+em* euch geliebt; bleibt in meiner Liebe.\wj*
-\v 10 \wj Wenn ihr meine Gebote haltet, so werdet ihr in meiner Liebe bleiben, wie \+em ich\+em* die Gebote meines Vaters gehalten habe und in seiner Liebe bleibe.\wj*
-\v 11 \wj Dies habe ich zu euch geredet, damit meine Freude in euch sei und eure Freude völlig\wj*\f - \fr 15,11 \ft O. voll, vollgemacht\f*\wj werde.\wj*
-\v 12 \wj Dies ist mein Gebot, dass ihr einander liebt, wie ich euch geliebt habe.\wj*
-\v 13 \wj Größere Liebe hat niemand als diese, dass jemand sein Leben lässt\wj*\f - \fr 15,13 \ft Eig. einsetzt, darlegt\f*\wj für seine Freunde.\wj*
-\v 14 \wj Ihr seid meine Freunde, wenn ihr tut, was irgend ich euch gebiete.\wj*
-\v 15 \wj Ich nenne euch nicht mehr Knechte\wj*\f - \fr 15,15 \ft O. Sklaven (Sklave)\f*\wj , denn der Knecht\wj*\f - \fr 15,15 \ft O. Sklaven (Sklave)\f*\wj weiß nicht, was sein Herr tut; aber ich habe euch Freunde genannt, weil ich alles, was ich von meinem\wj*\f - \fr 15,15 \ft O. vonseiten meines\f*\wj Vater gehört habe, euch mitgeteilt habe. \wj*
-\v 16 \wj \+em Ihr\+em* habt nicht mich auserwählt, sondern \+em ich\+em* habe euch auserwählt und euch gesetzt, damit \+em ihr\+em* hingeht und Frucht bringt, und eure Frucht bleibe, damit, was irgend ihr den Vater bitten werdet in meinem Namen, er euch gebe. \wj*
-\v 17 \wj Dies gebiete ich euch, dass ihr einander liebet.\wj*
-\v 18 \wj Wenn die Welt euch hasst, so wisst\wj*\f - \fr 15,18 \ft O. so wisst ihr\f*\wj , dass sie mich vor euch gehasst hat.\wj*
-\v 19 \wj Wenn ihr von der Welt wärt, würde die Welt das Ihre lieben; weil ihr aber nicht von der Welt seid, sondern \+em ich\+em* euch aus der Welt auserwählt habe, darum hasst euch die Welt. \wj*
-\v 20 \wj Gedenkt des Wortes, das \+em ich\+em* euch gesagt habe: Ein Knecht\wj*\f - \fr 15,20 \ft O. Sklaven (Sklave)\f*\wj ist nicht größer als sein Herr. Wenn sie mich verfolgt haben, werden sie auch euch verfolgen; wenn sie mein Wort gehalten haben, werden sie auch das eure halten. \wj*
-\v 21 \wj Aber dies alles werden sie euch tun um meines Namens willen, weil sie den nicht kennen, der mich gesandt hat.\wj*
-\v 22 \wj Wenn ich nicht gekommen wäre und zu ihnen geredet hätte, so hätten sie keine Sünde; jetzt aber haben sie keinen Vorwand für ihre Sünde.\wj*
-\v 23 \wj Wer mich hasst, hasst auch meinen Vater.\wj*
-\v 24 \wj Wenn ich nicht die Werke unter ihnen getan hätte, die kein anderer getan hat, so hätten sie keine Sünde; jetzt aber haben sie gesehen und gehasst sowohl mich als auch meinen Vater.\wj*
-\v 25 \wj Aber damit das Wort erfüllt würde, das in ihrem Gesetz geschrieben steht: „Sie haben mich ohne Ursache gehasst“.\wj*\f - \fr 15,25 \ft Ps. 69,5\f*
-\v 26 \wj Wenn aber der Sachwalter\wj*\f - \fr 15,26 \ft O. Fürsprecher, Tröster; so auch Kap. 16,7\f*\wj gekommen ist, den \+em ich\+em* euch von dem Vater senden werde, der Geist der Wahrheit, der von dem Vater ausgeht, so wird er von mir zeugen.\wj*
-\v 27 \wj Aber auch \+em ihr\+em* zeugt, weil ihr von Anfang an bei mir seid.\wj*
+\s1 Jesus the True Vine
+\r (Isaiah 27:1–13)
+\m
+\v 1 “I am the true vine, and My Father is the keeper of the vineyard.
+\v 2 He cuts off every branch in Me that bears no fruit, and every branch that does bear fruit, He prunes to make it even more fruitful.
+\v 3 You are already clean because of the word I have spoken to you.
+\v 4 Remain in Me, and I will remain in you. Just as no branch can bear fruit by itself unless it remains in the vine, neither can you bear fruit unless you remain in Me.
+\b
+\m
+\v 5 I am the vine and you are the branches. The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing.
+\v 6 If anyone does not remain in Me, he is like a branch that is thrown away and withers. Such branches are gathered up, thrown into the fire, and burned.
+\v 7 If you remain in Me and My words remain in you, ask whatever you wish, and it will be done for you.
+\v 8 This is to My Father’s glory, that you bear much fruit, proving yourselves to be My disciples.
+\s1 No Greater Love
+\b
+\m
+\v 9 As the Father has loved Me, so have I loved you. Remain in My love.
+\v 10 If you keep My commandments, you will remain in My love, just as I have kept My Father’s commandments and remain in His love.
+\v 11 I have told you these things so that My joy may be in you and your joy may be complete.
+\b
+\m
+\v 12 This is My commandment, that you love one another as I have loved you.
+\v 13 Greater love has no one than this, that he lay down his life for his friends.
+\b
+\m
+\v 14 You are My friends if you do what I command you.
+\v 15 No longer do I call you servants, for a servant does not understand what his master is doing. But I have called you friends, because everything I have learned from My Father I have made known to you.
+\v 16 You did not choose Me, but I chose you. And I appointed you to go and bear fruit—fruit that will remain—so that whatever you ask the Father in My name, He will give you.
+\v 17 This is My command to you: Love one another.
+\s1 The Hatred of the World
+\b
+\m
+\v 18 If the world hates you, understand that it hated Me first.
+\v 19 If you were of the world, it would love you as its own. Instead, the world hates you, because you are not of the world, but I have chosen you out of the world.
+\b
+\m
+\v 20 Remember the word that I spoke to you: ‘No servant is greater than his master.’\f + \fr 15:20 \ft John 13:16\f* If they persecuted Me, they will persecute you as well; if they kept My word, they will keep yours as well.
+\v 21 But they will treat you like this because of My name, since they do not know the One who sent Me.
+\v 22 If I had not come and spoken to them, they would not be guilty of sin. Now, however, they have no excuse for their sin.
+\b
+\m
+\v 23 Whoever hates Me hates My Father as well.
+\v 24 If I had not done among them the works that no one else did, they would not be guilty of sin; but now they have seen and hated both Me and My Father.
+\v 25 But this is to fulfill what is written in their Law: ‘They hated Me without reason.’\f + \fr 15:25 \ft See Psalms 35:19, Psalms 38:19, and Psalms 69:4.\f*
+\b
+\m
+\v 26 When the Advocate \f + \fr 15:26 \ft Or Comforter or Helper or Counselor; Greek Paraclete\f* comes, whom I will send to you from the Father—the Spirit of truth who proceeds from the Father—He will testify about Me.
+\v 27 And you also must testify, because you have been with Me from the beginning.
 \c 16
-\p
-\v 1 \wj Dieses habe ich zu euch geredet, damit ihr euch nicht ärgert. \wj*
-\v 2 \wj Sie werden euch aus der Synagoge ausschließen. Es kommt aber die Stunde, dass jeder, der euch tötet, meinen wird, Gott einen Dienst\wj*\f - \fr 16,2 \ft Eig. Opferdienst, Gottesdienst\f*\wj darzubringen. \wj*
-\v 3 \wj Und dies werden sie tun, weil sie weder den Vater noch mich erkannt haben.\wj*
-\v 4 \wj Dieses aber habe ich zu euch geredet, damit, wenn die Stunde gekommen ist, ihr daran gedenkt, dass \+em ich\+em* es euch gesagt habe. Dieses aber habe ich euch von Anfang an nicht gesagt, weil ich bei euch war. \wj*
-\v 5 \wj Jetzt aber gehe ich hin zu dem, der mich gesandt hat, und niemand von euch fragt mich: Wo gehst du hin? \wj*
-\v 6 \wj sondern weil ich dieses zu euch geredet habe, hat Traurigkeit euer Herz erfüllt. \wj*
-\v 7 \wj Doch \+em ich\+em* sage euch die Wahrheit: Es ist euch nützlich, dass \+em ich\+em* weggehe, denn wenn ich nicht weggehe, wird der Sachwalter nicht zu euch kommen; wenn ich aber hingehe, werde ich ihn zu euch senden.\wj*
-\v 8 \wj Und wenn er gekommen ist, wird \+em er\+em* die Welt überführen von Sünde und von Gerechtigkeit und von Gericht.\wj*
-\v 9 \wj Von Sünde, weil sie nicht an mich glauben;\wj*
-\v 10 \wj von Gerechtigkeit aber, weil ich zu [meinem] Vater gehe, und ihr mich nicht mehr seht; \wj*
-\v 11 \wj von Gericht aber, weil der Fürst dieser Welt gerichtet ist.\wj*
-\p
-\v 12 \wj Noch vieles habe ich euch zu sagen, aber ihr könnt es jetzt nicht tragen.\wj*
-\v 13 \wj Wenn aber jener, der Geist der Wahrheit, gekommen ist, wird er euch in die ganze Wahrheit leiten; denn er wird nicht aus\wj*\f - \fr 16,13 \ft W. von\f*\wj sich selbst reden, sondern was irgend er hören wird, wird er reden, und das Kommende wird er euch verkündigen.\wj*
-\v 14 \wj Er wird mich verherrlichen, denn von dem Meinen wird er empfangen\wj*\f - \fr 16,14 \ft O. nehmen\f*\wj und euch verkündigen.\wj*
-\v 15 \wj Alles, was der Vater hat, ist mein; darum sagte ich, dass er von dem Meinen empfängt\wj*\f - \fr 16,15 \ft O. nimmt\f*\wj und euch verkündigen wird.\wj*
-\v 16 \wj Eine kurze \+add Zeit\+add*, und ihr schaut mich nicht, und wiederum eine kurze Zeit, und ihr werdet mich sehen [weil \+em ich\+em* zum Vater hingehe].\wj*
-\v 17 Es sprachen nun \add einige\add* von seinen Jüngern zueinander: Was ist dies, das er zu uns sagt: \wj Eine kurze \+add Zeit\+add*, und ihr schaut mich nicht, und wiederum eine kurze \+add Zeit\+add*, und ihr werdet mich sehen, und: weil ich zum Vater hingehe?\wj*
-\v 18 Da sprachen sie: Was ist das für eine kurze \add Zeit\add*, wovon er redet?\f - \fr 16,18 \ft Eig. Was ist dies, das er sagt, das Kleine?\f* Wir wissen nicht, was er sagt.
-\v 19 [Da] erkannte Jesus, dass sie ihn fragen wollten, und sprach zu ihnen: \wj Forscht ihr darüber untereinander, dass ich sagte: Eine kurze \+add Zeit\+add*, und ihr schaut mich nicht, und wiederum eine kurze \+add Zeit\+add*, und ihr werdet mich sehen? \wj*
-\v 20 \wj Wahrlich, wahrlich, ich sage euch, dass \+em ihr\+em* weinen und wehklagen werdet, aber die Welt wird sich freuen; \+em ihr\+em* werdet traurig sein, aber eure Traurigkeit wird zur Freude werden.\wj*
-\v 21 \wj Die Frau, wenn sie gebiert, hat Traurigkeit, weil ihre Stunde gekommen ist; wenn sie aber das Kind geboren hat, gedenkt sie nicht mehr der Drangsal, um der Freude willen, dass ein Mensch zur Welt geboren ist. \wj*
-\v 22 \wj Auch \+em ihr\+em* nun habt jetzt zwar Traurigkeit; aber ich werde euch wiedersehen, und euer Herz wird sich freuen, und eure Freude nimmt niemand von euch.\wj*
-\v 23 \wj Und an jenem Tag werdet ihr mich nichts fragen\wj*\f - \fr 16,23 \ft O. um nichts bitten\f*\wj . Wahrlich, wahrlich, ich sage euch: Was irgend ihr den Vater bitten werdet in meinem Namen, wird er euch geben\wj*\f - \fr 16,23 \ft O. bitten werdet, wird er euch in meinem Namen geben\f*\wj .\wj*
-\v 24 \wj Bis jetzt habt ihr nichts gebeten in meinem Namen. Bittet, und ihr werdet empfangen, damit eure Freude völlig\wj*\f - \fr 16,24 \ft O. voll, vollgemacht; so auch Kap. 17,13\f*\wj sei.\wj*
-\v 25 \wj Dies habe ich in Gleichnissen\wj*\f - \fr 16,25 \ft Eig. in sinnbildl. Reden; so auch V. 29\f*\wj zu euch geredet; es kommt die\wj*\f - \fr 16,25 \ft Eig. eine\f*\wj Stunde, da ich nicht mehr in Gleichnissen zu euch reden, sondern euch offen von dem Vater verkündigen werde.\wj*
-\v 26 \wj An jenem Tag werdet ihr bitten in meinem Namen, und ich sage euch nicht, dass \+em ich\+em* den Vater für euch bitten werde;\wj*
-\v 27 \wj denn der Vater selbst hat euch lieb, weil \+em ihr\+em* mich geliebt und geglaubt habt, dass \+em ich\+em* von Gott ausgegangen bin. \wj*
-\v 28 \wj Ich bin von\wj*\f - \fr 16,28 \ft Eig. aus\f*\wj dem Vater ausgegangen und bin in die Welt gekommen; wiederum verlasse ich die Welt und gehe zum Vater.\wj*
-\p
-\v 29 Seine Jünger sprechen zu ihm: Siehe, jetzt redest du offen und sprichst kein Gleichnis;
-\v 30 jetzt wissen wir, dass du alles weißt und nicht nötig hast, dass dich jemand frage; hierdurch glauben wir, dass du von Gott ausgegangen bist.
-\v 31 Jesus antwortete ihnen: \wj Glaubt ihr jetzt?\wj*
-\v 32 \wj Siehe, es kommt die\wj*\f - \fr 16,32 \ft Eig. eine\f*\wj Stunde und ist gekommen, dass ihr zerstreut sein werdet, jeder in das Seine, und mich allein lassen werdet; und ich bin nicht allein, denn der Vater ist bei mir. \wj*
-\v 33 \wj Dieses habe ich zu euch geredet, damit ihr in mir Frieden habt. In der Welt habt ihr Drangsal; aber seid guten Mutes, \+em ich\+em* habe die Welt überwunden.\wj*
+\s1 Persecution Foretold
+\r (Acts 23:12–22)
+\m
+\v 1 “I have told you these things so that you will not fall away.
+\v 2 They will put you out of the synagogues. In fact, a time is coming when anyone who kills you will think he is offering a service to God.
+\v 3 They will do these things because they have not known the Father or Me.
+\v 4 But I have told you these things so that when their hour comes, you will remember that I told you about them. I did not tell you these things from the beginning, because I was with you.
+\s1 The Promise of the Holy Spirit
+\r (John 14:15–26)
+\b
+\m
+\v 5 Now, however, I am going to Him who sent Me; yet none of you asks Me, ‘Where are You going?’
+\v 6 Instead, your hearts are filled with sorrow because I have told you these things.
+\v 7 But I tell you the truth, it is for your benefit that I am going away. Unless I go away, the Advocate \f + \fr 16:7 \ft Or Comforter or Helper or Counselor; Greek Paraclete\f* will not come to you; but if I go, I will send Him to you.
+\b
+\m
+\v 8 And when He comes, He will convict the world in regard to sin and righteousness and judgment:
+\v 9 in regard to sin, because they do not believe in Me;
+\v 10 in regard to righteousness, because I am going to the Father and you will no longer see Me;
+\v 11 and in regard to judgment, because the prince of this world has been condemned.
+\b
+\m
+\v 12 I still have much to tell you, but you cannot yet bear to hear it.
+\v 13 However, when the Spirit of truth comes, He will guide you into all truth. For He will not speak on His own, but He will speak what He hears, and He will declare to you what is to come.
+\v 14 He will glorify Me by taking from what is Mine and disclosing it to you.
+\v 15 Everything that belongs to the Father is Mine. That is why I said that the Spirit will take from what is Mine and disclose it to you.
+\b
+\m
+\v 16 In a little while you will see Me no more, and then after a little while you will see Me.\f + \fr 16:16 \ft BYZ and TR include because I go away to the Father.\f*”
+\s1 Grief Will Turn to Joy
+\b
+\m
+\v 17 Then some of His disciples asked one another, “Why is He telling us, ‘In a little while you will not see Me, and then after a little while you will see Me’ and ‘Because I am going to the Father’?”
+\v 18 They kept asking, “Why is He saying, ‘a little while’? We do not understand what He is saying.”
+\b
+\m
+\v 19 Aware that they wanted to question Him, Jesus said to them, “Are you asking one another why I said, ‘In a little while you will not see Me, and then after a little while you will see Me’?
+\v 20 Truly, truly, I tell you, you will weep and wail while the world rejoices. You will grieve, but your grief will turn to joy.
+\v 21 A woman has pain in childbirth because her time has come; but when she brings forth her child, she forgets her anguish because of her joy that a child has been born into the world.
+\v 22 So also you have sorrow now, but I will see you again and your hearts will rejoice, and no one will take away your joy.
+\s1 Ask in My Name
+\r (Matthew 18:19–20)
+\b
+\m
+\v 23 In that day you will no longer ask Me anything. Truly, truly, I tell you, whatever you ask the Father in My name, He will give you.
+\v 24 Until now you have not asked for anything in My name. Ask and you will receive, so that your joy may be complete.
+\b
+\m
+\v 25 I have spoken these things to you in figures of speech. An hour is coming when I will no longer speak to you this way, but will tell you plainly about the Father.
+\v 26 In that day you will ask in My name. I am not saying that I will ask the Father on your behalf.
+\v 27 For the Father Himself loves you, because you have loved Me and have believed that I came from God.\f + \fr 16:27 \ft WH from the Father\f*
+\v 28 I came from the Father and entered the world. In turn, I will leave the world and go to the Father.”
+\b
+\m
+\v 29 His disciples said, “See, now You are speaking plainly and without figures of speech.
+\v 30 Now we understand that You know all things and that You have no need for anyone to question You. Because of this, we believe that You came from God.”
+\b
+\m
+\v 31 “Do you finally believe?” Jesus replied.
+\v 32 “Look, an hour is coming and has already come when you will be scattered, each to his own home, and you will leave Me all alone. Yet I am not alone, because the Father is with Me.
+\v 33 I have told you these things so that in Me you may have peace. In the world you will have tribulation. But take courage; I have overcome the world!”
 \c 17
-\p
-\v 1 Dieses redete Jesus und hob seine Augen auf zum Himmel und sprach: \wj Vater, die Stunde ist gekommen; verherrliche deinen Sohn, damit dein Sohn dich verherrliche. \wj*
-\v 2 \wj Wie du ihm Gewalt gegeben hast über alles Fleisch, damit er allen, die du ihm gegeben\wj*\f - \fr 17,2 \ft Eig. damit alles, was du ihm gegeben, er ihnen usw.\f*\wj , ewiges Leben gebe. \wj*
-\v 3 \wj Dies aber ist das ewige Leben, dass sie dich, den allein wahren Gott, und den du gesandt hast, Jesus Christus, erkennen.\wj*
-\v 4 \wj \+em Ich\+em* habe dich verherrlicht auf der Erde; das Werk habe ich vollbracht, das du mir gegeben hast, dass ich es tun sollte.\wj*
-\v 5 \wj Und nun verherrliche \+em du\+em*, Vater, mich bei dir selbst mit der Herrlichkeit, die ich bei dir hatte, ehe die Welt war.\wj*
-\p
-\v 6 \wj Ich habe deinen Namen offenbart den Menschen, die du mir aus der Welt gegeben hast. Dein waren sie, und mir hast du sie gegeben, und sie haben dein Wort bewahrt\wj*\f - \fr 17,6 \ft O. gehalten\f*\wj . \wj*
-\v 7 \wj Jetzt haben sie erkannt, dass alles, was du mir gegeben hast, von dir ist;\wj*
-\v 8 \wj denn die Worte\wj*\f - \fr 17,8 \ft O. Aussprüche. Mitteilungen\f*\wj , die du mir gegeben hast, habe ich ihnen gegeben, und \+em sie\+em* haben \+add sie\+add* angenommen und wahrhaftig erkannt, dass ich von dir ausgegangen bin, und haben geglaubt, dass \+em du\+em* mich gesandt hast.\wj*
-\v 9 \wj \+em Ich\+em* bitte für sie\wj*\f - \fr 17,9 \ft Eig. bezüglich ihrer (der, derer); so auch V. 20\f*\wj ; nicht für die\wj*\f - \fr 17,9 \ft Eig. bezüglich ihrer (der, derer); so auch V. 20\f*\wj Welt bitte ich, sondern für die\wj*\f - \fr 17,9 \ft Eig. bezüglich ihrer (der, derer); so auch V. 20\f*\wj , die du mir gegeben hast, denn sie sind dein\wj*
-\v 10 \wj (und alles, was mein ist, ist dein, und was dein ist, mein), und ich bin in ihnen verherrlicht.\wj*
-\v 11 \wj Und ich bin nicht mehr in der Welt, und diese sind in der Welt, und \+em ich\+em* komme zu dir. Heiliger Vater! Bewahre sie in deinem Namen, den du mir\wj*\f - \fr 17,11 \ft O. viell.: in dem du \+add sie\+add* mir\f*\wj gegeben hast, damit sie eins seien, wie wir.\wj*
-\v 12 \wj Als ich bei ihnen war, bewahrte \+em ich\+em* sie in deinem Namen, den du mir gegeben hast; und ich habe \+add sie\+add* behütet\wj*\f - \fr 17,12 \ft O. nach and. Les.: ... Namen. Die du mir gegeben hast, habe ich behütet\f*\wj , und keiner von ihnen ist verloren\wj*\f - \fr 17,12 \ft O. verdorben\f*\wj , als nur der Sohn des Verderbens, damit die Schrift erfüllt werde. \wj*
-\v 13 \wj Jetzt aber komme ich zu dir; und dieses rede ich in der Welt, damit sie meine Freude völlig in sich haben.\wj*
-\v 14 \wj \+em Ich\+em* habe ihnen dein Wort gegeben, und die Welt hat sie gehasst, weil sie nicht von der Welt sind, wie \+em ich\+em* nicht von der Welt bin.\wj*
-\v 15 \wj Ich bitte nicht, dass du sie aus der Welt wegnimmst, sondern dass du sie bewahrest vor dem Bösen.\wj*
-\v 16 \wj Sie sind nicht von der Welt, wie \+em ich\+em* nicht von der Welt bin.\wj*
-\v 17 \wj Heilige sie durch die\wj*\f - \fr 17,17 \ft O. in (der)\f*\wj Wahrheit: dein Wort ist Wahrheit.\wj*
-\v 18 \wj Wie du mich in die Welt gesandt hast, habe auch \+em ich\+em* sie in die Welt gesandt; \wj*
-\v 19 \wj und \+em ich\+em* heilige mich selbst für sie, damit auch \+em sie\+em* Geheiligte seien durch\wj*\f - \fr 17,19 \ft O. in (der)\f*\wj Wahrheit.\wj*
-\v 20 \wj Aber nicht für diese allein bitte ich, sondern auch für die, die durch ihr Wort an mich glauben;\wj*
-\v 21 \wj damit sie alle eins seien, wie du, Vater, in mir und ich in dir, damit auch \+em sie\+em* in uns eins seien, damit die Welt glaube, dass \+em du\+em* mich gesandt hast.\wj*
-\v 22 \wj Und die Herrlichkeit, die du mir gegeben hast, habe \+em ich\+em* ihnen gegeben, damit sie eins seien, wie \+em wir\+em* eins sind;\wj*
-\v 23 \wj ich in ihnen und du in mir, damit sie in eins vollendet seien, [und] damit die Welt erkenne, dass \+em du\+em* mich gesandt und sie geliebt hast, wie du mich geliebt hast.\wj*
-\v 24 \wj Vater, ich will, dass \+em die\+em*, die du mir gegeben hast, auch bei mir seien, wo \+em ich\+em* bin,\wj*\f - \fr 17,24 \ft W. Vater, die (nach and. Les.: was) du mir gegeben hast – ich will, dass, wo \+em ich\+em* bin, auch jene bei mir seien\f*\wj damit sie meine Herrlichkeit schauen, die du mir gegeben hast, denn du hast mich geliebt vor Grundlegung der Welt.\wj*
-\v 25 \wj Gerechter Vater! – Und die Welt hat dich nicht erkannt; \+em ich\+em* aber habe dich erkannt, und diese haben erkannt, dass \+em du\+em* mich gesandt hast.\wj*
-\v 26 \wj Und ich habe ihnen deinen Namen verkündet und werde \+add ihn\+add* verkünden, damit die Liebe, womit du mich geliebt hast, in ihnen sei und ich in ihnen.\wj*
+\s1 Prayer for the Son
+\m
+\v 1 When Jesus had spoken these things, He lifted up His eyes to heaven and said, “Father, the hour has come. Glorify Your Son, that Your Son may glorify You.
+\v 2 For You granted Him authority over all people,\f + \fr 17:2 \ft Literally all flesh\f* so that He may give eternal life to all those You have given Him.
+\v 3 Now this is eternal life, that they may know You, the only true God, and Jesus Christ, whom You have sent.
+\v 4 I have glorified You on earth by accomplishing the work You gave Me to do.
+\v 5 And now, Father, glorify Me in Your presence with the glory I had with You before the world existed.
+\s1 Prayer for the Disciples
+\b
+\m
+\v 6 I have revealed Your name to those You have given Me out of the world. They were Yours; You gave them to Me, and they have kept Your word.
+\v 7 Now they know that everything You have given Me comes from You.
+\v 8 For I have given them the words You gave Me, and they have received them. They knew with certainty that I came from You, and they believed that You sent Me.
+\b
+\m
+\v 9 I ask on their behalf. I do not ask on behalf of the world, but on behalf of those You have given Me; for they are Yours.
+\v 10 All I have is Yours, and all You have is Mine; and in them I have been glorified.
+\v 11 I will no longer be in the world, but they are in the world, and I am coming to You.
+\b
+\m Holy Father, protect them by Your name, the name You gave Me,\f + \fr 17:11 \ft Literally Your name, which You gave Me; TR Your name. These You have given Me; similarly in verse 12\f* so that they may be one as We are one.
+\v 12 While I was with them, I protected and preserved them by Your name, the name You gave Me. Not one of them has been lost, except the son of destruction, so that the Scripture would be fulfilled.
+\b
+\m
+\v 13 But now I am coming to You; and I am saying these things while I am in the world, so that they may have My joy fulfilled within them.
+\v 14 I have given them Your word and the world has hated them; for they are not of the world, just as I am not of the world.
+\b
+\m
+\v 15 I am not asking that You take them out of the world, but that You keep them from the evil one.\f + \fr 17:15 \ft Or from evil\f*
+\v 16 They are not of the world, just as I am not of the world.
+\v 17 Sanctify them by the truth; Your word is truth.
+\v 18 As You sent Me into the world, I have also sent them into the world.
+\v 19 For them I sanctify Myself, so that they too may be sanctified by the truth.
+\s1 Prayer for All Believers
+\b
+\m
+\v 20 I am not asking on behalf of them alone, but also on behalf of those who will believe in Me through their message,
+\v 21 that all of them may be one, as You, Father, are in Me, and I am in You. May they also be in Us, so that the world may believe that You sent Me.
+\b
+\m
+\v 22 I have given them the glory You gave Me, so that they may be one as We are one—
+\v 23 I in them and You in Me—that they may be perfectly united, so that the world may know that You sent Me and have loved them just as You have loved Me.
+\b
+\m
+\v 24 Father, I want those You have given Me to be with Me where I am, that they may see the glory You gave Me because You loved Me before the foundation of the world.
+\b
+\m
+\v 25 Righteous Father, although the world has not known You, I know You, and they know that You sent Me.
+\v 26 And I have made Your name known to them and will continue to make it known, so that the love You have for Me may be in them, and I in them.”
 \c 18
-\p
-\v 1 Als Jesus dieses gesagt hatte, ging er mit seinen Jüngern hinaus über den Bach Kidron, wo ein Garten war, in den er hineinging, er und seine Jünger.
-\v 2 Aber auch Judas, der ihn überlieferte, wusste den Ort, weil Jesus sich oft dort mit seinen Jüngern versammelte.
-\v 3 Als nun Judas die Schar und von den Hohenpriestern und Pharisäern Diener genommen hatte, kommt er dahin mit Leuchten und Fackeln und Waffen.
-\v 4 Jesus nun, der alles wusste, was über ihn kommen würde, ging hinaus und sprach zu ihnen: \wj Wen sucht ihr?\wj*
-\v 5 Sie antworteten ihm: Jesus, den Nazaräer. Jesus spricht zu ihnen: \wj \+em Ich\+em* bin es.\wj* Aber auch Judas, der ihn überlieferte, stand bei ihnen.
-\v 6 Als er nun zu ihnen sagte: \wj \+em Ich\+em* bin es\wj*, wichen sie zurück und fielen zu Boden.
-\v 7 Da fragte er sie wiederum: Wen sucht ihr? Sie aber sprachen: Jesus, den Nazaräer.
-\v 8 Jesus antwortete: \wj Ich habe euch gesagt, dass \+em ich\+em* es bin; wenn ihr nun mich sucht, so lasst diese gehen!\wj*
-\v 9 damit das Wort erfüllt würde, das er sprach: \wj Von denen, die du mir gegeben hast, habe ich keinen verloren\wj*\f - \fr 18,9 \ft O. verderben lassen\f*\wj .\wj*
-\v 10 Simon Petrus nun, der ein Schwert hatte, zog es und schlug den Knecht des Hohenpriesters und hieb ihm das rechte Ohr ab. Der Name des Knechtes aber war Malchus.
-\v 11 Da sprach Jesus zu Petrus: \wj Stecke das Schwert in die Scheide. Den Kelch, den mir der Vater gegeben hat, soll ich den \+em nicht\+em* trinken?\wj*
-\p
-\v 12 Die Schar nun und der Oberste\f - \fr 18,12 \ft W. Chiliarch, Befehlshaber über 1.000 Mann\f* und die Diener der Juden nahmen Jesus und banden ihn;
-\v 13 und sie führten ihn zuerst hin zu Annas, denn er war Schwiegervater des Kajaphas, der jenes Jahr\f - \fr 18,13 \ft O. jenes Jahres\f* Hoherpriester war.
-\v 14 Kajaphas aber war es, der den Juden geraten hatte, es sei nützlich, dass \em ein\em* Mensch für das Volk sterbe.
-\v 15 Simon Petrus aber folgte Jesus und der andere Jünger. Dieser Jünger aber war dem Hohenpriester bekannt und ging mit Jesus hinein in den Hof des Hohenpriesters.
-\v 16 Petrus aber stand an der Tür draußen. Da ging der andere Jünger, der dem Hohenpriester bekannt war, hinaus und sprach mit der Türhüterin und führte Petrus hinein.
-\v 17 Da spricht die Magd, die Türhüterin, zu Petrus: Bist nicht auch \em du\em* \add einer\add* von den Jüngern dieses Menschen? Er sagt: Ich bin es nicht.
-\v 18 Es standen aber die Knechte und die Diener, die ein Kohlenfeuer gemacht hatten, weil es kalt war, und wärmten sich; Petrus aber stand auch bei ihnen und wärmte sich.
-\v 19 Der Hohepriester nun fragte Jesus über seine Jünger und über seine Lehre.
-\v 20 Jesus antwortete ihm: \wj \+em Ich\+em* habe öffentlich zu der Welt geredet; \+em ich\+em* habe allezeit in der Synagoge und in dem Tempel gelehrt, wo alle Juden zusammenkommen, und im Verborgenen habe ich nichts geredet; \wj*
-\v 21 \wj was fragst du mich? Frage die, die gehört, was ich zu ihnen geredet habe; siehe, diese wissen, was \+em ich\+em* gesagt habe.\wj*
-\v 22 Als er aber dieses sagte, gab einer der Diener, der dabeistand, Jesus einen Backenstreich und sagte: Antwortest du so dem Hohenpriester?
-\v 23 Jesus antwortete ihm: \wj Wenn ich übel geredet habe, so gib Zeugnis von dem Übel; wenn aber recht, was schlägst du mich?\wj*
-\v 24 Annas nun hatte ihn gebunden zu Kajaphas, dem Hohenpriester, gesandt\f - \fr 18,24 \ft O. Da sandte Annas ihn usw.\f*.
-\p
-\v 25 Simon Petrus aber stand und wärmte sich. Da sprachen sie zu ihm: Bist nicht auch \em du\em* \add einer\add* von seinen Jüngern? \em Er\em* leugnete und sprach: Ich bin es nicht.
-\v 26 Es spricht einer von den Knechten des Hohenpriesters, der ein Verwandter dessen war, dem Petrus das Ohr abgehauen hatte: Sah ich dich nicht in dem Garten bei ihm?
-\v 27 Da leugnete Petrus wiederum; und sogleich krähte der Hahn.
-\p
-\v 28 Sie führen nun Jesus von Kajaphas in das Prätorium; es war aber frühmorgens. Und \em sie\em* gingen nicht hinein in das Prätorium, damit sie sich nicht verunreinigten, sondern das Passah essen möchten.
-\v 29 Pilatus ging nun zu ihnen hinaus und sprach: Welche Anklage bringt ihr gegen diesen Menschen?
-\v 30 Sie antworteten und sprachen zu ihm: Wenn dieser nicht ein Übeltäter wäre, würden wir ihn dir nicht überliefert haben.
-\v 31 Da sprach Pilatus zu ihnen: Nehmt \em ihr\em* ihn und richtet ihn nach eurem Gesetz. Da sprachen die Juden zu ihm: Es ist uns nicht erlaubt, jemand zu töten;
-\v 32 damit das Wort Jesu erfüllt würde, das er sprach, andeutend, was für \add einen\add* Tod er sterben sollte.
-\v 33 Pilatus ging nun wieder hinein in das Prätorium und rief Jesus und sprach zu ihm: Bist \em du\em* der König der Juden?
-\v 34 Jesus antwortete [ihm]: \wj Sagst du dies von dir selbst, oder haben dir andere von mir gesagt?\wj*
-\v 35 Pilatus antwortete: Bin \em ich\em* etwa ein Jude? Deine Nation und die Hohenpriester haben dich mir überliefert; was hast du getan?
-\v 36 Jesus antwortete: \wj Mein Reich ist nicht von dieser Welt; wenn mein Reich von dieser Welt wäre, so hätten meine Diener gekämpft, damit ich den Juden nicht überliefert würde; jetzt aber ist mein Reich nicht von hier.\wj*
-\v 37 Da sprach Pilatus zu ihm: \wj Also du bist ein König? Jesus antwortete: \+em Du\+em* sagst es, dass \+em ich\+em* ein König bin. \+em Ich\+em* bin dazu geboren und dazu in die Welt gekommen, damit ich der Wahrheit Zeugnis gebe. Jeder, der aus der Wahrheit ist, hört meine Stimme.\wj*
-\v 38 Pilatus spricht zu ihm: Was ist Wahrheit? Und als er dies gesagt hatte, ging er wieder zu den Juden hinaus und spricht zu ihnen: \em Ich\em* finde keinerlei Schuld an ihm;
-\v 39 ihr habt aber eine Gewohnheit, dass ich euch an dem Passah einen freilasse. Wollt ihr nun, dass ich euch den König der Juden freilasse?
-\v 40 Da schrien wiederum alle und sagten: Nicht diesen, sondern den Barabbas! Barabbas aber war ein Räuber.
+\s1 The Betrayal of Jesus
+\r (Matthew 26:47–56; Mark 14:43–52; Luke 22:47–53)
+\m
+\v 1 After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden.
+\v 2 Now Judas His betrayer also knew the place, because Jesus had often met there with His disciples.
+\v 3 So Judas brought a band of soldiers and officers from the chief priests and Pharisees. They arrived at the garden carrying lanterns, torches, and weapons.
+\b
+\m
+\v 4 Jesus, knowing all that was coming upon Him, stepped forward and asked them, “Whom are you seeking?”
+\b
+\m
+\v 5 “Jesus of Nazareth,” they answered.
+\b
+\m Jesus said, “I am He.”
+\b
+\m And Judas His betrayer was standing there with them.
+\v 6 When Jesus said, “I am He,” they drew back and fell to the ground.
+\b
+\m
+\v 7 So He asked them again, “Whom are you seeking?”
+\b
+\m “Jesus of Nazareth,” they answered.
+\b
+\m
+\v 8 “I told you that I am He,” Jesus replied. “So if you are looking for Me, let these men go.”
+\v 9 This was to fulfill the word He had spoken: “I have not lost one of those You have given Me.”\f + \fr 18:9 \ft See John 6:39 and John 17:12.\f*
+\b
+\m
+\v 10 Then Simon Peter drew his sword and struck the servant of the high priest, cutting off his right ear. The servant’s name was Malchus.
+\b
+\m
+\v 11 “Put your sword back in its sheath!” Jesus said to Peter. “Shall I not drink the cup the Father has given Me?”
+\b
+\m
+\v 12 Then the band of soldiers, with its commander and the officers of the Jews, arrested Jesus and bound Him.
+\v 13 They brought Him first to Annas, who was the father-in-law of Caiaphas, the high priest that year.
+\v 14 Caiaphas was the one who had advised the Jews that it would be better if one man died for the people.
+\s1 Peter’s First Denial
+\r (Matthew 26:69–70; Mark 14:66–68; Luke 22:54–57)
+\b
+\m
+\v 15 Now Simon Peter and another disciple were following Jesus. Since that disciple was known to the high priest, he also went with Jesus into the courtyard of the high priest.
+\v 16 But Peter stood outside at the door. Then the disciple who was known to the high priest went out and spoke to the doorkeeper, and brought Peter in.
+\b
+\m
+\v 17 At this, the servant girl watching the door said to Peter, “Aren’t you also one of this man’s disciples?”
+\b
+\m “I am not,” he answered.
+\b
+\m
+\v 18 Because it was cold, the servants and officers were standing around a charcoal fire they had made to keep warm. And Peter was also standing with them, warming himself.
+\s1 Jesus before the High Priest
+\r (Matthew 26:57–68; Mark 14:53–65; Luke 22:66–71)
+\b
+\m
+\v 19 Meanwhile, the high priest questioned Jesus about His disciples and His teaching.
+\b
+\m
+\v 20 “I have spoken openly to the world,” Jesus answered. “I always taught in the synagogues and at the temple, where all the Jews come together. I said nothing in secret.
+\v 21 Why are you asking Me? Ask those who heard My message. Surely they know what I said.”
+\b
+\m
+\v 22 When Jesus had said this, one of the officers standing nearby slapped Him in the face and said, “Is this how You answer the high priest?”
+\b
+\m
+\v 23 Jesus replied, “If I said something wrong, testify as to what was wrong. But if I spoke correctly, why did you strike Me?”
+\b
+\m
+\v 24 Then Annas sent Him, still bound, to Caiaphas the high priest.
+\s1 Peter’s Second and Third Denials
+\r (Matthew 26:71–75; Mark 14:69–72; Luke 22:58–62)
+\b
+\m
+\v 25 Simon Peter was still standing and warming himself. So they asked him, “Aren’t you also one of His disciples?”
+\b
+\m He denied it and said, “I am not.”
+\b
+\m
+\v 26 One of the high priest’s servants, a relative of the man whose ear Peter had cut off, asked, “Didn’t I see you with Him in the garden?”
+\b
+\m
+\v 27 Peter denied it once more, and immediately a rooster crowed.
+\s1 Jesus before Pilate
+\r (Matthew 27:11–14; Luke 23:1–5)
+\b
+\m
+\v 28 Then they led Jesus away from Caiaphas into the Praetorium. By now it was early morning, and the Jews did not enter the Praetorium, to avoid being defiled and unable to eat the Passover.
+\b
+\m
+\v 29 So Pilate went out to them and asked, “What accusation are you bringing against this man?”
+\b
+\m
+\v 30 “If He were not a criminal,” they replied, “we would not have handed Him over to you.”
+\b
+\m
+\v 31 “You take Him and judge Him by your own law,” Pilate told them.
+\b
+\m “We are not permitted to execute anyone,” the Jews replied.
+\v 32 This was to fulfill the word that Jesus had spoken to indicate the kind of death He was going to die.\f + \fr 18:32 \ft See John 12:32–33.\f*
+\b
+\m
+\v 33 Pilate went back into the Praetorium, summoned Jesus, and asked Him, “Are You the King of the Jews?”
+\b
+\m
+\v 34 “Are you saying this on your own,” Jesus asked, “or did others tell you about Me?”
+\b
+\m
+\v 35 “Am I a Jew?” Pilate replied. “Your own people and chief priests handed You over to me. What have You done?”
+\b
+\m
+\v 36 Jesus answered, “My kingdom is not of this world; if it were, My servants would fight to prevent My arrest by the Jews. But now My kingdom is not of this realm.”
+\b
+\m
+\v 37 “Then You are a king!” Pilate said.
+\b
+\m “You say that I am a king,” Jesus answered. “For this reason I was born and have come into the world, to testify to the truth. Everyone who belongs to the truth listens to My voice.”
+\b
+\m
+\v 38 “What is truth?” Pilate asked.
+\b
+\m And having said this, he went out again to the Jews and told them, “I find no basis for a charge against Him.
+\v 39 But it is your custom that I release to you one prisoner at the Passover. So then, do you want me to release to you the King of the Jews?”
+\b
+\m
+\v 40 “Not this man,” they shouted, “but Barabbas!” (Now Barabbas was an insurrectionist.)
 \c 19
-\p
-\v 1 Dann nahm nun Pilatus Jesus und ließ ihn geißeln.
-\v 2 Und die Soldaten flochten eine Krone aus Dornen und setzten sie auf sein Haupt und warfen ihm ein Purpurkleid um;
-\v 3 und sie kamen zu ihm und sagten: Sei gegrüßt, König der Juden! Und sie gaben ihm Backenstreiche.
-\v 4 Und Pilatus ging wieder hinaus und spricht zu ihnen: Siehe, ich führe ihn zu euch heraus, damit ihr wisst, dass ich keinerlei Schuld an ihm finde.
-\v 5 Jesus nun ging hinaus, die Dornenkrone und das Purpurkleid tragend. Und er spricht zu ihnen: Siehe, der Mensch!
-\v 6 Als ihn nun die Hohenpriester und die Diener sahen, schrien sie und sagten: Kreuzige, kreuzige ihn! Pilatus spricht zu ihnen: Nehmt \em ihr\em* ihn hin und kreuzigt ihn, denn \em ich\em* finde keine Schuld an ihm.
-\v 7 Die Juden antworteten ihm: \em Wir\em* haben ein Gesetz, und nach [unserem] Gesetz muss er sterben, weil er sich selbst zu Gottes Sohn gemacht hat.
-\v 8 Als nun Pilatus dieses Wort hörte, fürchtete er sich noch mehr;
-\v 9 und er ging wieder hinein in das Prätorium und spricht zu Jesus: Wo bist \em du\em* her? Jesus aber gab ihm keine Antwort.
-\v 10 Da spricht Pilatus zu ihm: Redest du nicht mit \em mir\em*? Weißt du nicht, dass ich Gewalt habe, dich loszugeben, und Gewalt habe, dich zu kreuzigen?
-\v 11 Jesus antwortete: \wj Du hättest keinerlei Gewalt gegen mich, wenn sie dir nicht von oben gegeben wäre; darum hat der, der mich dir überliefert hat, größere Sünde.\wj*
-\v 12 Von da an suchte Pilatus ihn loszugeben. Die Juden aber schrien und sagten: Wenn du diesen freilässt, bist du des Kaisers Freund nicht; jeder, der sich selbst zum König macht, spricht\f - \fr 19,12 \ft d.h. erklärt sich, lehnt sich auf\f* gegen den Kaiser.
-\v 13 Als nun Pilatus diese Worte hörte, führte er Jesus hinaus und setzte sich auf den Richterstuhl an einen Ort, genannt Steinpflaster, auf Hebräisch aber Gabbatha.
-\v 14 Es war aber Rüsttag des Passah; es war um die sechste Stunde. Und er spricht zu den Juden: Siehe, euer König!
-\v 15 Sie aber schrien: Weg \add mit ihm\add*, weg \add mit ihm\add*!\f - \fr 19,15 \ft Eig. Nimm \+add ihn\+add* weg, nimm \+add ihn\+add* weg!\f* Kreuzige ihn! Pilatus spricht zu ihnen: Euren König soll ich kreuzigen? Die Hohenpriester antworteten: Wir haben keinen König, als nur den Kaiser.
-\v 16 Dann nun überlieferte er ihn denselben, damit er gekreuzigt würde. Sie aber nahmen Jesus hin und führten ihn fort.
-\p
-\v 17 Und sein\f - \fr 19,17 \ft O. nach and. Lesart: sich selbst das\f* Kreuz tragend, ging er hinaus nach der Stätte, genannt Schädel\add stätte\add*, die auf Hebräisch Golgatha heißt,
-\v 18 wo sie ihn kreuzigten, und zwei andere mit ihm, auf dieser und auf jener Seite, Jesus aber in der Mitte.
-\v 19 Pilatus schrieb aber auch eine Überschrift und setzte sie auf das Kreuz. Es war aber geschrieben: Jesus, der Nazaräer, der König der Juden.
-\v 20 Diese Überschrift nun lasen viele von den Juden, denn die Stätte, wo Jesus gekreuzigt wurde, war nahe bei der Stadt\f - \fr 19,20 \ft O. der Ort der Stadt, wo ... wurde, war nahe\f*; und es war geschrieben auf Hebräisch, Griechisch \add und\add* Lateinisch.
-\v 21 Die Hohenpriester der Juden sagten nun zu Pilatus: Schreibe nicht: Der König der Juden, sondern dass jener gesagt hat: Ich bin König der Juden.
-\v 22 Pilatus antwortete: Was ich geschrieben habe, habe ich geschrieben.
-\p
-\v 23 Die Soldaten nun nahmen, als sie Jesus gekreuzigt hatten, seine Kleider und machten vier Teile, jedem Soldaten einen Teil, und den Leibrock\f - \fr 19,23 \ft O. das Unterkleid\f*. Der Leibrock aber war ohne Naht, von oben an durchweg gewebt.
-\v 24 Da sprachen sie zueinander: Lasst uns ihn nicht zerreißen, sondern um ihn losen, wessen er sein soll; damit die Schrift erfüllt würde, die spricht: „Sie haben meine Kleider unter sich verteilt, und über mein Gewand haben sie das Los geworfen“.\f - \fr 19,24 \ft Ps. 22,19\f* Die Soldaten nun haben dies getan.
-\p
-\v 25 Es standen aber bei dem Kreuz Jesu seine Mutter und die Schwester seiner Mutter, Maria, des Kleopas \add Frau\add*, und Maria Magdalene\f - \fr 19,25 \ft d.i. von Magdala; so auch Kap. 20,1.18\f*.
-\v 26 Als nun Jesus die Mutter sah und den Jünger, den er liebte, dabeistehen, spricht er zu seiner Mutter: \wj Frau, siehe, dein Sohn!\wj*
-\v 27 Dann spricht er zu dem Jünger: \wj Siehe, deine Mutter!\wj* Und von jener Stunde an nahm der Jünger sie zu sich\f - \fr 19,27 \ft Eig. in das Seine\f*.
-\v 28 Danach, da Jesus wusste, dass alles schon vollbracht war, spricht er, damit die Schrift erfüllt würde: \wj Mich dürstet!\wj*
-\v 29 Es stand nun \add dort\add* ein Gefäß voll Essig. Sie aber füllten einen Schwamm mit Essig und legten ihn um einen Ysop und brachten ihn an seinen Mund.
-\v 30 Als nun Jesus den Essig genommen hatte, sprach er: \wj Es ist vollbracht!\wj* Und er neigte das Haupt und übergab den Geist.
-\p
-\v 31 Die Juden nun baten den Pilatus, damit die Leiber nicht am Sabbat am Kreuz blieben, weil es Rüsttag war, (denn der Tag jenes Sabbats war groß) dass ihre Beine gebrochen\f - \fr 19,31 \ft O. zerschlagen; so auch V. 32.33\f*, und sie abgenommen werden möchten.
-\v 32 Da kamen die Soldaten und brachen die Beine des ersten und des anderen, der mit ihm gekreuzigt war.
-\v 33 Als sie aber zu Jesus kamen und sahen, dass er schon gestorben war, brachen sie ihm die Beine nicht,
-\v 34 sondern einer der Soldaten durchbohrte mit einem Speer seine Seite, und sogleich kam Blut und Wasser heraus.
-\v 35 Und der es gesehen hat, hat es bezeugt, und sein Zeugnis ist wahrhaftig; und \em er\em* weiß, dass er sagt \add was\add* wahr \add ist\add*, damit auch ihr glaubt.
-\v 36 Denn dies geschah, damit die Schrift erfüllt würde: „Kein Bein von ihm wird zerbrochen werden“.\f - \fr 19,36 \ft 2. Mose 12,46; Ps. 34,20\f*
-\v 37 Und wiederum sagt eine andere Schrift: „Sie werden den anschauen, den sie durchstochen haben“.\f - \fr 19,37 \ft Sach. 12,10\f*
-\p
-\v 38 Nach diesem aber bat Joseph von Arimathia, der ein Jünger Jesu war, aber aus Furcht vor den Juden ein verborgener, den Pilatus, dass er den Leib Jesu abnehmen dürfe. Und Pilatus erlaubte es. Er kam nun und nahm den Leib Jesu ab.
-\v 39 Es kam aber auch Nikodemus, der zuerst bei Nacht zu Jesus gekommen war, und brachte eine Mischung von Myrrhe und Aloe, ungefähr 100 Pfund.
-\v 40 Sie nahmen nun den Leib Jesu und wickelten ihn in leinene Tücher mit den Spezereien, wie es bei den Juden Sitte ist, zum Begräbnis zuzubereiten.
-\v 41 Es war aber an dem Ort, wo er gekreuzigt wurde, ein Garten und in dem Garten eine neue Gruft, in die noch nie jemand gelegt worden war.
-\v 42 Dorthin nun, wegen des Rüsttags der Juden, weil die Gruft nahe war, legten sie Jesus.
+\s1 The Soldiers Mock Jesus
+\r (Isaiah 50:4–11; Matthew 27:27–31; Mark 15:16–20; Luke 22:63–65)
+\m
+\v 1 Then Pilate took Jesus and had Him flogged.
+\v 2 The soldiers twisted together a crown of thorns, set it on His head, and dressed Him in a purple robe.
+\v 3 And they went up to Him again and again, saying, “Hail, King of the Jews!” and slapping Him in the face.
+\b
+\m
+\v 4 Once again Pilate came out and said to the Jews, “Look, I am bringing Him out to you to let you know that I find no basis for a charge against Him.”
+\v 5 When Jesus came out wearing the crown of thorns and the purple robe, Pilate said to them, “Here is the man!”
+\b
+\m
+\v 6 As soon as the chief priests and officers saw Him, they shouted, “Crucify Him! Crucify Him!”
+\b
+\m “You take Him and crucify Him,” Pilate replied, “for I find no basis for a charge against Him.”
+\b
+\m
+\v 7 “We have a law,” answered the Jews, “and according to that law He must die, because He declared Himself to be the Son of God.”
+\b
+\m
+\v 8 When Pilate heard this statement, he was even more afraid,
+\v 9 and he went back into the Praetorium. “Where are You from?” he asked.
+\b
+\m But Jesus gave no answer.
+\b
+\m
+\v 10 So Pilate said to Him, “Do You refuse to speak to me? Do You not know that I have authority to release You and authority to crucify You?”
+\b
+\m
+\v 11 Jesus answered, “You would have no authority over Me if it were not given to you from above. Therefore the one who handed Me over to you is guilty of greater sin.”
+\b
+\m
+\v 12 From then on, Pilate tried to release Him, but the Jews kept shouting, “If you release this man, you are no friend of Caesar. Anyone who declares himself a king is defying Caesar.”
+\b
+\m
+\v 13 When Pilate heard these words, he brought Jesus out and sat on the judgment seat at a place called the Stone Pavement, which in Hebrew \f + \fr 19:13 \ft Or in Aramaic; also in verses 17 and 20\f* is Gabbatha.
+\v 14 It was the day of Preparation for the Passover, about the sixth hour.\f + \fr 19:14 \ft That is, about noon\f* And Pilate said to the Jews, “Here is your King!”
+\b
+\m
+\v 15 At this, they shouted, “Away with Him! Away with Him! Crucify Him!”
+\b
+\m “Shall I crucify your King?” Pilate asked.
+\b
+\m “We have no king but Caesar,” replied the chief priests.
+\s1 The Crucifixion
+\r (Psalms 22:1–31; Matthew 27:32–44; Mark 15:21–32; Luke 23:26–43)
+\b
+\m
+\v 16 Then Pilate handed Jesus over to be crucified, and the soldiers took Him away.
+\v 17 Carrying His own cross, He went out to The Place of the Skull, which in Hebrew is called Golgotha.
+\b
+\m
+\v 18 There they crucified Him, and with Him two others, one on each side, with Jesus in the middle.
+\b
+\m
+\v 19 Pilate also had a notice posted on the cross. It read:
+\b
+\pc JESUS OF NAZARETH,
+\pc THE KING OF THE JEWS.
+\b
+\m
+\v 20 Many of the Jews read this sign, because the place where Jesus was crucified was near the city, and it was written in Hebrew, Latin, and Greek.
+\v 21 So the chief priests of the Jews said to Pilate, “Do not write, ‘The King of the Jews,’ but only that He said, ‘I am the King of the Jews.’”
+\b
+\m
+\v 22 Pilate answered, “What I have written, I have written.”
+\b
+\m
+\v 23 When the soldiers had crucified Jesus, they divided His garments into four parts, one for each soldier, with the tunic remaining. It was seamless, woven in one piece from top to bottom.
+\v 24 So they said to one another, “Let us not tear it. Instead, let us cast lots to see who will get it.” This was to fulfill the Scripture:
+\b
+\q1 “They divided My garments among them,
+\q2 and cast lots for My clothing.”\f + \fr 19:24 \ft Psalms 22:18\f*
+\b
+\m So that is what the soldiers did.
+\b
+\m
+\v 25 Near the cross of Jesus stood His mother and her sister, as well as Mary the wife of Clopas and Mary Magdalene.
+\v 26 When Jesus saw His mother and the disciple whom He loved standing nearby, He said to His mother, “Woman, here is your son.”
+\v 27 Then He said to the disciple, “Here is your mother.” So from that hour, this disciple took her into his home.
+\s1 The Death of Jesus
+\r (Psalms 22:1–31; Matthew 27:45–56; Mark 15:33–41; Luke 23:44–49)
+\b
+\m
+\v 28 After this, knowing that everything had now been accomplished, and to fulfill the Scripture, Jesus said, “I am thirsty.”\f + \fr 19:28 \ft See Psalms 22:15.\f*
+\v 29 A jar of sour wine \f + \fr 19:29 \ft Or A jar of wine vinegar; similarly in verse 30\f* was sitting there. So they soaked a sponge in the wine, put it on a stalk of hyssop, and lifted it to His mouth.\f + \fr 19:29 \ft See Psalms 69:21.\f*
+\v 30 When Jesus had received the sour wine, He said, “It is finished.” And bowing His head, He yielded up His spirit.
+\s1 Jesus’ Side Is Pierced
+\r (Zechariah 12:10–14)
+\b
+\m
+\v 31 It was the day of Preparation, and the next day was a High Sabbath. In order that the bodies would not remain on the cross during the Sabbath, the Jews asked Pilate to have the legs broken and the bodies removed.
+\v 32 So the soldiers came and broke the legs of the first man who had been crucified with Jesus, and those of the other.
+\b
+\m
+\v 33 But when they came to Jesus and saw that He was already dead, they did not break His legs.
+\v 34 Instead, one of the soldiers pierced His side with a spear, and immediately blood and water flowed out.
+\v 35 The one who saw it has testified to this, and his testimony is true. He knows that he is telling the truth, so that you also may believe.
+\b
+\m
+\v 36 Now these things happened so that the Scripture would be fulfilled: “Not one of His bones will be broken.”\f + \fr 19:36 \ft Psalms 34:20; see also Exodus 12:46 and Numbers 9:12.\f*
+\v 37 And, as another Scripture says: “They will look on the One they have pierced.”\f + \fr 19:37 \ft Zechariah 12:10\f*
+\s1 The Burial of Jesus
+\r (Isaiah 53:9–12; Matthew 27:57–61; Mark 15:42–47; Luke 23:50–56)
+\b
+\m
+\v 38 Afterward, Joseph of Arimathea, who was a disciple of Jesus (but secretly for fear of the Jews), asked Pilate to let him remove the body of Jesus. Pilate gave him permission, so he came and removed His body.
+\v 39 Nicodemus, who had previously come to Jesus at night, also brought a mixture of myrrh and aloes, about seventy-five pounds.\f + \fr 19:39 \ft Greek about a hundred litras; that is, approximately 34 kilograms\f*
+\v 40 So they took the body of Jesus and wrapped it in linen cloths with the spices, according to the Jewish burial custom.
+\b
+\m
+\v 41 Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid.
+\v 42 And because it was the Jewish day of Preparation and the tomb was nearby, they placed Jesus there.
 \c 20
-\p
-\v 1 An dem ersten Wochentag aber kommt Maria Magdalene früh, als es noch finster war, zur Gruft und sieht den Stein von der Gruft weggenommen.
-\v 2 Sie läuft nun und kommt zu Simon Petrus und zu dem anderen Jünger, den Jesus lieb hatte, und spricht zu ihnen: Sie haben den Herrn aus der Gruft weggenommen, und wir wissen nicht, wo sie ihn hingelegt haben.
-\v 3 Da ging Petrus hinaus und der andere Jünger, und sie gingen zu der Gruft.
-\v 4 Die beiden aber liefen zusammen, und der andere Jünger lief voraus, schneller als Petrus, und kam zuerst zu der Gruft;
-\v 5 und sich vornüberbückend, sieht er die leinenen Tücher liegen; doch ging er nicht hinein.
-\v 6 Da kommt Simon Petrus, ihm folgend, und ging hinein in die Gruft und sieht die leinenen Tücher liegen,
-\v 7 und das Schweißtuch, das auf seinem Haupt war, nicht bei den leinenen Tüchern liegen, sondern besonders zusammengewickelt an einem Ort.
-\v 8 Dann ging nun auch der andere Jünger hinein, der zuerst zu der Gruft kam, und er sah und glaubte.
-\v 9 Denn sie kannten die Schrift noch nicht, dass er aus \add den\add* Toten auferstehen musste.
-\v 10 Es gingen nun die Jünger wieder heim.
-\p
-\v 11 Maria aber stand bei der Gruft draußen und weinte. Als sie nun weinte, bückte sie sich vornüber in die Gruft
-\v 12 und sieht zwei Engel in weißen \add Kleidern\add* sitzen, einen zu dem Haupt und einen zu den Füßen, wo der Leib Jesu gelegen hatte.
-\v 13 Und jene sagen zu ihr: Frau, was weinst du? Sie spricht zu ihnen: Weil sie meinen Herrn weggenommen und ich nicht weiß, wo sie ihn hingelegt haben.
-\v 14 Als sie dies gesagt hatte, wandte sie sich zurück und sieht Jesus stehen; und sie wusste nicht, dass es Jesus sei.
-\v 15 Jesus spricht zu ihr: \wj Frau, was weinst du? Wen suchst du?\wj* \em Sie\em*, in der Meinung, es sei der Gärtner, spricht zu ihm: Herr, wenn du ihn weggetragen hast, so sage mir, wo du ihn hingelegt hast, und \em ich\em* werde ihn wegholen.
-\v 16 Jesus spricht zu ihr: \wj Maria!\wj* Sie wendet sich um und spricht zu ihm auf Hebräisch: Rabbuni!, das heißt Lehrer.
-\v 17 Jesus spricht zu ihr: \wj Rühre mich nicht an, denn ich bin noch nicht aufgefahren zu [meinem] Vater. Geh aber hin zu meinen Brüdern und sprich zu ihnen: Ich fahre auf zu meinem Vater und eurem Vater, und zu meinem Gott und eurem Gott.\wj*
-\v 18 Maria Magdalene kommt und verkündet den Jüngern, dass sie den Herrn gesehen und er dies zu ihr gesagt habe.
-\p
-\v 19 Als es nun Abend war an jenem Tag, dem ersten der Woche, und die Türen, wo die Jünger waren, aus Furcht vor den Juden verschlossen waren, kam Jesus und stand in der Mitte und spricht zu ihnen: \wj Friede euch!\wj*
-\v 20 Und als er dies gesagt hatte, zeigte er ihnen seine Hände und seine Seite. Da freuten sich die Jünger, als sie den Herrn sahen.
-\v 21 [Jesus] sprach nun wiederum zu ihnen: \wj Friede euch! Wie der Vater mich ausgesandt hat, sende \+em ich\+em* auch euch.\wj*
-\v 22 Und als er dies gesagt hatte, hauchte er in sie\f - \fr 20,22 \ft O. sie an\f* und spricht zu ihnen: \wj Empfangt \+add den\+add* Heiligen Geist!\wj*
-\v 23 \wj Welchen irgend ihr die Sünden vergebt, denen sind sie vergeben, welchen irgend ihr sie behaltet, sind sie behalten.\wj*
-\p
-\v 24 Thomas aber, einer von den Zwölfen, genannt Zwilling\f - \fr 20,24 \ft Didymus\f*, war nicht bei ihnen, als Jesus kam.
-\v 25 Da sagten die anderen Jünger zu ihm: Wir haben den Herrn gesehen. Er aber sprach zu ihnen: Es sei denn dass ich in seinen Händen das Mal der Nägel sehe und meine Finger in das Mal der Nägel lege, und lege meine Hand in seine Seite, so werde ich \em nicht\em* glauben.
-\v 26 Und nach acht Tagen waren seine Jünger wiederum drinnen und Thomas bei ihnen. \add Da\add* kommt Jesus, als die Türen verschlossen waren, und stand in der Mitte und sprach: \wj Friede euch!\wj*
-\v 27 Dann spricht er zu Thomas: \wj Reiche deinen Finger her und sieh meine Hände, und reiche deine Hand \+add her\+add* und lege sie in meine Seite, und sei nicht ungläubig, sondern gläubig.\wj*
-\v 28 Thomas antwortete und sprach zu ihm: Mein Herr und mein Gott!
-\v 29 Jesus spricht zu ihm: \wj Weil du mich gesehen hast, hast du geglaubt. Glückselig \+add sind\+add*, die nicht gesehen und geglaubt haben!\wj*
-\p
-\v 30 Auch viele andere Zeichen hat nun zwar Jesus vor seinen Jüngern getan, die nicht in diesem Buch geschrieben sind.
-\v 31 Diese aber sind geschrieben, damit \em ihr\em* glaubt, dass Jesus der Christus ist, der Sohn Gottes, und damit ihr glaubend Leben habt in seinem Namen.
+\s1 The Resurrection
+\r (Matthew 28:1–10; Mark 16:1–8; Luke 24:1–12)
+\m
+\v 1 Early on the first day of the week,\f + \fr 20:1 \ft Literally Now on the first of the Sabbaths, early,\f* while it was still dark, Mary Magdalene went to the tomb and saw that the stone had been removed from the entrance.
+\v 2 So she came running to Simon Peter and the other disciple, the one whom Jesus loved. “They have taken the Lord out of the tomb,” she said, “and we do not know where they have put Him!”
+\b
+\m
+\v 3 Then Peter and the other disciple set out for the tomb.
+\v 4 The two were running together, but the other disciple outran Peter and reached the tomb first.
+\v 5 He bent down and looked in at the linen cloths lying there, but he did not go in.
+\b
+\m
+\v 6 Simon Peter arrived just after him. He entered the tomb and saw the linen cloths lying there.
+\v 7 The cloth \f + \fr 20:7 \ft Greek soudarion\f* that had been around Jesus’ head was rolled up, lying separate from the linen cloths.
+\v 8 Then the other disciple, who had reached the tomb first, also went in. And he saw and believed.
+\v 9 For they still did not understand from the Scripture that Jesus had to rise from the dead.
+\s1 Jesus Appears to Mary Magdalene
+\r (Mark 16:9–11)
+\b
+\m
+\v 10 Then the disciples returned to their homes.
+\v 11 But Mary stood outside the tomb weeping. And as she wept, she bent down to look into the tomb,
+\v 12 and she saw two angels in white sitting where the body of Jesus had lain, one at the head and the other at the feet.
+\b
+\m
+\v 13 “Woman, why are you weeping?” they asked.
+\b
+\m “Because they have taken my Lord away,” she said, “and I do not know where they have put Him.”
+\b
+\m
+\v 14 When she had said this, she turned around and saw Jesus standing there; but she did not recognize that it was Jesus.
+\b
+\m
+\v 15 “Woman, why are you weeping?” Jesus asked. “Whom are you seeking?”
+\b
+\m Thinking He was the gardener, she said, “Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.”
+\b
+\m
+\v 16 Jesus said to her, “Mary.”
+\b
+\m She turned and said to Him in Hebrew,\f + \fr 20:16 \ft Or in Aramaic\f* “Rabboni!” (which means “Teacher”).
+\b
+\m
+\v 17 “Do not cling to Me,” Jesus said, “for I have not yet ascended to the Father. But go and tell My brothers, ‘I am ascending to My Father and your Father, to My God and your God.’”
+\b
+\m
+\v 18 Mary Magdalene went and announced to the disciples, “I have seen the Lord!” And she told them what He had said to her.
+\s1 Jesus Appears to the Disciples
+\r (Luke 24:36–49; 1 John 1:1–4)
+\b
+\m
+\v 19 It was the first day of the week, and that very evening, while the disciples were together with the doors locked for fear of the Jews, Jesus came and stood among them. “Peace be with you!” He said to them.
+\v 20 After He had said this, He showed them His hands and His side.
+\b
+\m The disciples rejoiced when they saw the Lord.
+\b
+\m
+\v 21 Again Jesus said to them, “Peace be with you. As the Father has sent Me, so also I am sending you.”
+\v 22 When He had said this, He breathed on them and said, “Receive the Holy Spirit.
+\v 23 If you forgive anyone his sins, they are forgiven; if you withhold forgiveness from anyone, it is withheld.”
+\s1 Jesus Appears to Thomas
+\b
+\m
+\v 24 Now Thomas called Didymus,\f + \fr 20:24 \ft Didymus means the twin.\f* one of the Twelve, was not with the disciples when Jesus came.
+\v 25 So the other disciples told him, “We have seen the Lord!”
+\b
+\m But he replied, “Unless I see the nail marks in His hands, and put my finger where the nails have been, and put my hand into His side, I will never believe.”
+\b
+\m
+\v 26 Eight days later, His disciples were once again inside with the doors locked, and Thomas was with them. Jesus came and stood among them and said, “Peace be with you.”
+\b
+\m
+\v 27 Then Jesus said to Thomas, “Put your finger here and look at My hands. Reach out your hand and put it into My side. Stop doubting and believe.”
+\b
+\m
+\v 28 Thomas replied, “My Lord and my God!”
+\b
+\m
+\v 29 Jesus said to him, “Because you have seen Me, you have believed; blessed are those who have not seen and yet have believed.”
+\s1 The Purpose of John’s Book
+\b
+\m
+\v 30 Jesus performed many other signs in the presence of His disciples, which are not written in this book.
+\v 31 But these are written so that you may believe \f + \fr 20:31 \ft Or may continue to believe\f* that Jesus is the Christ, the Son of God, and that by believing you may have life in His name.
 \c 21
-\p
-\v 1 Nach diesem offenbarte Jesus sich wiederum den Jüngern am See von Tiberias. Er offenbarte sich aber so:
-\v 2 Simon Petrus und Thomas, genannt Zwilling\f - \fr 21,2 \ft Didymus\f*, und Nathanael, der von Kana in Galiläa war, und die \add Söhne\add* des Zebedäus und zwei andere von seinen Jüngern waren zusammen. Simon Petrus spricht zu ihnen:
-\v 3 Ich gehe hin fischen. Sie sprechen zu ihm: Auch \em wir\em* gehen mit dir. Sie gingen hinaus und stiegen in das Schiff; und in jener Nacht fingen sie nichts.
-\v 4 Als aber schon der frühe Morgen anbrach, stand Jesus am Ufer; doch wussten die Jünger nicht, dass es Jesus sei.
-\v 5 Jesus spricht nun zu ihnen: \wj Kinder, habt ihr wohl etwas zu essen\wj*\f - \fr 21,5 \ft Eig. etwas Zukost\f*\wj ?\wj* Sie antworteten ihm: Nein.
-\v 6 Er aber sprach zu ihnen: \wj Werft das Netz auf der rechten Seite des Schiffes \+add aus\+add*, und ihr werdet finden.\wj* Da warfen sie es \add aus\add* und vermochten es vor der Menge der Fische nicht mehr zu ziehen.
-\v 7 Da sagt jener Jünger, den Jesus liebte, zu Petrus: Es ist der Herr. Simon Petrus nun, als er hörte, dass es der Herr sei, gürtete das Oberkleid um (denn er war nackt\f - \fr 21,7 \ft d.h. ohne Oberkleid\f*) und warf sich in den See.
-\v 8 Die anderen Jünger aber kamen in dem Boot, (denn sie waren nicht weit vom Land, sondern etwa 200 Ellen) und zogen das Netz mit den Fischen nach.
-\v 9 Als sie nun ans Land ausstiegen, sehen sie ein Kohlenfeuer angelegt und Fisch darauf liegen und Brot.
-\v 10 Jesus spricht zu ihnen: \wj Bringt her von den Fischen, die ihr jetzt gefangen habt.\wj*
-\v 11 Da ging Simon Petrus hinauf und zog das Netz voll großer Fische, 153, auf das Land; und obwohl es so viele waren, zerriss das Netz nicht.
-\v 12 Jesus spricht zu ihnen: \wj Kommt her, frühstückt!\wj* Keiner aber von den Jüngern wagte ihn zu fragen: Wer bist \em du\em*? da sie wussten, dass es der Herr sei.
-\v 13 Jesus kommt und nimmt das Brot und gibt es ihnen, und ebenso den Fisch.
-\v 14 Dies ist schon das dritte Mal, dass Jesus sich den Jüngern offenbarte, nachdem er aus \add den\add* Toten auferweckt war.
-\p
-\v 15 Als sie nun gefrühstückt hatten, spricht Jesus zu Simon Petrus: \wj Simon, \+add Sohn\+add* Jonas, liebst du mich mehr als diese?\wj* Er spricht zu ihm: Ja, Herr, \em du\em* weißt, dass ich dich lieb habe. Spricht er zu ihm: \wj Weide meine Lämmer.\wj*
-\v 16 Wiederum spricht er zum zweiten Mal zu ihm: \wj Simon, \+add Sohn\+add* Jonas, liebst du mich?\wj* Er spricht zu ihm: Ja, Herr, \em du\em* weißt, dass ich dich lieb habe. Spricht er zu ihm: \wj Hüte meine Schafe.\wj*
-\v 17 Er spricht zum dritten Mal zu ihm: \wj Simon, \+add Sohn\+add* Jonas, hast du mich lieb?\wj* Petrus wurde traurig, dass er zum dritten Mal zu ihm sagte: \wj Hast du mich lieb?\wj*, und sprach zu ihm: Herr, \em du\em* weißt alles; \em du\em* erkennst, dass ich dich lieb habe. Jesus spricht zu ihm: \wj Weide meine Schafe.\wj*
-\v 18 \wj Wahrlich, wahrlich, ich sage dir: Als du jünger warst, gürtetest du dich selbst und wandeltest, wohin du wolltest; wenn du aber alt geworden bist, wirst du deine Hände ausstrecken, und ein anderer wird dich gürten und hinbringen, wohin du nicht willst.\wj*
-\v 19 Dies aber sagte er, andeutend, mit welchem Tod er Gott verherrlichen sollte. Und als er dies gesagt hatte, spricht er zu ihm: \wj Folge mir nach!\wj*
-\p
-\v 20 Petrus wandte sich um und sieht den Jünger nachfolgen, den Jesus liebte, der sich auch bei dem Abendessen an seine Brust gelehnt und gesagt hatte: Herr, wer ist es, der dich überliefert?
-\v 21 Als nun Petrus diesen sah, spricht er zu Jesus: Herr, was \add soll\add* aber dieser?
-\v 22 Jesus spricht zu ihm: \wj Wenn ich will, dass er bleibe, bis ich komme, was geht es dich an? Folge du mir nach!\wj*
-\v 23 Es ging nun dieses Wort unter die Brüder aus: Jener Jünger stirbt nicht. Und Jesus sprach nicht zu ihm, dass er nicht sterbe, sondern: \wj Wenn ich will, dass er bleibe, bis ich komme, was geht es dich an?\wj*
-\p
-\v 24 Dieser ist der Jünger, der von diesen Dingen zeugt und der dieses geschrieben hat; und wir wissen, dass sein Zeugnis wahr ist.
-\v 25 Es sind aber auch viele andere Dinge, die Jesus getan hat, und wenn diese alle einzeln niedergeschrieben würden, so würde, denke ich, selbst die Welt die geschriebenen Bücher nicht fassen.
-`
+\s1 Jesus Appears by the Sea of Tiberias
+\m
+\v 1 Later, by the Sea of Tiberias,\f + \fr 21:1 \ft That is, the Sea of Galilee\f* Jesus again revealed Himself to the disciples. He made Himself known in this way:
+\v 2 Simon Peter, Thomas called Didymus,\f + \fr 21:2 \ft Didymus means the twin.\f* Nathanael from Cana in Galilee, the sons of Zebedee, and two other disciples were together.
+\v 3 Simon Peter told them, “I am going fishing.”
+\b
+\m “We will go with you,” they said. So they went out and got into the boat, but caught nothing that night.
+\b
+\m
+\v 4 Early in the morning, Jesus stood on the shore, but the disciples did not recognize that it was Jesus.
+\v 5 So He called out to them, “Children, do you have any fish?”
+\b
+\m “No,” they answered.
+\b
+\m
+\v 6 He told them, “Cast the net on the right side of the boat, and you will find some.” So they cast it there, and they were unable to haul it in because of the great number of fish.
+\b
+\m
+\v 7 Then the disciple whom Jesus loved said to Peter, “It is the Lord!” As soon as Simon Peter heard that it was the Lord, he put on his outer garment (for he had removed it) and jumped into the sea.
+\v 8 The other disciples came ashore in the boat. They dragged in the net full of fish, for they were not far from land, only about a hundred yards.\f + \fr 21:8 \ft Greek about two hundred cubits away; that is, approximately 300 feet or 91 meters\f*
+\b
+\m
+\v 9 When they landed, they saw a charcoal fire there with fish on it, and some bread.
+\b
+\m
+\v 10 Jesus told them, “Bring some of the fish you have just caught.”
+\v 11 So Simon Peter went aboard and dragged the net ashore. It was full of large fish, 153, but even with so many, the net was not torn.
+\b
+\m
+\v 12 “Come, have breakfast,” Jesus said to them. None of the disciples dared to ask Him, “Who are You?” They knew it was the Lord.
+\v 13 Jesus came and took the bread and gave it to them, and He did the same with the fish.
+\b
+\m
+\v 14 This was now the third time that Jesus appeared to the disciples after He was raised from the dead.
+\s1 Jesus and Peter
+\b
+\m
+\v 15 When they had finished eating, Jesus asked Simon Peter, “Simon son of John, do you love Me more than these?”
+\b
+\m “Yes, Lord,” he answered, “You know I love You.”
+\b
+\m Jesus replied, “Feed My lambs.”
+\b
+\m
+\v 16 Jesus asked a second time, “Simon son of John, do you love Me?”
+\b
+\m “Yes, Lord,” he answered, “You know I love You.”
+\b
+\m Jesus told him, “Shepherd My sheep.”
+\b
+\m
+\v 17 Jesus asked a third time, “Simon son of John, do you love Me?”
+\b
+\m Peter was deeply hurt that Jesus had asked him a third time, “Do you love Me?”
+\b
+\m “Lord, You know all things,” he replied. “You know I love You.”
+\b
+\m Jesus said to him, “Feed My sheep.
+\b
+\m
+\v 18 Truly, truly, I tell you, when you were young, you dressed yourself and walked where you wanted; but when you are old, you will stretch out your hands, and someone else \f + \fr 21:18 \ft Or others\f* will dress you and lead you where you do not want to go.”
+\v 19 Jesus said this to indicate the kind of death by which Peter would glorify God.
+\b
+\m And after He had said this, He told him, “Follow Me.”
+\s1 Jesus and the Beloved Disciple
+\b
+\m
+\v 20 Peter turned and saw the disciple whom Jesus loved following them. He was the one who had leaned back against Jesus \f + \fr 21:20 \ft Greek reclined on His bosom\f* at the supper to ask, “Lord, who is going to betray You?”
+\v 21 When Peter saw him, he asked, “Lord, what about him?”
+\b
+\m
+\v 22 Jesus answered, “If I want him to remain until I return, what is that to you? You follow Me!”
+\v 23 Because of this, the rumor spread among the brothers that this disciple would not die. However, Jesus did not say that he would not die, but only, “If I want him to remain until I return, what is that to you?”
+\b
+\m
+\v 24 This is the disciple who testifies to these things and who has written them down. And we know that his testimony is true.
+\b
+\m
+\v 25 There are many more things that Jesus did. If all of them were written down, I suppose that not even the world itself would have space for the books that would be written.`

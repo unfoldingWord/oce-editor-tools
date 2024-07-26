@@ -22,26 +22,28 @@ export default function PkPrintDrawer({
   repoIdStr, 
   langIdStr, 
   bookId, 
-  verbose = false, 
+  verbose = false,
+  bcvFilter, 
   extInfo, 
   renderFlags: _renderFlags,
+  renderStyles,
   printFont,
   printFontSize,
   printLineHeight,
 }) {
 
-  const allNames = [
-    'wordAtts',
-    'titles',
-    'headings',
-    'introductions',
-    'footnotes',
-    'xrefs',
-    'paraStyles',
-    'characterMarkup',
-    'chapterLabels',
-    'versesLabels',
-  ];
+  // const allNames = [
+  //   'wordAtts',
+  //   'titles',
+  //   'headings',
+  //   'introductions',
+  //   'footnotes',
+  //   'xrefs',
+  //   'paraStyles',
+  //   'characterMarkup',
+  //   'chapterLabels',
+  //   'versesLabels',
+  // ];
 
   const [docIdFromCache, setDocIdFromCache] = useState(undefined)
   // eslint-disable-next-line no-unused-vars
@@ -52,23 +54,21 @@ export default function PkPrintDrawer({
     actions: { getRepoUID }
   } = useContext(LocalPkCacheContext);
 
-  const makeIncludedFlags = (allN, includedN) => {
-    const ret = {};
-    for (const name of allN) {
-      ret[`show${name.substring(0, 1).toUpperCase()}${name.substring(1)}`] =
-        includedN.includes(name);
-    }
-    return ret;
-  };
+  // const makeIncludedFlags = (allN, includedN) => {
+  //   const ret = {};
+  //   for (const name of allN) {
+  //     ret[`show${name.substring(0, 1).toUpperCase()}${name.substring(1)}`] =
+  //       includedN.includes(name);
+  //   }
+  //   return ret;
+  // };
 
   const { ready, doRender } = usePkBookPreviewRenderer({
     pk, 
     docId: docIdFromCache, 
     bookId,
-    renderFlags: makeIncludedFlags(allNames, includedNames),
-    extInfo, 
-    verbose,
-    htmlRender: true,
+    renderStyles
+    // renderFlags: makeIncludedFlags(allNames, includedNames),
   })
 
   useEffect(() => {

@@ -31,9 +31,6 @@ export default function PkPreview(props) {
     pk, 
     docId: docIdFromCache, 
     bookId,
-    renderFlags,
-    extInfo, 
-    verbose,
   })
 
   useEffect(() => {

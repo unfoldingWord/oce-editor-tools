@@ -86,9 +86,6 @@ const sofria2WebActions = {
             const cachedSequencePointer = env.workspace.currentSequence;
             env.workspace.currentSequence = graftRecord.sequence;
             const cachedParaContentStack = env.workspace.paraContentStack;
-            if (currentBlock.subType === 'title') {
-              console.log(env)
-            }
             env.context.renderer.renderSequence(env);
             env.workspace.paraContentStack = cachedParaContentStack;
             env.workspace.currentSequence = cachedSequencePointer;
@@ -125,7 +122,7 @@ const sofria2WebActions = {
           const cachedWebParas = env.workspace.webParas;
           env.workspace.webParas = [];
           env.workspace.currentSequence = graftRecord.sequence;
-          env.context.renderer.renderSequence(env);
+          if (!env.workspace.suppressBcv) env.context.renderer.renderSequence(env);
           const sequencePseudoParas = env.workspace.webParas;
           env.workspace.webParas = cachedWebParas;
           env.workspace.paraContentStack = cachedParaContentStack;
@@ -157,7 +154,7 @@ const sofria2WebActions = {
       description: 'Add completed para to webParas',
       test: () => true,
       action: ({ config, context, workspace: ws }) => {
-        ws.webParas.push(
+        if (!ws.suppressBcv) ws.webParas.push(
           config.renderers.paragraph(
             ws.settings.showParaStyles ||
               ['footnote', 'xref'].includes(context.sequences[0].type)
@@ -309,6 +306,9 @@ const sofria2WebActions = {
             ws.paraContentStack[0].content.push(
               config.renderers.chapter_label(element.atts.number)
             );
+          }
+          if (!filteredOkChapterLabel) {
+            ws.suppressBcv = true
           }
         } else if (element.subType === 'verses_label') {
           ws.curBcvId = `${ws.bookId}.${ws.chNum}.${element.atts.number}`
